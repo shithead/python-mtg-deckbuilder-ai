@@ -1,0 +1,6 @@
+pyvirtualdisplay
+tf-agents[reverb]
+
+## for testing
+coverage
+pytest
