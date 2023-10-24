@@ -8,7 +8,6 @@ from database.SQLite import SQLite
 from environment.Card import MTGCard
 from environment.Pool import Pool
 from environment.Deck import Deck
-from utils.utils import fitstring
 
 from collections import Counter
 import torch
@@ -68,7 +67,7 @@ class Trainer_T1():
         self.word2idx = None
         self.embeddings = None
         self.embedding()
-        self.model = ModelClass(self.pool.size, len(self.keys), self.pool.size)
+        self.model = ModelClass(len(self.pool), len(self.keys), len(self.pool))
         # TODO maybe fit to card attributes
         self.loss_fn = nn.CrossEntropyLoss()
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr=0.001)

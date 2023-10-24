@@ -1,5 +1,6 @@
 from typing import Type, TypeVar
-from utils.utils import fitstring
+from utils.utils import get_token
+from torchtext.data.utils import ngrams_iterator
 from torch.utils.data import Dataset, DataLoader
 
 TCard = TypeVar('TCard', bound='Card')
@@ -59,7 +60,6 @@ class MTGCard(Card):
         # image_uris only from interesset by UI
         self.__keywords.remove("image_uris")
         self.__cxt_ids : list = None
-        self.__data : MTGDataset = None
 
     def wordlist(self):
         wordlist = list()
@@ -70,12 +70,16 @@ class MTGCard(Card):
             if isinstance(getattr(self,k),dict):
                 for attk, v in getattr(self,k).items():
                     wordlist.append(attk)
-                    wordlist.extend(fitstring(v).split(" "))
+                    wordlist.extend(get_token(v))
             elif isinstance(getattr(self,k),list):
                 for e in getattr(self,k):
-                    wordlist.extend(fitstring(e).split(" "))
+                    wordlist.extend(get_token(e))
             elif isinstance(getattr(self,k),str):
-                wordlist.extend(fitstring(getattr(self,k)).split(" "))
+                wordlist.extend(
+                        list(ngrams_iterator(
+                                get_token(getattr(self,k)),5
+                            ))
+                        )
             else:
                 wordlist.append(getattr(self,k))
         return wordlist

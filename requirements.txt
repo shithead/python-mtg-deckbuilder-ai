@@ -1,5 +1,5 @@
-pyvirtualdisplay
-tf-agents[reverb]
+torchtext
+torch
 
 ## for testing
 coverage
