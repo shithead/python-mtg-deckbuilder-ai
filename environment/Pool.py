@@ -7,8 +7,7 @@ class Pool():
         self._cur : TCard = None
         self.__size : int = 0
 
-    @property
-    def size(self) -> int:
+    def __len__(self) -> int:
         return self.__size
 
     @property
@@ -64,8 +63,12 @@ class Pool():
             return
         elif self.is_last():
             self._last = self.current.prev
+            self._cur = self.current.prev
         elif self.is_first():
             self._first = self.current.next
+            self._cur = self.current.next
+        else:
+            self._cur = self.current.prev
         card.remove()
         self.__size -= 1
 
@@ -113,8 +116,7 @@ class Pool():
         if pos == 0:
             if self.isEmpty():
                 self.first = card
-                return self.current is card
-            if self.is_last():
+            elif self.is_last():
                 self.last = card
             else:
                 self._cur.next.prev = card

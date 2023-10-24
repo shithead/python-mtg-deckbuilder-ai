@@ -23,9 +23,9 @@ def test_poolSize():
     f_card: TCard = pool.first
     countedsize = 1
     while(not pool.is_last()):
-        if countedsize > pool.size:
+        if countedsize > len(pool):
             pytest.fail("countedsize too big")
         pool.next
         countedsize += 1
 
-    assert pool.size == countedsize
+    assert len(pool) == countedsize
