@@ -2,6 +2,8 @@ from typing import Type, TypeVar
 from utils.utils import get_token
 from torchtext.data.utils import ngrams_iterator
 from torch.utils.data import Dataset, DataLoader
+import pandas as pd
+
 
 TCard = TypeVar('TCard', bound='Card')
 
@@ -60,6 +62,7 @@ class MTGCard(Card):
         # image_uris only from interesset by UI
         self.__keywords.remove("image_uris")
         self.__cxt_ids : list = None
+        
 
     def wordlist(self):
         wordlist = list()
@@ -108,12 +111,12 @@ class MTGCard(Card):
         return ret_str
 
 class MTGDataset(Dataset):
-    def __init__(self, data: list, transform=None):
+    def __init__(self, data: pd.DataFrame, transform=None):
         """
         Arguments:
-            data (list): Indexed card attributes
+            data (pandas.DataFrame): Indexed card attributes
         """
-        self.dataset: list = data
+        self.dataset: pd.DataFrame = data
 
     def __len__(self):
         return len(self.dataset)
@@ -127,3 +130,7 @@ class MTGDataset(Dataset):
         sample = {'datas': datas}
 
         return sample
+
+    def concat(self, data : pd.DataFrame):
+        self.dataset = pd.concat(self.dataset, data)
+        return self.dataset

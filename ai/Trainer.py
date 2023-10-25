@@ -9,7 +9,7 @@ from environment.Card import MTGCard
 from environment.Pool import Pool
 from environment.Deck import Deck
 
-from collections import Counter
+from collections import Counter, OrderedDict
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -31,13 +31,21 @@ class MTGDeckBuilderModel(nn.Module):
     def __init__(self, input_size, num_hidden_layer, output_size):
         super().__init__()
         self.flatten = nn.Flatten()
+        diff = int((input_size - output_size) / num_hidden_layer)
+        l = input_size - diff
+        layers = [
+                ("input_layer", nn.Linear(input_size, l)),
+                ("ReLU1", nn.ReLU())
+                ]
+        for k in range(num_hidden_layer):
+            layers.extend(
+                    [(f"hidden{k}",nn.Linear(l,l-diff)),
+                    (f"ReLU{k+1}",nn.ReLU())]
+                    )
+            l -= diff
+        layers.extend([("output_layer",nn.Linear(l,output_size))])
         self.linear_relu_stack = nn.Sequential(
-            nn.Linear(input_size, input_size),
-            nn.ReLU(),
-            # XXX maybe more hidden layer?
-            nn.Linear(input_size, input_size),
-            nn.ReLU(),
-            nn.Linear(input_size, output_size)
+                OrderedDict(layers)
         )
 
     def forward(self, x):
@@ -67,7 +75,7 @@ class Trainer_T1():
         self.word2idx = None
         self.embeddings = None
         self.embedding()
-        self.model = ModelClass(len(self.pool), len(self.keys), len(self.pool))
+        self.model = ModelClass(len(self.keys)*len(self.pool), int(len(self.keys)/2), len(self.pool))
         # TODO maybe fit to card attributes
         self.loss_fn = nn.CrossEntropyLoss()
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr=0.001)

@@ -20,8 +20,8 @@ class SQLite():
         pool = Pool()
         for amount, rawdata in res.fetchall():
             jdata = json.loads(base64.b64decode(rawdata))
+            jdata.update({"amount": amount})
             card = MTGCard(jdata)
-            for i in range(0,amount):
-                pool.insert(copy.deepcopy(card))
+            pool.insert(copy.deepcopy(card))
 
         return pool
