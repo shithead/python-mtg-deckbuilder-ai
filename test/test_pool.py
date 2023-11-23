@@ -7,11 +7,11 @@ sys.path.append(os.path.abspath('.'))
 from environment.Pool import Pool
 from environment.Card import TCard, MTGCard
 
-card1 = MTGCard({"name": "card1"})
-card2 = MTGCard({"name": "card2"})
-card3 = MTGCard({"name": "card3"})
-cardfirst = MTGCard({"name": "cardfirst"})
-cardlast = MTGCard({"name": "cardlast"})
+card1 = MTGCard({"scryfall_uri": "", "name": "card1"})
+card2 = MTGCard({"scryfall_uri": "","name": "card2"})
+card3 = MTGCard({"scryfall_uri": "","name": "card3"})
+cardfirst = MTGCard({"scryfall_uri": "","name": "cardfirst"})
+cardlast = MTGCard({"scryfall_uri": "","name": "cardlast"})
 print(card1)
 print(card2)
 print(card3)
@@ -21,7 +21,7 @@ print(cardlast)
 def test_initPool():
     pool = Pool()
     pool.insert(card1)
-    assert pool.is_first() and pool.is_last() and pool.current is card1 and pool.size == 1
+    assert pool.is_first() and pool.is_last() and pool.current is card1 and len(pool) == 1
 
 def test_delete_last_card():
     pool = Pool()

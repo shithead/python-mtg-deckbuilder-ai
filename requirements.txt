@@ -4,3 +4,6 @@ torch
 ## for testing
 coverage
 pytest
+
+## MTG
+mtgtools

@@ -2,7 +2,7 @@ from mtgtools.MtgDB import MtgDB
 from mtgtools.PCardList import PCardList
 from environment.Card import MTGCard
 from environment.Pool import Pool
-
+import copy
 
 DbPROVIDER = dict({"scryfall" : 1, "mtgio": 2})
 
@@ -49,5 +49,7 @@ class Database(MtgDB):
         cards = self.root.basic_collection
         if cards is None:
             return Exception("import first your basic collection via import_collection.py")
+        for card in cards:
+            pool.insert(copy.deepcopy(card))
         return pool
 

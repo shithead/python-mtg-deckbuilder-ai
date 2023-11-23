@@ -15,6 +15,7 @@ let
     matplotlib
     torch
     gymnasium
+    pandas
   ]);
   
 in
