@@ -16,7 +16,7 @@ class SQLite():
 
     def loadPool(self) -> Pool:
         cur = self.con.cursor()
-        res = cur.execute("SELECT  max(U.Count) as Amount, Rawdata FROM mtg,(SELECT ID, Count FROM user_collection_2 ) AS U WHERE U.ID = mtg.ID GROUP BY Name;")
+        res = cur.execute("SELECT  max(U.Count) as Amount, Rawdata FROM mtg,(SELECT ID, Count FROM user_collection_1 ) AS U WHERE Rawdata != '' and U.ID = mtg.ID GROUP BY Name;")
         pool = Pool()
         for amount, rawdata in res.fetchall():
             jdata = json.loads(base64.b64decode(rawdata))
