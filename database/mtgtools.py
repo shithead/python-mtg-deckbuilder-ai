@@ -1,7 +1,6 @@
 from mtgtools.MtgDB import MtgDB
 from mtgtools.PCardList import PCardList
-from environment.Card import MTGCard
-from environment.Pool import Pool
+from environment.Card import AICard
 import copy
 
 DbPROVIDER = dict({"scryfall" : 1, "mtgio": 2})
@@ -15,6 +14,14 @@ class Database(MtgDB):
             self.scryfall_bulk_update()
         if self.__provider == DbPROVIDER["mtgio"]:
             self.mtgio_update()
+
+    @property
+    def cards(self):
+        if self.__provider == DbPROVIDER["scryfall"]:
+            return self.root.scryfall_cards
+        if self.__provider == DbPROVIDER["mtgio"]:
+            return self.root.mtgio_cards
+        return PCardList()
 
     def load_from_file(self,path: str) -> PCardList:
         """
@@ -44,12 +51,9 @@ class Database(MtgDB):
             return self.root.mtgio_cards.from_str(string)
         return PCardList()
 
-    def loadPool(self) -> Pool:
-        pool = Pool()
-        cards = self.root.basic_collection
+    def loadPool(self) -> PCardList:
+        cards = self.root.basic_collection.filtered(lambda card: card.legalities['modern'] == 'legal' or card.legalities['modern'] == 'banned')
         if cards is None:
             return Exception("import first your basic collection via import_collection.py")
-        for card in cards:
-            pool.insert(copy.deepcopy(card))
-        return pool
+        return PCardList([ AICard.load_from_pcard(pcard) for pcard in cards ])
 

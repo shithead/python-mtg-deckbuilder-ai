@@ -1,13 +1,14 @@
 
-from .Card import MTGCard
-from .Pool import Pool
+from mtgtools.PCardList import PCardList
+from .Card import AICard
 from .Deck import Deck
 
 class Constructor():
     def __init__(self):
+        self.__pos_pool = 0
         pass
 
-    def other_card(self, pool: Pool, action: int = 0):
+    def other_card(self, pool: PCardList, action: int = 0):
         '''
         action:
             no action - 0
@@ -17,11 +18,12 @@ class Constructor():
         show card from pool .
         '''
         if action == 1:
-            return pool.prev
+            self.__pos_pool += 1
         if action == 2:
-            return pool.next
+            self.__pos_pool -= 1
+        return pool[self.__pos_pool]
 
-    def this_card(self, pool: Pool, deck: Deck ,action: int = 0):
+    def this_card(self, pool: PCardList, deck: Deck ,action: int = 0):
         '''
         action:
             no action - 0
