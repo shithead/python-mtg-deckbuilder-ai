@@ -1,8 +1,9 @@
-from utils.utils import get_token
+from utils.utils import get_token, get_optimized_token
 from torchtext.data.utils import ngrams_iterator
 from torch.utils.data import Dataset, DataLoader
 import pandas as pd
 from mtgtools.PCard import PCard
+from collections import Counter
 import json
 import re
 
@@ -11,76 +12,74 @@ class AICard(PCard):
     AICard Class for AI inforamtion construction
     """
     # TODO Create DAteset and Dataloader
-    def __init__(self, response_dict: dict):
+    def __init__(self, response_dict: dict, amount : int = 1):
         super().__init__(response_dict)
         # contruct attribute list from incoming card attributes
         # maybe need test on special attributes are given
         self.__cxt_ids : list = None
         self.data_dict : dict = None
-        self.data : MTGDataset = None
+        self.data : MTGDataset = MTGDataset()
         self.input_layer_size : int = 0
-        self.keys : list = [ "name", "mana_cost", "type_line" ]
+        self.keys : list = [ "amount", "name", "mana_cost", "type_line" ]
+        self.__wordlist : Counter = Counter()
+        self.amount = amount
         
     @staticmethod
     def load_from_pcard(pcard: PCard):
-        return AICard(json.loads(pcard.json))
+        return AICard(json.loads(pcard.json.lower()))
 
-    def create_dataset(self, word2idx: dict):
+    def create_dataset(self, word2idx: dict , wordlist: list):
         data_dict = dict()
-        data_dict.update({"name": [word2idx[self.name]]})
-        data_dict.update({"mana_cost": [word2idx[self.mana_cost]]})
+        data_dict.update({"name": [word2idx[" ".join(get_token(self.name))]]})
+        if self.mana_cost is not None:
+            data_dict.update({"mana_cost": [word2idx[self.mana_cost]]})
         data_dict.update({"type_line": [word2idx[t] for t in get_token(self.type_line)]})
         if self.power is not None:
             data_dict.update({"power": [word2idx[self.power]]})
-        if self.thoughness is not None:
+        if self.toughness is not None:
             data_dict.update({"toughness": [word2idx[self.toughness]]})
-        if self.loyality is not None:
-            data_dict.update({"loyality": [word2idx[self.loyality]]})
+        if self.loyalty is not None:
+            data_dict.update({"loyalty": [word2idx[self.loyalty]]})
         if self.oracle_text is not None:
-            oracle_text = self.oracle_text
-            for word in wordlist:
-                oracle_text.replace(word,word2idx[word])
+            data_dict.update({"oracle_text": [word2idx[t] for t in get_optimized_token(self.oracle_text, wordlist)]})
 
-            data_dict.update({"oracle_text": get_token(oracle_text)})
-
+        for k in data_dict.keys():
+            self.input_layer_size += 1
+            self.input_layer_size += len(data_dict[k])
         self.data_dict = data_dict
-        self.data.concat(pd.DataFrame(data_dict))
+        #self.data.concat(pd.DataFrame(data_dict))
 
 
-    def wordlist(self):
-        wordlist = list()
+    def wordlist(self) -> Counter:
+        if len(self.__wordlist):
+            return self.__wordlist
 
-        wordlist.append(self.name)
-        wordlist.append("name")
-        wordlist.append(self.mana_cost)
-        wordlist.append("mana_cost")
-        wordlist.extend(get_token(self.type_line))
-        wordlist.append("type_line")
+        #print([ " ".join(get_token(self.name)) ])
+        self.__wordlist.update(  { " ".join(get_token(self.name)): 9999 } )
+        self.type_line = self.type_line.replace(" - "," ")
+        for tltoken in get_token(self.type_line):
+            self.__wordlist.update( { tltoken: 9999 } )
+
+        self.__wordlist.update(Counter([ self.amount ]))
+        if self.mana_cost is not None:
+            self.__wordlist.update({ self.mana_cost: 9999 })
+            self.keys.append("mana_cost")
         if self.power is not None:
-            wordlist.append("power")
-            wordlist.append(self.power)
+            self.__wordlist.update(Counter([ self.power ]))
             self.keys.append("power")
         if self.toughness is not None:
-            wordlist.append("toughness")
-            wordlist.append(self.toughness)
+            self.__wordlist.update(Counter([ self.toughness ]))
             self.keys.append("toughness")
         if self.loyalty is not None:
-            wordlist.append("loyalty")
-            wordlist.append(self.loyalty)
+            self.__wordlist.update( Counter([ self.loyalty ]))
             self.keys.append("loyalty")
         if self.oracle_text is not None:
-            oracle_text = self.oracle_text
-            oracle_text = re.sub( r'\(.*\)', "", oracle_text)
-            for rn in wordlist:
-                oracle_text = oracle_text.replace(rn,"")
-                self.input_layer_size += 1
-            wordlist.append("oracle_text")
+            self.oracle_text = re.sub( r'\(.*\)', "", self.oracle_text)
             self.keys.append("oracle_text")
-            wordlist.extend(get_token(oracle_text))
-        self.__wordlist = wordlist 
-        self.input_layer_size += len(wordlist)
-
-        return wordlist
+            self.__wordlist.update( Counter( list(ngrams_iterator(get_token(self.oracle_text),5))))
+        for k in self.keys:
+            self.__wordlist.update({ k: 9999 })
+        return self.__wordlist
 
     @property
     def cxt_ids(self):

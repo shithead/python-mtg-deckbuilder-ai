@@ -4,10 +4,11 @@ import os
 sys.path.append(os.path.abspath('../environment'))
 sys.path.append(os.path.abspath('../database'))
 sys.path.append(os.path.abspath('.'))
-from database.SQLite import SQLite
-from environment.Card import MTGCard
-from environment.Pool import Pool
+from database.mtgtools import Database
+from environment.Card import AICard
+from mtgtools.PCardList import PCardList
 from environment.Deck import Deck
+from utils.utils import get_token
 
 from collections import Counter, OrderedDict
 import torch
@@ -26,6 +27,7 @@ device = (
 )
 print(f"Using {device} device")
 
+torch.set_default_dtype(torch.float16)
 
 class MTGDeckBuilderModel(nn.Module):
     def __init__(self, input_size, num_hidden_layer, output_size):
@@ -34,16 +36,18 @@ class MTGDeckBuilderModel(nn.Module):
         diff = int((input_size - output_size) / num_hidden_layer)
         l = input_size - diff
         layers = [
-                ("input_layer", nn.Linear(input_size, l)),
+                ("input_layer", nn.Linear(input_size, max(1,l), device=device)),
                 ("ReLU1", nn.ReLU())
                 ]
         for k in range(num_hidden_layer):
+            if (l - diff) < output_size:
+                break
             layers.extend(
-                    [(f"hidden{k}",nn.Linear(l,l-diff)),
+                    [(f"hidden{k}",nn.Linear(max(1,l),max(1,l-diff), device=device)),
                     (f"ReLU{k+1}",nn.ReLU())]
                     )
             l -= diff
-        layers.extend([("output_layer",nn.Linear(l,output_size))])
+        layers.extend([("output_layer",nn.Linear(max(1,l),output_size, device=device))])
         self.linear_relu_stack = nn.Sequential(
                 OrderedDict(layers)
         )
@@ -58,24 +62,20 @@ class Trainer_T1():
     Trainer_T1 train Model with with pool of cards. Every card is unique
     """
     def __init__(self, ModelClass: nn.Module):
-        self.pool = SQLite(os.path.abspath("../MTG-search/mtg.db")).loadPool()
-        def __unifyPool(self):
-            card = self.pool.first
-            last_id = card.id
-            while (not self.pool.is_last()):
-                card = self.pool.next
-                if last_id == card.id:
-                   del self.pool.current
-                else:
-                    last_id = card.id
+        self.pool : PCardList = Database().loadPool().unique_names()
 
-        __unifyPool(self)
-        self.keys = set(self.pool.first.keys)
-        self.vocab = Counter(self.keys)
-        self.word2idx = None
+        self.vocab : Counter = Counter()
+        self.word2idx : dict = None
         self.embeddings = None
+        self.input_layer_size : int  = 0
+        self.keys :set = set()
         self.embedding()
-        self.model = ModelClass(len(self.keys)*len(self.pool), int(len(self.keys)/2), len(self.pool))
+
+        print(len(self.pool))
+        # outpu_layer coded as binary code
+        print(self.input_layer_size)
+        ## XXX for testing
+        self.model = ModelClass(self.input_layer_size, int(len(self.keys)/2), len(self.pool))
         # TODO maybe fit to card attributes
         self.loss_fn = nn.CrossEntropyLoss()
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr=0.001)
@@ -85,25 +85,47 @@ class Trainer_T1():
         return self.model
 
     def save(self):
-        torch.save(self.model.state_dict(), "model.pth")
+        torch.save(self.model.state_dict(), "data/model.bin")
+
+    def rate_vocab(self, vocab) -> list:
+        vocabl = sorted(vocab, key=vocab.get)
+        rated_vocab = dict()
+        for v in vocabl:
+            rate = vocab[v]
+            tokens = get_token(v)
+            if len(tokens) > 1:
+                for t in tokens:
+                    rate += vocab[t]
+                rate = (vocabl.index(v)/len(vocabl)) * rate
+            else:
+                rate = 1
+            rated_vocab.update({ v: int(rate) })
+        return sorted(rated_vocab, key=rated_vocab.get, reverse=True)
+
 
     def embedding(self):
         # create vocab
-        card : MTGCard = self.pool.first
-        while (not self.pool.is_last()):
-            self.vocab.update(Counter(card.wordlist()))
-            card = self.pool.next
+        for i, card in  enumerate(self.pool):
+            print(f"create vocab: {i+1}/{len(self.pool)}")
+            self.vocab.update(card.wordlist())
             self.keys.update(card.keys)
-            self.vocab.update(Counter(self.keys))
-        self.vocab.update(Counter(card.wordlist()))
 
-        self.vocab = sorted(self.vocab, key=self.vocab.get, reverse=True)
+        self.vocab = self.rate_vocab(self.vocab)
+        torch.save(self.vocab, "data/vocable.bin")
         vocab_size = len(self.vocab)
 
         # map words to unique indices
         self.word2idx = {word: ind for ind, word in enumerate(self.vocab)} 
+        torch.save(self.word2idx, "data/word2idx.bin")
 
-        self.embeddings = nn.Embedding(vocab_size, len(self.keys))
+        self.embeddings = nn.Embedding(vocab_size, int(len(self.keys)/2))
+        torch.save(self.embeddings, "data/embeddings.bin")
+
+        for i, card in  enumerate(self.pool):
+            print(f"create_dataset: {i+1}/{len(self.pool)}")
+            card.create_dataset(self.word2idx, self.vocab)
+            self.input_layer_size += card.input_layer_size
+
 
     def train_loop(dataloader, loss_fn, optimizer):
         size = len(dataloader.dataset)
