@@ -5,6 +5,7 @@ import pandas as pd
 from mtgtools.PCard import PCard
 from collections import Counter
 import json
+import copy
 import re
 
 class AICard(PCard):
@@ -21,6 +22,18 @@ class AICard(PCard):
         self.data : MTGDataset = MTGDataset()
         self.input_layer_size : int = 0
         self.keys : list = [ "amount", "name", "mana_cost", "type_line" ]
+        if self.mana_cost is not None:
+            self.keys.append("mana_cost")
+        if self.power is not None:
+            self.keys.append("power")
+        if self.toughness is not None:
+            self.keys.append("toughness")
+        if self.loyalty is not None:
+            self.keys.append("loyalty")
+        if self.oracle_text is not None:
+            self.oracle_text = re.sub( r'\(.*\)', "", self.oracle_text)
+            self.keys.append("oracle_text")
+
         self.__wordlist : Counter = Counter()
         self.amount = amount
         
@@ -28,8 +41,9 @@ class AICard(PCard):
     def load_from_pcard(pcard: PCard):
         return AICard(json.loads(pcard.json.lower()))
 
-    def create_dataset(self, word2idx: dict , wordlist: list):
+    def create_dataset(self, word2idx: dict , wordlist: list) -> dict:
         data_dict = dict()
+        data_dict.update({"amount": [word2idx[" ".join(get_token(str(self.amount)))]]})
         data_dict.update({"name": [word2idx[" ".join(get_token(self.name))]]})
         if self.mana_cost is not None:
             data_dict.update({"mana_cost": [word2idx[self.mana_cost]]})
@@ -47,7 +61,12 @@ class AICard(PCard):
             self.input_layer_size += 1
             self.input_layer_size += len(data_dict[k])
         self.data_dict = data_dict
-        #self.data.concat(pd.DataFrame(data_dict))
+
+        data = dict()
+        for k in self.data_dict.keys():
+            data.update({k:  [ " ".join([ str(v) for v in  self.data_dict[k] ]) ] } )
+        self.data = MTGDataset(pd.DataFrame.from_dict(data))
+        return data
 
 
     def wordlist(self) -> Counter:
@@ -60,22 +79,16 @@ class AICard(PCard):
         for tltoken in get_token(self.type_line):
             self.__wordlist.update( { tltoken: 9999 } )
 
-        self.__wordlist.update(Counter([ self.amount ]))
+        self.__wordlist.update(Counter([ str(self.amount) ]))
         if self.mana_cost is not None:
             self.__wordlist.update({ self.mana_cost: 9999 })
-            self.keys.append("mana_cost")
         if self.power is not None:
             self.__wordlist.update(Counter([ self.power ]))
-            self.keys.append("power")
         if self.toughness is not None:
             self.__wordlist.update(Counter([ self.toughness ]))
-            self.keys.append("toughness")
         if self.loyalty is not None:
             self.__wordlist.update( Counter([ self.loyalty ]))
-            self.keys.append("loyalty")
         if self.oracle_text is not None:
-            self.oracle_text = re.sub( r'\(.*\)', "", self.oracle_text)
-            self.keys.append("oracle_text")
             self.__wordlist.update( Counter( list(ngrams_iterator(get_token(self.oracle_text),5))))
         for k in self.keys:
             self.__wordlist.update({ k: 9999 })

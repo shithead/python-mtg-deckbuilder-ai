@@ -1,7 +1,6 @@
 from mtgtools.MtgDB import MtgDB
 from mtgtools.PCardList import PCardList
 from environment.Card import AICard
-import copy
 
 DbPROVIDER = dict({"scryfall" : 1, "mtgio": 2})
 

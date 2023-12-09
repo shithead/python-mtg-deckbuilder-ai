@@ -11,10 +11,12 @@ from environment.Deck import Deck
 from utils.utils import get_token
 
 from collections import Counter, OrderedDict
+import copy
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
+import pandas as pd
 
 
 # Get cpu, gpu or mps device for training.
@@ -33,7 +35,7 @@ class MTGDeckBuilderModel(nn.Module):
     def __init__(self, input_size, num_hidden_layer, output_size):
         super().__init__()
         self.flatten = nn.Flatten()
-        diff = int((input_size - output_size) / num_hidden_layer)
+        diff = int((input_size - output_size) / (num_hidden_layer+1))
         l = input_size - diff
         layers = [
                 ("input_layer", nn.Linear(input_size, max(1,l), device=device)),
@@ -61,22 +63,31 @@ class Trainer_T1():
     """
     Trainer_T1 train Model with with pool of cards. Every card is unique
     """
-    def __init__(self, ModelClass: nn.Module):
+    def __init__(self, ModelClass: nn.Module, basic_data_path = "data"):
+
+        self.__basic_path = basic_data_path
         self.pool : PCardList = Database().loadPool().unique_names()
+        self.pool_size = len(self.pool)
 
         self.vocab : Counter = Counter()
-        self.word2idx : dict = None
+        self.word2idx : dict = dict()
         self.embeddings = None
         self.input_layer_size : int  = 0
         self.keys :set = set()
-        self.embedding()
+        self.datasets : pd.DataFrame = pd.DataFrame()
 
-        print(len(self.pool))
+
+        self.load()
+        self.embedding()
+        self.create_datasets()
+
+        print(self.pool_size)
         # outpu_layer coded as binary code
         print(self.input_layer_size)
         ## XXX for testing
-        self.model = ModelClass(self.input_layer_size, int(len(self.keys)/2), len(self.pool))
-        # TODO maybe fit to card attributes
+        self.pool = PCardList()
+        self.vocab = Counter()
+        self.model = ModelClass(self.input_layer_size, max(2,len(self.keys)), self.pool_size)
         self.loss_fn = nn.CrossEntropyLoss()
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr=0.001)
 
@@ -84,13 +95,50 @@ class Trainer_T1():
     def Model(self):
         return self.model
 
+    def load(self):
+        for i, card in  enumerate(self.pool):
+            print(f"\rload keys from card: {i+1}/{len(self.pool)}", end="", flush=True)
+            self.keys.update(card.keys)
+        
+        #try:
+        #    self.vocab = torch.load(f"{self.__basic_path}/vocable.bin")
+        #except FileNotFoundError as e:
+        #    print(e)
+        #    pass
+        try:
+            self.word2idx = torch.load(f"{self.__basic_path}/word2idx.bin")
+        except FileNotFoundError as e:
+            print(e)
+            pass
+        try:
+            self.embeddings = torch.load(f"{self.__basic_path}/embeddings.bin")
+        except FileNotFoundError as e:
+            print(e)
+            pass
+        try:
+            self.datasets = pd.DataFrame.from_dict(torch.load(f"{self.__basic_path}/datasets.bin"))
+        except FileNotFoundError as e:
+            print(e)
+            pass
+        try:
+            self.model = torch.load(f"{self.__basic_path}/t1_model_{len(self.pool)}_{len(self.keys)}.bin")
+        except FileNotFoundError as e:
+            print(e)
+            pass
+
     def save(self):
-        torch.save(self.model.state_dict(), "data/model.bin")
+        #torch.save(self.vocab, f"{self.__basic_path}/vocable.bin")
+        torch.save(self.word2idx, f"{self.__basic_path}/word2idx.bin")
+        torch.save(self.embeddings, f"{self.__basic_path}/embeddings.bin")
+        torch.save(self.datasets.to_dict(), f"{self.__basic_path}/datasets.bin")
+        torch.save(self.model.state_dict(), f"{self.__basic_path}/t1_model_{self.pool_size}_{len(self.keys)}.bin")
+
 
     def rate_vocab(self, vocab) -> list:
         vocabl = sorted(vocab, key=vocab.get)
         rated_vocab = dict()
-        for v in vocabl:
+        for i,v in enumerate(vocabl):
+            print(f"\rrerate vocab: {i+1}/{len(vocabl)}", end="", flush=True)
             rate = vocab[v]
             tokens = get_token(v)
             if len(tokens) > 1:
@@ -104,27 +152,46 @@ class Trainer_T1():
 
 
     def embedding(self):
+        if self.embeddings is not None:
+            return self.embeddings
+
         # create vocab
         for i, card in  enumerate(self.pool):
-            print(f"create vocab: {i+1}/{len(self.pool)}")
+            print(f"\rcreate vocab from card: {i+1}/{len(self.pool)}", end="", flush=True)
             self.vocab.update(card.wordlist())
             self.keys.update(card.keys)
 
         self.vocab = self.rate_vocab(self.vocab)
-        torch.save(self.vocab, "data/vocable.bin")
         vocab_size = len(self.vocab)
 
         # map words to unique indices
-        self.word2idx = {word: ind for ind, word in enumerate(self.vocab)} 
-        torch.save(self.word2idx, "data/word2idx.bin")
+        for ind, word in  enumerate(self.vocab):
+            print(f"\rcreate word2idx: {ind+1}/{len(self.vocab)}", end="", flush=True)
+            self.word2idx.update({word: ind})
 
         self.embeddings = nn.Embedding(vocab_size, int(len(self.keys)/2))
-        torch.save(self.embeddings, "data/embeddings.bin")
+
+    def create_datasets(self):
+        if self.datasets.size != 0:
+            return
+
+        datasets = dict()
+        for k in self.keys:
+            datasets.update({k : []})
 
         for i, card in  enumerate(self.pool):
-            print(f"create_dataset: {i+1}/{len(self.pool)}")
-            card.create_dataset(self.word2idx, self.vocab)
+            print(f"\rcreate_dataset: {i+1}/{len(self.pool)}", end="", flush=True)
+
+            d = card.create_dataset(self.word2idx, self.vocab)
+            for k in self.keys:
+                try:
+                    datasets[k].append(d[k])
+                except KeyError:
+                    datasets[k].append([])
+
+
             self.input_layer_size += card.input_layer_size
+        self.datasets = pd.DataFrame().from_dict(datasets)
 
 
     def train_loop(dataloader, loss_fn, optimizer):
