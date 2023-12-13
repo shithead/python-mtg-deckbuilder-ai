@@ -1,3 +1,30 @@
+Model
+=====
+
+## Inputlayer
+
+Attribute | # of perceptron | description
+----------|-----------------|------------
+amount    | 1               | number of card with unique name
+Name      | 1               | name of card. reduced to one perceptron as phrase.
+Mana Cost | 1               |
+Type line | # of types      |
+power/toughness | 2 (optional) | If is a Creature.
+loyality | 1 (optional) | If it is a Planeswalker.
+Oracle text | # of phrases (optional) | Remove text in __r'\(.*\)'__ . 
+
+## Hiddenlayer
+
+Number of hidden layer is the half of numbers of attributes card attributes in Inputlayer.
+
+
+## Outputlayer
+
+* 60 perceptron 
+* maximal 4 of same card
+* card idententification is  $${{C_{idx}} \\over {UC + 1}} {\\pm  {1 \\over 2({UC + 1}) }}$$
+
+
 Criterias
 ================
 
@@ -20,13 +47,6 @@ Deck
 * 1/3 +- 4/deck.size land cards
     * optimized to non basic lands
 
-
-* Deck attributes
-    * maximal amount of cards (60)
-    * maximal amount of same card (4)
-
-Fillup to 60 cards. calculate mana curve and avg. mana costs for numbers of basic lands.
-Than optimize basic lands.
 
 Sideboard
 --------
