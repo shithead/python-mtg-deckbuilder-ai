@@ -89,7 +89,7 @@ class Trainer_T1():
         self.vocab = Counter()
         self.model = ModelClass(self.input_layer_size, max(2,len(self.keys)), self.pool_size)
         self.loss_fn = nn.CrossEntropyLoss()
-        self.optimizer = torch.optim.SGD(self.model.parameters(), lr=0.001)
+        self.optimizer = torch.optim.SGD(self.model.parameters(), lr= ( self.pool_size / (4 * (self.pool_size + 1) ) ) )
 
     @property
     def Model(self):
