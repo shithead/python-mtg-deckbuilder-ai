@@ -1,5 +1,6 @@
 torchtext
 torch
+torch-summary
 
 ## for testing
 coverage
