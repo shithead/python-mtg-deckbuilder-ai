@@ -1,7 +1,7 @@
 Model
 =====
 
-## Inputlayer
+## Embedding
 
 Attribute | # of perceptron | description
 ----------|-----------------|------------
@@ -13,17 +13,23 @@ power/toughness | 2 (optional) | If is a Creature.
 loyality | 1 (optional) | If it is a Planeswalker.
 Oracle text | # of phrases (optional) | Remove text in __r'\(.*\)'__ . 
 
+
+to Pool Size.
+
+
+## Inputlayer
+
+Vector size from embedding, pool size.
+
 ## Hiddenlayer
 
-Number of hidden layer is the half of numbers of attributes card attributes in Inputlayer.
+Number of hidden layer is 45.
 
 
 ## Outputlayer
 
-* 60 perceptron 
-* maximal 4 of same card
-* card idententification is  $${{C_{idx}} \\over {UC + 1}} {\\pm  {1 \\over 2({UC + 1}) }}$$
-
+* 4 times of pool size
+* future: Individual amount times of exists Card
 
 Criterias
 ================
