@@ -31,7 +31,7 @@ Number of hidden layer is 45.
 * 4 times of pool size
 * future: Individual amount times of exists Card
 
-Criterias
+UI filter criterias
 ================
 
 * presets

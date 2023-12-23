@@ -15,7 +15,7 @@ class Database(MtgDB):
             self.mtgio_update()
 
     @property
-    def cards(self):
+    def cards(self) -> PCardList:
         if self.__provider == DbPROVIDER["scryfall"]:
             return self.root.scryfall_cards
         if self.__provider == DbPROVIDER["mtgio"]:
