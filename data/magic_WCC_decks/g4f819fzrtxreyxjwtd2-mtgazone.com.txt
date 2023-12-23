@@ -1,0 +1,31 @@
+﻿4 Generous Visitor
+4 Spirited Companion
+4 Jukai Naturalist
+4 Katilda, Dawnhart Martyr
+1 Royal Treatment
+1 Seed of Hope
+2 Rite of Harmony
+4 Commune with Spirits
+4 Ossification
+4 Teachings of the Kirin
+4 The Restoration of Eiganjo
+3 Hallowed Haunting
+1 Virtue of Loyalty
+6 Forest
+4 Plains
+4 Brushland
+4 Razorverge Thicket
+1 Boseiju, Who Endures
+1 Eiganjo, Seat of the Empire
+
+// Sideboard
+
+1 The Wandering Emperor
+2 Elesh Norn, Mother of Machines
+2 Rite of Harmony
+2 Destroy Evil
+1 Knockout Blow
+2 Vanquish the Horde
+2 Circle of Confinement
+2 Wedding Announcement
+1 Hallowed Haunting

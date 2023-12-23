@@ -1,0 +1,37 @@
+﻿3 The Wandering Emperor
+1 Razorlash Transmogrant
+4 Faerie Mastermind
+2 Dennick, Pious Apprentice
+4 Raffine, Scheming Seer
+2 Edgar, Charmed Groom
+2 Ao, the Dawn Sky
+2 Cut Down
+4 Go for the Throat
+4 Make Disappear
+3 Void Rend
+4 Wedding Announcement
+1 Plains
+1 Adarkar Wastes
+1 Underground River
+2 Caves of Koilos
+2 Seachrome Coast
+4 Darkslick Shores
+3 Shattered Sanctum
+2 Deserted Beach
+1 Shipwreck Marsh
+1 Plaza of Heroes
+4 Raffine's Tower
+1 Mirrex
+1 Otawara, Soaring City
+1 Eiganjo, Seat of the Empire
+
+// Sideboard
+
+2 Kaito Shizuki
+1 Liliana of the Veil
+2 Cut Down
+4 Disdainful Stroke
+3 Knockout Blow
+1 Void Rend
+1 Depopulate
+1 Farewell

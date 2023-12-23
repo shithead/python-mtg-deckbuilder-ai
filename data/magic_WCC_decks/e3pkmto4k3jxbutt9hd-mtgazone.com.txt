@@ -1,0 +1,24 @@
+﻿4 Omen Hawker
+4 Sleep-Cursed Faerie
+4 Hypnotic Grifter
+4 Surge Engine
+4 Rona, Herald of Invasion
+1 Realm-Scorcher Hellkite
+1 Spell Pierce
+4 Consider
+2 Make Disappear
+4 Sleight of Hand
+4 Agatha's Soul Cauldron
+4 Training Grounds
+1 Witness Protection
+17 Island
+2 Otawara, Soaring City
+
+// Sideboard
+
+4 Malevolent Hermit
+2 Fading Hope
+3 Slip Out the Back
+2 Disdainful Stroke
+1 Sword of Once and Future
+3 Witness Protection

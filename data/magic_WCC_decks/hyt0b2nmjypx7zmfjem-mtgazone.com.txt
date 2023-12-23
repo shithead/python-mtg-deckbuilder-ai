@@ -1,0 +1,35 @@
+﻿3 Kaito Shizuki
+2 Tenacious Underdog
+4 Bloodtithe Harvester
+4 Corpse Appraiser
+2 Archfiend of the Dross
+4 Sheoldred, the Apocalypse
+4 Cut Down
+4 Go for the Throat
+3 Make Disappear
+2 Sheoldred's Edict
+2 Gix's Command
+2 Swamp
+2 Sulfurous Springs
+2 Underground River
+3 Blackcleave Cliffs
+3 Darkslick Shores
+2 Haunted Ridge
+2 Shipwreck Marsh
+2 Stormcarved Coast
+3 Restless Spire
+2 Xander's Lounge
+1 Otawara, Soaring City
+1 Sokenzan, Crucible of Defiance
+1 Takenuma, Abandoned Mire
+
+// Sideboard
+
+1 Chandra, Hope's Beacon
+2 Negate
+3 Disdainful Stroke
+2 Siphon Insight
+2 Duress
+1 Lithomantic Barrage
+2 Glistening Deluge
+2 Virtue of Persistence

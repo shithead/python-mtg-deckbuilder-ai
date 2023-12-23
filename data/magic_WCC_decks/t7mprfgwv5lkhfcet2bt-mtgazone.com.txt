@@ -1,0 +1,35 @@
+﻿1 Nissa, Ascended Animist
+2 Chrome Host Seedshark
+4 Topiary Stomper
+4 Archangel of Wrath
+2 Atraxa, Grand Unifier
+4 Sunfall
+3 Herd Migration
+4 Courier's Briefcase
+2 Ossification
+4 Leyline Binding
+2 Virtue of Persistence
+3 Invasion of Zendikar
+4 Forest
+1 Island
+1 Mountain
+3 Plains
+1 Swamp
+1 Brushland
+4 Spara's Headquarters
+3 Jetmir's Garden
+1 Raffine's Tower
+1 Mirrex
+4 Ziatora's Proving Ground
+1 Boseiju, Who Endures
+
+// Sideboard
+
+2 The Wandering Emperor
+2 Tranquil Frillback
+2 Tyrranax Rex
+2 Negate
+3 Disdainful Stroke
+1 Go for the Throat
+2 Sunset Revelry
+1 Depopulate

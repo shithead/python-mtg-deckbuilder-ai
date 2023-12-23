@@ -1,0 +1,23 @@
+﻿4 Recruitment Officer
+4 Hopeful Initiate
+1 Skrelv, Defector Mite
+4 Spellbook Vendor
+1 Intrepid Adversary
+4 Coppercoat Vanguard
+4 Thalia, Guardian of Thraben
+2 Anointed Peacekeeper
+2 Extraction Specialist
+4 Adeline, Resplendent Cathar
+4 Ossification
+2 Virtue of Loyalty
+18 Plains
+4 Mishra's Foundry
+2 Eiganjo, Seat of the Empire
+
+// Sideboard
+
+2 The Wandering Emperor
+3 Destroy Evil
+3 Lay Down Arms
+4 Wedding Announcement
+3 Invasion of Gobakhan

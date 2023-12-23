@@ -1,0 +1,34 @@
+﻿1 Kaito Shizuki
+3 The Wandering Emperor
+4 Faerie Mastermind
+3 Dennick, Pious Apprentice
+3 Raffine, Scheming Seer
+2 Edgar, Charmed Groom
+1 Ao, the Dawn Sky
+2 Cut Down
+4 Go for the Throat
+4 Make Disappear
+4 Void Rend
+4 Wedding Announcement
+1 Plains
+1 Adarkar Wastes
+1 Underground River
+2 Caves of Koilos
+4 Darkslick Shores
+3 Seachrome Coast
+3 Shattered Sanctum
+2 Deserted Beach
+4 Raffine's Tower
+2 Mirrex
+1 Otawara, Soaring City
+1 Eiganjo, Seat of the Empire
+
+// Sideboard
+
+2 Cut Down
+2 Negate
+4 Disdainful Stroke
+3 Knockout Blow
+1 Depopulate
+1 Farewell
+2 Skrelv's Hive

@@ -1,0 +1,34 @@
+﻿3 The Wandering Emperor
+4 Dennick, Pious Apprentice
+2 Lord Skitter, Sewer King
+4 Raffine, Scheming Seer
+3 Sheoldred, the Apocalypse
+2 Cut Down
+4 Go for the Throat
+4 Make Disappear
+4 Wedding Announcement
+4 Virtue of Loyalty
+1 Plains
+3 Underground River
+2 Adarkar Wastes
+4 Darkslick Shores
+2 Seachrome Coast
+2 Deserted Beach
+4 Shattered Sanctum
+1 Plaza of Heroes
+2 Restless Fortress
+2 Raffine's Tower
+1 Eiganjo, Seat of the Empire
+1 Otawara, Soaring City
+1 Takenuma, Abandoned Mire
+
+// Sideboard
+
+2 Kaito Shizuki
+2 Cut Down
+2 Elspeth's Smite
+2 Negate
+3 Disdainful Stroke
+2 Destroy Evil
+1 Anoint with Affliction
+1 Farewell

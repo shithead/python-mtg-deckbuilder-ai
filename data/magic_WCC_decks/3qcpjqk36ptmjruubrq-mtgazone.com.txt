@@ -1,0 +1,36 @@
+﻿3 The Wandering Emperor
+3 Faerie Mastermind
+4 Dennick, Pious Apprentice
+1 Lord Skitter, Sewer King
+4 Raffine, Scheming Seer
+3 Sheoldred, the Apocalypse
+2 Cut Down
+4 Go for the Throat
+3 Make Disappear
+4 Wedding Announcement
+3 Virtue of Loyalty
+1 Island
+1 Underground River
+2 Caves of Koilos
+4 Darkslick Shores
+3 Seachrome Coast
+2 Deserted Beach
+3 Shattered Sanctum
+2 Plaza of Heroes
+4 Raffine's Tower
+2 Eiganjo, Seat of the Empire
+1 Otawara, Soaring City
+1 Takenuma, Abandoned Mire
+
+// Sideboard
+
+1 Kaito Shizuki
+1 The Wandering Emperor
+1 Loran of the Third Path
+1 Cut Down
+3 Disdainful Stroke
+2 Knockout Blow
+1 The End
+2 Duress
+1 Gix's Command
+2 Temporary Lockdown

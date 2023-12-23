@@ -1,0 +1,39 @@
+﻿2 The Wandering Emperor
+3 Faerie Mastermind
+4 Dennick, Pious Apprentice
+2 Lord Skitter, Sewer King
+3 Raffine, Scheming Seer
+2 Ertai Resurrected
+2 Sheoldred, the Apocalypse
+2 Cut Down
+3 Go for the Throat
+3 Make Disappear
+4 Wedding Announcement
+3 Virtue of Loyalty
+1 Virtue of Persistence
+1 Island
+1 Underground River
+2 Adarkar Wastes
+2 Caves of Koilos
+4 Darkslick Shores
+2 Seachrome Coast
+3 Shattered Sanctum
+1 Deserted Beach
+2 Plaza of Heroes
+1 Restless Fortress
+3 Raffine's Tower
+2 Eiganjo, Seat of the Empire
+1 Otawara, Soaring City
+1 Takenuma, Abandoned Mire
+
+// Sideboard
+
+2 Loran of the Third Path
+1 Ertai Resurrected
+2 Sheoldred, the Apocalypse
+2 Cut Down
+3 Disdainful Stroke
+1 Destroy Evil
+2 Gix's Command
+1 Virtue of Persistence
+1 Invasion of New Phyrexia // Unknown Backside

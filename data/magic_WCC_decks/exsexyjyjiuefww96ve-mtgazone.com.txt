@@ -1,0 +1,33 @@
+﻿3 Wrenn and Realmbreaker
+1 Jace, the Perfected Mind
+4 Sleep-Cursed Faerie
+4 Fallaji Archaeologist
+4 Rona, Herald of Invasion
+4 Kami of Whispered Hopes
+1 Realm-Scorcher Hellkite
+4 Seed of Hope
+1 Brave the Wilds
+2 Unnatural Restoration
+4 Agatha's Soul Cauldron
+3 Witness Protection
+3 Teachings of the Kirin
+4 Forest
+3 Island
+4 Yavimaya Coast
+4 Dreamroot Cascade
+2 Argoth, Sanctum of Nature
+1 Restless Vinestalk
+2 Otawara, Soaring City
+2 Boseiju, Who Endures
+
+// Sideboard
+
+1 Wrenn and Realmbreaker
+2 Outland Liberator
+2 Malevolent Hermit
+4 Titania, Voice of Gaea
+1 Slogurk, the Overslime
+1 Spell Pierce
+2 Tamiyo's Safekeeping
+1 Negate
+1 Animist's Might

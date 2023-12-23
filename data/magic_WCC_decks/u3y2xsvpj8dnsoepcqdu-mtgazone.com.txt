@@ -1,0 +1,35 @@
+﻿3 Bramble Familiar
+2 Chrome Host Seedshark
+4 Topiary Stomper
+4 Archangel of Wrath
+1 Elesh Norn, Mother of Machines
+3 Atraxa, Grand Unifier
+1 Drag to the Bottom
+2 Sunfall
+1 Herd Migration
+3 Courier's Briefcase
+1 Ossification
+4 Leyline Binding
+3 Virtue of Persistence
+3 Invasion of Zendikar
+4 Forest
+1 Island
+1 Mountain
+2 Plains
+3 Swamp
+4 Spara's Headquarters
+4 Jetmir's Garden
+4 Ziatora's Proving Ground
+1 Boseiju, Who Endures
+1 Takenuma, Abandoned Mire
+
+// Sideboard
+
+2 Chrome Host Seedshark
+1 Elesh Norn, Mother of Machines
+1 Thrun, Breaker of Silence
+4 Disdainful Stroke
+3 Lithomantic Barrage
+2 Sunset Revelry
+1 Drag to the Bottom
+1 Sunfall

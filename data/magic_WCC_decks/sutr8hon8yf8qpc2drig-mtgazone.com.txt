@@ -1,0 +1,41 @@
+﻿4 The Wandering Emperor
+1 Jace, the Perfected Mind
+2 Cut Down
+2 Negate
+2 Go for the Throat
+2 Siphon Insight
+3 Make Disappear
+3 Sheoldred's Edict
+3 Dissipate
+2 Void Rend
+4 Memory Deluge
+3 Sunfall
+1 Farewell
+1 Island
+1 Swamp
+1 Adarkar Wastes
+2 Underground River
+4 Darkslick Shores
+2 Seachrome Coast
+4 Deserted Beach
+4 Shattered Sanctum
+1 Restless Fortress
+4 Raffine's Tower
+1 Mirrex
+1 Eiganjo, Seat of the Empire
+1 Otawara, Soaring City
+1 Takenuma, Abandoned Mire
+
+// Sideboard
+
+2 Jace, the Perfected Mind
+1 Chrome Host Seedshark
+1 Boon-Bringer Valkyrie
+2 Sheoldred
+1 March of Otherworldly Light
+1 Cut Down
+1 Disdainful Stroke
+2 Anoint with Affliction
+1 Knockout Blow
+1 Silver Scrutiny
+2 Path of Peril

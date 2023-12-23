@@ -1,0 +1,30 @@
+﻿2 Yotian Frontliner
+4 Lunarch Veteran
+4 Recruitment Officer
+4 Resolute Reinforcements
+4 Zephyr Sentinel
+2 Regal Bunnicorn
+3 Harbin, Vanguard Aviator
+1 Werefox Bodyguard
+4 Knight-Errant of Eos
+4 Make Disappear
+4 Wedding Announcement
+4 Plains
+4 Adarkar Wastes
+4 Seachrome Coast
+1 Deserted Beach
+1 Secluded Courtyard
+4 Fortified Beachhead
+2 Mirrex
+2 Otawara, Soaring City
+2 Eiganjo, Seat of the Empire
+
+// Sideboard
+
+2 The Wandering Emperor
+1 Regal Bunnicorn
+2 Elspeth's Smite
+2 Lantern Flare
+2 Destroy Evil
+3 Protect the Negotiators
+3 Tocasia's Welcome

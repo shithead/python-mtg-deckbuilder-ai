@@ -1,0 +1,32 @@
+﻿4 Voldaren Epicure
+2 Razorlash Transmogrant
+4 Bloodtithe Harvester
+2 Syr Ginger, the Meal Ender
+2 Vraan, Executioner Thane
+3 Goddric, Cloaked Reveler
+3 Torch the Tower
+3 Annihilating Glare
+4 Experimental Synthesizer
+4 Oni-Cult Anvil
+4 Urabrask's Forge
+3 Kumano Faces Kakkazan
+4 Mountain
+1 Swamp
+4 Sulfurous Springs
+4 Blackcleave Cliffs
+4 Haunted Ridge
+2 Mirrex
+1 The Mycosynth Gardens
+1 Sokenzan, Crucible of Defiance
+1 Takenuma, Abandoned Mire
+
+// Sideboard
+
+1 Liliana of the Veil
+2 Ob Nixilis, the Adversary
+2 Go for the Throat
+2 Vampires' Vengeance
+4 Duress
+2 Lithomantic Barrage
+1 The Stone Brain
+1 Virtue of Persistence

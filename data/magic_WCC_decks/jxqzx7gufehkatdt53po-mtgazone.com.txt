@@ -1,0 +1,37 @@
+﻿4 The Wandering Emperor
+3 Horned Loch-Whale
+3 Syncopate
+2 March of Otherworldly Light
+1 Negate
+2 Make Disappear
+1 Dissipate
+1 Brokers Charm
+1 Memory Deluge
+4 Lay Down Arms
+3 Sunfall
+4 Up the Beanstalk
+4 Leyline Binding
+1 Island
+6 Plains
+4 Yavimaya Coast
+3 Dreamroot Cascade
+4 Spara's Headquarters
+2 Jetmir's Garden
+3 Raffine's Tower
+1 Mirrex
+1 Eiganjo, Seat of the Empire
+1 Boseiju, Who Endures
+1 Otawara, Soaring City
+
+// Sideboard
+
+1 The Eternal Wanderer
+3 Chrome Host Seedshark
+1 Hullbreaker Horror
+1 Elspeth's Smite
+2 Negate
+2 Disdainful Stroke
+1 Destroy Evil
+2 Knockout Blow
+1 Memory Deluge
+1 Sunset Revelry

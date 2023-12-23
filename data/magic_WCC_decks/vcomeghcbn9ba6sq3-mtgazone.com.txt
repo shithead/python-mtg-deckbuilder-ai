@@ -1,0 +1,28 @@
+﻿3 Shivan Devastator
+4 Monastery Swiftspear
+3 Falkenrath Pit Fighter
+2 Charming Scoundrel
+3 Bloodthirsty Adversary
+2 Feldon, Ronom Excavator
+2 Squee, Dubious Monarch
+3 Goddric, Cloaked Reveler
+3 Play with Fire
+2 Lightning Strike
+1 Witchstalker Frenzy
+1 Nahiri's Warcrafting
+4 Kumano Faces Kakkazan
+4 Invasion of Tarkir
+18 Mountain
+3 Mishra's Foundry
+2 Sokenzan, Crucible of Defiance
+
+// Sideboard
+
+2 Chandra, Dressed to Kill
+2 Koth, Fire of Resistance
+1 Witchstalker Frenzy
+4 Lithomantic Barrage
+2 Obliterating Bolt
+2 Twisted Fealty
+1 Nahiri's Warcrafting
+1 The Elder Dragon War

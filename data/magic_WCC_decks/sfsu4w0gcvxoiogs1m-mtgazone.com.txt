@@ -1,0 +1,46 @@
+﻿2 The Wandering Emperor
+4 Chrome Host Seedshark
+3 Sheoldred, the Apocalypse
+1 March of Otherworldly Light
+1 Cut Down
+1 Elspeth's Smite
+2 Go for the Throat
+1 Sheoldred's Edict
+3 Sunfall
+4 Herd Migration
+1 The Celestus
+4 Up the Beanstalk
+4 Leyline Binding
+2 Virtue of Persistence
+1 Forest
+1 Island
+2 Plains
+3 Swamp
+1 Brushland
+1 Llanowar Wastes
+4 Spara's Headquarters
+1 Jetmir's Garden
+4 Raffine's Tower
+1 Mirrex
+4 Ziatora's Proving Ground
+1 Boseiju, Who Endures
+1 Takenuma, Abandoned Mire
+1 Eiganjo, Seat of the Empire
+1 Otawara, Soaring City
+
+// Sideboard
+
+1 Faerie Mastermind
+1 Glissa Sunslayer
+1 Obstinate Baloth
+2 Elesh Norn, Mother of Machines
+1 Negate
+1 Disdainful Stroke
+1 Parasitic Grasp
+1 Destroy Evil
+1 Sheoldred's Edict
+1 Knockout Blow
+1 The End
+1 Duress
+1 Drag to the Bottom
+1 Temporary Lockdown
