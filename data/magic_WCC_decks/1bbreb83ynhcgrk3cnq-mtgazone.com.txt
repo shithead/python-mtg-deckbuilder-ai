@@ -1,5 +1,5 @@
 //Deck
-﻿2 Liliana of the Veil
+2 Liliana of the Veil
 1 Nissa, Ascended Animist
 4 Mosswood Dreadknight
 2 Tenacious Underdog

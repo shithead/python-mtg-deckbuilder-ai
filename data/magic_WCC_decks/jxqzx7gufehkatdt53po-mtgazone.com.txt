@@ -1,5 +1,4 @@
 //Deck
-﻿
 4 The Wandering Emperor
 3 Horned Loch-Whale
 3 Syncopate

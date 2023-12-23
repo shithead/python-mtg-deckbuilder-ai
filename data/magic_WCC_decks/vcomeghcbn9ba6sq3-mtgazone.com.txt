@@ -1,5 +1,5 @@
 //Deck
-﻿3 Shivan Devastator
+3 Shivan Devastator
 4 Monastery Swiftspear
 3 Falkenrath Pit Fighter
 2 Charming Scoundrel

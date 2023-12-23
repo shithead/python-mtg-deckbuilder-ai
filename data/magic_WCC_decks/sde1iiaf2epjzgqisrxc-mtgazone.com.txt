@@ -1,5 +1,5 @@
 //Deck
-﻿4 Voldaren Epicure
+4 Voldaren Epicure
 2 Razorlash Transmogrant
 4 Bloodtithe Harvester
 2 Syr Ginger, the Meal Ender

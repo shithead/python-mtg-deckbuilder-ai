@@ -1,5 +1,5 @@
 //Deck
-﻿4 Topiary Stomper
+4 Topiary Stomper
 4 Archangel of Wrath
 3 Atraxa, Grand Unifier
 1 Go for the Throat

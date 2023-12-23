@@ -1,5 +1,5 @@
 //Deck
-﻿3 Liliana of the Veil
+3 Liliana of the Veil
 1 Nissa, Ascended Animist
 1 Bramble Familiar
 4 Mosswood Dreadknight

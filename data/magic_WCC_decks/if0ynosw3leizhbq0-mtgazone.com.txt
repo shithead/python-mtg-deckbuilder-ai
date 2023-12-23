@@ -1,5 +1,5 @@
 //Deck
-﻿4 Skrelv, Defector Mite
+4 Skrelv, Defector Mite
 4 Faerie Mastermind
 4 Thalia, Guardian of Thraben
 4 Dennick, Pious Apprentice

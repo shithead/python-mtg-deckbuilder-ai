@@ -1,5 +1,5 @@
 //Deck
-﻿1 Nissa, Ascended Animist
+1 Nissa, Ascended Animist
 2 Chrome Host Seedshark
 4 Topiary Stomper
 4 Archangel of Wrath

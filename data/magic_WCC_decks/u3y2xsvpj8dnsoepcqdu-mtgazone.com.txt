@@ -1,5 +1,5 @@
 //Deck
-﻿3 Bramble Familiar
+3 Bramble Familiar
 2 Chrome Host Seedshark
 4 Topiary Stomper
 4 Archangel of Wrath

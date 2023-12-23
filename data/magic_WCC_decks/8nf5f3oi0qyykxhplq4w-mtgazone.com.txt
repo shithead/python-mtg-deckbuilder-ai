@@ -1,5 +1,5 @@
 //Deck
-﻿2 The Wandering Emperor
+2 The Wandering Emperor
 3 Faerie Mastermind
 4 Dennick, Pious Apprentice
 2 Lord Skitter, Sewer King

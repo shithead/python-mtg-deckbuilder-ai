@@ -1,5 +1,5 @@
 //Deck
-﻿2 The Wandering Emperor
+2 The Wandering Emperor
 4 Chrome Host Seedshark
 3 Sheoldred, the Apocalypse
 1 March of Otherworldly Light

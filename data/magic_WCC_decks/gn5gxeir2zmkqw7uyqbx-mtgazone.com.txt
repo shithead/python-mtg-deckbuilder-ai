@@ -1,5 +1,5 @@
 //Deck
-﻿3 The Wandering Emperor
+3 The Wandering Emperor
 1 Razorlash Transmogrant
 4 Faerie Mastermind
 2 Dennick, Pious Apprentice

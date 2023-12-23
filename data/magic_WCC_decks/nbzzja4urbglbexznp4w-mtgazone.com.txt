@@ -1,5 +1,5 @@
 //Deck
-﻿2 Yotian Frontliner
+2 Yotian Frontliner
 4 Lunarch Veteran
 4 Recruitment Officer
 4 Resolute Reinforcements
