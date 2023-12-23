@@ -1,4 +1,6 @@
-﻿4 The Wandering Emperor
+//Deck
+﻿
+4 The Wandering Emperor
 3 Horned Loch-Whale
 3 Syncopate
 2 March of Otherworldly Light

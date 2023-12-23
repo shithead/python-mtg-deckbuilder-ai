@@ -1,3 +1,4 @@
+//Deck
 ﻿3 Kaito Shizuki
 2 Tenacious Underdog
 4 Bloodtithe Harvester

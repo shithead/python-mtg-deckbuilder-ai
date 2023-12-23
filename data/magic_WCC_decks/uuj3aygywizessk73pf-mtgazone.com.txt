@@ -1,3 +1,4 @@
+//Deck
 ﻿3 The Wandering Emperor
 4 Faerie Mastermind
 4 Dennick, Pious Apprentice

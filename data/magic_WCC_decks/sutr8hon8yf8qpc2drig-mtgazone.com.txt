@@ -1,3 +1,4 @@
+//Deck
 ﻿4 The Wandering Emperor
 1 Jace, the Perfected Mind
 2 Cut Down
