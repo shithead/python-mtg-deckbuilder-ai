@@ -133,7 +133,7 @@ class Preparer():
         self.embeddings = nn.Embedding(self.input_layer_size, self.pool_size)
 
     def create_word2idx(self):
-        if len(self.word2idx) != 0:
+        if len(self.word2idx) and len(self.vocab):
             return
 
         # create vocab
@@ -156,7 +156,7 @@ class Preparer():
 
         import concurrent.futures
 
-        pool = concurrent.futures.ThreadPoolExecutor(max_workers=3, thread_name_prefix='AICard-dataset')
+        pool = concurrent.futures.ThreadPoolExecutor(max_workers=int(os.cpu_count() - 1), thread_name_prefix='AICard-dataset')
         
         global datasets_array
         datasets_array = [None] * len(self.pool)
