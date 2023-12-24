@@ -40,7 +40,8 @@ class Preparer():
     def __init__(self, ModelClass: nn.Module, basic_data_path = "data"):
 
         self.__basic_path = basic_data_path
-        self.pool : PCardList = Database().loadPool().unique_names()
+        db = Database()
+        self.pool : PCardList = db.loadPool().unique_names() + db.loadWccPool().unique_names()
         self.pool_size = len(self.pool)
 
         self.vocab : Counter = Counter()

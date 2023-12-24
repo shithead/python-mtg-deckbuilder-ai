@@ -56,3 +56,8 @@ class Database(MtgDB):
             return Exception("import first your basic collection via import_collection.py")
         return PCardList([ AICard.load_from_pcard(pcard) for pcard in cards ])
 
+    def loadWccPool(self) -> PCardList:
+        cards = self.root.wcc_collection
+        if cards is None:
+            return Exception("import first your wcc collection via import_collection.py")
+        return PCardList([ AICard.load_from_pcard(pcard) for pcard in cards ])
