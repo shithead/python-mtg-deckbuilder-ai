@@ -1,3 +1,26 @@
+How to
+======
+
+## Install
+
+```bash
+sudo mount -t tmpfs -o remount,rw,size=6G /run/user/`id -u`
+./create_virtenv.sh
+nix-shell
+```
+
+
+## Prepare
+
+
+Copy in data a CSV file in deckbox format with name myCollection.csv.
+
+```bash
+python3 import_collection.py
+python3 ai_prepare.py
+
+```
+
 Model
 =====
 
