@@ -8,7 +8,7 @@ from database.mtgtools import Database
 from environment.Card import AICard
 from mtgtools.PCardList import PCardList
 from environment.Deck import Deck
-from utils.utils import get_token
+from utils.utils import get_token, get_dataset
 
 from collections import Counter
 import copy
@@ -134,7 +134,7 @@ class Preparer():
         self.embeddings = nn.Embedding(self.input_layer_size, self.pool_size)
 
     def create_word2idx(self):
-        if len(self.word2idx) and len(self.vocab):
+        if len(self.word2idx):
             return
 
         # create vocab
@@ -144,7 +144,6 @@ class Preparer():
             self.keys.update(card.keys)
 
         self.vocab = self.rate_vocab(self.vocab)
-        vocab_size = len(self.vocab)
 
         # map words to unique indices
         for ind, word in  enumerate(self.vocab):
@@ -155,38 +154,45 @@ class Preparer():
         if self.datasets.size != 0:
             return
 
-        import concurrent.futures
-
-        pool = concurrent.futures.ThreadPoolExecutor(max_workers=int(os.cpu_count() - 1), thread_name_prefix='AICard-dataset')
         
-        global datasets_array
         datasets_array = [None] * len(self.pool)
+
+
+        step = int(len(self.pool) / 32 )
+
+        from multiprocessing import Pool
+        processPools = list()
+        with Pool() as p:
+            for n,offset in enumerate(range(0, len(self.pool)-2*step, step)):
+                last_offset = (n+1)*step - 1
+                processPools.append(p.apply_async(get_dataset, args=(self, offset, self.pool[offset:last_offset])))
+            processPools.append(p.apply_async(get_dataset, args=(self, last_offset+1, self.pool[last_offset+1:])))
+            p.close()
+            print(f"\ncreate_dataset wait on Threads")
+            p.join()
+            print(f"\ncreate_dataset all Threads finished")
+        
+        for p in processPools:
+            offset, input_layer_size, card_datasets = p.get()
+            print(card_datasets)
+            datasets_array[int(offset):] = card_datasets
+            self.input_layer_size += input_layer_size
+        print(datasets_array)
+        print(f"\nnumber of input perceptron {self.input_layer_size}")
 
         datasets = dict()
         for k in self.keys:
             datasets.update({k : []})
 
-        def get_dataset(self, idx: int, card: AICard):
-            global datasets_array
-            datasets_array[idx] = card.create_dataset(self.word2idx, self.vocab)
-            self.input_layer_size += card.input_layer_size
-
-
-        for i, card in  enumerate(self.pool):
-            print(f"\rcreate_dataset: {i+1}/{len(self.pool)}", end="", flush=True)
-            pool.submit(get_dataset, self, i, card)
-        
-            
-        print(f"\ncreate_dataset wait on Threads")
-        pool.shutdown(wait =  True)
-        print(f"\ncreate_dataset all Threads finished")
-
-        for d in datasets_array:
+        for idx,d in enumerate(datasets_array):
+            print(f"\rcreate dataset: {idx+1}/{len(datasets_array)}", end="", flush=True)
             for k in self.keys:
                 try:
                     datasets[k].append(d[k])
                 except KeyError:
                     datasets[k].append([])
+
+        self.datasets_array = None
 
         self.datasets = pd.DataFrame().from_dict(datasets)
 

@@ -33,3 +33,11 @@ def get_optimized_token(s:str, vocab: list):
                 otoken.pop(idx)
 
     return otoken
+
+def get_dataset(self, offset: int, cards: list):
+    input_layer_size = 0
+    datasets = list()
+    for card in cards:
+        datasets.append(card.create_dataset(self.word2idx))
+        input_layer_size += card.input_layer_size
+    return offset, input_layer_size , datasets

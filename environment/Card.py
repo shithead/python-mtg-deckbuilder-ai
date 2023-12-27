@@ -41,7 +41,7 @@ class AICard(PCard):
     def load_from_pcard(pcard: PCard):
         return AICard(json.loads(pcard.json.lower()))
 
-    def create_dataset(self, word2idx: dict , wordlist: list) -> dict:
+    def create_dataset(self, word2idx: dict) -> dict:
         data_dict = dict()
         data_dict.update({"amount": [word2idx[" ".join(get_token(str(self.amount)))]]})
         data_dict.update({"name": [word2idx[" ".join(get_token(self.name))]]})
@@ -55,7 +55,7 @@ class AICard(PCard):
         if self.loyalty is not None:
             data_dict.update({"loyalty": [word2idx[self.loyalty]]})
         if self.oracle_text is not None:
-            data_dict.update({"oracle_text": [word2idx[t] for t in get_optimized_token(self.oracle_text, wordlist)]})
+            data_dict.update({"oracle_text": [word2idx[t] for t in get_optimized_token(self.oracle_text, sorted(word2idx, key=word2idx.get, reverse=True))]})
 
         for k in data_dict.keys():
             self.input_layer_size += 1
@@ -93,15 +93,6 @@ class AICard(PCard):
         for k in self.keys:
             self.__wordlist.update({ k: 9999 })
         return self.__wordlist
-
-    @property
-    def cxt_ids(self):
-        return self.__cxt_ids
-    
-    def cxt_ids(self, word2idx: dict):
-        if self.__cxt_ids is None:
-            self.__cxt_ids = torch.tensor([word2idx[w] for w in self.wordlist()], dtype=torch.long)
-        return self.__cxt_ids
 
 
 class MTGDataset(Dataset):
