@@ -51,7 +51,6 @@ class Trainer_T1():
 
 
         self.load()
-        summary(self.model)
         self.loss_fn = nn.CrossEntropyLoss()
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr= 0.001  )
 

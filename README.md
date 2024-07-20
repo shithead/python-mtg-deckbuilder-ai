@@ -23,6 +23,21 @@ python3 ai_prepare.py
 
 Model
 =====
+ 
+## Vector Database
+
+During the process development, i tried to ultilise a vector DB for redundant and persistent information
+
+Use a vector DB to reduce
+
+* number of input perceptrons,
+* memory usage,
+* easier AI training.
+
+Vector DBs for testing:
+* vectordb (https://pypi.org/project/vectordb/)
+* ChromeDB (https://realpython.com/chromadb-vector-database/)
+
 
 ## Embedding
 

@@ -177,7 +177,7 @@ class Preparer():
             print(card_datasets)
             datasets_array[int(offset):] = card_datasets
             self.input_layer_size += input_layer_size
-        print(datasets_array)
+
         print(f"\nnumber of input perceptron {self.input_layer_size}")
 
         datasets = dict()

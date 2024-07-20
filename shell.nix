@@ -13,9 +13,8 @@ let
     pyglet
     imageio
     matplotlib
-    torch
-    gymnasium
     pandas
+    chromadb
   ]);
   
 in
@@ -44,15 +43,12 @@ pkgs.mkShell {
     zlib
     python-with-my-packages
   ];
-  PATH = lib.strings.makeBinPath [ "/run/current-system/sw" "./penv" ];
+  PATH = lib.strings.makeBinPath [ "/run/current-system/sw" "./_build" ];
   shellHook = ''
     export PIP_PREFIX=$(pwd)/_build/pip_packages
-    export PYTHONPATH="$PIP_PREFIX/${pkgs.python3.sitePackages}:$PYTHONPATH:$PWD/telepresence"
+    export PYTHONPATH="$PIP_PREFIX/${pkgs.python3.sitePackages}:$PYTHONPATH:$PWD/"
     export PATH="$PIP_PREFIX/bin:$PATH"
     unset SOURCE_DATE_EPOCH
-    #python3 -m penv
-    #. ./penv/bin/activate
     pip3 --cache /tmp/pip_cache install -r requirements.txt
-    #zsh
   '';
 }

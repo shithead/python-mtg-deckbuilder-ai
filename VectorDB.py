@@ -1,0 +1,85 @@
+import os
+import sys
+sys.path.append(os.path.abspath('../environment'))
+sys.path.append(os.path.abspath('../database'))
+sys.path.append(os.path.abspath('.'))
+
+import chromadb
+from chromadb.utils import embedding_functions
+from database.mtgtools import Database
+from environment.Card import AICard
+from mtgtools.PCardList import PCardList
+
+CHROMA_DATA_PATH = "data/"
+EMBED_MODEL = "all-MiniLM-L6-v2"
+COLLECTION_NAME = "MTGCards"
+
+client = chromadb.PersistentClient(path=CHROMA_DATA_PATH)
+
+embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
+    model_name=EMBED_MODEL
+)
+
+collection : chromadb.Collection = None
+
+#client.delete_collection(name=COLLECTION_NAME)
+if COLLECTION_NAME in [c.name for c in client.list_collections()]:
+    collection = client.get_collection(
+        name=COLLECTION_NAME,
+        embedding_function=embedding_func
+        )
+else:
+    collection = client.create_collection(
+        name=COLLECTION_NAME,
+        embedding_function=embedding_func,
+        metadata={"hnsw:space": "cosine"},
+    )
+    db = Database()
+    pool : PCardList = db.loadPool().unique_names() + db.loadWccPool().unique_names()
+    documents = []
+    metadatas = []
+    
+    for i, card in  enumerate(pool):
+        print(f"\rcreate vectorDB entry from card: {i+1}/{len(pool)}", end="", flush=True)
+    
+        documents.append(card.name)
+    
+        data_dict = dict()
+        data_dict.update({"type": card.type_line})
+        if "planswalker" in card.type_line:
+            print(card)
+
+        if card.oracle_text is not None:
+            data_dict.update({"oracle_text": card.oracle_text})
+        if card.mana_cost is not None:
+            data_dict.update({"mana_cost": card.mana_cost})
+        if card.power is not None:
+            data_dict.update({"power": card.power})
+        if card.toughness is not None:
+            data_dict.update({"toughness": card.toughness})
+        if card.loyalty is not None:
+            data_dict.update({"loyalty": card.loyalty})
+        metadatas.append(data_dict)
+    
+    collection.add(
+        documents=documents,
+        ids=[f"id{i}" for i in range(len(documents))],
+        metadatas=metadatas
+    )
+
+query_results = collection.query(
+    query_texts=["Find some cards from type creature"],
+    n_results=5
+)
+
+print(query_results.keys())
+
+print(query_results["documents"])
+
+print(query_results["ids"])
+
+print(query_results["distances"])
+
+print(query_results["metadatas"])
+
+print(query_results["data"])
