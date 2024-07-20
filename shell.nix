@@ -8,13 +8,10 @@ let
     virtualenv
     setuptools
     wheel
-    xvfbwrapper
     ipython
-    pyglet
-    imageio
-    matplotlib
     pandas
     chromadb
+    sentence-transformers
   ]);
   
 in
@@ -23,13 +20,6 @@ pkgs.mkShell {
   buildInputs = [
     gcc
     pkg-config
-    #cairo.dev
-    #xorg.libxcb.dev
-    #xorg.libX11.dev
-    #xorg.libXext.dev
-    ffmpeg
-    xvfb-run
-    freeglut.dev
     zlib
     my-python
     python-with-my-packages
@@ -37,7 +27,6 @@ pkgs.mkShell {
   LD_LIBRARY_PATH = lib.makeLibraryPath [
     stdenv.cc.cc
     my-python
-    freeglut.dev
     glib
     glibc
     zlib
