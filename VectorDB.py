@@ -42,24 +42,32 @@ else:
     for i, card in  enumerate(pool):
         print(f"\rcreate vectorDB entry from card: {i+1}/{len(pool)}", end="", flush=True)
     
-        documents.append(card.name)
     
+        document = ""
         data_dict = dict()
         data_dict.update({"type": card.type_line})
         if "planswalker" in card.type_line:
             print(card)
 
-        if card.oracle_text is not None:
-            data_dict.update({"oracle_text": card.oracle_text})
+        document += f"name: {card.name}\n"
+        data_dict.update({"name": card.name})
         if card.mana_cost is not None:
             data_dict.update({"mana_cost": card.mana_cost})
+            document += f"mana_cost: {card.mana_cost}\n"
         if card.power is not None:
             data_dict.update({"power": card.power})
+            document += f"power: {card.power}\n"
         if card.toughness is not None:
             data_dict.update({"toughness": card.toughness})
+            document += f"toughness: {card.toughness}\n"
         if card.loyalty is not None:
             data_dict.update({"loyalty": card.loyalty})
+            document += f"loyalty: {card.loyalty}\n"
+        if card.oracle_text is not None:
+            data_dict.update({"oracle_text": card.oracle_text})
+            document += f"oracle_text: {card.oracle_text}\n"
         metadatas.append(data_dict)
+        documents.append(document)
     
     collection.add(
         documents=documents,
