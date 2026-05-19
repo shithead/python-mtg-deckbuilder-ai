@@ -1,0 +1,22 @@
+__pycache__/
+_build/
+*.pyc
+*.pyo
+
+# ChromaDB
+data/chroma.sqlite3
+data/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]-*/
+
+# ZODB
+data/mtgdb.fs
+data/mtgdb.fs.index
+data/mtgdb.fs.lock
+data/mtgdb.fs.old
+data/mtgdb.fs.tmp
+
+# Collection
+data/myCollection.csv
+
+# Coverage
+.coverage
+htmlcov/
