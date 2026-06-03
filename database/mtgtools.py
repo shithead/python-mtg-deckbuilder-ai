@@ -6,13 +6,26 @@ DbPROVIDER = dict({"scryfall" : 1, "mtgio": 2})
 
 
 class Database(MtgDB):
-    def __init__(self, provider : int = DbPROVIDER["scryfall"]):
+    def __init__(self, provider : int = DbPROVIDER["scryfall"], force_update : bool = False):
         super().__init__('data/mtgdb.fs')
         self.__provider = provider
-        if self.__provider == DbPROVIDER["scryfall"]:
-            self.scryfall_bulk_update()
-        if self.__provider == DbPROVIDER["mtgio"]:
-            self.mtgio_update()
+        if force_update or self._needs_update():
+            if self.__provider == DbPROVIDER["scryfall"]:
+                self.scryfall_bulk_update()
+            if self.__provider == DbPROVIDER["mtgio"]:
+                self.mtgio_update()
+
+    def _needs_update(self) -> bool:
+        attr = (
+            "scryfall_cards"
+            if self.__provider == DbPROVIDER["scryfall"]
+            else "mtgio_cards"
+        )
+        try:
+            cards = getattr(self.root, attr, None)
+            return cards is None or len(cards) == 0
+        except Exception:
+            return True
 
     @property
     def cards(self) -> PCardList:
