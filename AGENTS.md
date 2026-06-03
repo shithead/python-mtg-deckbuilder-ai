@@ -14,6 +14,7 @@ Python project for AI-assisted Magic: The Gathering deck building. Uses PyTorch 
 ├── VectorDB.py            ChromaDB vector store builder (top-level script)
 ├── import_collection.py   Import CSV + WCC decks into ZODB
 ├── ai_prepare.py          Prepare AI data (vocab, embeddings, datasets)
+├── pyproject.toml         Package metadata and build configuration
 └── requirements.txt       Python dependencies
 ```
 
@@ -23,6 +24,7 @@ Python project for AI-assisted Magic: The Gathering deck building. Uses PyTorch 
 ./create_virtenv.sh          # creates ./_build virtualenv with Python 3
 nix-shell                    # alternative: Nix shell with all system deps + pip install
 pip install -r requirements.txt
+pip install -e .             # install the project in editable mode
 ```
 
 `requirements.txt` pins `torch==2.3.0`, `torchtext==0.18.0`. The Nix `shell.nix` provides additional system deps (chromadb, sentence-transformers, gcc, pkg-config, zlib) and runs `pip install -r requirements.txt` automatically in its shellHook.
@@ -68,17 +70,14 @@ python VectorDB.py
   from .Deck import Deck
   ```
 
-- **Across packages** (e.g. `ai/Preparer.py` importing `environment` and `database`): use `sys.path` hacks — this is the established convention:
+- **Across packages** (e.g. `ai/Preparer.py` importing `environment` and `database`): use direct package-qualified imports. The `pyproject.toml` + `pip install -e .` makes all packages importable without path hacks:
   ```python
-  import sys, os
-  sys.path.append(os.path.abspath('../environment'))
-  sys.path.append(os.path.abspath('../database'))
-  sys.path.append(os.path.abspath('.'))
   from database.mtgtools import Database
   from environment.Card import AICard
+  from utils.utils import get_token
   ```
 
-- **Top-level scripts** (`VectorDB.py`, `import_collection.py`) also use `sys.path` hacks pointing to subdirectories. Top-level scripts may also import directly (e.g. `from database.mtgtools import Database`) when `PYTHONPATH` is set via Nix (`shell.nix` appends `$PWD/` to `PYTHONPATH`).
+- **Top-level scripts** (`VectorDB.py`, `import_collection.py`) also use direct imports — `pip install -e .` places the project root on `sys.path`.
 
 - **Standard library first**, then third-party, then local imports. Group related imports together. Blank lines between import groups are common but not strict.
 
@@ -135,16 +134,16 @@ The project uses `print()` with `end="", flush=True` for progress indicators. Th
 
 ### Formatting
 
-No formatter is configured. Do not add one or reformat the entire codebase without discussion. If adding a `pyproject.toml`, keep formatting changes in a separate commit.
+No formatter is configured. Do not add one or reformat the entire codebase without discussion.
 
 ## Tests
 
 - Framework: **pytest** (no config file)
 - Test files: flat under `test/`, named `test_*.py`
 - No fixtures, no conftest.py, no parametrize in use yet — add these if helpful
-- Tests import the module under test using `sys.path` hacks, matching main code convention
+- Tests import the module under test using direct package-qualified imports (same as main code)
 
-**IMPORTANT**: `test/test_pool.py` imports `environment.Pool`, `TCard`, and `MTGCard` — all removed or renamed. This test file is **non-functional legacy code**. If you add new tests, target current modules: `AICard`, `Deck`, `Constructor`, `Database`, `Preparer`, `Trainer_T1`. Write tests in the same `sys.path` hack style as test_pool.py but with valid imports.
+**IMPORTANT**: `test/test_pool.py` imports `environment.Pool`, `TCard`, and `MTGCard` — all removed or renamed. This test file is **non-functional legacy code**. If you add new tests, target current modules: `AICard`, `Deck`, `Constructor`, `Database`, `Preparer`, `Trainer_T1`. Write tests using direct package imports.
 
 ## Known issues
 
