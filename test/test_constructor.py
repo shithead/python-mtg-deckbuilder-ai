@@ -10,11 +10,31 @@ class TestConstructor:
         pool = PCardList()
         card1 = AICard({"name": "Card 1", "type_line": "Creature"})
         card2 = AICard({"name": "Card 2", "type_line": "Creature"})
+        card3 = AICard({"name": "Card 3", "type_line": "Creature"})
+        pool.add(card1)
+        pool.add(card2)
+        pool.add(card3)
+        ctor = Constructor()
+        assert ctor.other_card(pool, action=1) == pool[0]  # return current, move to 1
+        assert ctor.other_card(pool, action=1) == pool[1]  # return current, move to 2
+        assert ctor.other_card(pool, action=1) == pool[2]  # return current, stay at 2
+
+    def test_other_card_prev(self):
+        pool = PCardList()
+        card1 = AICard({"name": "Card 1", "type_line": "Creature"})
+        card2 = AICard({"name": "Card 2", "type_line": "Creature"})
         pool.add(card1)
         pool.add(card2)
         ctor = Constructor()
-        assert ctor.other_card(pool, action=1) == pool[0]
-        assert ctor.other_card(pool, action=1) == pool[1]
+        ctor.other_card(pool, action=1)  # move to 1
+        assert ctor.other_card(pool, action=2) == pool[1]  # return current, move to 0
+        assert ctor.other_card(pool, action=2) == pool[0]  # return current, stay at 0
+
+    def test_other_card_empty_pool(self):
+        pool = PCardList()
+        ctor = Constructor()
+        assert ctor.other_card(pool, action=0) is None
+        assert ctor.other_card(pool, action=1) is None
 
     def test_other_card_no_action(self):
         pool = PCardList()

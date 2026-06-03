@@ -12,16 +12,20 @@ class Constructor():
         '''
         action:
             no action - 0
-            preview card - 1
-            next card - 2
+            next card - 1
+            prev card - 2
 
-        show card from pool .
+        Return current card from pool, then move position.
         '''
+        if len(pool) == 0:
+            return None
+        self.__pos_pool = max(0, min(self.__pos_pool, len(pool) - 1))
+        card = pool[self.__pos_pool]
         if action == 1:
-            self.__pos_pool += 1
+            self.__pos_pool = min(len(pool) - 1, self.__pos_pool + 1)
         if action == 2:
-            self.__pos_pool -= 1
-        return pool[self.__pos_pool]
+            self.__pos_pool = max(0, self.__pos_pool - 1)
+        return card
 
     def this_card(self, pool: PCardList, deck: Deck ,action: int = 0):
         '''
