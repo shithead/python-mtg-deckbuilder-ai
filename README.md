@@ -10,10 +10,11 @@ nix-shell                     # system deps + pip install
 pip install -e .              # install the project in editable mode
 ```
 
-Copy a CSV file in deckbox format to `data/myCollection.csv`, then:
+Place a CSV collection export in deckbox format at `data/mtgcb-collection-*.csv`,
+then run the import (first run downloads ~515 MB from Scryfall, one-time cost):
 
 ```bash
-python import_collection.py   # import collection into ZODB
+python import_collection.py   # import CSV + WCC decks into ZODB
 python VectorDB.py            # build ChromaDB vector index
 python ai_prepare.py          # create vocab, embeddings, datasets
 

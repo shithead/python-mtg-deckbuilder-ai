@@ -3,6 +3,7 @@ from mtgtools.PCardList import PCardList
 import pandas as pd
 import re
 import os
+import glob
 from os.path import join
 from persistent.list import PersistentList
 import random
@@ -94,8 +95,13 @@ cards = PCardList()
 cards.name = "Basic Collection"
 print(f"\nLoading {cards.name} from CSV ...")
 _csv_cols = ["Count", "Name", "Edition Code"]
+_csv_files = glob.glob(join(DATA_DIR, "mtgcb-collection-*.csv"))
+if not _csv_files:
+    raise FileNotFoundError(f"No mtgcb-collection-*.csv found in {DATA_DIR}")
+_csv_path = sorted(_csv_files)[-1]  # use the most recent file
+print(f"  using {os.path.basename(_csv_path)}")
 data = pd.read_csv(
-    join(DATA_DIR, "mtgcb-collection-2026-06-03.csv"),
+    _csv_path,
     usecols=_csv_cols,
 )  # type: ignore[arg-type]
 print(f"  {len(data)} rows")
