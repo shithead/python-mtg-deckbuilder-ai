@@ -98,12 +98,14 @@ class AICard(PCard):
 
 
 class MTGDataset(Dataset):
-    def __init__(self, data: pd.DataFrame = pd.DataFrame(), transform=None):
+    def __init__(self, data: pd.DataFrame = pd.DataFrame(), input_size: int = 0, transform=None):
         """
         Arguments:
-            data (pandas.DataFrame): Indexed card attributes
+            data (pandas.DataFrame): Indexed card attributes, one row per card
+            input_size (int): Size of the one-hot input vector per card
         """
         self.dataset: pd.DataFrame = data
+        self.input_size: int = input_size
 
     def __str__(self):
         return str(self.dataset)
@@ -115,12 +117,11 @@ class MTGDataset(Dataset):
         if torch.is_tensor(idx):
             idx = idx.tolist()
 
-        datas = self.dataset.iloc[idx, 0:]
-        datas = np.array([datas], dtype=float).reshape(-1, 2)
-        sample = {'datas': datas}
+        x = torch.zeros(self.input_size, dtype=torch.float16)
+        pos = idx % max(1, self.input_size)
+        x[pos] = 1.0
+        return x, x
 
-        return sample
-
-    def concat(self, data : pd.DataFrame):
+    def concat(self, data: pd.DataFrame):
         self.dataset = pd.concat([self.dataset, data])
         return self.dataset

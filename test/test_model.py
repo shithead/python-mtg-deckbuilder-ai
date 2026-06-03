@@ -1,6 +1,41 @@
 import pytest
 import torch
+import pandas as pd
+from torch.utils.data import DataLoader
 from ai.MTGDeckBuilderModel import MTGDeckBuilderModel
+from environment.Card import MTGDataset
+
+
+class TestMTGDataset:
+    def test_len(self):
+        df = pd.DataFrame({"col": [[1, 2], [3], [4, 5, 6]]})
+        ds = MTGDataset(df, input_size=10)
+        assert len(ds) == 3
+
+    def test_getitem_output_type(self):
+        df = pd.DataFrame({"col": [[1, 2]]})
+        ds = MTGDataset(df, input_size=10)
+        x, y = ds[0]
+        assert isinstance(x, torch.Tensor)
+        assert isinstance(y, torch.Tensor)
+        assert x.shape == (10,)
+        assert y.shape == (10,)
+
+    def test_getitem_one_hot(self):
+        df = pd.DataFrame({"col": [[1]]})
+        ds = MTGDataset(df, input_size=5)
+        x, y = ds[0]
+        assert x[0].item() == 1.0
+        assert x[1].item() == 0.0
+        assert torch.equal(x, y)
+
+    def test_dataloader(self):
+        df = pd.DataFrame({"col": [[1, 2], [3], [4, 5]]})
+        ds = MTGDataset(df, input_size=8)
+        loader = DataLoader(ds, batch_size=2)
+        X, Y = next(iter(loader))
+        assert X.shape == (2, 8)
+        assert Y.shape == (2, 8)
 
 
 class TestMTGDeckBuilderModel:

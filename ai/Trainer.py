@@ -1,5 +1,5 @@
 from database.mtgtools import Database
-from environment.Card import AICard
+from environment.Card import AICard, MTGDataset
 from mtgtools.PCardList import PCardList
 from environment.Deck import Deck
 from utils.utils import get_token
@@ -7,6 +7,7 @@ from utils.utils import get_token
 from collections import Counter
 import copy
 import torch
+from torch.utils.data import DataLoader
 from torchsummary import summary
 import torch.nn as nn
 import torch.nn.functional as F
@@ -45,8 +46,14 @@ class Trainer_T1():
 
 
         self.load()
+        if self.model is None:
+            self.model = ModelClass(self.pool_size, 40, 4 * self.pool_size, device)
+            summary(self.model)
+
         self.loss_fn = nn.CrossEntropyLoss()
-        self.optimizer = torch.optim.SGD(self.model.parameters(), lr= 0.001  )
+        self.optimizer = torch.optim.SGD(self.model.parameters(), lr=0.001)
+        self.dataloader : DataLoader = None
+        self.test_dataloader : DataLoader = None
 
     @property
     def Model(self):
@@ -129,3 +136,19 @@ class Trainer_T1():
         test_loss /= num_batches
         correct /= size
         print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
+
+    def create_dataloader(self, batch_size: int = 32, shuffle: bool = True) -> DataLoader:
+        dataset = MTGDataset(self.datasets, input_size=self.pool_size)
+        return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
+
+    def run(self, epochs: int = 5, batch_size: int = 32):
+        if self.dataloader is None:
+            self.dataloader = self.create_dataloader(batch_size=batch_size, shuffle=True)
+        if self.test_dataloader is None:
+            self.test_dataloader = self.create_dataloader(batch_size=batch_size, shuffle=False)
+
+        for epoch in range(epochs):
+            print(f"\nEpoch {epoch+1}/{epochs}")
+            self.train_loop(self.dataloader, self.loss_fn, self.optimizer)
+            self.test_loop(self.test_dataloader, self.loss_fn)
+            self.save()

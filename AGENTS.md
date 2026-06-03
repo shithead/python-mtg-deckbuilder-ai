@@ -147,7 +147,6 @@ No formatter is configured. Do not add one or reformat the entire codebase witho
 
 ## Known issues
 
-- `ai/Trainer.py` — `train_loop()` and `test_loop()` still reference `self.model` and `self` internally, but the methods now have `self` in their signatures. The class still needs a proper dataloader and training orchestration to be functional.
 - `database/SQLite.py` — imports `environment.Pool` and old card classes (`MTGCard`, `TCard`) that no longer exist; this file is defunct
 
 ## External dependencies
