@@ -1,0 +1,33 @@
+// Jon Schneck
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+4 Momo, Friendly Flier
+2 Erode
+2 Aang, Swift Savior
+2 Haliya, Guided by Light
+4 Floodfarm Verge
+4 Hallowed Fountain
+2 Seam Rip
+4 Springleaf Drum
+2 Practiced Offense
+4 Daydream
+4 Multiversal Passage
+2 Abandoned Air Temple
+7 Plains
+4 Sage of the Skies
+4 Starfield Shepherd
+2 Cosmogrand Zenith
+2 Nurturing Pixie
+1 Gran-Gran
+4 Quantum Riddler
+
+SB: 1 Disdainful Stroke
+SB: 2 Seam Rip
+SB: 2 Pyrrhic Strike
+SB: 2 No More Lies
+SB: 2 Spider-Sense
+SB: 2 Rest in Peace
+SB: 3 Clarion Conqueror
+SB: 1 Elspeth, Storm Slayer

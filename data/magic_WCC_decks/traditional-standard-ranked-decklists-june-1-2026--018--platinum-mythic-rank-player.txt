@@ -1,0 +1,31 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+18 Island
+3 Agna Qel'a
+2 Fountainport
+1 Petrified Hamlet
+4 Bounce Off
+4 Hydro-Man, Fluid Felon
+4 Floodpits Drowner
+4 Loch Mare
+4 Malcolm, Alluring Scoundrel
+4 Enduring Curiosity
+3 Spell Pierce
+3 Spell Snare
+2 Three Steps Ahead
+2 Spyglass Siren
+2 Octopus Form
+
+SB: 3 Tishana's Tidebinder
+SB: 2 Ghost Vacuum
+SB: 2 Annul
+SB: 2 Disdainful Stroke
+SB: 1 The Ooze
+SB: 1 Stoic Sphinx
+SB: 1 Kaito, Cunning Infiltrator
+SB: 1 Wan Shi Tong, Librarian
+SB: 1 Negate
+SB: 1 Into the Flood Maw

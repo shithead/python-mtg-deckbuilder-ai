@@ -1,0 +1,40 @@
+// Zhong Dong
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Plains
+1 Island
+1 Path to Exile
+4 Hallowed Fountain
+1 Spell Snare
+1 Steam Vents
+2 Remand
+2 Spell Queller
+4 Prismatic Vista
+2 Archon of Emeria
+2 Prismatic Ending
+1 The Wandering Emperor
+1 Eiganjo, Seat of the Empire
+3 Fragment Reality
+1 Otawara, Soaring City
+4 Reprieve
+4 Lórien Revealed
+1 Talion's Throneguard
+4 Aven Interrupter
+4 High Noon
+1 Sink into Stupor
+1 Tamiyo, Inquisitive Student
+4 Starting Town
+2 Aang, Swift Savior
+1 Abandoned Air Temple
+4 Hydroponics Architect
+
+SB: 3 Rest in Peace
+SB: 1 Erode
+SB: 1 Spell Snare
+SB: 1 Stern Scolding
+SB: 3 Wrath of the Skies
+SB: 2 Tajic, Legion's Valor
+SB: 2 Clarion Conqueror
+SB: 2 Quantum Riddler

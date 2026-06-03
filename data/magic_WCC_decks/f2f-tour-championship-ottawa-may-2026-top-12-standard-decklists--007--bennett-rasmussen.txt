@@ -1,0 +1,32 @@
+// Bennett Rasmussen
+// F2F Tour Championship: Ottawa
+// May 17, 2026
+// Standard
+
+7 Island
+4 Opt
+4 Stormchaser's Talent
+4 Burst Lightning
+2 Bounce Off
+4 Boomerang Basics
+4 Colorstorm Stallion
+3 Secret Identity
+2 Flow State
+2 Multiversal Passage
+2 Drake Hatcher
+4 Riverpyre Verge
+4 Steam Vents
+4 Spirebluff Canal
+4 Sleight of Hand
+2 Vibrant Outburst
+4 Slickshot Show-Off
+
+SB: 1 Disdainful Stroke
+SB: 2 Slagstorm
+SB: 2 Get Out
+SB: 2 Flow State
+SB: 1 Sear
+SB: 2 Spell Pierce
+SB: 2 Into the Flood Maw
+SB: 2 Drake Hatcher
+SB: 1 Ral, Crackling Wit

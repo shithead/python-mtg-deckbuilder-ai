@@ -1,0 +1,39 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+4 Overgrown Tomb
+4 Wastewood Verge
+4 Blooming Marsh
+3 Swamp
+3 Forest
+2 Multiversal Passage
+1 Starting Town
+1 Deathcap Glade
+1 Ba Sing Se
+1 Restless Cottage
+4 Badgermole Cub
+4 Professor Dellian Fel
+4 Sentinel of the Nameless City
+4 Llanowar Elves
+3 Keen-Eyed Curator
+3 Emeritus of Abundance
+3 Requiting Hex
+3 Ral Zarek, Guest Lecturer
+2 Shoot the Sheriff
+2 Ouroboroid
+2 Duress
+1 Maelstrom Pulse
+1 Strategic Betrayal
+
+SB: 2 Mind Roots
+SB: 2 Qarsi Revenant
+SB: 2 Leatherhead, Swamp Stalker
+SB: 2 Duress
+SB: 2 Day of Black Sun
+SB: 1 Decorum Dissertation
+SB: 1 Ghost Vacuum
+SB: 1 Requiting Hex
+SB: 1 Maelstrom Pulse
+SB: 1 Strategic Betrayal

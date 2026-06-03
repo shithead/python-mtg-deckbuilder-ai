@@ -1,0 +1,36 @@
+// Ethan Cummins
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+1 Craterhoof Behemoth
+1 Forest
+3 Mockingbird
+4 Starting Town
+4 Temple Garden
+2 Floodfarm Verge
+2 Hallowed Fountain
+3 Seam Rip
+4 Llanowar Elves
+4 Badgermole Cub
+2 Brightglass Gearhulk
+4 Gene Pollinator
+4 Breeding Pool
+4 Nature's Rhythm
+3 Hushwood Verge
+2 Meltstrider's Resolve
+4 Spider Manifestation
+1 Soul-Guide Lantern
+2 Botanical Sanctum
+2 Ouroboroid
+4 Quantum Riddler
+
+SB: 1 Disdainful Stroke
+SB: 3 Erode
+SB: 1 Surrak, Elusive Hunter
+SB: 1 Keen-Eyed Curator
+SB: 1 Kutzil's Flanker
+SB: 3 Sage of the Skies
+SB: 1 Champion of the Weird
+SB: 2 Spider-Sense
+SB: 2 Rest in Peace

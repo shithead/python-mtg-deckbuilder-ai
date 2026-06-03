@@ -1,0 +1,49 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+4 Hallowed Fountain
+4 Steam Vents
+3 Great Hall of the Biblioplex
+2 Gloomlake Verge
+2 Sacred Foundry
+2 Shattered Sanctum
+2 Mistrise Village
+1 Plains
+1 Stormcarved Coast
+1 Meticulous Archive
+1 Godless Shrine
+1 Multiversal Passage
+1 Cori Mountain Monastery
+1 Sundown Pass
+1 Sunbillow Verge
+4 Stock Up
+4 Jeskai Revelation
+4 Tablet of Discovery
+3 Consult the Star Charts
+3 Thunder Magic
+3 Inevitable Defeat
+2 Flashback
+1 Ill-Timed Explosion
+1 Sear
+1 Erode
+1 Fire Magic
+1 Get Lost
+1 Pyroclasm
+1 Abrade
+1 Three Steps Ahead
+1 Negate
+1 Day of Judgment
+
+SB: 2 Emeritus of Ideation
+SB: 2 Disdainful Stroke
+SB: 2 Rest in Peace
+SB: 2 Flashfreeze
+SB: 1 Ultima
+SB: 1 Get Lost
+SB: 1 Annul
+SB: 1 Pyroclasm
+SB: 1 High Noon
+SB: 1 Wan Shi Tong, Librarian
+SB: 1 Negate

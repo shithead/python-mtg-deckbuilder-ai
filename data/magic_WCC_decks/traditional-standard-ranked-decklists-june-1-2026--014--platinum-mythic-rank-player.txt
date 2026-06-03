@@ -1,0 +1,39 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+7 Forest
+4 Stomping Ground
+4 Thornspire Verge
+3 Multiversal Passage
+1 Commercial District
+1 Ba Sing Se
+1 Mountain
+4 Break Out
+4 Keen-Eyed Curator
+4 Patchwork Beastie
+4 Burst Lightning
+4 Wildfire Wickerfolk
+4 Fear of Missing Out
+3 Violent Urge
+3 Overprotect
+2 Pawpatch Recruit
+2 Bushwhack
+2 Tersa Lightshatter
+1 Primal Might
+1 Iroh's Demonstration
+1 Royal Treatment
+
+SB: 2 Pyroclasm
+SB: 2 Scrapshooter
+SB: 2 Ouroboroid
+SB: 1 Pick Your Poison
+SB: 1 The Ooze
+SB: 1 Impractical Joke
+SB: 1 The Legend of Roku
+SB: 1 Surrak, Elusive Hunter
+SB: 1 Royal Treatment
+SB: 1 Thunderous Velocipede
+SB: 1 Soul-Guide Lantern
+SB: 1 Twinmaw Stormbrood

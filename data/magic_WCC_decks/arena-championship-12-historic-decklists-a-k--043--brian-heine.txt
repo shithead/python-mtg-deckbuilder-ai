@@ -1,0 +1,36 @@
+// Brian Heine
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Mana Confluence
+4 Starting Town
+2 Nurturing Peatland
+4 Razorverge Thicket
+1 Prismatic Vista
+1 Plains
+1 Swamp
+1 Forest
+1 Boseiju, Who Endures
+4 Esper Sentinel
+4 Gilded Goose
+4 A-Cauldron Familiar
+3 Cenote Scout
+4 Samwise Gamgee
+4 Birthing Ritual
+4 Juggernaut Peddler
+4 Chord of Calling
+3 Thoughtseize
+2 Blooming Marsh
+1 A-Haywire Mite
+4 Umbral Collar Zealot
+
+SB: 2 Fragment Reality
+SB: 2 A-Haywire Mite
+SB: 1 Phyrexian Revoker
+SB: 3 Fatal Push
+SB: 1 Jet Collector
+SB: 1 Sorin of House Markov
+SB: 3 Deafening Silence
+SB: 1 Dauthi Voidwalker
+SB: 1 Lurrus of the Dream-Den

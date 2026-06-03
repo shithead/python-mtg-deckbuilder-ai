@@ -1,0 +1,40 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+4 Starting Town
+4 Watery Grave
+3 Hallowed Fountain
+2 Multiversal Passage
+2 Godless Shrine
+1 Bleachbone Verge
+1 Floodfarm Verge
+1 Island
+1 Swamp
+1 Gloomlake Verge
+1 Plains
+4 Quantum Riddler
+4 Skycoach Conductor
+4 Splash Portal
+4 Springleaf Drum
+4 Aang, Swift Savior
+4 Satoru, the Infiltrator
+4 Emptiness
+3 Get Lost
+2 Spell Pierce
+2 Deceit
+2 Not Dead After All
+2 Starfield Vocalist
+
+SB: 2 Duress
+SB: 2 Kaito, Bane of Nightmares
+SB: 2 Spider-Sense
+SB: 2 Charming Prince
+SB: 1 Strategic Betrayal
+SB: 1 Spell Snare
+SB: 1 Azula, Cunning Usurper
+SB: 1 Annul
+SB: 1 Disdainful Stroke
+SB: 1 Soul-Guide Lantern
+SB: 1 Mai, Scornful Striker

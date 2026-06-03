@@ -1,0 +1,40 @@
+// Masakatsu Iida
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Jarsyl, Dark Age Scion
+4 Pyrogoyf
+2 Swamp
+1 Kroxa, Titan of Death's Hunger
+4 Ignoble Hierarch
+4 Prismatic Vista
+4 Thoughtseize
+4 Fatal Push
+1 Forest
+4 Starting Town
+1 Detective's Phoenix
+3 Stomping Ground
+2 Inquisition of Kozilek
+2 Arena of Glory
+1 Mountain
+1 Nurturing Peatland
+3 Blooming Marsh
+1 Abrupt Decay
+1 Esper Origins
+4 Barrowgoyf
+4 Malevolent Rumble
+1 Fear of Missing Out
+2 Fable of the Mirror-Breaker
+2 Blood Crypt
+
+SB: 1 Go Blank
+SB: 1 Surgical Extraction
+SB: 1 Witherbloom Command
+SB: 2 Damping Sphere
+SB: 3 Culling Ritual
+SB: 2 Professor Dellian Fel
+SB: 2 Soul-Guide Lantern
+SB: 1 Alpine Moon
+SB: 1 Magus of the Moon
+SB: 1 Jegantha, the Wellspring

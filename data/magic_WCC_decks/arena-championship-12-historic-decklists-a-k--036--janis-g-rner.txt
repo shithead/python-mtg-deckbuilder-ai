@@ -1,0 +1,36 @@
+// Janis Görner
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Swamp
+4 Counterspell
+4 Phelia, Exuberant Shepherd
+4 Prismatic Vista
+4 Fatal Push
+3 Juggernaut Peddler
+4 Starting Town
+3 Ketramose, the New Dawn
+3 Hallowed Fountain
+1 Floodfarm Verge
+2 Island
+1 Tamiyo, Inquisitive Student
+2 Spell Snare
+2 Fragment Reality
+4 Psychic Frog
+3 Watery Grave
+1 Plains
+4 Relic of Progenitus
+3 Raffine's Tower
+1 Overlord of the Balemurk
+2 Gloomlake Verge
+4 Quantum Riddler
+
+SB: 1 Juggernaut Peddler
+SB: 1 Rest in Peace
+SB: 2 Mystical Dispute
+SB: 2 Deafening Silence
+SB: 2 Fragment Reality
+SB: 2 Wrath of the Skies
+SB: 2 End of the Hunt
+SB: 3 Containment Priest

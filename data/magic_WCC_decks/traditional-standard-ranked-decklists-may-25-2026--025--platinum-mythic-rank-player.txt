@@ -1,0 +1,38 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+4 Godless Shrine
+4 Concealed Courtyard
+4 Shattered Sanctum
+3 Plains
+2 Bleachbone Verge
+2 Starting Town
+1 Restless Fortress
+1 Fountainport
+1 Swamp
+4 Case of the Uneaten Feast
+4 Amalia Benavides Aguirre
+4 Hinterland Sanctifier
+4 Moseo, Vein's New Dean
+3 Haliya, Guided by Light
+3 Requiting Hex
+2 Aunt May
+2 Enduring Innocence
+2 Lunar Convocation
+2 Starscape Cleric
+2 Emptiness
+2 Voice of Victory
+2 Delney, Streetwise Lookout
+1 Decorum Dissertation
+1 Dream Beavers
+
+SB: 3 Duress
+SB: 2 Dawn's Truce
+SB: 2 Seam Rip
+SB: 2 Cruelclaw's Heist
+SB: 2 Get Lost
+SB: 2 Clarion Conqueror
+SB: 1 Voice of Victory
+SB: 1 Decorum Dissertation

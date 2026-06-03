@@ -1,0 +1,65 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+8 Forest
+5 Swamp
+2 Evolving Wilds
+1 Jungle Hollow
+1 Foggy Bottom Swamp
+1 Wastewood Verge
+1 Capital City
+1 Rumble Arena
+1 Strangled Cemetery
+1 Temple of Malady
+1 Muraganda Raceway
+1 Golgari Guildgate
+3 Bushwhack
+2 Dragon Sniper
+1 Madame Null, Power Broker
+1 Witherbloom Charm
+1 Michelangelo's Technique
+1 Tifa Lockhart
+1 Vivien Reid
+1 Mona Lisa, Science Geek
+1 Day of Black Sun
+1 Seismic Sense
+1 Ouroboroid
+1 Cycle of Renewal
+1 Primeval Bounty
+1 Planar Engineering
+1 Grievous Wound
+1 South Wind Avatar
+1 Villainous Wrath
+1 Archdruid's Charm
+1 Stargaze
+1 Bandit's Talent
+1 Michelangelo, Mutant BFF
+1 Bristly Bill, Spine Sower
+1 Icetill Explorer
+1 Summon: Primal Odin
+1 Virtue of Strength
+1 Dawn's Light Archer
+1 Pull from the Grave
+1 Surrak, Elusive Hunter
+1 Feed the Swarm
+1 Rise of the Dark Realms
+1 Railway Brawler
+1 Shark Shredder, Killer Clone
+1 Massacre Girl, Known Killer
+1 Super Shredder
+1 Circuitous Route
+1 Sire of Seven Deaths
+1 Case of the Locked Hothouse
+1 Hungry Graffalon
+1 Liliana, Dreadhorde General
+1 Shared Roots
+1 Point the Way
+1 Mossborn Hydra
+1 Loot, Exuberant Explorer
+1 Pick Your Poison
+1 Fecund Greenshell
+1 House Cartographer
+1 Painful Quandary
+1 Massacre Wurm

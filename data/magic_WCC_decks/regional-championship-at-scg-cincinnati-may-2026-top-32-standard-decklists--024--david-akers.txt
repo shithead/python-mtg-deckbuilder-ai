@@ -1,0 +1,48 @@
+// David Akers
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+2 Mistrise Village
+1 Cori Mountain Monastery
+1 Negate
+1 Erode
+1 Traumatic Critique
+2 Shattered Sanctum
+1 Stormcarved Coast
+3 Inevitable Defeat
+2 Flashback
+4 Great Hall of the Biblioplex
+1 Ill-Timed Explosion
+3 Hallowed Fountain
+4 Jeskai Revelation
+1 Sundown Pass
+2 Consult the Star Charts
+2 No More Lies
+1 Sear
+1 Multiversal Passage
+2 Lightning Helix
+1 Day of Judgment
+2 Firebending Lesson
+2 Sacred Foundry
+1 Meticulous Archive
+4 Stock Up
+1 Plains
+4 Tablet of Discovery
+4 Steam Vents
+1 Sunbillow Verge
+2 Gloomlake Verge
+1 Godless Shrine
+1 Swallowed by Leviathan
+1 Fire Magic
+
+SB: 1 Ultima
+SB: 1 Disdainful Stroke
+SB: 2 High Noon
+SB: 1 Wan Shi Tong, Librarian
+SB: 1 Annul
+SB: 2 Pyroclasm
+SB: 2 Emeritus of Ideation
+SB: 2 Rest in Peace
+SB: 1 Outrageous Robbery
+SB: 2 Flashfreeze

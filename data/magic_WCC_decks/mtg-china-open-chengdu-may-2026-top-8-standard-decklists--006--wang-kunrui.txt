@@ -1,0 +1,42 @@
+// Wang Kunrui
+// South America Regional Championship: São Paulo
+// May 17, 2026
+// Standard
+
+1 Mistrise Village
+1 Three Steps Ahead
+1 Traumatic Critique
+1 Pyroclasm
+2 Abrade
+2 Stormcarved Coast
+2 Flashback
+4 Thunder Magic
+4 Great Hall of the Biblioplex
+4 Consult the Star Charts
+2 Hallowed Fountain
+4 Jeskai Revelation
+2 Sundown Pass
+1 Impractical Joke
+3 Island
+1 Mountain
+1 Into the Flood Maw
+1 Sacred Foundry
+1 Confounding Riddle
+4 Stock Up
+1 Syncopate
+4 Riverpyre Verge
+4 Steam Vents
+4 Tablet of Discovery
+2 Broadside Barrage
+2 Petrified Hamlet
+1 Fire Magic
+
+SB: 2 Slagstorm
+SB: 1 Impractical Joke
+SB: 2 Spell Pierce
+SB: 3 Emeritus of Ideation
+SB: 3 Flashfreeze
+SB: 1 Petrified Hamlet
+SB: 1 Erode
+SB: 1 Negate
+SB: 1 Broadside Barrage

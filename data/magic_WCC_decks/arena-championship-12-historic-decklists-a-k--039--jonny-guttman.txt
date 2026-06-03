@@ -1,0 +1,37 @@
+// Jonny Guttman
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 A-Demilich
+4 Arclight Phoenix
+3 Chain Lightning
+4 Consider
+2 Deem Inferior
+4 Faithless Looting
+1 Fiery Islet
+3 Island
+4 Manamorphose
+1 Mountain
+1 Force of Negation
+4 Prismatic Vista
+4 Ponder
+4 Spirebluff Canal
+4 Steam Vents
+1 Surgical Extraction
+2 Swiftspear's Teachings
+4 Thought Scour
+4 Treasure Cruise
+1 Into the Flood Maw
+1 Noxious Revival
+
+SB: 1 Maddening Hex
+SB: 2 Brazen Borrower
+SB: 1 Quantum Riddler
+SB: 3 Force of Negation
+SB: 2 Meltdown
+SB: 1 Spell Snare
+SB: 1 Soulless Jailer
+SB: 2 Rending Volley
+SB: 1 Annul
+SB: 1 Cindercone Smite

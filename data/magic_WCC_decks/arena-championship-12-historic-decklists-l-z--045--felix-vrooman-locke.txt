@@ -1,0 +1,42 @@
+// Felix Vrooman-Locke
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Swamp
+4 Counterspell
+2 Baleful Strix
+1 Otawara, Soaring City
+4 Prismatic Vista
+4 Thoughtseize
+4 Fatal Push
+3 Cecil, Dark Knight
+4 Darkslick Shores
+2 Dismember
+4 Ponder
+2 Treasure Cruise
+3 Tamiyo, Inquisitive Student
+4 Force of Negation
+1 Flow State
+2 Island
+1 Spell Snare
+4 Psychic Frog
+1 Shoot the Sheriff
+4 Watery Grave
+1 Sink into Stupor
+1 Lórien Revealed
+1 Hydroponics Architect
+2 Gloomlake Verge
+
+SB: 1 Soulless Jailer
+SB: 1 Damping Sphere
+SB: 1 Pithing Needle
+SB: 1 Requiting Hex
+SB: 2 Mystical Dispute
+SB: 1 Snuff Out
+SB: 1 Consign to Memory
+SB: 1 Lurrus of the Dream-Den
+SB: 1 Long River's Pull
+SB: 2 Annul
+SB: 1 Spell Snare
+SB: 2 Relic of Progenitus

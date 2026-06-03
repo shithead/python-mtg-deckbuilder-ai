@@ -1,0 +1,48 @@
+// Shun Asano
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Swamp
+2 Prismatic Vista
+4 Ignoble Hierarch
+1 Thoughtseize
+4 Yawgmoth, Thran Physician
+4 Marionette Apprentice
+2 Forest
+1 Echoing Cavern
+1 A-Blood Artist
+4 Badgermole Cub
+4 Birthing Ritual
+2 Delighted Halfling
+1 Nurturing Peatland
+1 Birds of Paradise
+3 Blooming Marsh
+1 A-Haywire Mite
+1 Wastewood Verge
+4 Overgrown Tomb
+1 Yavimaya, Cradle of Growth
+1 Urborg, Tomb of Yawgmoth
+4 Young Wolf
+1 Hapatra, Vizier of Poisons
+1 Boggart Trawler
+1 Sephiroth, Fabled SOLDIER
+1 Chittering Illuminator
+2 Boseiju, Who Endures
+4 Chord of Calling
+1 Phyrexian Tower
+1 Endurance
+1 Khalni Garden
+
+SB: 1 Kraul Harpooner
+SB: 1 Endurance
+SB: 1 Skyfisher Spider
+SB: 1 Surgical Extraction
+SB: 1 Reclamation Sage
+SB: 1 Chittering Illuminator
+SB: 2 Necromentia
+SB: 1 Pile On
+SB: 2 Abrupt Decay
+SB: 1 Force of Vigor
+SB: 1 Opposition Agent
+SB: 2 Thoughtseize

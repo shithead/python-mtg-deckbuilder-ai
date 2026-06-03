@@ -1,0 +1,30 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+9 Mountain
+4 Inspiring Vantage
+4 Sunbillow Verge
+4 Sacred Foundry
+3 Dalkovan Encampment
+4 Hired Claw
+4 Stadium Headliner
+4 Shocking Sharpshooter
+4 Voice of Victory
+4 Burst Lightning
+3 Enduring Innocence
+3 Warleader's Call
+3 Howlsquad Heavy
+2 Fanatical Firebrand
+2 Lightning Helix
+2 Ojer Axonil, Deepest Might
+1 Raphael, Tough Turtle
+
+SB: 3 Rest in Peace
+SB: 2 Boros Charm
+SB: 2 Exorcise
+SB: 2 Sunspine Lynx
+SB: 2 Magebane Lizard
+SB: 2 Battle Menu
+SB: 2 Spectacular Spider-Man

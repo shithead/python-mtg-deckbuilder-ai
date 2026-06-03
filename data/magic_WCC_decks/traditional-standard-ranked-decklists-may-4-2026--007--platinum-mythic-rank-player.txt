@@ -1,0 +1,43 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+4 Sandsteppe Citadel
+2 Overgrown Tomb
+2 Adagia, Windswept Bastion
+2 Cavern of Souls
+2 Multiversal Passage
+2 Watery Grave
+2 Hushwood Verge
+2 Temple Garden
+2 Starting Town
+2 Evendo, Waking Haven
+1 Forest
+1 Swamp
+4 Esper Origins
+3 Kona, Rescue Beastie
+3 Yuna, Hope of Spira
+3 Formidable Speaker
+3 The Last Ronin
+3 The Cloning of Shredder
+2 Summon: Knights of Round
+2 Dredger's Insight
+2 Summon: Bahamut
+2 Summon: Fenrir
+2 Gene Pollinator
+2 Does Machines
+2 Bitter Triumph
+1 Armaggon, Future Shark
+1 The Seriema
+1 Summon: Primal Odin
+
+SB: 3 Origin of Metalbending
+SB: 3 The Rise of Sozin
+SB: 2 Restoration Magic
+SB: 2 Soul-Guide Lantern
+SB: 1 The Seriema
+SB: 1 Terra, Magical Adept
+SB: 1 Summon: Knights of Round
+SB: 1 Summon: Bahamut
+SB: 1 Gogo, Master of Mimicry

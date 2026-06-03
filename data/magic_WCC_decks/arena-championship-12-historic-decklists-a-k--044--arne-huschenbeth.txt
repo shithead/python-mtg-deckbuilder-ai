@@ -1,0 +1,38 @@
+// Arne Huschenbeth
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Swamp
+4 Counterspell
+4 Prismatic Vista
+4 Thoughtseize
+1 Surgical Extraction
+4 Fatal Push
+4 Darkslick Shores
+4 Tamiyo, Inquisitive Student
+4 Ponder
+3 Island
+2 Consider
+4 Flow State
+2 Snuff Out
+4 Force of Negation
+1 Spell Snare
+4 Psychic Frog
+4 Watery Grave
+2 Sink into Stupor
+1 Strategic Betrayal
+1 Soul-Guide Lantern
+2 Gloomlake Verge
+
+SB: 2 Baleful Strix
+SB: 2 Surgical Extraction
+SB: 2 Toxic Deluge
+SB: 1 Stern Scolding
+SB: 2 Mystical Dispute
+SB: 1 Dismember
+SB: 1 Soul-Guide Lantern
+SB: 1 Case of the Lost Witness
+SB: 1 Spell Snare
+SB: 1 Sheoldred's Edict
+SB: 1 Lurrus of the Dream-Den

@@ -1,0 +1,40 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+17 Island
+2 Demolition Field
+2 Jidoor, Aristocratic Capital
+2 Mistrise Village
+1 Fountainport
+4 Waterbending Scroll
+4 Three Steps Ahead
+3 Horned Loch-Whale
+3 Eluge, the Shoreless Sea
+3 Aetherize
+2 Kitsune's Technique
+2 Consult the Star Charts
+2 Into the Flood Maw
+2 Stock Up
+2 Spell Snare
+1 Eject
+1 Unable to Scream
+1 Elixir
+1 River's Rebuke
+1 Mathemagics
+1 Turtles in Time
+1 Time Stop
+1 Riverchurn Monument
+1 Marang River Regent
+
+SB: 2 Confounding Riddle
+SB: 2 Confiscate
+SB: 2 Imprisoned in the Moon
+SB: 2 Spectral Interference
+SB: 2 Unable to Scream
+SB: 1 Elixir
+SB: 1 Mathemagics
+SB: 1 Long River's Pull
+SB: 1 Refute
+SB: 1 Spell Snare

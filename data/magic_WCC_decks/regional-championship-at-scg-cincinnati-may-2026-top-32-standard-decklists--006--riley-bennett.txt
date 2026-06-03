@@ -1,0 +1,47 @@
+// Riley Bennett
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+1 Swamp
+1 Mistrise Village
+3 Three Steps Ahead
+1 Wan Shi Tong, Librarian
+1 Decorum Dissertation
+4 Great Hall of the Biblioplex
+4 Consult the Star Charts
+4 Deadly Cover-Up
+2 Overgrown Tomb
+1 Duress
+3 Breeding Pool
+1 Feed the Cycle
+2 Flow State
+1 Multiversal Passage
+1 Undercity Sewers
+1 Bitter Triumph
+3 Professor Dellian Fel
+3 Maelstrom Pulse
+3 Requiting Hex
+3 Shoot the Sheriff
+1 Stock Up
+4 Watery Grave
+1 Witherbloom Charm
+1 Strategic Betrayal
+3 Deathcap Glade
+3 Gloomlake Verge
+2 Petrified Hamlet
+2 Ancient Cornucopia
+
+SB: 1 The Dawning Archaic
+SB: 1 Flashfreeze
+SB: 1 Decorum Dissertation
+SB: 2 Intimidation Tactics
+SB: 1 Torpor Orb
+SB: 1 Ghost Vacuum
+SB: 2 Duress
+SB: 1 Nowhere to Run
+SB: 1 Day of Black Sun
+SB: 1 Emeritus of Ideation
+SB: 1 Outrageous Robbery
+SB: 1 Heritage Reclamation
+SB: 1 Negate

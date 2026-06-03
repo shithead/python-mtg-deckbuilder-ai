@@ -1,0 +1,35 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+4 Breeding Pool
+4 Botanical Sanctum
+4 Forest
+4 Willowrush Verge
+2 Multiversal Passage
+2 Starting Town
+1 Restless Vinestalk
+1 Island
+4 Nature's Rhythm
+4 Badgermole Cub
+4 Mockingbird
+4 Spider Manifestation
+4 Repulsive Mutation
+4 Geometer's Arthropod
+4 Slumbering Trudge
+4 Llanowar Elves
+2 Ouroboroid
+1 Keen-Eyed Curator
+1 Spectral Denial
+1 Craterhoof Behemoth
+1 Abhorrent Oculus
+
+SB: 3 Floodpits Drowner
+SB: 3 Keen-Eyed Curator
+SB: 2 Heritage Reclamation
+SB: 2 Spectral Denial
+SB: 2 Meltstrider's Resolve
+SB: 1 Ghost Vacuum
+SB: 1 Soul-Guide Lantern
+SB: 1 Surrak, Elusive Hunter

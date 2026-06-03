@@ -1,0 +1,31 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+10 Plains
+4 Sunken Citadel
+4 Fountainport
+4 Demolition Field
+3 Abandoned Air Temple
+4 Day of Judgment
+4 Carrot Cake
+4 Caretaker's Talent
+4 Get Lost
+4 Seam Rip
+3 Enduring Innocence
+3 Voice of Victory
+2 Erode
+2 Ajani, Outland Chaperone
+2 Beza, the Bounding Spring
+2 Overlord of the Mistmoors
+1 Elspeth, Storm Slayer
+
+SB: 3 Rest in Peace
+SB: 3 Clarion Conqueror
+SB: 2 Authority of the Consuls
+SB: 2 Exorcise
+SB: 2 High Noon
+SB: 1 Erode
+SB: 1 Ultima
+SB: 1 Parting Gust

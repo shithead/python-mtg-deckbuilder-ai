@@ -1,0 +1,39 @@
+// Junpei Nakamura
+// Champions Cup Final: Kyoto
+// May 9, 2026
+// Standard
+
+3 Swamp
+2 Restless Cottage
+3 Forest
+2 Firdoch Core
+2 Tragedy Feaster
+2 Keen-Eyed Curator
+4 Llanowar Elves
+4 Badgermole Cub
+3 Duress
+2 Emeritus of Abundance
+4 Wastewood Verge
+4 Blooming Marsh
+2 Maelstrom Pulse
+1 Bitter Triumph
+3 Professor Dellian Fel
+4 Overgrown Tomb
+2 Shoot the Sheriff
+1 Ba Sing Se
+4 Requiting Hex
+4 Unholy Annex // Ritual Chamber
+2 Soulstone Sanctuary
+1 Strategic Betrayal
+1 Deathcap Glade
+
+SB: 2 Strategic Betrayal
+SB: 1 Decorum Dissertation
+SB: 2 Qarsi Revenant
+SB: 1 Keen-Eyed Curator
+SB: 3 Cruelclaw's Heist
+SB: 1 Leatherhead, Swamp Stalker
+SB: 1 Black Cat, Cunning Thief
+SB: 1 Professor Dellian Fel
+SB: 2 Day of Black Sun
+SB: 1 Outrageous Robbery

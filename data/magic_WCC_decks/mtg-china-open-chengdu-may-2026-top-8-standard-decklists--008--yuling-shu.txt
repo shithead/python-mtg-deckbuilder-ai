@@ -1,0 +1,38 @@
+// Yuling Shu
+// South America Regional Championship: São Paulo
+// May 17, 2026
+// Standard
+
+6 Island
+1 Willowrush Verge
+4 Opt
+3 Elusive Otter
+2 Eddymurk Crab
+4 Stormchaser's Talent
+4 Burst Lightning
+1 Bounce Off
+4 Boomerang Basics
+2 Colorstorm Stallion
+1 Magic Damper
+4 Flow State
+1 Impractical Joke
+2 Multiversal Passage
+1 Spell Pierce
+4 Riverpyre Verge
+4 Steam Vents
+4 Spirebluff Canal
+4 Sleight of Hand
+4 Slickshot Show-Off
+
+SB: 1 Flashfreeze
+SB: 1 Slagstorm
+SB: 2 Colorstorm Stallion
+SB: 2 Get Out
+SB: 1 Sear
+SB: 1 Ghost Vacuum
+SB: 2 Roaring Furnace // Steaming Sauna
+SB: 1 Emeritus of Ideation
+SB: 1 Soul-Guide Lantern
+SB: 1 Ral, Crackling Wit
+SB: 1 Spell Pierce
+SB: 1 Broadside Barrage

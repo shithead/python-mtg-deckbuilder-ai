@@ -1,0 +1,38 @@
+// Marcin Klimuszko
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 High Noon
+3 Archon of Emeria
+1 Gemstone Caverns
+1 Otawara, Soaring City
+2 Restless Anchorage
+4 Prismatic Vista
+3 Aang, Swift Savior
+4 Aven Interrupter
+2 Dismember
+4 Seachrome Coast
+4 Hallowed Fountain
+3 Ponder
+1 Mountain
+4 Remand
+1 Island
+3 Talion's Throneguard
+2 Fragment Reality
+2 Spell Queller
+2 Oust
+2 Sink into Stupor
+1 Lórien Revealed
+2 Plains
+4 Reprieve
+1 Eiganjo, Seat of the Empire
+
+SB: 1 Seam Rip
+SB: 1 Oust
+SB: 1 Tamiyo, Inquisitive Student
+SB: 3 Force of Negation
+SB: 2 Spell Snare
+SB: 2 Teferi, Hero of Dominaria
+SB: 2 Rest in Peace
+SB: 3 Divine Purge

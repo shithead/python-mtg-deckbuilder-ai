@@ -1,0 +1,47 @@
+// Chris Botelho
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+2 High Noon
+3 Counterspell
+1 Deserted Beach
+1 Hall of Storm Giants
+1 Restless Anchorage
+1 Otawara, Soaring City
+3 Memory Deluge
+4 Hallowed Fountain
+2 Get Lost
+2 Fountainport
+3 Seachrome Coast
+1 Adarkar Wastes
+3 Field of Ruin
+1 Sunken Citadel
+3 Island
+1 Force of Negation
+2 Dovin's Veto
+2 Beza, the Bounding Spring
+2 Teferi, Hero of Dominaria
+2 Fragment Reality
+1 Jwari Disruption
+2 Narset, Parter of Veils
+2 Stock Up
+4 March of Otherworldly Light
+3 Plains
+1 Hengegate Pathway
+1 Sink into Stupor
+2 Supreme Verdict
+2 Pinnacle Starcage
+2 The Wandering Emperor
+
+SB: 1 High Noon
+SB: 1 Surgical Extraction
+SB: 2 Mystical Dispute
+SB: 2 Dovin's Veto
+SB: 1 Beza, the Bounding Spring
+SB: 2 Reckoner Bankbuster
+SB: 2 Rest in Peace
+SB: 1 Hullbreaker Horror
+SB: 1 Counterspell
+SB: 1 Pinnacle Starcage
+SB: 1 Kaheera, the Orphanguard

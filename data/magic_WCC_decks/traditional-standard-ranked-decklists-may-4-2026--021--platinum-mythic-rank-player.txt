@@ -1,0 +1,28 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+20 Mountain
+4 Red Mage's Rapier
+4 Turn Inside Out
+4 Ancestral Anger
+4 Bulk Up
+4 Felonious Rage
+4 Demonic Ruckus
+4 Burst Lightning
+4 Slickshot Show-Off
+3 Firebending Student
+2 Emberheart Challenger
+1 Flashback
+1 Frantic Scapegoat
+1 Molten-Core Maestro
+
+SB: 4 Shock
+SB: 3 Clockwork Percussionist
+SB: 2 Hexing Squelcher
+SB: 2 Choreographed Sparks
+SB: 1 Sear
+SB: 1 Fleeting Effigy
+SB: 1 Redirect Lightning
+SB: 1 Fire Magic

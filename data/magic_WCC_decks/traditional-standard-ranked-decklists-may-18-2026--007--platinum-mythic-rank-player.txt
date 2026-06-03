@@ -1,0 +1,50 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+5 Island
+5 Swamp
+4 Soured Springs
+2 Starting Town
+2 Crossroads Village
+2 Dismal Backwater
+1 Undercity Sewers
+1 Temple of Deceit
+1 Soulstone Sanctuary
+4 Floodpits Drowner
+3 Kaito, Bane of Nightmares
+2 Spyglass Siren
+2 Stock Up
+2 Faebloom Trick
+2 River Herald Scout
+2 Boomerang Basics
+2 Flow State
+2 Shoot the Sheriff
+2 Phantom Interference
+2 Enduring Curiosity
+2 Gravpack Monoist
+1 Zero Point Ballad
+1 Elegy Acolyte
+1 Tragic Trajectory
+1 Dreadwing Scavenger
+1 Bitter Triumph
+1 Lecturing Scornmage
+1 Kaito, Cunning Infiltrator
+1 Arnyn, Deathbloom Botanist
+1 Aetherize
+1 Talion, the Kindly Lord
+
+SB: 2 Essence Scatter
+SB: 2 Stab
+SB: 1 Chart a Course
+SB: 1 Razzle-Dazzler
+SB: 1 Duress
+SB: 1 Drake Hatcher
+SB: 1 Donatello's Technique
+SB: 1 Deduce
+SB: 1 Long Goodbye
+SB: 1 Dreadwing Scavenger
+SB: 1 Il Mheg Pixie
+SB: 1 Three Steps Ahead
+SB: 1 Annul

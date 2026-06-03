@@ -1,0 +1,37 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+8 Forest
+4 Fabled Passage
+4 Hushwood Verge
+3 Escape Tunnel
+3 Ba Sing Se
+2 Plains
+1 Temple Garden
+4 Earthbender Ascension
+4 Llanowar Elves
+4 Mightform Harmonizer
+4 Badgermole Cub
+4 Sazh's Chocobo
+4 Erode
+3 Mossborn Hydra
+2 Bushwhack
+2 Dyadrine, Synthesis Amalgam
+2 Lumbering Worldwagon
+1 Surrak, Elusive Hunter
+1 Icetill Explorer
+
+SB: 2 Rest in Peace
+SB: 2 Sheltered by Ghosts
+SB: 2 Voice of Victory
+SB: 1 Origin of Metalbending
+SB: 1 Pawpatch Formation
+SB: 1 Mossborn Hydra
+SB: 1 Sandman, Shifting Scoundrel
+SB: 1 Restoration Magic
+SB: 1 Snakeskin Veil
+SB: 1 Torpor Orb
+SB: 1 Get Lost
+SB: 1 Surrak, Elusive Hunter

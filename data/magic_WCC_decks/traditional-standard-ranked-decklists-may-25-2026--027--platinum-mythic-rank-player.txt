@@ -1,0 +1,36 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+6 Island
+4 Riverpyre Verge
+4 Spirebluff Canal
+3 Stormcarved Coast
+2 Mountain
+1 Great Hall of the Biblioplex
+1 Willowrush Verge
+4 Boomerang Basics
+4 Stormchaser's Talent
+4 Elusive Otter
+4 Burst Lightning
+4 Opt
+4 Flow State
+4 Sleight of Hand
+2 Slickshot Show-Off
+2 Balmor, Battlemage Captain
+2 Eddymurk Crab
+1 Prismari Charm
+1 Roaring Furnace // Steaming Sauna
+1 Impractical Joke
+1 Wild Ride
+1 Secret Identity
+
+SB: 3 Spell Pierce
+SB: 3 Frolicking Familiar
+SB: 2 Ghost Vacuum
+SB: 2 Disdainful Stroke
+SB: 2 Ral, Crackling Wit
+SB: 1 Broadside Barrage
+SB: 1 Sear
+SB: 1 Get Out

@@ -1,0 +1,30 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+12 Forest
+4 Fabled Passage
+4 Escape Tunnel
+3 Ba Sing Se
+2 Promising Vein
+4 Icetill Explorer
+4 Sazh's Chocobo
+4 Mossborn Hydra
+4 Badgermole Cub
+4 Earthbender Ascension
+4 Llanowar Elves
+3 Michelangelo, Weirdness to 11
+2 Mightform Harmonizer
+2 Leatherhead, Swamp Stalker
+2 Mikey & Leo, Chaos & Order
+2 Archdruid's Charm
+
+SB: 4 Longstalk Brawl
+SB: 3 Sapling Nursery
+SB: 2 Soul-Guide Lantern
+SB: 2 Origin of Metalbending
+SB: 1 Pawpatch Formation
+SB: 1 Surrak, Elusive Hunter
+SB: 1 Royal Treatment
+SB: 1 Torpor Orb

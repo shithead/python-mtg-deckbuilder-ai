@@ -1,0 +1,31 @@
+// Maxx Kominowski
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Mox Amber
+4 Ornithopter
+4 Tormod's Crypt
+3 Thoughtcast
+4 Drix Interlacer
+4 Weapons Manufacturing
+3 Arcbound Ravager
+4 Emry, Lurker of the Loch
+4 Pinnacle Emissary
+4 Kappa Cannoneer
+4 Seat of the Synod
+1 Island
+3 Great Furnace
+4 Fiery Islet
+4 Spirebluff Canal
+3 Steam Vents
+2 Preponderant Pearl
+1 Springleaf Drum
+
+SB: 2 Dismember
+SB: 4 Soulless Jailer
+SB: 2 Machinist's Dismissal
+SB: 2 Mystical Dispute
+SB: 2 Spell Snare
+SB: 2 Rending Volley
+SB: 1 Jegantha, the Wellspring

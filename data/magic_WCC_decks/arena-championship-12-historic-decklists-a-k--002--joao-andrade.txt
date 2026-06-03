@@ -1,0 +1,38 @@
+// Joao Andrade
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Flickerwisp
+2 Swamp
+4 Phelia, Exuberant Shepherd
+1 Mischievous Lookout
+4 Concealed Courtyard
+4 Prismatic Vista
+4 Thoughtseize
+3 Witch Enchanter
+3 Fatal Push
+4 Juggernaut Peddler
+1 Skyclave Apparition
+3 Dedicated Dollmaker
+3 Fragment Reality
+1 Recruiter of the Guard
+3 Parallax Wave
+2 Stalwart Realmwarden
+1 Mother of Runes
+2 Boggart Trawler
+2 Plains
+1 Silent Clearing
+2 Godless Shrine
+4 Overlord of the Balemurk
+4 Brightclimb Pathway
+1 Containment Priest
+
+SB: 2 Necromentia
+SB: 2 Ketramose, the New Dawn
+SB: 1 Fragment Reality
+SB: 2 Deafening Silence
+SB: 1 Elesh Norn, Mother of Machines
+SB: 2 Divine Purge
+SB: 3 Rest in Peace
+SB: 2 Clarion Conqueror

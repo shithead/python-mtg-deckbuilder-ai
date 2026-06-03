@@ -1,0 +1,30 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+6 Plains
+5 Mountain
+4 Fountainport
+4 Demolition Field
+3 Sacred Foundry
+3 Inspiring Vantage
+4 Lightning Helix
+4 Weapons Manufacturing
+4 Final Showdown
+4 Nesting Bot
+4 Tezzeret, Cruel Captain
+4 Legion Extruder
+3 Technodrome
+3 Fountainport Bell
+2 Elspeth, Storm Slayer
+1 Syr Ginger, the Meal Ender
+1 Tarrian's Soulcleaver
+1 Diamond Pick-Axe
+
+SB: 3 Unidentified Hovership
+SB: 3 Disenchant
+SB: 3 The Ooze
+SB: 2 Destined Confrontation
+SB: 2 Krenko's Buzzcrusher
+SB: 2 Get Lost

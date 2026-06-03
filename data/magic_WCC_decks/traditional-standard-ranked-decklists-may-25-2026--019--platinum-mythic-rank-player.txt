@@ -1,0 +1,36 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+5 Plains
+4 Multiversal Passage
+4 Hallowed Fountain
+4 Floodfarm Verge
+2 Island
+2 Sunbillow Verge
+1 Restless Anchorage
+1 Fomori Vault
+4 Clay-Fired Bricks
+4 Repurposing Bay
+4 United Battlefront
+4 Simulacrum Synthesizer
+4 Cryogen Relic
+3 Spring-Loaded Sawblades
+3 Perilous Snare
+2 High Noon
+2 Pinnacle Starcage
+2 Three Steps Ahead
+2 Hide on the Ceiling
+1 The Fire Crystal
+1 White Auracite
+1 Dauntless Scrapbot
+
+SB: 3 Authority of the Consuls
+SB: 2 The Enigma Jewel
+SB: 2 Dauntless Scrapbot
+SB: 2 Disdainful Stroke
+SB: 2 Split Up
+SB: 2 Torpor Orb
+SB: 1 Day of Judgment
+SB: 1 Riverchurn Monument

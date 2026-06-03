@@ -1,0 +1,31 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+5 Mountain
+4 Inspiring Vantage
+4 Sacred Foundry
+4 Sunbillow Verge
+3 Plains
+2 Dalkovan Encampment
+1 Restless Bivouac
+4 Warleader's Call
+4 Torch the Tower
+4 Ojer Axonil, Deepest Might
+4 Howlsquad Heavy
+4 Seam Rip
+4 Pursue the Past
+4 Raphael, Tough Turtle
+3 Anim Pakal, Thousandth Moon
+2 Catharsis
+2 Voice of Victory
+1 Ajani, Outland Chaperone
+1 Elspeth, Storm Slayer
+
+SB: 3 Magebane Lizard
+SB: 3 Split Up
+SB: 3 Cathar Commando
+SB: 2 Erode
+SB: 2 Rest in Peace
+SB: 2 Get Lost

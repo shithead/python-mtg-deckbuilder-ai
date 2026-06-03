@@ -1,0 +1,47 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+4 Great Hall of the Biblioplex
+4 Steam Vents
+3 Hallowed Fountain
+2 Sacred Foundry
+2 Shattered Sanctum
+2 Gloomlake Verge
+2 Mistrise Village
+1 Sunbillow Verge
+1 Stormcarved Coast
+1 Cori Mountain Monastery
+1 Meticulous Archive
+1 Multiversal Passage
+1 Plains
+1 Godless Shrine
+1 Sundown Pass
+4 Tablet of Discovery
+4 Stock Up
+4 Jeskai Revelation
+3 Inevitable Defeat
+2 Swallowed by Leviathan
+2 Sear
+2 Consult the Star Charts
+2 No More Lies
+2 Flashback
+2 Lightning Helix
+1 Fire Magic
+1 Day of Judgment
+1 Pyroclasm
+1 Traumatic Critique
+1 Ill-Timed Explosion
+1 Erode
+
+SB: 2 Pyroclasm
+SB: 2 Rest in Peace
+SB: 2 Flashfreeze
+SB: 2 Emeritus of Ideation
+SB: 2 High Noon
+SB: 1 Disdainful Stroke
+SB: 1 The Unagi of Kyoshi Island
+SB: 1 Annul
+SB: 1 Erode
+SB: 1 Ultima

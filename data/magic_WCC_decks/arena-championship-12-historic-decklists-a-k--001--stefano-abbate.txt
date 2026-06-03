@@ -1,0 +1,41 @@
+// Stefano Abbate
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Umbral Collar Zealot
+1 Forest
+4 Juggernaut Peddler
+4 Starting Town
+2 Esper Sentinel
+2 Temple Garden
+1 Sylvan Safekeeper
+1 Overgrown Tomb
+4 Birthing Ritual
+2 Badgermole Cub
+1 Nurturing Peatland
+2 Birds of Paradise
+3 Blooming Marsh
+4 A-Cauldron Familiar
+1 A-Haywire Mite
+3 Mana Confluence
+4 Gilded Goose
+1 Chittering Illuminator
+2 Voice of Resurgence
+2 Boseiju, Who Endures
+4 Razorverge Thicket
+4 Chord of Calling
+4 Samwise Gamgee
+
+SB: 1 Kraul Harpooner
+SB: 1 Jirina, Dauntless General
+SB: 1 Chittering Illuminator
+SB: 1 Crystal Barricade
+SB: 2 Deafening Silence
+SB: 1 Lurrus of the Dream-Den
+SB: 3 Fragment Reality
+SB: 1 Patriar's Humiliation
+SB: 1 Drannith Magistrate
+SB: 1 Abrupt Decay
+SB: 1 Thoughtseize
+SB: 1 Thalia, Guardian of Thraben

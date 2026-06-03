@@ -1,0 +1,34 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+4 Secluded Courtyard
+4 Jasmine Dragon Tea Shop
+4 Cavern of Souls
+3 Multiversal Passage
+3 Starting Town
+2 Hallowed Fountain
+2 Temple Garden
+1 Forest
+1 Plains
+4 South Pole Voyager
+4 Great Divide Guide
+4 Earth Kingdom Protectors
+4 Earthen Ally
+4 Earth King's Lieutenant
+3 Aang, Swift Savior
+3 Allies at Last
+2 Katara, the Fearless
+2 Invasion Reinforcements
+2 Mai, Scornful Striker
+2 Hakoda, Selfless Commander
+1 Suki, Courageous Rescuer
+1 Aang, at the Crossroads
+
+SB: 4 Earth Kingdom Jailer
+SB: 4 Pick Your Poison
+SB: 3 Boiling Rock Rioter
+SB: 2 Ty Lee, Chi Blocker
+SB: 1 Mai, Scornful Striker
+SB: 1 Aang, Swift Savior

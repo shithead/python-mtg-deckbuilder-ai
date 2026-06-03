@@ -1,0 +1,41 @@
+// Sam Ng
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+5 Island
+3 Eddymurk Crab
+1 Willowrush Verge
+4 Opt
+3 Elusive Otter
+4 Stormchaser's Talent
+4 Burst Lightning
+1 Great Hall of the Biblioplex
+4 Boomerang Basics
+1 Get Out
+1 Breeding Pool
+1 Roaring Furnace // Steaming Sauna
+4 Flow State
+1 Impractical Joke
+1 Secret Identity
+2 Multiversal Passage
+1 Prismari Charm
+3 Riverpyre Verge
+4 Steam Vents
+4 Spirebluff Canal
+4 Sleight of Hand
+4 Slickshot Show-Off
+
+SB: 1 Disdainful Stroke
+SB: 1 Eddymurk Crab
+SB: 1 Wan Shi Tong, Librarian
+SB: 1 Annul
+SB: 1 Bounce Off
+SB: 1 Get Out
+SB: 2 Slagstorm
+SB: 1 Stock Up
+SB: 1 Prismari Charm
+SB: 2 Ral, Crackling Wit
+SB: 1 Abrade
+SB: 1 Spell Pierce
+SB: 1 Broadside Barrage

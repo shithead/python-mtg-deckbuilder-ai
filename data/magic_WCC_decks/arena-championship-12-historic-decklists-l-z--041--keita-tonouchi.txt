@@ -1,0 +1,31 @@
+// Keita Tonouchi
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Swamp
+4 Archon of Emeria
+2 Ignoble Hierarch
+4 Prismatic Vista
+2 Forest
+4 Juggernaut Peddler
+4 Starting Town
+4 Skyclave Apparition
+1 Temple Garden
+4 Birds of Paradise
+4 Badgermole Cub
+4 Birthing Ritual
+4 Verdant Dread
+4 Boggart Trawler
+1 Plains
+4 Razorverge Thicket
+4 Ouroboroid
+1 Godless Shrine
+4 Noble Hierarch
+
+SB: 3 Erode
+SB: 2 Dismember
+SB: 2 Fade from History
+SB: 3 Deafening Silence
+SB: 2 Elesh Norn, Mother of Machines
+SB: 3 Rest in Peace

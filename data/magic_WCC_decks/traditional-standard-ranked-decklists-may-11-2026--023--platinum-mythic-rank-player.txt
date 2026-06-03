@@ -1,0 +1,30 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+8 Plains
+4 Floodfarm Verge
+3 Island
+2 Valgavoth's Lair
+2 Meticulous Archive
+4 Optimistic Scavenger
+4 Feather of Flight
+4 Shardmage's Rescue
+4 Ethereal Armor
+4 Sheltered by Ghosts
+4 Silent Hallcreeper
+3 Enduring Innocence
+3 Grand Entryway // Elegant Rotunda
+3 Spellbook Vendor
+2 Seam Rip
+2 Sun-Spider, Nimble Webber
+2 Skyward Spider
+2 Spell Pierce
+
+SB: 3 Annul
+SB: 3 Rest in Peace
+SB: 3 No More Lies
+SB: 2 Seam Rip
+SB: 2 An Offer You Can't Refuse
+SB: 2 Spell Pierce

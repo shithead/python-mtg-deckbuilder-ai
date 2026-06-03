@@ -1,0 +1,37 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+6 Plains
+4 Godless Shrine
+3 Scoured Barrens
+3 Concealed Courtyard
+3 Shattered Sanctum
+1 Swamp
+1 Lupinflower Village
+1 Mudflat Village
+4 Essence Channeler
+4 Hinterland Sanctifier
+4 Deep-Cavern Bat
+4 Case of the Uneaten Feast
+3 Starscape Cleric
+3 Haliya, Guided by Light
+3 Amalia Benavides Aguirre
+3 Sheltered by Ghosts
+2 Moseo, Vein's New Dean
+2 Seam Rip
+2 Zoraline, Cosmos Caller
+1 Bloodthirsty Conqueror
+1 Leonardo, Cutting Edge
+1 Darkstar Augur
+1 Momo, Friendly Flier
+
+SB: 3 Cavern of Souls
+SB: 3 Lunar Convocation
+SB: 2 Decorum Dissertation
+SB: 2 Cathar Commando
+SB: 2 Soul-Guide Lantern
+SB: 1 Ghost Vacuum
+SB: 1 Clarion Conqueror
+SB: 1 Kutzil's Flanker

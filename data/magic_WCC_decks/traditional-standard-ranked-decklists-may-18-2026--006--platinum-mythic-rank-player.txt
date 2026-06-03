@@ -1,0 +1,35 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+4 Sacred Foundry
+4 Riverpyre Verge
+4 Inspiring Vantage
+3 Steam Vents
+2 Sunbillow Verge
+2 Spirebluff Canal
+2 Floodfarm Verge
+1 Mountain
+1 Island
+1 Plains
+4 Hardened Academic
+4 Helping Hand
+4 Marauding Mako
+4 Abhorrent Oculus
+4 Fear of Missing Out
+3 Pursue the Past
+3 Burst Lightning
+3 Steamcore Scholar
+2 Cool but Rude
+2 Quantum Riddler
+2 Winternight Stories
+1 Erode
+
+SB: 3 Voice of Victory
+SB: 2 Pyroclasm
+SB: 2 Spell Snare
+SB: 2 Requisition Raid
+SB: 2 Sheltered by Ghosts
+SB: 2 Annul
+SB: 2 Soul-Guide Lantern

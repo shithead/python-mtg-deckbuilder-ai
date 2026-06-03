@@ -1,0 +1,27 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+15 Forest
+4 Fabled Passage
+4 Escape Tunnel
+3 Ba Sing Se
+4 Sazh's Chocobo
+4 Icetill Explorer
+4 Keen-Eyed Curator
+4 Badgermole Cub
+4 Earthbender Ascension
+4 Llanowar Elves
+4 Mightform Harmonizer
+3 Meltstrider's Resolve
+2 Sapling Nursery
+1 Royal Treatment
+
+SB: 4 Mossborn Hydra
+SB: 2 Sapling Nursery
+SB: 2 Surrak, Elusive Hunter
+SB: 2 Torpor Orb
+SB: 2 Origin of Metalbending
+SB: 2 Pawpatch Formation
+SB: 1 Meltstrider's Resolve

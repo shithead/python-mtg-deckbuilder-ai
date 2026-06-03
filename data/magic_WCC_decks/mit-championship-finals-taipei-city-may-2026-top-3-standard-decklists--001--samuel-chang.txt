@@ -1,0 +1,37 @@
+// Samuel Chang
+// MIT Championship Finals: Taipei City
+// May 24, 2026
+// Standard
+
+2 Swamp
+1 Opulent Palace
+3 Restless Reef
+2 Overgrown Tomb
+4 Deceit
+3 Wistfulness
+2 Oildeep Gearhulk
+2 Winternight Stories
+3 Bitter Triumph
+4 Superior Spider-Man
+2 Cavern of Souls
+3 Day of Black Sun
+2 Undercity Sewers
+2 Wastewood Verge
+1 Shoot the Sheriff
+1 Deadly Cover-Up
+4 Requiting Hex
+2 Stock Up
+4 Watery Grave
+4 Gloomlake Verge
+4 Deathcap Glade
+2 Overlord of the Balemurk
+3 Emeritus of Ideation
+
+SB: 1 Disdainful Stroke
+SB: 2 Strategic Betrayal
+SB: 2 Doomsday Excruciator
+SB: 2 Qarsi Revenant
+SB: 4 Duress
+SB: 1 Ghost Vacuum
+SB: 2 Flashfreeze
+SB: 1 Sunderflock

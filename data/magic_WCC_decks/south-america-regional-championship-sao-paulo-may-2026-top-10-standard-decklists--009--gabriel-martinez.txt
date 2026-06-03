@@ -1,0 +1,33 @@
+// Gabriel Martinez
+// South America Regional Championship: São Paulo
+// May 17, 2026
+// Standard
+
+4 Erode
+1 Lumbering Worldwagon
+4 Earthbender Ascension
+1 Temple Garden
+4 Sazh's Chocobo
+8 Forest
+2 Icetill Explorer
+1 Keen-Eyed Curator
+4 Llanowar Elves
+4 Badgermole Cub
+4 Fabled Passage
+2 Dyadrine, Synthesis Amalgam
+4 Hushwood Verge
+4 Mightform Harmonizer
+4 Escape Tunnel
+2 Plains
+3 Ba Sing Se
+1 Snakeskin Veil
+3 Mossborn Hydra
+
+SB: 3 Surrak, Elusive Hunter
+SB: 3 Sheltered by Ghosts
+SB: 1 Keen-Eyed Curator
+SB: 1 Kutzil, Malamet Exemplar
+SB: 1 Mossborn Hydra
+SB: 3 Rest in Peace
+SB: 2 Snakeskin Veil
+SB: 1 Voice of Victory

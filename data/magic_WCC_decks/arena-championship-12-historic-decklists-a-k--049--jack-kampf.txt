@@ -1,0 +1,36 @@
+// Jack Kampf
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Swamp
+3 Phelia, Exuberant Shepherd
+4 Prismatic Vista
+3 Thoughtseize
+4 Starting Town
+2 Fatal Push
+4 Ketramose, the New Dawn
+2 Hallowed Fountain
+2 Tamiyo, Inquisitive Student
+1 Floodfarm Verge
+2 Abhorrent Oculus
+1 Island
+4 Fragment Reality
+4 Psychic Frog
+2 Watery Grave
+1 Bleachbone Verge
+2 Quantum Riddler
+3 Boggart Trawler
+2 Plains
+3 Relic of Progenitus
+3 End of the Hunt
+1 Gloomlake Verge
+2 Godless Shrine
+4 Overlord of the Balemurk
+
+SB: 2 Tishana's Tidebinder
+SB: 2 Consign to Memory
+SB: 4 Deafening Silence
+SB: 4 Divine Purge
+SB: 2 Test of Talents
+SB: 1 Emrakul, the Aeons Torn

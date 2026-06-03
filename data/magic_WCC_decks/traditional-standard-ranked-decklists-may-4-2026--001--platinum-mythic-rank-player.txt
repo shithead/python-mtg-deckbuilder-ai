@@ -1,0 +1,48 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+3 Inspiring Vantage
+3 Spirebluff Canal
+3 University Campus
+3 Island
+2 Mountain
+2 Dalkovan Encampment
+2 Plains
+2 Mystic Monastery
+4 Exorcise
+4 Boros Charm
+4 Quick Study
+4 Lightning Helix
+3 Mocking Sprite
+3 Shiko, Paragon of the Way
+2 Improvisation Capstone
+2 Korvold and the Noble Thief
+2 Lightning Strike
+2 Silent Hallcreeper
+2 J. Jonah Jameson
+1 Slickshot Lockpicker
+1 Omniscience
+1 Enduring Curiosity
+1 Thousand-Year Storm
+1 Unwelcome Sprite
+1 Archmage of Runes
+1 Magda, the Hoardmaster
+1 Meticulous Artisan
+
+SB: 1 Kellan, the Kid
+SB: 1 Perennation
+SB: 1 Alesha, Who Laughs at Fate
+SB: 1 Ugin, Eye of the Storms
+SB: 1 Charred Foyer // Warped Space
+SB: 1 Krang, Utrom Warlord
+SB: 1 Ultima
+SB: 1 All-Out Assault
+SB: 1 Kefka, Court Mage
+SB: 1 Niv-Mizzet, Visionary
+SB: 1 Neriv, Heart of the Storm
+SB: 1 Slash, Reptile Rampager
+SB: 1 Fire Lord Azula
+SB: 1 Riptide Gearhulk
+SB: 1 Aurelia, the Warleader

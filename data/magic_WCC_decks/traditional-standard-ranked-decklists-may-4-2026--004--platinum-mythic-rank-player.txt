@@ -1,0 +1,40 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+4 Overgrown Tomb
+4 Wastewood Verge
+3 Blooming Marsh
+3 Forest
+3 Swamp
+2 Restless Cottage
+2 Soulstone Sanctuary
+2 Ba Sing Se
+1 Deathcap Glade
+4 Llanowar Elves
+4 Badgermole Cub
+4 Requiting Hex
+4 Unholy Annex // Ritual Chamber
+3 Professor Dellian Fel
+3 Mind Roots
+2 Maelstrom Pulse
+2 Strategic Betrayal
+2 Duress
+2 Firdoch Core
+2 Emeritus of Abundance
+1 Witherbloom Charm
+1 Tragedy Feaster
+1 Mosswood Dreadknight
+1 Keen-Eyed Curator
+
+SB: 3 Vicious Rivalry
+SB: 2 Duress
+SB: 2 Scrapshooter
+SB: 2 Shoot the Sheriff
+SB: 1 Tragedy Feaster
+SB: 1 Deadly Cover-Up
+SB: 1 Leatherhead, Swamp Stalker
+SB: 1 Surrak, Elusive Hunter
+SB: 1 Strategic Betrayal
+SB: 1 Ghost Vacuum

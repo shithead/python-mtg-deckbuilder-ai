@@ -1,0 +1,35 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+8 Plains
+4 Multiversal Passage
+3 Sacred Foundry
+3 Mountain
+1 Rockface Village
+1 Fire Nation Palace
+4 Flowerfoot Swordmaster
+4 Cheeky House-Mouse
+4 Authority of the Consuls
+4 Emberheart Challenger
+3 Graduation Day
+3 Ancestral Anger
+2 Lavaspur Boots
+2 Morningtide's Light
+2 Hexing Squelcher
+2 Practiced Offense
+2 Seedglaive Mentor
+2 Wild Ride
+2 Opera Love Song
+2 Sheltered by Ghosts
+1 Raging Battle Mouse
+1 Stirring Hopesinger
+
+SB: 4 Restoration Magic
+SB: 2 Seam Rip
+SB: 2 Personify
+SB: 2 Requisition Raid
+SB: 2 Sheltered by Ghosts
+SB: 2 Burst Lightning
+SB: 1 Lightning Helix

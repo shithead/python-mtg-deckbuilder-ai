@@ -1,0 +1,34 @@
+// Yusuke Nakamura
+// Champions Cup Final: Kyoto
+// May 9, 2026
+// Standard
+
+7 Island
+4 Opt
+2 Eddymurk Crab
+4 Stormchaser's Talent
+4 Burst Lightning
+4 Boomerang Basics
+4 Colorstorm Stallion
+4 Flow State
+1 Impractical Joke
+2 Multiversal Passage
+1 Spell Pierce
+1 Stock Up
+4 Riverpyre Verge
+4 Steam Vents
+4 Spirebluff Canal
+4 Sleight of Hand
+2 Vibrant Outburst
+4 Slickshot Show-Off
+
+SB: 1 Disdainful Stroke
+SB: 1 Eddymurk Crab
+SB: 1 Slagstorm
+SB: 2 Get Out
+SB: 1 Impractical Joke
+SB: 2 Roaring Furnace // Steaming Sauna
+SB: 2 Annul
+SB: 2 Ral, Crackling Wit
+SB: 2 Soul-Guide Lantern
+SB: 1 Broadside Barrage

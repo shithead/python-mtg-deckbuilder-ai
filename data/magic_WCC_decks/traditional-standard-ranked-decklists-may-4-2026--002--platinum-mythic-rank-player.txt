@@ -1,0 +1,31 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+4 Godless Shrine
+4 Plains
+4 Concealed Courtyard
+4 Dalkovan Encampment
+4 Bleachbone Verge
+2 Swamp
+4 Amalia Benavides Aguirre
+4 Case of the Uneaten Feast
+4 Essence Channeler
+4 Voice of Victory
+4 Hinterland Sanctifier
+3 Moseo, Vein's New Dean
+3 Starscape Cleric
+3 Syr Vondam, Sunstar Exemplar
+3 Haliya, Guided by Light
+2 Erode
+2 Bitter Triumph
+2 Sothera, the Supervoid
+
+SB: 3 Sunset Saboteur
+SB: 3 Rest in Peace
+SB: 3 Clarion Conqueror
+SB: 2 Seam Rip
+SB: 2 Cathar Commando
+SB: 1 Ancient Vendetta
+SB: 1 Duress

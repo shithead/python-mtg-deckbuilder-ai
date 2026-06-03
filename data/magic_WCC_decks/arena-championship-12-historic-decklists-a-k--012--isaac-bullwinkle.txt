@@ -1,0 +1,37 @@
+// Isaac Bullwinkle
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Prismatic Vista
+2 Deem Inferior
+3 Chain Lightning
+1 Surgical Extraction
+2 Swiftspear's Teachings
+4 Treasure Cruise
+1 Noxious Revival
+4 Arclight Phoenix
+4 Consider
+4 Ponder
+3 Island
+1 Mountain
+1 Force of Negation
+4 Thought Scour
+1 Into the Flood Maw
+4 Faithless Looting
+4 Steam Vents
+4 Manamorphose
+4 Spirebluff Canal
+1 Fiery Islet
+4 A-Demilich
+
+SB: 1 Soulless Jailer
+SB: 1 Maddening Hex
+SB: 1 Annul
+SB: 3 Force of Negation
+SB: 1 Cindercone Smite
+SB: 2 Brazen Borrower
+SB: 2 Rending Volley
+SB: 2 Meltdown
+SB: 1 Quantum Riddler
+SB: 1 Spell Snare

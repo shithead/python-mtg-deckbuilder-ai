@@ -1,0 +1,32 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+5 Forest
+5 Swamp
+4 Northampton Farm
+4 Jungle Hollow
+2 Temple of Malady
+2 Deathcap Glade
+1 Underground Mortuary
+4 Ouroboroid
+4 Dragon Sniper
+4 Predator Ooze
+4 Qarsi Revenant
+4 Fynn, the Fangbearer
+3 Momentum Breaker
+3 Phyrexian Arena
+3 Vivien Reid
+2 The Aetherspark
+2 Cecil, Dark Knight
+1 Painful Quandary
+1 Morlun, Devourer of Spiders
+1 Deadly Cover-Up
+1 Vastlands Scavenger
+
+SB: 4 Duress
+SB: 4 Intimidation Tactics
+SB: 4 Ozai's Cruelty
+SB: 2 Cerebral Confiscation
+SB: 1 Cruelclaw's Heist

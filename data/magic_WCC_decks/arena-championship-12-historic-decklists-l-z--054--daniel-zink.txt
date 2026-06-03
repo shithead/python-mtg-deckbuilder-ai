@@ -1,0 +1,32 @@
+// Daniel Zink
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Landlore Navigator
+4 Arcbound Ravager
+2 Krang, Master Mind
+4 Drix Interlacer
+2 Force of Negation
+2 Tamiyo, Inquisitive Student
+4 Great Furnace
+1 Island
+4 Mox Amber
+4 Kappa Cannoneer
+4 Emry, Lurker of the Loch
+4 Seat of the Synod
+4 Pinnacle Emissary
+3 Ornithopter
+2 Sink into Stupor
+4 Weapons Manufacturing
+4 Tormod's Crypt
+4 Spirebluff Canal
+1 Steam Vents
+2 Fiery Islet
+
+SB: 2 Landlore Navigator
+SB: 4 Spell Snare
+SB: 3 Machinist's Dismissal
+SB: 1 By Force
+SB: 1 Soul-Guide Lantern
+SB: 4 Galvanic Blast

@@ -1,0 +1,35 @@
+// Naoya Kawanishi
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Counterspell
+2 Swamp
+2 Baleful Strix
+2 Sheoldred's Edict
+2 Tasigur, the Golden Fang
+1 Kaito, Bane of Nightmares
+1 Otawara, Soaring City
+4 Prismatic Vista
+4 Thoughtseize
+4 Fatal Push
+4 Tamiyo, Inquisitive Student
+4 Darkslick Shores
+1 Snapcaster Mage
+4 Ponder
+2 Island
+3 Force of Negation
+4 Psychic Frog
+4 Watery Grave
+2 Quantum Riddler
+2 Sink into Stupor
+1 Lórien Revealed
+3 Gloomlake Verge
+
+SB: 1 Surgical Extraction
+SB: 3 Damping Sphere
+SB: 3 Toxic Deluge
+SB: 2 Mystical Dispute
+SB: 2 Barrowgoyf
+SB: 2 Harbinger of the Seas
+SB: 2 Relic of Progenitus

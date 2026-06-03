@@ -1,0 +1,45 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+4 Cavern of Souls
+4 Starting Town
+3 Stomping Ground
+3 Deathcap Glade
+2 Mountain
+2 Thornspire Verge
+1 Wastewood Verge
+1 Blood Crypt
+1 Forest
+1 Blazemire Verge
+1 Swamp
+4 Random Encounter
+4 Anticausal Vestige
+3 Tannuk, Steadfast Second
+3 Overlord of the Hauntwoods
+3 Abandon Attachments
+2 Raph & Mikey, Troublemakers
+2 Overlord of the Boilerbilges
+2 Slagstorm
+2 Vaultborn Tyrant
+2 Firdoch Core
+2 Studious First-Year
+2 Trumpeting Carnosaur
+2 Zombify
+1 Fire Magic
+1 Unholy Annex // Ritual Chamber
+1 Progenitus
+1 Aurelia, the Warleader
+
+SB: 2 Overlord of the Boilerbilges
+SB: 2 Abrade
+SB: 2 Cease // Desist
+SB: 2 Fire Magic
+SB: 1 Slagstorm
+SB: 1 Ugin, Eye of the Storms
+SB: 1 Tannuk, Steadfast Second
+SB: 1 Raph & Mikey, Troublemakers
+SB: 1 Ureni, the Song Unending
+SB: 1 Extinguisher Battleship
+SB: 1 Unholy Annex // Ritual Chamber

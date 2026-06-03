@@ -1,0 +1,38 @@
+// Adriano Di Natale
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+2 Flickerwisp
+3 Swamp
+3 Phelia, Exuberant Shepherd
+2 Witch Enchanter
+2 Thoughtseize
+4 Concealed Courtyard
+1 Archon of Emeria
+4 Prismatic Vista
+4 Fatal Push
+4 Juggernaut Peddler
+3 Ketramose, the New Dawn
+1 Dauthi Voidwalker
+1 Esper Sentinel
+1 Darkstar Banisher
+3 Dedicated Dollmaker
+1 Fragment Reality
+2 Porcine Portent
+3 Bleachbone Verge
+1 Takenuma, Abandoned Mire
+1 Plains
+2 Boggart Trawler
+4 Relic of Progenitus
+4 Godless Shrine
+4 Overlord of the Balemurk
+
+SB: 1 Surgical Extraction
+SB: 2 Dauthi Voidwalker
+SB: 3 Deafening Silence
+SB: 2 Fragment Reality
+SB: 1 Elesh Norn, Mother of Machines
+SB: 2 Thoughtseize
+SB: 3 Clarion Conqueror
+SB: 1 Elspeth, Storm Slayer

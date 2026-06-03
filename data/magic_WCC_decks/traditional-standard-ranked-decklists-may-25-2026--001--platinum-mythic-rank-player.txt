@@ -1,0 +1,43 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+4 Forest
+4 Starting Town
+4 Mountain
+3 Stomping Ground
+2 Breeding Pool
+2 Fabled Passage
+1 Multiversal Passage
+1 Botanical Sanctum
+1 Island
+1 Mistrise Village
+4 Outcaster Trailblazer
+4 Temur Battlecrier
+4 Anticausal Vestige
+4 Llanowar Elves
+3 Roaming Throne
+3 Lumbering Worldwagon
+3 Esper Origins
+2 Devastating Onslaught
+2 Grow from the Ashes
+2 Terror of the Peaks
+1 Spider-Sense
+1 Dragonhawk, Fate's Tempest
+1 Quantum Riddler
+1 Vastlands Scavenger
+1 Scrapshooter
+1 Abrade
+
+SB: 2 Spider-Sense
+SB: 2 Enduring Curiosity
+SB: 2 Nature's Rhythm
+SB: 2 Wistfulness
+SB: 1 Scrapshooter
+SB: 1 Abrade
+SB: 1 Krang, Utrom Warlord
+SB: 1 Dragonhawk, Fate's Tempest
+SB: 1 Vastlands Scavenger
+SB: 1 Vibrance
+SB: 1 Sab-Sunen, Luxa Embodied

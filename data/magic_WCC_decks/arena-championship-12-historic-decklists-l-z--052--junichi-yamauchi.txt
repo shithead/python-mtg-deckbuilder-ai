@@ -1,0 +1,36 @@
+// Junichi Yamauchi
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Prismatic Vista
+3 Chain Lightning
+2 Swiftspear's Teachings
+4 Treasure Cruise
+2 Noxious Revival
+4 Arclight Phoenix
+4 Ponder
+1 Lightning Axe
+3 Deem Inferior
+4 Consider
+1 Mountain
+3 Island
+4 Thought Scour
+4 Faithless Looting
+4 Manamorphose
+4 Steam Vents
+4 Spirebluff Canal
+4 A-Demilich
+1 Fiery Islet
+
+SB: 1 Scalding Viper
+SB: 1 Lightning Axe
+SB: 3 Force of Negation
+SB: 2 Spell Snare
+SB: 1 Cindercone Smite
+SB: 1 Slickshot Show-Off
+SB: 2 Rending Volley
+SB: 1 Brazen Borrower
+SB: 1 Meltdown
+SB: 1 Alpine Moon
+SB: 1 Brotherhood's End

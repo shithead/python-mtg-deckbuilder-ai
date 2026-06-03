@@ -1,0 +1,36 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+4 Bleachbone Verge
+4 Multiversal Passage
+4 Godless Shrine
+3 Starting Town
+3 Shadowy Backstreet
+2 Swamp
+1 Fountainport
+1 Plains
+1 Shattered Sanctum
+4 Snarling Gorehound
+4 Moonshadow
+4 Vengeful Bloodwitch
+4 Voice of Victory
+4 Umbral Collar Zealot
+3 Syr Vondam, Sunstar Exemplar
+3 Raise the Past
+3 Splitskin Doll
+2 Timeline Culler
+2 Ral Zarek, Guest Lecturer
+2 Zahur, Glory's Past
+1 Split Up
+1 Beseech the Mirror
+
+SB: 2 Duress
+SB: 2 Mai, Scornful Striker
+SB: 2 Curious Farm Animals
+SB: 2 Soul-Guide Lantern
+SB: 2 Authority of the Consuls
+SB: 2 Split Up
+SB: 1 Sothera, the Supervoid
+SB: 1 Deep-Cavern Bat

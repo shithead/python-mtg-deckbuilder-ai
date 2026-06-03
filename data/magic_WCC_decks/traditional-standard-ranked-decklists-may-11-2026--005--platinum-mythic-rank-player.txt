@@ -1,0 +1,38 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+8 Forest
+8 Swamp
+2 Fountainport
+2 Underground Mortuary
+2 Restless Cottage
+1 Wastewood Verge
+1 Pit of Offerings
+4 Llanowar Elves
+4 Innkeeper's Talent
+4 Studious First-Year
+3 Professor Dellian Fel
+3 Summon: Fenrir
+3 Sephiroth, Fabled SOLDIER
+2 Deadly Cover-Up
+2 Nine-Lives Familiar
+2 Hero's Downfall
+2 Bandit's Talent
+1 The Gitrog, Ravenous Ride
+1 Liliana, Dreadhorde General
+1 Archenemy's Charm
+1 Maelstrom Pulse
+1 Season of Gathering
+1 Aclazotz, Deepest Betrayal
+1 The End
+
+SB: 4 Collector's Vault
+SB: 3 Monument to Endurance
+SB: 2 Ugin, Eye of the Storms
+SB: 2 Instant Ramen
+SB: 1 The Aetherspark
+SB: 1 Solemn Simulacrum
+SB: 1 Sire of Seven Deaths
+SB: 1 Summon: Bahamut

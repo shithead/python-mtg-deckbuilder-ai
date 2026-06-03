@@ -1,0 +1,32 @@
+// Ziora Doffek
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Baral, Chief of Compliance
+3 Fiery Islet
+4 Prismatic Vista
+4 Tamiyo, Inquisitive Student
+4 Ponder
+4 Consider
+4 Ral, Monsoon Mage
+1 Mountain
+4 Brain Freeze
+3 Flow State
+2 Island
+4 Mox Amber
+4 Underworld Breach
+3 Faithless Looting
+1 Sink into Stupor
+4 Manamorphose
+3 Steam Vents
+4 Spirebluff Canal
+
+SB: 2 Surgical Extraction
+SB: 1 Into the Flood Maw
+SB: 3 Spell Pierce
+SB: 3 Cindercone Smite
+SB: 2 By Force
+SB: 2 Meltdown
+SB: 1 Pyroclasm
+SB: 1 Tendrils of Agony

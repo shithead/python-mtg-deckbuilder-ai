@@ -1,0 +1,42 @@
+// Kouhei Takeda
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+3 Umbral Collar Zealot
+1 Marionette Apprentice
+4 Juggernaut Peddler
+4 Starting Town
+2 Temple Garden
+2 Overgrown Tomb
+1 Sylvan Safekeeper
+4 Birthing Ritual
+2 Badgermole Cub
+2 Birds of Paradise
+3 Blooming Marsh
+4 A-Cauldron Familiar
+1 A-Haywire Mite
+1 Yavimaya, Cradle of Growth
+3 Mana Confluence
+4 Gilded Goose
+1 Chittering Illuminator
+2 Voice of Resurgence
+2 Boseiju, Who Endures
+3 Razorverge Thicket
+1 Bartolomé del Presidio
+2 Silent Clearing
+4 Chord of Calling
+4 Samwise Gamgee
+
+SB: 1 Kraul Harpooner
+SB: 1 Jirina, Dauntless General
+SB: 1 Chittering Illuminator
+SB: 1 Crystal Barricade
+SB: 2 Deafening Silence
+SB: 1 Lurrus of the Dream-Den
+SB: 3 Fragment Reality
+SB: 1 Patriar's Humiliation
+SB: 1 Force of Vigor
+SB: 1 Abrupt Decay
+SB: 1 Thoughtseize
+SB: 1 Thalia, Guardian of Thraben

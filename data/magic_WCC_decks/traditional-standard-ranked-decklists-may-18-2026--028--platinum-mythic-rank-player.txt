@@ -1,0 +1,34 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+4 Overgrown Tomb
+4 Breeding Pool
+4 Watery Grave
+3 Starting Town
+2 Island
+2 Multiversal Passage
+2 Gloomlake Verge
+1 Forest
+1 Swamp
+4 Stock Up
+4 Stormchaser's Talent
+4 Boomerang Basics
+4 Applied Geometry
+4 Deep-Cavern Bat
+4 Fear of Isolation
+3 Momentum Breaker
+3 Bandit's Talent
+3 Nowhere to Run
+2 Witherbloom Charm
+1 The Soul Stone
+1 Overlord of the Floodpits
+
+SB: 4 Deceit
+SB: 2 Quandrix Charm
+SB: 2 Strategic Betrayal
+SB: 2 Superior Spider-Man
+SB: 2 Requiting Hex
+SB: 2 Chomping Changeling
+SB: 1 Nowhere to Run

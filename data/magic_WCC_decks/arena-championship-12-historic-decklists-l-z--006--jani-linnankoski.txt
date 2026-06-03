@@ -1,0 +1,36 @@
+// Jani Linnankoski
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Counterspell
+4 Sea Gate Restoration
+1 Otawara, Soaring City
+4 Aquatic Subtlety
+4 Push // Pull
+1 Cunning Azurescale
+4 Impulse
+2 Darkslick Shores
+2 Remand
+3 Island
+3 Otherworldly Gaze
+1 Roiling Dragonstorm
+1 Marang River Regent
+4 Silundi Vision
+1 Into the Flood Maw
+4 Dragonstorm
+2 Watery Grave
+4 Hidetsugu and Kairi
+4 Sink into Stupor
+3 Gloomlake Verge
+4 Force Spike
+
+SB: 3 Surgical Extraction
+SB: 1 Tamiyo, Inquisitive Student
+SB: 1 Consign to Memory
+SB: 3 Force of Negation
+SB: 2 Flusterstorm
+SB: 1 Currency Converter
+SB: 2 Into the Flood Maw
+SB: 1 Fading Hope
+SB: 1 Psychic Frog

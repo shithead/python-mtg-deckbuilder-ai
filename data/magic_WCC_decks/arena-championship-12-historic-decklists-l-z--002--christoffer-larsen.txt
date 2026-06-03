@@ -1,0 +1,40 @@
+// Christoffer Larsen
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Fatal Push
+1 Forest
+2 Swamp
+1 Mountain
+2 Blood Crypt
+3 Stomping Ground
+4 Thoughtseize
+2 Inquisition of Kozilek
+3 Blooming Marsh
+1 Nurturing Peatland
+4 Prismatic Vista
+2 Tarmogoyf
+4 Ignoble Hierarch
+1 Crucias, Titan of the Waves
+1 Boseiju, Who Endures
+1 Takenuma, Abandoned Mire
+4 Jarsyl, Dark Age Scion
+4 Malevolent Rumble
+1 Esper Origins
+4 Starting Town
+4 Barrowgoyf
+4 Pyrogoyf
+2 Abrupt Decay
+1 Fable of the Mirror-Breaker
+
+SB: 1 Meltdown
+SB: 1 Surgical Extraction
+SB: 2 End of the Hunt
+SB: 2 Culling Ritual
+SB: 2 Damping Sphere
+SB: 1 A-Haywire Mite
+SB: 1 Spectacle of Destruction
+SB: 1 Soul-Guide Lantern
+SB: 3 Magebane Lizard
+SB: 1 Jegantha, the Wellspring

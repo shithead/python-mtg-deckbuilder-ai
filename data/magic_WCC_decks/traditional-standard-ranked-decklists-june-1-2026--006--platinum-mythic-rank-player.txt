@@ -1,0 +1,39 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+5 Plains
+4 Hallowed Fountain
+4 Floodfarm Verge
+4 Starting Town
+3 Island
+2 Multiversal Passage
+2 Abandoned Air Temple
+1 Restless Anchorage
+4 Aven Interrupter
+4 High Noon
+4 Aang, Swift Savior
+4 Skycoach Conductor
+4 Voice of Victory
+2 Seam Rip
+2 Enduring Innocence
+2 Spell Snare
+2 Floodpits Drowner
+2 No More Lies
+2 Malcolm, Alluring Scoundrel
+1 Get Lost
+1 Enduring Curiosity
+1 Avatar's Wrath
+
+SB: 2 Clarion Conqueror
+SB: 2 Ajani, Outland Chaperone
+SB: 2 Tishana's Tidebinder
+SB: 2 Rest in Peace
+SB: 1 Get Lost
+SB: 1 Avatar's Wrath
+SB: 1 Disdainful Stroke
+SB: 1 Wan Shi Tong, Librarian
+SB: 1 Requisition Raid
+SB: 1 Spell Snare
+SB: 1 Soul-Guide Lantern

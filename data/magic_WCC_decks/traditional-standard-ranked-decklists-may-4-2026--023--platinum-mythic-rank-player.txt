@@ -1,0 +1,27 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+19 Island
+1 Agna Qel'a
+4 Bounce Off
+4 Opt
+4 Sunderflock
+4 Eddymurk Crab
+4 Winternight Stories
+4 Sleight of Hand
+3 Three Steps Ahead
+3 Eluge, the Shoreless Sea
+3 Get Out
+3 Consult the Star Charts
+2 Unsummon
+2 Hydro-Man, Fluid Felon
+
+SB: 3 Soul-Guide Lantern
+SB: 2 Annul
+SB: 2 Aetherize
+SB: 2 Spell Snare
+SB: 2 The Legend of Kuruk
+SB: 2 Glen Elendra's Answer
+SB: 2 Spider-Sense

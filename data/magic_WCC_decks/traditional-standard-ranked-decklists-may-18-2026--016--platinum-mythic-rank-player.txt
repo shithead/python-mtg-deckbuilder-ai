@@ -1,0 +1,44 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+4 Wastewood Verge
+4 Overgrown Tomb
+4 Blooming Marsh
+3 Forest
+3 Swamp
+1 Restless Cottage
+1 Ba Sing Se
+1 Deathcap Glade
+1 Multiversal Passage
+1 Soulstone Sanctuary
+4 Llanowar Elves
+4 Badgermole Cub
+4 Unholy Annex // Ritual Chamber
+4 Requiting Hex
+3 Duress
+3 Professor Dellian Fel
+3 Keen-Eyed Curator
+2 Maelstrom Pulse
+2 Firdoch Core
+2 Emeritus of Abundance
+1 Strategic Betrayal
+1 Bitter Triumph
+1 Intimidation Tactics
+1 Shoot the Sheriff
+1 Tragedy Feaster
+1 Witherbloom Charm
+
+SB: 2 Super Shredder
+SB: 2 Strategic Betrayal
+SB: 2 Day of Black Sun
+SB: 1 Ouroboroid
+SB: 1 Duress
+SB: 1 Scrapshooter
+SB: 1 Decorum Dissertation
+SB: 1 Qarsi Revenant
+SB: 1 Ghost Vacuum
+SB: 1 Ygra, Eater of All
+SB: 1 Surrak, Elusive Hunter
+SB: 1 Leatherhead, Swamp Stalker

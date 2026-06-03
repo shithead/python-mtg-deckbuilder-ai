@@ -1,0 +1,32 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+8 Plains
+5 Forest
+4 Hushwood Verge
+2 Cavern of Souls
+2 Three Tree City
+1 Temple Garden
+1 Oakhollow Village
+7 Hare Apparent
+4 Valley Mightcaller
+4 Valley Questcaller
+4 Hop to It
+4 Get Lost
+4 Pawpatch Recruit
+3 Warren Warleader
+3 Burrowguard Mentor
+2 Caretaker's Talent
+1 Elspeth, Storm Slayer
+1 Season of the Burrow
+
+SB: 2 Dawn's Truce
+SB: 2 Starfall Invocation
+SB: 2 Static Snare
+SB: 2 Crumb and Get It
+SB: 2 Repel Calamity
+SB: 2 Wear Down
+SB: 1 Overprotect
+SB: 1 Royal Treatment

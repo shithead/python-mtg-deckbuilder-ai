@@ -1,0 +1,35 @@
+// Caleb Piersma
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Swamp
+4 Archon of Emeria
+3 Phelia, Exuberant Shepherd
+4 Prismatic Vista
+2 Ignoble Hierarch
+3 Forest
+4 Juggernaut Peddler
+4 Starting Town
+4 Skyclave Apparition
+1 Ketramose, the New Dawn
+1 Temple Garden
+4 Birds of Paradise
+4 Badgermole Cub
+1 Abandoned Air Temple
+4 Verdant Dread
+3 Boggart Trawler
+1 Plains
+1 Boseiju, Who Endures
+4 Ouroboroid
+1 Godless Shrine
+4 Noble Hierarch
+2 Razorverge Thicket
+
+SB: 3 Fatal Push
+SB: 1 Ketramose, the New Dawn
+SB: 1 Fragment Reality
+SB: 2 Fade from History
+SB: 1 Grist, the Hunger Tide
+SB: 3 Deafening Silence
+SB: 4 Endurance

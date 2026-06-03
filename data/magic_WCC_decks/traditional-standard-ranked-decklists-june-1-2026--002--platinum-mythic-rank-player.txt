@@ -1,0 +1,40 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+4 Godless Shrine
+4 Blood Crypt
+4 Starting Town
+4 Sacred Foundry
+2 Concealed Courtyard
+2 Blazemire Verge
+1 Inspiring Vantage
+1 Mountain
+4 Bloodghast
+4 Marauding Mako
+4 Iron-Shield Elf
+4 Cool but Rude
+4 Moonshadow
+4 Hardened Academic
+3 Practiced Offense
+2 Carnage, Crimson Chaos
+2 Burst Lightning
+2 Tersa Lightshatter
+1 Bloodthorn Flail
+1 Cecil, Dark Knight
+1 Shardmage's Rescue
+1 Inti, Seneschal of the Sun
+1 Sheltered by Ghosts
+
+SB: 2 Arachne, Psionic Weaver
+SB: 2 Case of the Crimson Pulse
+SB: 2 Erode
+SB: 2 Strategic Betrayal
+SB: 1 Voice of Victory
+SB: 1 Get Lost
+SB: 1 Dawn's Truce
+SB: 1 Monument to Endurance
+SB: 1 Qarsi Revenant
+SB: 1 Nowhere to Run
+SB: 1 Sheltered by Ghosts

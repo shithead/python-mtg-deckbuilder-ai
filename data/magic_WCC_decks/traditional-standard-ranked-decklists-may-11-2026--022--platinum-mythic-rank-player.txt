@@ -1,0 +1,42 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+8 Forest
+7 Plains
+3 Evolving Wilds
+1 Temple Garden
+1 Abandoned Air Temple
+4 Shared Roots
+3 Voice of Victory
+2 Restoration Magic
+2 Ajani, Outland Chaperone
+2 Skyknight Squire
+2 Delney, Streetwise Lookout
+2 Curious Farm Animals
+2 Brigid, Clachan's Heart
+2 Hop to It
+2 Good-Fortune Unicorn
+2 Split Up
+2 Kinbinding
+2 Authority of the Consuls
+2 Dragon Sniper
+1 Caretaker's Talent
+1 Day of Judgment
+1 Dalkovan Packbeasts
+1 Antiquities on the Loose
+1 Elspeth, Storm Slayer
+1 Hunter's Talent
+1 Case of the Gateway Express
+1 Fumigate
+1 Figure of Fable
+
+SB: 2 Dollmaker's Shop // Porcelain Gallery
+SB: 1 Dazzling Theater // Prop Room
+SB: 1 Innkeeper's Talent
+SB: 1 Ouroboroid
+SB: 1 Case of the Gateway Express
+SB: 1 Hunter's Talent
+SB: 1 Good-Fortune Unicorn
+SB: 1 Neighborhood Guardian

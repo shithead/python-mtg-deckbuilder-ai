@@ -1,0 +1,48 @@
+// Kelvin Chew
+// SEA Championship Final: Kuala Lumpur
+// May 24, 2026
+// Standard
+
+1 Cori Mountain Monastery
+2 Mistrise Village
+1 Negate
+2 Shattered Sanctum
+1 Abrade
+3 Inevitable Defeat
+1 Stormcarved Coast
+2 Flashback
+3 Consult the Star Charts
+4 Great Hall of the Biblioplex
+2 Hallowed Fountain
+4 Jeskai Revelation
+1 Sundown Pass
+2 No More Lies
+2 Sear
+1 Multiversal Passage
+2 Firebending Lesson
+2 Day of Judgment
+1 Lightning Helix
+3 Sacred Foundry
+1 Meticulous Archive
+4 Stock Up
+1 Plains
+4 Steam Vents
+4 Tablet of Discovery
+1 Sunbillow Verge
+2 Gloomlake Verge
+1 Godless Shrine
+1 Fire Magic
+1 North Wind Avatar
+
+SB: 1 Disdainful Stroke
+SB: 1 Return the Favor
+SB: 2 Strategic Betrayal
+SB: 1 Pest Control
+SB: 1 Pyroclasm
+SB: 2 Emeritus of Ideation // Ancestral Recall
+SB: 2 Flashfreeze
+SB: 1 Outrageous Robbery
+SB: 1 Petrified Hamlet
+SB: 1 Riverchurn Monument
+SB: 1 Day of Judgment
+SB: 1 Spell Snare

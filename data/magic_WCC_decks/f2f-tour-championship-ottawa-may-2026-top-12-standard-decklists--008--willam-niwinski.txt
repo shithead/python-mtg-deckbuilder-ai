@@ -1,0 +1,37 @@
+// Willam Niwinski
+// F2F Tour Championship: Ottawa
+// May 17, 2026
+// Standard
+
+1 Swamp
+4 Concealed Courtyard
+2 Erode
+4 Iron-Shield Elf
+2 Inspiring Vantage
+1 Cecil, Dark Knight
+4 Starting Town
+4 Practiced Offense
+1 Mountain
+1 Shardmage's Rescue
+4 Moonshadow
+4 Hardened Academic
+4 Marauding Mako
+3 Requiting Hex
+4 Sacred Foundry
+4 Cool but Rude
+1 Blazemire Verge
+4 Bloodghast
+2 Tersa Lightshatter
+1 Carnage, Crimson Chaos
+4 Blood Crypt
+1 Godless Shrine
+
+SB: 2 Inti, Seneschal of the Sun
+SB: 3 Strategic Betrayal
+SB: 1 Seam Rip
+SB: 1 Duel Tactics
+SB: 1 Shoot the Sheriff
+SB: 1 Leyline of the Void
+SB: 2 Case of the Crimson Pulse
+SB: 1 Erode
+SB: 3 Voice of Victory

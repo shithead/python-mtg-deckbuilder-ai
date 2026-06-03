@@ -1,0 +1,37 @@
+// Robert Wagner Krankel
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+6 Island
+1 Willowrush Verge
+4 Opt
+4 Elusive Otter
+4 Stormchaser's Talent
+4 Burst Lightning
+4 Boomerang Basics
+2 Colorstorm Stallion
+1 Breeding Pool
+4 Flow State
+1 Impractical Joke
+2 Secret Identity
+1 Wild Ride
+1 Multiversal Passage
+1 Spell Pierce
+4 Riverpyre Verge
+4 Steam Vents
+4 Spirebluff Canal
+4 Sleight of Hand
+4 Slickshot Show-Off
+
+SB: 1 Colorstorm Stallion
+SB: 1 Slagstorm
+SB: 3 Get Out
+SB: 1 Sear
+SB: 1 Ghost Vacuum
+SB: 1 Roaring Furnace // Steaming Sauna
+SB: 2 Into the Flood Maw
+SB: 2 Ral, Crackling Wit
+SB: 1 Soul-Guide Lantern
+SB: 1 Spell Pierce
+SB: 1 Broadside Barrage

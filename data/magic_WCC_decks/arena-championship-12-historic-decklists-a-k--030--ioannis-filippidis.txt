@@ -1,0 +1,36 @@
+// Ioannis Filippidis
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Esper Sentinel
+1 Mountain
+4 Kor Spiritdancer
+4 Light-Paws, Emperor's Voice
+4 Sunbaked Canyon
+4 Thought Partition
+4 Ethereal Armor
+1 Amped Raptor
+4 Shardmage's Rescue
+4 Demonic Ruckus
+4 Plains
+4 Sheltered by Ghosts
+4 Sacred Foundry
+4 Inspiring Vantage
+4 Prismatic Vista
+1 Mana Tithe
+1 Sticky Fingers
+1 Mother of Runes
+1 Sram, Senior Edificer
+1 Escape Velocity
+1 Fragment Reality
+
+SB: 4 Seam Rip
+SB: 1 Hexing Squelcher
+SB: 1 Grafdigger's Cage
+SB: 1 Thalia, Guardian of Thraben
+SB: 4 Rest in Peace
+SB: 1 Adanto Vanguard
+SB: 1 Angel's Grace
+SB: 1 Doorkeeper Thrull
+SB: 1 Lurrus of the Dream-Den

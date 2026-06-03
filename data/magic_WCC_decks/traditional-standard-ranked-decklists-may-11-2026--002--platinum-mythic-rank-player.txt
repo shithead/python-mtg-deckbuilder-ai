@@ -1,0 +1,31 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+7 Swamp
+7 Mountain
+4 Eclipsed Realms
+4 Cavern of Souls
+1 Blood Crypt
+4 Bile-Vial Boggart
+4 Boggart Cursecrafter
+4 Dropkick Bomber
+4 Searslicer Goblin
+4 Mudbutton Cursetosser
+4 Boggart Mischief
+3 Champion of the Weird
+2 Grub, Storied Matriarch
+2 Howlsquad Heavy
+2 Requiting Hex
+2 Cinder Strike
+2 Sourbread Auntie
+
+SB: 3 Abrade
+SB: 3 Duress
+SB: 2 Sothera, the Supervoid
+SB: 2 Shoot the Sheriff
+SB: 2 Soul-Guide Lantern
+SB: 1 Ghost Vacuum
+SB: 1 Deadly Cover-Up
+SB: 1 Feed the Swarm

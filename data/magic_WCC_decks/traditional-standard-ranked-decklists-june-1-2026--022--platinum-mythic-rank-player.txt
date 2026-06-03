@@ -1,0 +1,41 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+4 Sacred Foundry
+4 Steam Vents
+2 Plains
+2 Hallowed Fountain
+2 Sunbillow Verge
+1 Maelstrom of the Spirit Dragon
+1 Multiversal Passage
+1 Inspiring Vantage
+1 Floodfarm Verge
+1 Starting Town
+1 Cavern of Souls
+1 Island
+1 Spirebluff Canal
+4 Quantum Riddler
+4 Ashling, Rekindled
+4 Springleaf Drum
+4 Magmatic Hellkite
+4 Daydream
+4 Momo, Friendly Flier
+4 Nova Hellkite
+2 Seam Rip
+2 Go Ninja Go
+2 Practiced Offense
+2 Get Lost
+1 Parting Gust
+1 Erode
+
+SB: 2 Voice of Victory
+SB: 2 Clarion Conqueror
+SB: 2 Emeritus of Ideation
+SB: 2 Pyroclasm
+SB: 2 Rest in Peace
+SB: 2 Twinmaw Stormbrood
+SB: 1 Pyrrhic Strike
+SB: 1 Spectacular Tactics
+SB: 1 Wan Shi Tong, Librarian

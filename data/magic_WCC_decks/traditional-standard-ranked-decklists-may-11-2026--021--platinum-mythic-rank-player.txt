@@ -1,0 +1,54 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+4 Starting Town
+2 Riverpyre Verge
+2 Mistrise Village
+2 Thundering Falls
+2 Floodfarm Verge
+2 Lush Portico
+2 Elegant Parlor
+1 Breeding Pool
+1 Temple Garden
+1 Shadowy Backstreet
+1 Plains
+1 Hedge Maze
+1 Willowrush Verge
+1 Stomping Ground
+1 Gloomlake Verge
+1 Cori Mountain Monastery
+1 Great Hall of the Biblioplex
+1 Meticulous Archive
+4 Lightning Helix
+4 Jeskai Revelation
+3 Inevitable Defeat
+3 Stock Up
+3 No More Lies
+2 Sleight of Hand
+2 Ancient Cornucopia
+2 Lessons from Life
+2 North Wind Avatar
+2 Improvisation Capstone
+2 Shimmerwilds Growth
+1 Turtles in Time
+1 Quandrix, the Proof
+1 Prismari Charm
+1 Flow State
+
+SB: 1 Get Lost
+SB: 1 Aetherize
+SB: 1 Fire Magic
+SB: 1 Deadly Cover-Up
+SB: 1 Inevitable Defeat
+SB: 1 Day of Judgment
+SB: 1 Negate
+SB: 1 Stock Up
+SB: 1 Lessons from Life
+SB: 1 Erode
+SB: 1 Torpor Orb
+SB: 1 Rest in Peace
+SB: 1 Mathemagics
+SB: 1 Space-Time Anomaly
+SB: 1 Hexing Squelcher

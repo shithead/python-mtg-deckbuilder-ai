@@ -1,0 +1,40 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+6 Forest
+4 Mountain
+4 Stomping Ground
+3 Commercial District
+2 Kavaron, Memorial World
+1 Restless Ridgeline
+1 Thornspire Verge
+1 Fabled Passage
+1 Savage Mansion
+1 Evendo, Waking Haven
+4 Overlord of the Boilerbilges
+4 Llanowar Elves
+4 Bramble Familiar
+3 Summon: Fenrir
+2 Summon: Titan
+2 Fire Magic
+2 Enduring Courage
+2 Overlord of the Hauntwoods
+2 Summon: Bahamut
+2 Kona, Rescue Beastie
+2 Sandman, Shifting Scoundrel
+1 Ghalta, Stampede Tyrant
+1 Summoner's Grimoire
+1 Rydia, Summoner of Mist
+1 Terra, Magical Adept
+1 Michelangelo's Technique
+1 Sapling Nursery
+1 Lumbering Worldwagon
+
+SB: 4 Return the Favor
+SB: 3 Royal Treatment
+SB: 3 Magebane Lizard
+SB: 2 Hexing Squelcher
+SB: 2 Keen-Eyed Curator
+SB: 1 Origin of Metalbending

@@ -1,0 +1,31 @@
+// Marr Chata
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+4 Sunderflock
+6 Island
+4 Eddymurk Crab
+4 Opt
+3 Burst Lightning
+4 Traumatic Critique
+2 Get Out
+3 Winternight Stories
+2 Impractical Joke
+2 Multiversal Passage
+2 Spell Snare
+4 Hearth Elemental
+4 Riverpyre Verge
+4 Prismari Charm
+4 Steam Vents
+4 Spirebluff Canal
+4 Sleight of Hand
+
+SB: 1 Disdainful Stroke
+SB: 4 Colorstorm Stallion
+SB: 2 Get Out
+SB: 2 Spell Snare
+SB: 2 Annul
+SB: 2 Pit of Offerings
+SB: 1 Spell Pierce
+SB: 1 Broadside Barrage

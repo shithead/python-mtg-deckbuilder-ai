@@ -1,0 +1,34 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+16 Forest
+2 Hidden Grotto
+2 Three Tree City
+2 Cavern of Souls
+4 Dwynen's Elite
+4 Virulent Emissary
+4 Llanowar Elves
+4 Elvish Archdruid
+4 Topiary Lecturer
+4 Imperious Perfect
+3 Nature's Rhythm
+2 Craterhoof Behemoth
+2 Wildborn Preserver
+2 Tyvar, the Pummeler
+2 Greenbelt Guardian
+1 Reclamation Sage
+1 Dwynen, Gilt-Leaf Daen
+1 Growing Rites of Itlimoc
+
+SB: 1 Petrified Hamlet
+SB: 3 Assert Perfection
+SB: 2 Selfless Safewright
+SB: 2 Snakeskin Veil
+SB: 2 Scavenging Ooze
+SB: 1 Vivien Reid
+SB: 1 Reclamation Sage
+SB: 1 Primeval Bounty
+SB: 1 Cease // Desist
+SB: 1 Stormkeld Vanguard

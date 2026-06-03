@@ -1,0 +1,28 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+18 Island
+2 Agna Qel'a
+1 Mistrise Village
+1 Jidoor, Aristocratic Capital
+4 Unable to Scream
+4 Spyglass Siren
+4 Kitsune's Technique
+4 Veteran Ice Climber
+4 Consult the Star Charts
+4 Into the Flood Maw
+4 Riverchurn Monument
+4 Stock Up
+2 Aetherize
+2 Spell Snare
+1 The Water Crystal
+1 Spider-Sense
+
+SB: 3 Spell Pierce
+SB: 3 Annul
+SB: 3 Disdainful Stroke
+SB: 2 Spell Snare
+SB: 2 Spider-Sense
+SB: 2 Torpor Orb

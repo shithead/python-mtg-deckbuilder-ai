@@ -1,0 +1,27 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+6 Forest
+4 Multiversal Passage
+4 Thornspire Verge
+4 Stomping Ground
+3 Fabled Passage
+1 Mountain
+4 Ouroboroid
+4 Royal Treatment
+4 Llanowar Elves
+4 Lightning Strike
+4 Fear of Missing Out
+4 Tersa Lightshatter
+4 Bushwhack
+4 Patchwork Beastie
+4 Keen-Eyed Curator
+2 Scavenging Ooze
+
+SB: 4 Pyroclasm
+SB: 4 Scrapshooter
+SB: 3 Balustrade Wurm
+SB: 2 Sear
+SB: 2 Leatherhead, Swamp Stalker

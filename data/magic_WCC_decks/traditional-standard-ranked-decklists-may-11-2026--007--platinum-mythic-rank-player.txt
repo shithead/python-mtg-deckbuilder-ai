@@ -1,0 +1,42 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+4 Uthros, Titanic Godcore
+4 Kavaron, Memorial World
+4 Cavern of Souls
+3 Breeding Pool
+2 Spirebluff Canal
+2 Stomping Ground
+2 Multiversal Passage
+2 Starting Town
+1 Riverpyre Verge
+1 Forest
+1 Steam Vents
+4 Kona, Rescue Beastie
+4 Omniscience
+4 Ashling, Rekindled
+4 Formidable Speaker
+3 Marang River Regent
+3 Stock Up
+3 North Wind Avatar
+3 Winternight Stories
+2 Fire Magic
+1 Spell Snare
+1 Into the Flood Maw
+1 Firebending Lesson
+1 Spider-Sense
+
+SB: 2 Abrade
+SB: 2 Soul-Guide Lantern
+SB: 2 Spider-Sense
+SB: 1 Fire Magic
+SB: 1 Marang River Regent
+SB: 1 Ill-Timed Explosion
+SB: 1 Voice of Victory
+SB: 1 Extinguisher Battleship
+SB: 1 Omni-Changeling
+SB: 1 Traumatic Critique
+SB: 1 Origin of Metalbending
+SB: 1 Spell Pierce

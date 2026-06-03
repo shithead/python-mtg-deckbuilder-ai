@@ -1,0 +1,34 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+4 Bleachbone Verge
+4 Starting Town
+4 Blood Crypt
+4 Raucous Theater
+3 Concealed Courtyard
+3 Godless Shrine
+1 Swamp
+4 Hardened Academic
+4 Moonshadow
+4 Fear of Infinity
+4 Overlord of the Balemurk
+4 Fear of Missing Out
+3 Cool but Rude
+3 Iron-Shield Elf
+3 Defiled Crypt // Cadaver Lab
+2 Practiced Offense
+2 Marauding Mako
+2 Seam Rip
+2 Bitter Triumph
+
+SB: 3 Duress
+SB: 3 Ghost Vacuum
+SB: 2 Pyroclasm
+SB: 2 Bitter Triumph
+SB: 1 Iron-Shield Elf
+SB: 1 Marauding Mako
+SB: 1 Authority of the Consuls
+SB: 1 Monument to Endurance
+SB: 1 Seam Rip

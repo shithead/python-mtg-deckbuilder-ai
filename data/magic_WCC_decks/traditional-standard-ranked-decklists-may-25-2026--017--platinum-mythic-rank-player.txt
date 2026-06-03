@@ -1,0 +1,32 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+19 Mountain
+3 Rockface Village
+4 Nova Hellkite
+4 Hired Claw
+4 Burst Lightning
+4 Burnout Bashtronaut
+3 Lightning Strike
+3 Hexing Squelcher
+3 Zhao, the Moon Slayer
+2 Tokka & Rahzar, Terrible Twos
+2 Emberheart Challenger
+2 Shock
+1 Witchstalker Frenzy
+1 Full Bore
+1 Kellan, Planar Trailblazer
+1 Sunspine Lynx
+1 Howlsquad Heavy
+1 Tersa Lightshatter
+1 Inti, Seneschal of the Sun
+
+SB: 4 Magebane Lizard
+SB: 2 Soul-Guide Lantern
+SB: 2 Sunspine Lynx
+SB: 2 Witchstalker Frenzy
+SB: 2 Ghost Vacuum
+SB: 2 Scorching Shot
+SB: 1 Shock

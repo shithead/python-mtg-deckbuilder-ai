@@ -1,0 +1,40 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+4 Godless Shrine
+3 Starting Town
+3 Swamp
+2 Demolition Field
+2 Gloomlake Verge
+2 Concealed Courtyard
+2 Shattered Sanctum
+1 Restless Fortress
+1 Undercity Sewers
+1 Temple of Silence
+1 Shadowy Backstreet
+1 Plains
+1 Restless Reef
+4 Deceit
+3 Bitter Triumph
+3 Ral Zarek, Guest Lecturer
+3 Abhorrent Oculus
+3 Overlord of the Balemurk
+3 The Soul Stone
+3 Beseech the Mirror
+2 Zombify
+2 Day of Judgment
+2 Ancient Vendetta
+2 Nurturing Pixie
+2 Nowhere to Run
+2 Tinybones Joins Up
+1 Leyline of the Void
+1 Valgavoth, Terror Eater
+
+SB: 3 Starfield Shepherd
+SB: 3 Momo, Friendly Flier
+SB: 3 Daydream
+SB: 2 Nurturing Pixie
+SB: 2 Rest in Peace
+SB: 2 Quantum Riddler

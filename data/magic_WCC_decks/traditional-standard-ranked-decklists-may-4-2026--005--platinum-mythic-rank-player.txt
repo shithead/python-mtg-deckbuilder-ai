@@ -1,0 +1,35 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+4 Gloomlake Verge
+4 Watery Grave
+3 Willowrush Verge
+3 Breeding Pool
+3 Starting Town
+2 Overgrown Tomb
+2 Cavern of Souls
+2 Undercity Sewers
+2 Wastewood Verge
+4 Bringer of the Last Gift
+4 Superior Spider-Man
+4 Dredger's Insight
+4 Deceit
+3 Formidable Speaker
+3 Wistfulness
+3 Requiting Hex
+3 Ardyn, the Usurper
+2 Awaken the Honored Dead
+2 Rakshasa's Bargain
+2 Bitter Triumph
+1 Overlord of the Balemurk
+
+SB: 4 Duress
+SB: 3 Intimidation Tactics
+SB: 2 Spider-Sense
+SB: 2 Ghost Vacuum
+SB: 1 Professor Dellian Fel
+SB: 1 Witherbloom Charm
+SB: 1 Ral Zarek, Guest Lecturer
+SB: 1 Oko, Lorwyn Liege

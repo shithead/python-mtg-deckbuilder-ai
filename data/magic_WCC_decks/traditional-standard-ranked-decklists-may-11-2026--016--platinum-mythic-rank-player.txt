@@ -1,0 +1,37 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+4 Breeding Pool
+4 Urban Retreat
+4 Starting Town
+2 Plains
+2 Mistrise Village
+2 Swamp
+2 Fabled Passage
+1 Island
+1 Forest
+1 Wastewood Verge
+1 Mountain
+4 Inevitable Defeat
+4 Biomechan Engineer
+4 Erode
+4 Esper Origins
+4 Jeskai Revelation
+3 Urgent Necropsy
+3 Summon: Fenrir
+2 Shared Roots
+2 Together as One
+2 Lessons from Life
+2 Strategic Betrayal
+1 Ugin, Eye of the Storms
+1 Ultima
+
+SB: 3 Get Lost
+SB: 3 Ancient Vendetta
+SB: 2 The Rise of Sozin
+SB: 2 Syncopate
+SB: 2 Death Begets Life
+SB: 2 Ultima
+SB: 1 Strategic Betrayal

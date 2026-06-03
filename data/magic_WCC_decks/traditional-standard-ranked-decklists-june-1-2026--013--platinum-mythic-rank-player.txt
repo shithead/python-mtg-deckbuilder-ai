@@ -1,0 +1,32 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+8 Plains
+4 Island
+4 Hallowed Fountain
+2 Demolition Field
+2 Restless Anchorage
+2 Meticulous Archive
+2 Jidoor, Aristocratic Capital
+4 Raise the Past
+4 Essence Channeler
+4 Ruin-Lurker Bat
+4 Lifecreed Duo
+4 Hinterland Sanctifier
+3 Picklock Prankster
+3 The Tale of Tamiyo
+3 Hope Estheim
+3 Curious Farm Animals
+2 Riverchurn Monument
+2 Day of Judgment
+
+SB: 2 Three Steps Ahead
+SB: 2 Morningtide's Light
+SB: 2 The Ooze
+SB: 2 Exorcise
+SB: 2 Get Lost
+SB: 2 Day of Judgment
+SB: 2 Crystal Barricade
+SB: 1 Cease // Desist

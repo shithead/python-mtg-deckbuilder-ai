@@ -1,0 +1,37 @@
+// Drew Siebert
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Pyretic Ritual
+2 Glimpse the Impossible
+1 Gemstone Caverns
+1 Lindblum, Industrial Regency
+4 Needleverge Pathway
+4 Inspiring Vantage
+4 Reckless Impulse
+3 Storm of Memories
+4 Ruby Medallion
+2 Strike It Rich
+4 Ral, Monsoon Mage
+2 Wish
+4 Mountain
+4 Wrenn's Resolve
+2 Past in Flames
+4 Sacred Foundry
+1 Tend to the Kiln
+1 Artist's Talent
+4 Manamorphose
+4 Jeska's Will
+1 Valakut Awakening
+
+SB: 1 Surgical Extraction
+SB: 3 Orim's Chant
+SB: 1 Underworld Breach
+SB: 3 Wear // Tear
+SB: 1 Mass Hysteria
+SB: 1 Past in Flames
+SB: 1 Empty the Warrens
+SB: 1 Path to Exile
+SB: 2 Grapeshot
+SB: 1 Brotherhood's End

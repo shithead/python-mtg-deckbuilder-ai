@@ -1,0 +1,26 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+16 Swamp
+2 Soulstone Sanctuary
+2 Mudflat Village
+4 Shoot the Sheriff
+4 Timeline Culler
+4 Case of the Stashed Skeleton
+4 Tinybones, the Pickpocket
+4 Forsaken Miner
+4 Deep-Cavern Bat
+4 Strategic Betrayal
+4 Thought-Stalker Warlock
+4 Corpses of the Lost
+3 Dark Knight's Greatsword
+1 Cecil, Dark Knight
+
+SB: 4 Requiting Hex
+SB: 4 Duress
+SB: 3 Bitter Triumph
+SB: 2 Intimidation Tactics
+SB: 1 Gisa, the Hellraiser
+SB: 1 Ral Zarek, Guest Lecturer

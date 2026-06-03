@@ -1,0 +1,37 @@
+// Daniel Toledo
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+6 Mountain
+3 Kami of Bamboo Groves
+1 Gate to Tumbledown
+4 Prismatic Vista
+4 Exploration
+4 Scapeshift
+2 Forest
+4 A-The One Ring
+1 Abrade
+4 Stomping Ground
+4 Icetill Explorer
+4 Valakut, the Molten Pinnacle
+1 Fabled Passage
+4 Farseek
+2 Dryad of the Ilysian Grove
+4 Song of Seasons
+4 Commercial District
+2 Relic of Progenitus
+1 Boseiju, Who Endures
+1 Blast Zone
+
+SB: 1 Damping Sphere
+SB: 2 Disruptor Flute
+SB: 2 Dismember
+SB: 1 Shatterstorm
+SB: 1 Force of Vigor
+SB: 1 Pyroclasm
+SB: 1 Abrade
+SB: 1 Boseiju, Who Endures
+SB: 1 Hexing Squelcher
+SB: 2 Relic of Progenitus
+SB: 2 Vibrance

@@ -1,0 +1,36 @@
+// Manuel Corbacho
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+2 Swamp
+4 Phelia, Exuberant Shepherd
+1 Witch Enchanter
+4 Prismatic Vista
+3 Thoughtseize
+4 Juggernaut Peddler
+2 Starting Town
+4 Ketramose, the New Dawn
+2 Hallowed Fountain
+1 Floodfarm Verge
+4 Fragment Reality
+1 Island
+4 Psychic Frog
+2 Blot Out
+2 Porcine Portent
+3 Watery Grave
+1 Bleachbone Verge
+1 Plains
+1 Boggart Trawler
+4 Relic of Progenitus
+3 Godless Shrine
+1 Gloomlake Verge
+2 Overlord of the Balemurk
+4 Quantum Riddler
+
+SB: 3 High Noon
+SB: 2 Fatal Push
+SB: 2 Consign to Memory
+SB: 2 Wrath of the Skies
+SB: 3 Containment Priest
+SB: 3 Test of Talents

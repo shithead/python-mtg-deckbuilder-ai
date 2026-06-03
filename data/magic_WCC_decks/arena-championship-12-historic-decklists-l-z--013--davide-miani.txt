@@ -1,0 +1,45 @@
+// Davide Miani
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 High Noon
+1 Soul Partition
+1 Otawara, Soaring City
+1 Archon of Emeria
+4 Prismatic Vista
+2 Aang, Swift Savior
+1 Tajic, Legion's Valor
+4 Starting Town
+4 Aven Interrupter
+1 Floodfarm Verge
+3 Hallowed Fountain
+2 Remand
+1 Talion's Throneguard
+2 Island
+1 Tamiyo, Inquisitive Student
+1 Spell Snare
+3 Spell Queller
+1 Fragment Reality
+1 Into the Flood Maw
+1 Brazen Borrower
+2 Prismatic Ending
+3 Plains
+1 Sink into Stupor
+4 Reprieve
+4 Hydroponics Architect
+1 Steam Vents
+2 Eiganjo, Seat of the Empire
+4 Lórien Revealed
+
+SB: 1 Tajic, Legion's Valor
+SB: 1 Cunning Azurescale
+SB: 1 Mystical Dispute
+SB: 1 Force of Negation
+SB: 1 Fragment Reality
+SB: 1 Deafening Silence
+SB: 2 Quantum Riddler
+SB: 2 Rest in Peace
+SB: 1 Path to Exile
+SB: 2 Containment Priest
+SB: 2 Clarion Conqueror

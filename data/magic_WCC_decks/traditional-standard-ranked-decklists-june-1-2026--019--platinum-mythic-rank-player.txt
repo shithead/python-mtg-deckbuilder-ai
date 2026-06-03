@@ -1,0 +1,31 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+4 Multiversal Passage
+4 Blood Crypt
+4 Starting Town
+4 Blazemire Verge
+2 Rockface Village
+2 Mountain
+2 Restless Vents
+1 Swamp
+4 Flamecache Gecko
+4 Hired Claw
+4 Gev, Scaled Scorch
+4 Iridescent Vinelasher
+4 Valley Flamecaller
+4 Requiting Hex
+4 Gastal Thrillseeker
+3 Forsaken Miner
+2 Shoot the Sheriff
+2 Strategic Betrayal
+2 Nova Hellkite
+
+SB: 4 Magebane Lizard
+SB: 3 Deathmark
+SB: 3 Ral Zarek, Guest Lecturer
+SB: 2 Intimidation Tactics
+SB: 2 Shoot the Sheriff
+SB: 1 Forsaken Miner

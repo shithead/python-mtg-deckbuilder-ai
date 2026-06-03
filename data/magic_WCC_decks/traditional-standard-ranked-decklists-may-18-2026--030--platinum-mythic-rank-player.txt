@@ -1,0 +1,39 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+10 Swamp
+3 Overgrown Tomb
+3 Forest
+2 Wastewood Verge
+2 Ba Sing Se
+2 Demolition Field
+1 Fountainport
+1 Blooming Marsh
+3 Bandit's Talent
+3 Nowhere to Run
+3 Cruelclaw's Heist
+3 Skullcap Snail
+3 Seeker's Folly
+2 Virtue of Persistence
+2 Dark Confidant
+2 Undergrowth Leopard
+2 Rottenmouth Viper
+2 Intimidation Tactics
+2 Deadly Cover-Up
+2 Lord Skitter, Sewer King
+2 Unstoppable Slasher
+2 Ruthless Negotiation
+2 Aclazotz, Deepest Betrayal
+1 Vivien Reid
+
+SB: 2 Duress
+SB: 2 Undergrowth Leopard
+SB: 2 Strategic Betrayal
+SB: 2 The End
+SB: 2 Day of Black Sun
+SB: 2 Bitter Triumph
+SB: 1 Scavenging Ooze
+SB: 1 The Ooze
+SB: 1 Keen-Eyed Curator

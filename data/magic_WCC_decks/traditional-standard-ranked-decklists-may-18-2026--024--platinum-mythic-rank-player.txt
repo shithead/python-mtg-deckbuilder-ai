@@ -1,0 +1,35 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+5 Island
+4 Restless Anchorage
+4 Floodfarm Verge
+4 Plains
+2 Abandoned Air Temple
+2 Fountainport
+2 Hallowed Fountain
+1 Starting Town
+1 Multiversal Passage
+4 Aang, Swift Savior
+4 Aven Interrupter
+4 Voice of Victory
+4 High Noon
+3 Skycoach Conductor
+3 Floodpits Drowner
+3 Erode
+2 Stoic Sphinx
+2 Avatar's Wrath
+2 No More Lies
+2 Spell Snare
+2 Glen Elendra Guardian
+
+SB: 2 Negate
+SB: 2 Rest in Peace
+SB: 2 Kutzil's Flanker
+SB: 2 Beyond the Quiet
+SB: 2 Annul
+SB: 2 Get Lost
+SB: 2 Ultima
+SB: 1 Spell Snare

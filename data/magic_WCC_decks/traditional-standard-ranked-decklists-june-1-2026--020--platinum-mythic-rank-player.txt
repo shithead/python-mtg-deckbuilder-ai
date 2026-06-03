@@ -1,0 +1,38 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+4 Sacred Foundry
+4 Shattered Sanctum
+4 Sundown Pass
+3 Multiversal Passage
+3 Blood Crypt
+2 Godless Shrine
+2 Cavern of Souls
+1 Plains
+1 Cori Mountain Monastery
+1 Mountain
+4 Quintorius Kand
+4 Geological Appraiser
+4 Sage of the Skies
+4 Trumpeting Carnosaur
+3 Ride's End
+2 Overlord of the Balemurk
+2 Twinmaw Stormbrood
+2 Inevitable Defeat
+2 Virtue of Persistence
+2 The Legend of Roku
+2 Grabby Giant
+2 Harvester of Misery
+1 Virtue of Loyalty
+1 Elspeth, Storm Slayer
+
+SB: 4 Antiquities on the Loose
+SB: 2 Ultima
+SB: 2 Rest in Peace
+SB: 2 Duress
+SB: 2 Day of Judgment
+SB: 1 The Legend of Roku
+SB: 1 Harvester of Misery
+SB: 1 Inevitable Defeat

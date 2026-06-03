@@ -1,0 +1,33 @@
+// Farid Meraghni
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Arcbound Ravager
+4 Drix Interlacer
+4 Emry, Lurker of the Loch
+1 Fiery Islet
+4 Great Furnace
+3 Kappa Cannoneer
+2 Krang, Master Mind
+2 Metallic Rebuke
+4 Mox Amber
+3 Ornithopter
+4 Pinnacle Emissary
+4 Seat of the Synod
+1 Sink into Stupor
+3 Spirebluff Canal
+2 Springleaf Drum
+3 Steam Vents
+3 Tamiyo, Inquisitive Student
+4 Tormod's Crypt
+4 Weapons Manufacturing
+1 Otawara, Soaring City
+
+SB: 2 By Force
+SB: 3 Damping Sphere
+SB: 1 Force of Negation
+SB: 2 Harbinger of the Seas
+SB: 3 Machinist's Dismissal
+SB: 1 Pyroclasm
+SB: 3 Galvanic Blast

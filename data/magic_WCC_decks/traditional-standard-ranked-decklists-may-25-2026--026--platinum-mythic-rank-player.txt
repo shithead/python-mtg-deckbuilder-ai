@@ -1,0 +1,33 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+4 Inspiring Vantage
+4 Maelstrom of the Spirit Dragon
+4 Sacred Foundry
+4 Sunbillow Verge
+3 Multiversal Passage
+3 Cavern of Souls
+2 Mountain
+4 Sarkhan, Dragon Ascendant
+4 Nova Hellkite
+4 Clarion Conqueror
+4 Magmatic Hellkite
+4 Burst Lightning
+4 Voice of Victory
+4 Momo, Friendly Flier
+2 Twinmaw Stormbrood
+2 Dragonhawk, Fate's Tempest
+2 Get Lost
+1 Spectacular Tactics
+1 Lorehold, the Historian
+
+SB: 4 Rest in Peace
+SB: 3 Doorkeeper Thrull
+SB: 2 High Noon
+SB: 2 The Legend of Roku
+SB: 1 Pyroclasm
+SB: 1 Spectacular Tactics
+SB: 1 Slagstorm
+SB: 1 Get Lost

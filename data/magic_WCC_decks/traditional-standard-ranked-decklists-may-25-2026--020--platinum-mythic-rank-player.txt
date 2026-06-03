@@ -1,0 +1,40 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+8 Swamp
+4 Watery Grave
+4 Gloomlake Verge
+4 Restless Reef
+3 Cavern of Souls
+2 Undercity Sewers
+1 Multiversal Passage
+4 Deceit
+4 Superior Spider-Man
+4 Requiting Hex
+3 Emeritus of Ideation
+3 Bitter Triumph
+3 Duress
+3 Stock Up
+2 Doomsday Excruciator
+2 Day of Black Sun
+2 Winternight Stories
+1 Intimidation Tactics
+1 Shoot the Sheriff
+1 Deadly Cover-Up
+1 Strategic Betrayal
+
+SB: 1 Petrified Hamlet
+SB: 2 Qarsi Revenant
+SB: 2 Deathmark
+SB: 1 Duress
+SB: 1 Intimidation Tactics
+SB: 1 Negate
+SB: 1 Strategic Betrayal
+SB: 1 Disdainful Stroke
+SB: 1 Annul
+SB: 1 The End
+SB: 1 Flashfreeze
+SB: 1 Ghost Vacuum
+SB: 1 Stock Up

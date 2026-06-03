@@ -1,0 +1,35 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+4 Forest
+3 Multiversal Passage
+3 Ba Sing Se
+3 Island
+2 Willowrush Verge
+2 Temple Garden
+2 Hallowed Fountain
+2 Floodfarm Verge
+2 Petrified Hamlet
+1 Plains
+4 Badgermole Cub
+4 Llanowar Elves
+4 Ouroboroid
+3 Spider-Sense
+3 Wan Shi Tong, Librarian
+3 No More Lies
+3 Surrak, Elusive Hunter
+2 Craterhoof Behemoth
+2 Quantum Riddler
+2 Pawpatch Recruit
+2 Day of Judgment
+2 Frenzied Baloth
+2 Agonasaur Rex
+
+SB: 4 Voice of Victory
+SB: 3 Rest in Peace
+SB: 3 Get Lost
+SB: 2 High Noon
+SB: 2 Erode
+SB: 1 Day of Judgment

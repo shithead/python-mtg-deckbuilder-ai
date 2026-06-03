@@ -1,0 +1,31 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+4 Mountain
+4 Sacred Foundry
+4 Sunbillow Verge
+4 Inspiring Vantage
+3 Abandoned Air Temple
+2 Sundown Pass
+2 Plains
+2 Fountainport
+4 Etali's Favor
+4 Ride's End
+4 Virtue of Loyalty
+4 Sage of the Skies
+4 Quintorius Kand
+4 Antiquities on the Loose
+4 Geological Appraiser
+3 Catharsis
+2 Twinmaw Stormbrood
+2 Ajani's Response
+
+SB: 3 Voice of Victory
+SB: 3 Rest in Peace
+SB: 3 Clarion Conqueror
+SB: 2 Day of Judgment
+SB: 2 Cathar Commando
+SB: 1 Twinmaw Stormbrood
+SB: 1 Ajani's Response

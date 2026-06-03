@@ -1,0 +1,29 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+4 Hallowed Fountain
+4 Floodfarm Verge
+4 Meticulous Archive
+3 Island
+3 Plains
+3 Demolition Field
+2 Restless Anchorage
+2 Fountainport
+1 Petrified Hamlet
+4 Aang's Iceberg
+4 Seam Rip
+4 Three Steps Ahead
+4 Day of Judgment
+4 Consult the Star Charts
+4 Mazemind Tome
+4 No More Lies
+4 Pinnacle Starcage
+2 Elspeth, Storm Slayer
+
+SB: 1 Petrified Hamlet
+SB: 4 Negate
+SB: 4 Kutzil's Flanker
+SB: 4 High Noon
+SB: 2 Beyond the Quiet

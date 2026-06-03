@@ -1,0 +1,21 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+21 Plains
+4 Fountainport
+4 Virtue of Loyalty
+4 Lightstall Inquisitor
+4 Elspeth, Storm Slayer
+4 Enduring Innocence
+4 Warden of the Inner Sky
+4 Caretaker's Talent
+4 Voice of Victory
+4 Seam Rip
+3 Overlord of the Mistmoors
+
+SB: 4 Day of Judgment
+SB: 4 Authority of the Consuls
+SB: 4 Exorcise
+SB: 3 The Legend of Yangchen

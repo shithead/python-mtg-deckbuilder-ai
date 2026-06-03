@@ -1,0 +1,35 @@
+// Tikhon Timoshchenko
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+2 Swamp
+1 Concealed Courtyard
+4 Prismatic Vista
+4 Thoughtseize
+4 Fatal Push
+3 Juggernaut Peddler
+4 Starting Town
+4 Ketramose, the New Dawn
+1 Darkslick Shores
+4 Hallowed Fountain
+2 Tamiyo, Inquisitive Student
+2 Phelia, Exuberant Shepherd
+1 Island
+2 Spell Snare
+3 Fragment Reality
+4 Psychic Frog
+3 Bleachbone Verge
+1 Porcine Portent
+2 Watery Grave
+1 Plains
+4 Relic of Progenitus
+4 Quantum Riddler
+
+SB: 1 Fragment Reality
+SB: 1 Tamiyo, Inquisitive Student
+SB: 3 Deafening Silence
+SB: 2 Wrath of the Skies
+SB: 2 Rest in Peace
+SB: 3 End of the Hunt
+SB: 3 Clarion Conqueror

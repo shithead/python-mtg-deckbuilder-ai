@@ -1,0 +1,39 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+4 Stomping Ground
+4 Breeding Pool
+3 Forest
+2 Dreamroot Cascade
+2 Cavern of Souls
+2 Thornspire Verge
+2 Mountain
+2 Island
+1 Multiversal Passage
+1 Steam Vents
+1 Riverpyre Verge
+4 Formidable Speaker
+4 Aurora Awakener
+4 Spider Manifestation
+4 Wildvine Pummeler
+4 Leyline of the Guildpact
+4 Bloom Tender
+3 Twinmaw Stormbrood
+2 Prismatic Undercurrents
+2 Glacier Godmaw
+1 Improvisation Capstone
+1 Naga Fleshcrafter
+1 Tam, Mindful First-Year
+1 Explosive Prodigy
+1 Waxen Shapethief
+
+SB: 3 Hexing Squelcher
+SB: 3 Vibrance
+SB: 2 Ghost Vacuum
+SB: 2 Pyroclasm
+SB: 2 Sapling Nursery
+SB: 1 Ill-Timed Explosion
+SB: 1 Spell Pierce
+SB: 1 Spell Snare

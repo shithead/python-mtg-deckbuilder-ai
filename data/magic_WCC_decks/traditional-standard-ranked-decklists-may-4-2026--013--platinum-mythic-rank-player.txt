@@ -1,0 +1,32 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+5 Plains
+5 Island
+4 Hallowed Fountain
+4 Floodfarm Verge
+4 Starting Town
+2 Multiversal Passage
+4 Daydream
+4 Aang, Swift Savior
+4 Quantum Riddler
+4 Momo, Friendly Flier
+3 Clarion Conqueror
+3 Springleaf Drum
+3 Skycoach Conductor
+2 Emeritus of Ideation
+2 Erode
+2 Sage of the Skies
+2 Spell Snare
+2 Get Lost
+1 Wan Shi Tong, Librarian
+
+SB: 3 Requisition Raid
+SB: 2 Tishana's Tidebinder
+SB: 2 Disdainful Stroke
+SB: 2 Rest in Peace
+SB: 2 Sheltered by Ghosts
+SB: 2 Negate
+SB: 2 Seam Rip

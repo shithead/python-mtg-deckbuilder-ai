@@ -1,0 +1,30 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+4 Swamp
+4 Bleachbone Verge
+4 Plains
+4 Godless Shrine
+3 Starting Town
+3 Soulstone Sanctuary
+4 Optimistic Scavenger
+4 Corpses of the Lost
+4 Forsaken Miner
+4 United Battlefront
+4 Sheltered by Ghosts
+4 Case of the Stashed Skeleton
+3 Seam Rip
+3 Nowhere to Run
+3 Origin of Spider-Man
+3 The Death of Gwen Stacy
+2 Phyrexian Arena
+
+SB: 3 Momentum Breaker
+SB: 2 High Noon
+SB: 2 Enduring Tenacity
+SB: 2 Enduring Innocence
+SB: 2 Tinybones Joins Up
+SB: 2 Rest in Peace
+SB: 2 Tinybones, Bauble Burglar

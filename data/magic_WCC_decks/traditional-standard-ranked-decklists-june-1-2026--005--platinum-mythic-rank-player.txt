@@ -1,0 +1,37 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+8 Swamp
+4 Gloomlake Verge
+4 Restless Reef
+4 Watery Grave
+2 Undercity Sewers
+2 Cavern of Souls
+1 Multiversal Passage
+4 Deceit
+4 Superior Spider-Man
+4 Requiting Hex
+4 Duress
+3 Bitter Triumph
+3 Winternight Stories
+2 Stock Up
+2 Emeritus of Ideation
+2 Day of Black Sun
+2 Strategic Betrayal
+2 Doomsday Excruciator
+1 Shoot the Sheriff
+1 Deadly Cover-Up
+1 Harvester of Misery
+
+SB: 2 Ghost Vacuum
+SB: 2 Annul
+SB: 2 Deathmark
+SB: 2 Flashfreeze
+SB: 2 Oildeep Gearhulk
+SB: 1 Decorum Dissertation
+SB: 1 Ancient Vendetta
+SB: 1 The End
+SB: 1 Harvester of Misery
+SB: 1 Strategic Betrayal

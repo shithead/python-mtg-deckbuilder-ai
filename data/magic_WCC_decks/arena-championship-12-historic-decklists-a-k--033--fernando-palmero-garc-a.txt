@@ -1,0 +1,38 @@
+// Fernando Palmero García
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Ignoble Hierarch
+4 Barrowgoyf
+4 Jarsyl, Dark Age Scion
+4 Pyrogoyf
+4 Fatal Push
+1 Crucias, Titan of the Waves
+2 Inquisition of Kozilek
+4 Malevolent Rumble
+4 Thoughtseize
+1 Forest
+2 Swamp
+1 Mountain
+2 Blood Crypt
+3 Stomping Ground
+3 Blooming Marsh
+1 Nurturing Peatland
+4 Prismatic Vista
+1 Boseiju, Who Endures
+1 Takenuma, Abandoned Mire
+3 Abrupt Decay
+4 Starting Town
+2 Tarmogoyf
+1 Fable of the Mirror-Breaker
+
+SB: 1 A-Haywire Mite
+SB: 1 Surgical Extraction
+SB: 1 Meltdown
+SB: 2 Damping Sphere
+SB: 2 Culling Ritual
+SB: 2 Soul-Guide Lantern
+SB: 3 Magebane Lizard
+SB: 2 End of the Hunt
+SB: 1 Jegantha, the Wellspring

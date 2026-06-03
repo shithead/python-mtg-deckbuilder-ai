@@ -1,0 +1,36 @@
+// Dalibor Trnka
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Swamp
+4 Phelia, Exuberant Shepherd
+1 Witch Enchanter
+3 Thoughtseize
+4 Prismatic Vista
+2 Starting Town
+3 Juggernaut Peddler
+4 Ketramose, the New Dawn
+1 Floodfarm Verge
+3 Hallowed Fountain
+1 Island
+4 Fragment Reality
+4 Psychic Frog
+2 Porcine Portent
+3 Watery Grave
+1 Bleachbone Verge
+2 Plains
+1 Boggart Trawler
+4 Relic of Progenitus
+3 Godless Shrine
+2 Overlord of the Balemurk
+1 Gloomlake Verge
+4 Quantum Riddler
+2 End of the Hunt
+
+SB: 1 Surgical Extraction
+SB: 3 Damping Sphere
+SB: 4 Deafening Silence
+SB: 1 Mother of Runes
+SB: 3 Divine Purge
+SB: 3 Test of Talents

@@ -1,0 +1,28 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+5 Mountain
+4 Multiversal Passage
+4 Inspiring Vantage
+4 Sacred Foundry
+3 Sunbillow Verge
+3 Dalkovan Encampment
+4 Burst Lightning
+4 Howlsquad Heavy
+4 Warleader's Call
+4 Ojer Axonil, Deepest Might
+4 Shocking Sharpshooter
+4 Stadium Headliner
+4 Voice of Victory
+3 Fanatical Firebrand
+3 Raphael, Tough Turtle
+3 Seam Rip
+
+SB: 4 Magebane Lizard
+SB: 3 Abrade
+SB: 3 Get Lost
+SB: 2 Requisition Raid
+SB: 2 Dewdrop Cure
+SB: 1 Seam Rip

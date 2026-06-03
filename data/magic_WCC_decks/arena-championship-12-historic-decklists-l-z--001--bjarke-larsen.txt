@@ -1,0 +1,41 @@
+// Bjarke Larsen
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Psychic Frog
+4 Counterspell
+2 Spell Snare
+1 Spell Pierce
+4 Thoughtseize
+2 Tamiyo, Inquisitive Student
+1 Power Word Kill
+1 Drown in the Loch
+4 Quantum Riddler
+1 Tasigur, the Golden Fang
+1 Barrowgoyf
+2 Dismember
+1 Snapcaster Mage
+2 Kaito, Bane of Nightmares
+2 Force of Negation
+2 Baleful Strix
+4 Fatal Push
+4 Darkslick Shores
+4 Watery Grave
+4 Gloomlake Verge
+2 Island
+2 Swamp
+1 Otawara, Soaring City
+1 Clearwater Pathway
+4 Prismatic Vista
+
+SB: 1 Spell Pierce
+SB: 1 Force of Negation
+SB: 2 Stern Scolding
+SB: 2 Surgical Extraction
+SB: 2 Toxic Deluge
+SB: 1 Snuff Out
+SB: 2 Annul
+SB: 2 Consign to Memory
+SB: 1 Mystical Dispute
+SB: 1 Harbinger of the Seas

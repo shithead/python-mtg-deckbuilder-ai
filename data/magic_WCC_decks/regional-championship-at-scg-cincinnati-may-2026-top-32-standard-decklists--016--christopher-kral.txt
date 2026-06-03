@@ -1,0 +1,35 @@
+// Christopher Kral
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+4 Concealed Courtyard
+2 Erode
+3 Inspiring Vantage
+4 Iron-Shield Elf
+4 Starting Town
+4 Practiced Offense
+1 Mountain
+1 Multiversal Passage
+4 Moonshadow
+4 Hardened Academic
+4 Marauding Mako
+3 Requiting Hex
+4 Sacred Foundry
+4 Cool but Rude
+1 Blazemire Verge
+3 Tersa Lightshatter
+4 Bloodghast
+1 Carnage, Crimson Chaos
+4 Blood Crypt
+1 Godless Shrine
+
+SB: 1 Inti, Seneschal of the Sun
+SB: 2 Strategic Betrayal
+SB: 1 Seam Rip
+SB: 1 Shoot the Sheriff
+SB: 1 Case of the Crimson Pulse
+SB: 1 Erode
+SB: 1 Day of Judgment
+SB: 3 Voice of Victory
+SB: 4 Leyline of the Void

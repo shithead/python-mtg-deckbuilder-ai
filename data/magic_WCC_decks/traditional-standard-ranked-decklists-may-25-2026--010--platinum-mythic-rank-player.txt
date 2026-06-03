@@ -1,0 +1,29 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+6 Forest
+4 Stomping Ground
+4 Thornspire Verge
+4 Restless Ridgeline
+4 Multiversal Passage
+1 Mountain
+4 Burst Lightning
+4 Fear of Missing Out
+4 Wildfire Wickerfolk
+4 Patchwork Beastie
+4 Break Out
+3 Impractical Joke
+3 Summon: Fenrir
+3 Emeritus of Abundance
+3 Nova Hellkite
+3 Raphael, the Nightwatcher
+2 Overprotect
+
+SB: 3 Frenzied Baloth
+SB: 3 Pyroclasm
+SB: 3 Keen-Eyed Curator
+SB: 2 Pawpatch Formation
+SB: 2 Soul-Guide Lantern
+SB: 2 Heritage Reclamation

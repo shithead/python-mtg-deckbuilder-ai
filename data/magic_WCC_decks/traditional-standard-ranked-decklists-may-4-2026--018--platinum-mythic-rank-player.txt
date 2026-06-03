@@ -1,0 +1,48 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+3 Great Hall of the Biblioplex
+3 Steam Vents
+3 Floodfarm Verge
+2 Thundering Falls
+2 Hallowed Fountain
+2 Riverpyre Verge
+2 Meticulous Archive
+2 Mistrise Village
+2 Elegant Parlor
+1 Sunbillow Verge
+1 Plains
+1 Cori Mountain Monastery
+1 Sacred Foundry
+1 Island
+4 Stock Up
+4 No More Lies
+4 Consult the Star Charts
+4 Lightning Helix
+3 Jeskai Revelation
+3 Resonating Lute
+3 Get Lost
+2 Day of Judgment
+1 Improvisation Capstone
+1 Abrade
+1 Flashback
+1 Three Steps Ahead
+1 North Wind Avatar
+1 Traumatic Critique
+1 Negate
+
+SB: 2 Rest in Peace
+SB: 2 Torpor Orb
+SB: 1 Annul
+SB: 1 Abrade
+SB: 1 Day of Judgment
+SB: 1 Beza, the Bounding Spring
+SB: 1 Disdainful Stroke
+SB: 1 Traumatic Critique
+SB: 1 Negate
+SB: 1 The Unagi of Kyoshi Island
+SB: 1 Flashfreeze
+SB: 1 Mathemagics
+SB: 1 Pyroclasm

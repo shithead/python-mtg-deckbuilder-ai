@@ -1,0 +1,31 @@
+// Alexander Kans
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+2 Swamp
+4 Phelia, Exuberant Shepherd
+2 Witch Enchanter
+4 Concealed Courtyard
+4 Prismatic Vista
+4 Thoughtseize
+4 Juggernaut Peddler
+4 Dedicated Dollmaker
+4 Fragment Reality
+1 Momentum Breaker
+2 Boggart Trawler
+4 Porcine Portent
+2 Plains
+2 Hopeless Nightmare
+2 Nurturing Pixie
+3 Naktamun Shines Again
+4 Godless Shrine
+4 Brightclimb Pathway
+4 Overlord of the Balemurk
+
+SB: 4 Deafening Silence
+SB: 1 Dismember
+SB: 1 Parallax Wave
+SB: 3 Rest in Peace
+SB: 2 Containment Priest
+SB: 4 Clarion Conqueror

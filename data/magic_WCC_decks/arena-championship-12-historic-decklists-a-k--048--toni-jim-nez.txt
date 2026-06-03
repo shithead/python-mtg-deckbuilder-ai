@@ -1,0 +1,37 @@
+// Toni Jiménez
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Exploration
+3 Kami of Bamboo Groves
+4 Farseek
+2 Dryad of the Ilysian Grove
+4 Song of Seasons
+4 Scapeshift
+4 Icetill Explorer
+4 A-The One Ring
+4 Valakut, the Molten Pinnacle
+1 Gate to Tumbledown
+1 Boseiju, Who Endures
+4 Stomping Ground
+4 Prismatic Vista
+1 Fabled Passage
+4 Commercial District
+6 Mountain
+2 Forest
+2 Relic of Progenitus
+1 Blast Zone
+1 Abrade
+
+SB: 1 Force of Vigor
+SB: 2 Vibrance
+SB: 2 Dismember
+SB: 1 Shatterstorm
+SB: 1 Hexing Squelcher
+SB: 2 Disruptor Flute
+SB: 1 Damping Sphere
+SB: 2 Relic of Progenitus
+SB: 1 Pyroclasm
+SB: 1 Abrade
+SB: 1 Boseiju, Who Endures

@@ -1,0 +1,33 @@
+// Yiwei Mao
+// South America Regional Championship: São Paulo
+// May 17, 2026
+// Standard
+
+1 Erode
+3 Starting Town
+4 Keen-Eyed Curator
+4 Temple Garden
+3 Seam Rip
+6 Forest
+4 Llanowar Elves
+4 Badgermole Cub
+3 Gene Pollinator
+3 Brightglass Gearhulk
+4 Hushwood Verge
+4 Sage of the Skies
+4 Abandoned Air Temple
+2 Meltstrider's Resolve
+4 Pawpatch Recruit
+2 Plains
+1 Nurturing Pixie
+4 Ouroboroid
+
+SB: 2 Erode
+SB: 1 Craterhoof Behemoth
+SB: 1 Surrak, Elusive Hunter
+SB: 1 Rest in Peace
+SB: 4 Nature's Rhythm
+SB: 2 Elspeth, Storm Slayer
+SB: 1 Insidious Fungus
+SB: 2 Spider Manifestation
+SB: 1 Spectacular Spider-Man

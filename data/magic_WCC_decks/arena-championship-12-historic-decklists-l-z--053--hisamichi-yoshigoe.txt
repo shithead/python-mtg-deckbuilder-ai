@@ -1,0 +1,40 @@
+// Hisamichi Yoshigoe
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Eladamri, Korvecdal
+4 Archon of Emeria
+4 Prismatic Vista
+1 Forest
+3 Fblthp, the Lost
+1 Starting Town
+4 Skyclave Apparition
+1 Hallowed Fountain
+2 Temple Garden
+4 Abhorrent Oculus
+4 Birds of Paradise
+4 Badgermole Cub
+4 Birthing Ritual
+4 Collected Company
+1 Island
+1 Hushwood Verge
+1 Glasspool Mimic
+2 Waterlogged Grove
+2 Plains
+1 Tyvar, the Pummeler
+1 Chittering Illuminator
+1 Botanical Sanctum
+4 Razorverge Thicket
+1 Boseiju, Who Endures
+4 Noble Hierarch
+
+SB: 1 Endurance
+SB: 1 Force of Negation
+SB: 1 Fragment Reality
+SB: 2 Deafening Silence
+SB: 1 Malevolent Hermit
+SB: 1 Tyvar, the Pummeler
+SB: 3 Rest in Peace
+SB: 2 Harbinger of the Seas
+SB: 3 Clarion Conqueror

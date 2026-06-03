@@ -1,0 +1,42 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+4 Wastewood Verge
+4 Starting Town
+4 Watery Grave
+3 Overgrown Tomb
+3 Dreamroot Cascade
+2 Swamp
+2 Island
+1 Great Hall of the Biblioplex
+1 Petrified Hamlet
+1 Forest
+1 Restless Reef
+1 Mistrise Village
+4 Rakshasa's Bargain
+4 Shared Roots
+4 Requiting Hex
+3 Deadly Cover-Up
+3 Lessons from Life
+2 Consult the Star Charts
+2 Deceit
+2 Shoot the Sheriff
+2 Singularity Rupture
+2 Riverchurn Monument
+1 The End
+1 Duress
+1 Spell Pierce
+1 Day of Black Sun
+1 Urgent Necropsy
+
+SB: 2 Heritage Reclamation
+SB: 2 Shoot the Sheriff
+SB: 2 Torpor Orb
+SB: 2 Professor Dellian Fel
+SB: 2 Duress
+SB: 2 Nowhere to Run
+SB: 1 Outrageous Robbery
+SB: 1 Negate
+SB: 1 Analyze the Pollen

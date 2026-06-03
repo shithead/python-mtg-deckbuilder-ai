@@ -1,0 +1,29 @@
+// Kenji Egashira
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Atraxa, Grand Unifier
+4 Necromancy
+1 Undercity Sewers
+4 Psychic Frog
+2 Thundertrap Trainer
+4 Aquatic Subtlety
+4 Tainted Indulgence
+4 Watery Grave
+4 Darkslick Shores
+2 Quantum Riddler
+4 Agent of Treachery
+4 Essence Flux
+4 Ponder
+4 Sink into Stupor
+4 Consider
+4 Gloomlake Verge
+3 Island
+
+SB: 3 Fatal Push
+SB: 3 Mystical Dispute
+SB: 1 Harbinger of the Seas
+SB: 2 Force of Negation
+SB: 3 Thoughtseize
+SB: 3 Leyline of the Void

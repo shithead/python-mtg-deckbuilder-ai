@@ -1,0 +1,42 @@
+// Pavel Semenov
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Flickerwisp
+2 Swamp
+1 Gemstone Caverns
+4 A-Sorin, Imperious Bloodlord
+2 Witch Enchanter
+4 Concealed Courtyard
+4 Prismatic Vista
+4 Thoughtseize
+3 Fatal Push
+2 Juggernaut Peddler
+1 Inquisition of Kozilek
+2 Phelia, Exuberant Shepherd
+3 Dedicated Dollmaker
+1 Barrowgoyf
+2 Fragment Reality
+1 Momentum Breaker
+1 Shoot the Sheriff
+1 Cling to Dust
+1 Emperor of Bones
+1 Vona de Iedo, the Antifex
+2 Boggart Trawler
+2 Plains
+4 Vein Ripper
+1 Castle Locthwain
+1 Silent Clearing
+4 Godless Shrine
+4 Overlord of the Balemurk
+1 Mutavault
+
+SB: 1 Gemstone Caverns
+SB: 3 Deafening Silence
+SB: 1 Cling to Dust
+SB: 1 Momentum Breaker
+SB: 3 Wrath of the Skies
+SB: 2 Reprieve
+SB: 2 Spirit of the Labyrinth
+SB: 2 Containment Priest

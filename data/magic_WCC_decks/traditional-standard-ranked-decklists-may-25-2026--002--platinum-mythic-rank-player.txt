@@ -1,0 +1,42 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+4 Stomping Ground
+4 Thornspire Verge
+3 Starting Town
+1 Hushwood Verge
+1 Forest
+1 Dreamroot Cascade
+1 Mountain
+1 Temple Garden
+1 Wastewood Verge
+1 Breeding Pool
+1 Deathcap Glade
+1 Botanical Sanctum
+1 Ba Sing Se
+1 Blooming Marsh
+4 Badgermole Cub
+4 Wildgrowth Archaic
+4 Ouroboroid
+4 Spider Manifestation
+4 Gene Pollinator
+4 Llanowar Elves
+4 Formidable Speaker
+3 Vibrance
+2 Overlord of the Boilerbilges
+1 Magmatic Hellkite
+1 Halana and Alena, Partners
+1 Raphael, the Nightwatcher
+1 Scrapshooter
+1 Anzrag, the Quake-Mole
+
+SB: 4 Magebane Lizard
+SB: 2 Pyroclasm
+SB: 2 Keen-Eyed Curator
+SB: 2 Scavenging Ooze
+SB: 2 Hexing Squelcher
+SB: 1 Surrak, Elusive Hunter
+SB: 1 Leatherhead, Swamp Stalker
+SB: 1 Reclamation Sage

@@ -1,0 +1,33 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+7 Plains
+4 Multiversal Passage
+4 Hallowed Fountain
+4 Floodfarm Verge
+2 Abandoned Air Temple
+4 Sage of the Skies
+4 Springleaf Drum
+4 Quantum Riddler
+4 Starfield Shepherd
+4 Daydream
+4 Momo, Friendly Flier
+2 Aang, Swift Savior
+2 Haliya, Guided by Light
+2 Cosmogrand Zenith
+2 Nurturing Pixie
+2 Practiced Offense
+2 Seam Rip
+2 Erode
+1 Gran-Gran
+
+SB: 3 Clarion Conqueror
+SB: 2 Seam Rip
+SB: 2 Spell Pierce
+SB: 2 Pyrrhic Strike
+SB: 2 No More Lies
+SB: 2 Rest in Peace
+SB: 1 Disdainful Stroke
+SB: 1 Hide on the Ceiling

@@ -1,0 +1,34 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 4, 2026
+// Standard
+
+8 Forest
+8 Island
+4 Cavern of Souls
+2 Willowrush Verge
+2 Fabled Passage
+1 Lilypad Village
+1 Restless Anchorage
+1 Breeding Pool
+4 Sazh's Chocobo
+4 Traveling Chocobo
+4 Mutable Explorer
+4 Sidequest: Raise a Chocobo
+3 Dazzling Denial
+3 Bartz and Boko
+3 Wan Shi Tong, Librarian
+2 Plumecreed Escort
+2 Mockingbird
+2 Twists and Turns
+1 Defend the Rider
+1 Chomping Changeling
+
+SB: 3 Defend the Rider
+SB: 3 Chomping Changeling
+SB: 2 Three Steps Ahead
+SB: 2 Plumecreed Escort
+SB: 2 Mockingbird
+SB: 1 Dazzling Denial
+SB: 1 The Ooze
+SB: 1 Ghost Vacuum

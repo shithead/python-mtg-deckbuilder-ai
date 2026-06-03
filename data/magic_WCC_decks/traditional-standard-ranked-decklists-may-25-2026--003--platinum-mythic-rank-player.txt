@@ -1,0 +1,30 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 25, 2026
+// Standard
+
+4 Sacred Foundry
+4 Elegant Parlor
+4 Mountain
+4 Sundown Pass
+4 Plains
+4 Sunbillow Verge
+4 Ark of Hunger
+4 Tablet of Discovery
+4 Lightning Helix
+4 Pursue the Past
+4 Day of Judgment
+4 Quintorius Kand
+3 Improvisation Capstone
+2 Pyroclasm
+2 Burst Lightning
+2 Split Up
+2 Get Lost
+1 Restoration Seminar
+
+SB: 4 Slickshot Show-Off
+SB: 4 Voice of Victory
+SB: 2 Sunspine Lynx
+SB: 2 Ojer Axonil, Deepest Might
+SB: 2 Hexing Squelcher
+SB: 1 Molten-Core Maestro

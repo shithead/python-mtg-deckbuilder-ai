@@ -1,0 +1,39 @@
+// Justin Schabel
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Umbral Collar Zealot
+1 Forest
+4 Marionette Apprentice
+4 Starting Town
+1 Juggernaut Peddler
+1 Mana Confluence
+3 Temple Garden
+2 Overgrown Tomb
+4 Birds of Paradise
+4 Birthing Ritual
+1 Collected Company
+2 Badgermole Cub
+2 Nurturing Peatland
+4 A-Cauldron Familiar
+1 A-Haywire Mite
+2 Blooming Marsh
+2 Naktamun Shines Again
+4 Gilded Goose
+1 Bartolomé del Presidio
+3 Razorverge Thicket
+4 Chord of Calling
+2 Godless Shrine
+4 Samwise Gamgee
+
+SB: 1 Endurance
+SB: 1 Dauthi Voidwalker
+SB: 1 Darkstar Banisher
+SB: 1 Juggernaut Peddler
+SB: 1 Archon of Emeria
+SB: 3 Deafening Silence
+SB: 1 Phyrexian Revoker
+SB: 3 Path to Exile
+SB: 1 Abrupt Decay
+SB: 2 Naktamun Shines Again

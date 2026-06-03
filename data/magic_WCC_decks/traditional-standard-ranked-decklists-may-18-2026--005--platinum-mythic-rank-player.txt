@@ -1,0 +1,31 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+4 Temple Garden
+4 Overgrown Tomb
+4 Starting Town
+4 Multiversal Passage
+4 Godless Shrine
+2 Dalkovan Encampment
+1 Plains
+4 Virulent Emissary
+4 Essence Channeler
+4 Lunar Convocation
+4 Ruin-Lurker Bat
+4 Case of the Uneaten Feast
+4 Deep-Cavern Bat
+3 Amalia Benavides Aguirre
+2 Leonardo, Cutting Edge
+2 Blech, Loafing Pest
+2 Starscape Cleric
+2 Raise the Past
+2 Haliya, Guided by Light
+
+SB: 3 Enduring Innocence
+SB: 3 Curious Farm Animals
+SB: 3 Seam Rip
+SB: 2 Rest in Peace
+SB: 2 Restoration Magic
+SB: 2 Sheltered by Ghosts

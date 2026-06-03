@@ -1,0 +1,40 @@
+// Martijn Born
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Umbral Collar Zealot
+1 Reezug, the Bonecobbler
+1 Forest
+4 Juggernaut Peddler
+4 Starting Town
+2 Temple Garden
+1 Sylvan Safekeeper
+1 Overgrown Tomb
+3 Birds of Paradise
+4 Birthing Ritual
+1 Nurturing Peatland
+2 Badgermole Cub
+3 Blooming Marsh
+4 A-Cauldron Familiar
+1 A-Haywire Mite
+3 Mana Confluence
+1 Urborg, Tomb of Yawgmoth
+4 Gilded Goose
+1 Chittering Illuminator
+2 Voice of Resurgence
+2 Boseiju, Who Endures
+3 Razorverge Thicket
+4 Chord of Calling
+4 Samwise Gamgee
+
+SB: 1 Crystal Barricade
+SB: 1 Lurrus of the Dream-Den
+SB: 2 Deafening Silence
+SB: 1 Viconia, Nightsinger's Disciple
+SB: 2 Abrupt Decay
+SB: 2 Fragment Reality
+SB: 1 Patriar's Humiliation
+SB: 1 Drannith Magistrate
+SB: 2 Chittering Illuminator
+SB: 2 Thoughtseize

@@ -1,0 +1,33 @@
+// Wesley Hickman
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+4 Opt
+4 Elusive Otter
+3 Callous Sell-Sword
+4 Stormchaser's Talent
+4 Starting Town
+2 Boomerang Basics
+2 Secret Identity
+1 Mountain
+4 Wild Ride
+3 Turn Inside Out
+4 Multiversal Passage
+4 Ancestral Anger
+3 Drake Hatcher
+3 Riverpyre Verge
+4 Steam Vents
+4 Spirebluff Canal
+3 Sleight of Hand
+4 Slickshot Show-Off
+
+SB: 2 Burst Lightning
+SB: 1 Callous Sell-Sword
+SB: 2 Secret Identity
+SB: 1 Into the Flood Maw
+SB: 2 Spell Pierce
+SB: 1 Pyroclasm
+SB: 2 Quantum Riddler
+SB: 2 Soul-Guide Lantern
+SB: 2 Full Bore

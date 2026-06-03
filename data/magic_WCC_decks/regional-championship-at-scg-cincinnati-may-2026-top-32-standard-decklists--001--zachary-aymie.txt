@@ -1,0 +1,48 @@
+// Zachary Aymie
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+2 Mistrise Village
+1 Cori Mountain Monastery
+1 Negate
+1 Erode
+1 Three Steps Ahead
+2 Shattered Sanctum
+3 Inevitable Defeat
+1 Pyroclasm
+1 Abrade
+2 Stormcarved Coast
+2 Flashback
+3 Thunder Magic
+4 Great Hall of the Biblioplex
+3 Consult the Star Charts
+1 Ill-Timed Explosion
+1 Get Lost
+3 Hallowed Fountain
+4 Jeskai Revelation
+1 Sundown Pass
+1 Sear
+1 Multiversal Passage
+1 Day of Judgment
+2 Sacred Foundry
+4 Stock Up
+1 Watery Grave
+2 Riverpyre Verge
+1 Plains
+4 Tablet of Discovery
+3 Steam Vents
+1 Godless Shrine
+1 Gloomlake Verge
+1 Fire Magic
+
+SB: 2 Disdainful Stroke
+SB: 2 High Noon
+SB: 1 Wan Shi Tong, Librarian
+SB: 1 Get Lost
+SB: 1 Pyroclasm
+SB: 2 Emeritus of Ideation
+SB: 1 Outrageous Robbery
+SB: 2 Rest in Peace
+SB: 2 Flashfreeze
+SB: 1 Day of Judgment

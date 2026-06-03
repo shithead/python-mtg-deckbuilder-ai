@@ -1,0 +1,46 @@
+// Hidenari Ikeda
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Jarsyl, Dark Age Scion
+4 Pyrogoyf
+2 Swamp
+1 Kroxa, Titan of Death's Hunger
+4 Ignoble Hierarch
+4 Prismatic Vista
+4 Thoughtseize
+3 Fatal Push
+1 Forest
+1 Detective's Phoenix
+4 Starting Town
+3 Stomping Ground
+2 Inquisition of Kozilek
+1 Arena of Glory
+1 Overgrown Tomb
+1 Grist, the Hunger Tide
+1 Mountain
+3 Blooming Marsh
+2 Abrupt Decay
+4 Barrowgoyf
+4 Malevolent Rumble
+1 Fear of Missing Out
+1 Boseiju, Who Endures
+2 Blood Crypt
+1 Fable of the Mirror-Breaker
+1 End of the Hunt
+
+SB: 1 Go Blank
+SB: 1 Surgical Extraction
+SB: 1 Damping Sphere
+SB: 1 Witherbloom Command
+SB: 2 Necromentia
+SB: 1 Culling Ritual
+SB: 1 Ghost Vacuum
+SB: 1 Duress
+SB: 1 Vicious Rivalry
+SB: 1 Professor Dellian Fel
+SB: 1 Soul-Guide Lantern
+SB: 1 Undercity Plunder
+SB: 1 Fable of the Mirror-Breaker
+SB: 1 Jegantha, the Wellspring

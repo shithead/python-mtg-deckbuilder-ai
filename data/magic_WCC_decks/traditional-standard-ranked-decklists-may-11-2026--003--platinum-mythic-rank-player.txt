@@ -1,0 +1,32 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+4 Concealed Courtyard
+4 Godless Shrine
+4 Bleachbone Verge
+3 Multiversal Passage
+3 Soulstone Sanctuary
+3 Plains
+1 Swamp
+1 Abandoned Air Temple
+4 Seam Rip
+4 Case of the Stashed Skeleton
+4 Optimistic Scavenger
+4 Forsaken Miner
+4 Sheltered by Ghosts
+4 United Battlefront
+4 Corpses of the Lost
+4 Origin of Spider-Man
+3 Nowhere to Run
+2 Ninja Teen
+
+SB: 4 Duress
+SB: 3 Requisition Raid
+SB: 2 Torpor Orb
+SB: 2 Rest in Peace
+SB: 1 Day of Judgment
+SB: 1 Fumigate
+SB: 1 Ultima
+SB: 1 Spectacular Pileup

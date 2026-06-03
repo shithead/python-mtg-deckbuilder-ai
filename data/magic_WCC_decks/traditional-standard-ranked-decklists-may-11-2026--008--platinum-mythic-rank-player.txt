@@ -1,0 +1,35 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+4 Blood Crypt
+4 Blazemire Verge
+4 Multiversal Passage
+3 Starting Town
+2 Sunbillow Verge
+2 Sacred Foundry
+1 Bleachbone Verge
+1 Swamp
+1 Mountain
+4 Hardened Academic
+4 Cool but Rude
+4 Moonshadow
+4 Bloodghast
+4 Marauding Mako
+3 Requiting Hex
+3 Carnage, Crimson Chaos
+3 Casey Jones, Vigilante
+3 Practiced Offense
+2 Erode
+2 Fear of Missing Out
+1 Tersa Lightshatter
+1 Bitter Triumph
+
+SB: 3 Chandra, Spark Hunter
+SB: 3 Duress
+SB: 2 Mai, Scornful Striker
+SB: 2 Soul-Guide Lantern
+SB: 2 Shredder's Technique
+SB: 2 Pyroclasm
+SB: 1 Requiting Hex

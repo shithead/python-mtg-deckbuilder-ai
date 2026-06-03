@@ -1,0 +1,29 @@
+// Alan Ke
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+1 Cavern of Souls
+1 Surrak, Elusive Hunter
+2 Lumbering Worldwagon
+4 Earthbender Ascension
+4 Mightform Harmonizer
+4 Esper Origins
+4 Escape Tunnel
+2 Meltstrider's Resolve
+1 Royal Treatment
+4 Ba Sing Se
+4 Sazh's Chocobo
+4 Icetill Explorer
+4 Llanowar Elves
+4 Badgermole Cub
+4 Fabled Passage
+13 Forest
+
+SB: 2 Surrak, Elusive Hunter
+SB: 2 Meltstrider's Resolve
+SB: 1 Pawpatch Formation
+SB: 1 Royal Treatment
+SB: 3 Soul-Guide Lantern
+SB: 2 Edge Rover
+SB: 4 Mossborn Hydra

@@ -1,0 +1,38 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+4 Godless Shrine
+4 Wastewood Verge
+4 Hushwood Verge
+2 Forest
+2 Plains
+2 Swamp
+2 Multiversal Passage
+2 Starting Town
+4 Bitter Triumph
+4 Summon: Fenrir
+4 Esper Origins
+3 Overlord of the Hauntwoods
+3 Elspeth's Smite
+3 Yuna, Hope of Spira
+2 Aang's Iceberg
+2 The Rise of Sozin
+2 Virtue of Persistence
+2 Overlord of the Mistmoors
+2 Summon: Bahamut
+1 Day of Judgment
+1 Michelangelo, Improviser
+1 Summon: Primal Odin
+1 The Legend of Yangchen
+1 Hollowmurk Siege
+1 Rest in Peace
+1 Overlord of the Balemurk
+
+SB: 2 High Noon
+SB: 2 Authority of the Consuls
+SB: 1 Leyline of the Void
+SB: 1 The Cloning of Shredder
+SB: 1 Rest in Peace
+SB: 1 Cease // Desist

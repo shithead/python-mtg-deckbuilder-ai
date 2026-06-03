@@ -1,0 +1,36 @@
+// Martin-Éric Gauthier
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+4 Pyretic Ritual
+6 Mountain
+1 Glimpse the Impossible
+1 Gemstone Caverns
+4 Sunbaked Canyon
+1 Grapeshot
+4 Inspiring Vantage
+4 Reckless Impulse
+4 Ruby Medallion
+2 Storm of Memories
+2 Strike It Rich
+4 Ral, Monsoon Mage
+2 Wish
+4 Wrenn's Resolve
+2 Valakut Awakening
+1 Past in Flames
+4 Sacred Foundry
+2 Artist's Talent
+4 Manamorphose
+4 Jeska's Will
+
+SB: 1 Surgical Extraction
+SB: 1 Storm of Memories
+SB: 1 Wear // Tear
+SB: 3 Orim's Chant
+SB: 3 Fragment Reality
+SB: 1 Empty the Warrens
+SB: 1 Hexing Squelcher
+SB: 1 Grapeshot
+SB: 2 Brotherhood's End
+SB: 1 Lurrus of the Dream-Den

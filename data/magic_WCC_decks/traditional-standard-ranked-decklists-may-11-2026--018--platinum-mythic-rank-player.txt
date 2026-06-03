@@ -1,0 +1,36 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+7 Island
+4 Riverpyre Verge
+4 Steam Vents
+4 Spirebluff Canal
+2 Multiversal Passage
+4 Opt
+4 Burst Lightning
+4 Slickshot Show-Off
+4 Boomerang Basics
+4 Sleight of Hand
+4 Flow State
+4 Stormchaser's Talent
+4 Eddymurk Crab
+2 Stock Up
+2 Get Out
+1 Impractical Joke
+1 Roaring Furnace // Steaming Sauna
+1 Spell Pierce
+
+SB: 2 Sunderflock
+SB: 2 Slagstorm
+SB: 2 The Legend of Kuruk
+SB: 1 Disdainful Stroke
+SB: 1 Negate
+SB: 1 Annul
+SB: 1 Get Out
+SB: 1 Impractical Joke
+SB: 1 Sear
+SB: 1 Spell Snare
+SB: 1 Soul-Guide Lantern
+SB: 1 Spell Pierce

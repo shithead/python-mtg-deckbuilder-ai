@@ -1,0 +1,21 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+24 Swamp
+4 Hero's Downfall
+4 Sanguine Syphoner
+4 Bloodthirsty Conqueror
+4 Virtue of Persistence
+4 Insatiable Avarice
+4 Dream Beavers
+4 Strategic Betrayal
+4 South Wind Avatar
+4 Marauding Blight-Priest
+
+SB: 3 Cruelclaw's Heist
+SB: 3 Deadly Cover-Up
+SB: 3 Ruthless Negotiation
+SB: 3 Macabre Waltz
+SB: 3 Feed the Swarm

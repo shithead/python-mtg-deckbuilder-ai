@@ -1,0 +1,34 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 11, 2026
+// Standard
+
+4 Island
+4 Breeding Pool
+4 Gloomlake Verge
+4 Watery Grave
+3 Swamp
+2 Blooming Marsh
+1 Forest
+1 Restless Cottage
+1 Starting Town
+4 Llanowar Elves
+4 Unholy Annex // Ritual Chamber
+4 Mischievous Sneakling
+4 Dispelling Exhale
+3 Deadly Cover-Up
+3 Mutable Explorer
+3 Mana Sculpt
+2 Caustic Exhale
+2 Oko, Lorwyn Liege
+2 Firdoch Core
+2 Thrumming Hivepool
+2 Dark Confidant
+1 Aetherize
+
+SB: 4 Cease // Desist
+SB: 3 Zero Point Ballad
+SB: 2 Caustic Exhale
+SB: 2 Urgent Necropsy
+SB: 2 Maelstrom Pulse
+SB: 2 Assassin's Trophy

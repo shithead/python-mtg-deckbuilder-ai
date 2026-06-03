@@ -1,0 +1,37 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// May 18, 2026
+// Standard
+
+5 Mountain
+4 Sacred Foundry
+4 Blood Crypt
+3 Godless Shrine
+2 Concealed Courtyard
+2 Plains
+1 Sunbillow Verge
+1 Bleachbone Verge
+1 Swamp
+1 Inspiring Vantage
+4 Momo, Friendly Flier
+4 Magmatic Hellkite
+4 Sheltered by Ghosts
+4 Nova Hellkite
+4 Sarkhan, Dragon Ascendant
+3 Scavenger Regent
+2 Twinmaw Stormbrood
+2 Purging Stormbrood
+2 Go Ninja Go
+2 Twinflame Tyrant
+2 Lightning Helix
+2 Erode
+1 Bonehoard Dracosaur
+
+SB: 3 Clarion Conqueror
+SB: 2 Pyroclasm
+SB: 2 Rest in Peace
+SB: 2 Strategic Betrayal
+SB: 2 Authority of the Consuls
+SB: 2 High Noon
+SB: 1 Scavenger Regent
+SB: 1 Get Lost

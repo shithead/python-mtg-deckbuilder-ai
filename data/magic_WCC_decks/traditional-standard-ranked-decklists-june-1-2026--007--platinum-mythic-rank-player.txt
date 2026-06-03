@@ -1,0 +1,23 @@
+// Platinum-Mythic Rank Player
+// Traditional (Bo3)
+// June 1, 2026
+// Standard
+
+20 Plains
+3 Fountainport
+1 Abandoned Air Temple
+4 Nesting Bot
+4 Get Lost
+4 Exorcise
+4 Enduring Innocence
+4 Carrot Cake
+4 Caretaker's Talent
+3 Dollmaker's Shop // Porcelain Gallery
+3 Virtue of Loyalty
+3 Day of Judgment
+3 Elspeth, Storm Slayer
+
+SB: 4 Rest in Peace
+SB: 4 Authority of the Consuls
+SB: 4 Not on My Watch
+SB: 2 Ultima

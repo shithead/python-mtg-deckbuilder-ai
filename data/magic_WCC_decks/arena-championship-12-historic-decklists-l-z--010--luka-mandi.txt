@@ -1,0 +1,38 @@
+// Luka Mandić
+// Arena Championship 12
+// May 23, 2026
+// Historic
+
+1 Deem Inferior
+4 Prismatic Vista
+3 Chain Lightning
+1 Surgical Extraction
+4 Treasure Cruise
+1 Noxious Revival
+4 Arclight Phoenix
+4 Ponder
+4 Consider
+3 Island
+1 Mountain
+1 Force of Negation
+4 Thought Scour
+2 Into the Flood Maw
+4 Faithless Looting
+1 Brazen Borrower
+1 Swiftspear's Teachings
+4 Manamorphose
+4 Steam Vents
+4 Spirebluff Canal
+4 A-Demilich
+1 Fiery Islet
+
+SB: 1 Surgical Extraction
+SB: 1 Soulless Jailer
+SB: 1 Maddening Hex
+SB: 1 Mystical Dispute
+SB: 3 Force of Negation
+SB: 2 Rending Volley
+SB: 1 Brazen Borrower
+SB: 2 Annul
+SB: 2 Meltdown
+SB: 1 Quantum Riddler

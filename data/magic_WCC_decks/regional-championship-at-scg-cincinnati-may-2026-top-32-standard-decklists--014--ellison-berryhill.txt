@@ -1,0 +1,43 @@
+// Ellison Berryhill
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+2 Mistrise Village
+1 Erode
+2 Three Steps Ahead
+2 Shattered Sanctum
+3 Inevitable Defeat
+2 Stormcarved Coast
+1 Flashback
+4 Great Hall of the Biblioplex
+3 Hallowed Fountain
+4 Jeskai Revelation
+1 Sundown Pass
+2 Consult the Star Charts
+2 No More Lies
+2 Sear
+1 Multiversal Passage
+2 Firebending Lesson
+2 Day of Judgment
+3 Lightning Helix
+2 Sacred Foundry
+1 Meticulous Archive
+4 Stock Up
+1 Plains
+4 Tablet of Discovery
+4 Steam Vents
+1 Sunbillow Verge
+2 Gloomlake Verge
+1 Godless Shrine
+1 Fire Magic
+
+SB: 2 Ultima
+SB: 1 Disdainful Stroke
+SB: 2 High Noon
+SB: 1 Annul
+SB: 1 Stoic Sphinx
+SB: 2 Pyroclasm
+SB: 2 Emeritus of Ideation
+SB: 2 Rest in Peace
+SB: 2 Flashfreeze

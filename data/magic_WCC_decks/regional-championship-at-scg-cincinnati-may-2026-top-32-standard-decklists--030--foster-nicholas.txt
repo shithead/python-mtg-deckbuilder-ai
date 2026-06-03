@@ -1,0 +1,35 @@
+// Foster Nicholas
+// Regional Championship at SCG Cincinnati
+// May 17, 2026
+// Standard
+
+6 Island
+4 Eddymurk Crab
+4 Gran-Gran
+4 Stormchaser's Talent
+2 Stormcarved Coast
+4 Boomerang Basics
+4 Combustion Technique
+3 Flow State
+1 Iroh's Demonstration
+1 Multiversal Passage
+3 Slickshot Show-Off
+4 Firebending Lesson
+2 Abandon Attachments
+4 Accumulate Wisdom
+4 Riverpyre Verge
+4 Steam Vents
+4 Spirebluff Canal
+2 Octopus Form
+
+SB: 1 Colorstorm Stallion
+SB: 1 Slagstorm
+SB: 1 Iroh's Demonstration
+SB: 2 Spell Pierce
+SB: 2 Ral, Crackling Wit
+SB: 2 Flashfreeze
+SB: 1 Quantum Riddler
+SB: 1 It'll Quench Ya!
+SB: 1 Negate
+SB: 1 Octopus Form
+SB: 2 Sunderflock
