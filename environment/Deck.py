@@ -18,9 +18,9 @@ class Deck(PCardList):
             add = 4
         '''
         if action == 4:
-            if self.size < self.__maxsize:
-                self.add(card)
+            if len(self) < self.__maxsize:
+                self.append(card)
             else:
                 raise ValueError("Can not add Card to Deck, max size reached.")
         if action == 3:
-            del self.current
+            self.pop(-1)

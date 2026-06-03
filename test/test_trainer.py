@@ -11,6 +11,7 @@ class TestTrainerDataloader:
     def test_create_dataloader_batch_size(self):
         pytest.importorskip("mtgtools")
         import ai.Trainer as trainer_module
+        torch.set_default_dtype(torch.float32)
 
         pool_size = 10
         df = pd.DataFrame({"col": [[i] for i in range(pool_size)]})
@@ -27,6 +28,7 @@ class TestTrainerDataloader:
     def test_create_dataloader_default_params(self):
         pytest.importorskip("mtgtools")
         import ai.Trainer as trainer_module
+        torch.set_default_dtype(torch.float32)
 
         df = pd.DataFrame({"col": [[1], [2]]})
         trainer = object.__new__(trainer_module.Trainer_T1)
@@ -40,6 +42,7 @@ class TestTrainerDataloader:
     def test_create_dataloader_shuffle_false(self):
         pytest.importorskip("mtgtools")
         import ai.Trainer as trainer_module
+        torch.set_default_dtype(torch.float32)
 
         df = pd.DataFrame({"col": [[i] for i in range(50)]})
         trainer = object.__new__(trainer_module.Trainer_T1)
@@ -58,10 +61,11 @@ class TestTrainerTrainLoop:
     def test_train_loop_runs_without_error(self):
         pytest.importorskip("mtgtools")
         import ai.Trainer as trainer_module
+        torch.set_default_dtype(torch.float32)
 
         model = MTGDeckBuilderModel(input_size=4, num_hidden_layer=0, output_size=4)
         ds = MTGDataset(pd.DataFrame({"col": [[i] for i in range(8)]}), input_size=4)
-        loader = torch.utils.data.DataLoader(ds, batch_size=2)
+        loader = DataLoader(ds, batch_size=2)
 
         trainer = object.__new__(trainer_module.Trainer_T1)
         trainer.model = model
@@ -74,10 +78,11 @@ class TestTrainerTrainLoop:
     def test_test_loop_runs_without_error(self):
         pytest.importorskip("mtgtools")
         import ai.Trainer as trainer_module
+        torch.set_default_dtype(torch.float32)
 
         model = MTGDeckBuilderModel(input_size=4, num_hidden_layer=0, output_size=4)
         ds = MTGDataset(pd.DataFrame({"col": [[i] for i in range(8)]}), input_size=4)
-        loader = torch.utils.data.DataLoader(ds, batch_size=2)
+        loader = DataLoader(ds, batch_size=2)
 
         trainer = object.__new__(trainer_module.Trainer_T1)
         trainer.model = model
@@ -89,10 +94,11 @@ class TestTrainerTrainLoop:
     def test_train_loop_reduces_loss(self):
         pytest.importorskip("mtgtools")
         import ai.Trainer as trainer_module
+        torch.set_default_dtype(torch.float32)
 
         model = MTGDeckBuilderModel(input_size=4, num_hidden_layer=0, output_size=4)
         ds = MTGDataset(pd.DataFrame({"col": [[i] for i in range(100)]}), input_size=4)
-        loader = torch.utils.data.DataLoader(ds, batch_size=10, shuffle=False)
+        loader = DataLoader(ds, batch_size=10, shuffle=False)
 
         trainer = object.__new__(trainer_module.Trainer_T1)
         trainer.model = model
@@ -104,7 +110,7 @@ class TestTrainerTrainLoop:
             losses = []
             for X, y in dataloader:
                 pred = model(X)
-                losses.append(loss_fn(pred, y).item())
+                losses.append(loss_fn(pred.float(), y.float()).item())
             return sum(losses) / len(losses)
 
         loss_before = avg_loss(loader)
@@ -112,7 +118,7 @@ class TestTrainerTrainLoop:
         for _ in range(5):
             for X, y in loader:
                 pred = model(X)
-                loss = loss_fn(pred, y)
+                loss = loss_fn(pred.float(), y.float())
                 loss.backward()
                 optimizer.step()
                 optimizer.zero_grad()

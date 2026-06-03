@@ -58,11 +58,11 @@ class Constructor():
         Drop card from deck and add back to pool.
         '''
         if action == 3:
-            card = deck.current
+            card = deck[-1]
             deck.update_deck(action = action)
-            pool.add(card)
+            pool.append(card)
         if action == 4:
-            card = pool.current
-            del pool.current
+            card = pool[-1]
+            pool.pop(-1)
             deck.update_deck(card = card, action = action)
 

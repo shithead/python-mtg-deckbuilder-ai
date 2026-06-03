@@ -119,7 +119,7 @@ class TestMTGDataset:
         ds = MTGDataset(df, input_size=4)
         loader = DataLoader(ds, batch_size=1)
         X, _ = next(iter(loader))
-        assert X.dtype == torch.float16
+        assert X.dtype == torch.get_default_dtype()
 
     def test_str(self):
         df = pd.DataFrame({"a": [[1]]})

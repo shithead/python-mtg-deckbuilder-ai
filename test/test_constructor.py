@@ -11,8 +11,8 @@ class TestConstructorSuggest:
         pool = PCardList()
         card1 = AICard({"name": "Lightning Bolt", "type_line": "Instant"})
         card2 = AICard({"name": "Grizzly Bears", "type_line": "Creature"})
-        pool.add(card1)
-        pool.add(card2)
+        pool.append(card1)
+        pool.append(card2)
         ctor = Constructor()
         with (
             patch("environment.Constructor.Constructor._get_searcher") as mock_searcher,
@@ -36,7 +36,7 @@ class TestConstructorSuggest:
 
     def test_suggest_searcher_cached(self):
         pool = PCardList()
-        pool.add(AICard({"name": "Card", "type_line": "Creature"}))
+        pool.append(AICard({"name": "Card", "type_line": "Creature"}))
         ctor = Constructor()
         ctor._get_searcher = MagicMock()
         ctor.suggest(pool, "query 1")
@@ -46,7 +46,7 @@ class TestConstructorSuggest:
     def test_suggest_falls_back_when_index_out_of_range(self):
         pool = PCardList()
         card = AICard({"name": "Only Card", "type_line": "Creature"})
-        pool.add(card)
+        pool.append(card)
         ctor = Constructor()
         with (
             patch("environment.Constructor.Constructor._get_searcher") as mock_searcher,
@@ -64,9 +64,9 @@ class TestConstructor:
         card1 = AICard({"name": "Card 1", "type_line": "Creature"})
         card2 = AICard({"name": "Card 2", "type_line": "Creature"})
         card3 = AICard({"name": "Card 3", "type_line": "Creature"})
-        pool.add(card1)
-        pool.add(card2)
-        pool.add(card3)
+        pool.append(card1)
+        pool.append(card2)
+        pool.append(card3)
         ctor = Constructor()
         assert ctor.other_card(pool, action=1) == pool[0]  # return current, move to 1
         assert ctor.other_card(pool, action=1) == pool[1]  # return current, move to 2
@@ -76,8 +76,8 @@ class TestConstructor:
         pool = PCardList()
         card1 = AICard({"name": "Card 1", "type_line": "Creature"})
         card2 = AICard({"name": "Card 2", "type_line": "Creature"})
-        pool.add(card1)
-        pool.add(card2)
+        pool.append(card1)
+        pool.append(card2)
         ctor = Constructor()
         ctor.other_card(pool, action=1)  # move to 1
         assert ctor.other_card(pool, action=2) == pool[1]  # return current, move to 0
@@ -92,7 +92,7 @@ class TestConstructor:
     def test_other_card_no_action(self):
         pool = PCardList()
         card = AICard({"name": "Card 1", "type_line": "Creature"})
-        pool.add(card)
+        pool.append(card)
         ctor = Constructor()
         result = ctor.other_card(pool, action=0)
         assert result is pool[0]
@@ -100,30 +100,30 @@ class TestConstructor:
     def test_pick_card_from_pool_to_deck(self):
         pool = PCardList()
         card = AICard({"name": "Pick Me", "type_line": "Creature"})
-        pool.add(card)
+        pool.append(card)
         deck = Deck(maxsize=5)
         ctor = Constructor()
         ctor.this_card(pool, deck, action=4)
-        assert deck.size == 1
-        assert pool.size == 0
+        assert len(deck) == 1
+        assert len(pool) == 0
 
     def test_drop_card_from_deck_to_pool(self):
         pool = PCardList()
         card = AICard({"name": "Drop Me", "type_line": "Creature"})
         deck = Deck(maxsize=5)
         deck.update_deck(card=card, action=4)
-        assert deck.size == 1
+        assert len(deck) == 1
         ctor = Constructor()
         ctor.this_card(pool, deck, action=3)
-        assert deck.size == 0
-        assert pool.size == 1
+        assert len(deck) == 0
+        assert len(pool) == 1
 
     def test_this_card_no_action(self):
         pool = PCardList()
         card = AICard({"name": "Card", "type_line": "Creature"})
-        pool.add(card)
+        pool.append(card)
         deck = Deck(maxsize=5)
         ctor = Constructor()
         ctor.this_card(pool, deck, action=0)
-        assert deck.size == 0
-        assert pool.size == 1
+        assert len(deck) == 0
+        assert len(pool) == 1

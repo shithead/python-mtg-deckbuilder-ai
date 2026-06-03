@@ -17,7 +17,7 @@ class TestDeck:
         deck = Deck(maxsize=2)
         card = AICard({"name": "Test Card", "type_line": "Creature"})
         deck.update_deck(card=card, action=4)
-        assert deck.size == 1
+        assert len(deck) == 1
 
     def test_add_card_exceeds_maxsize_raises(self):
         deck = Deck(maxsize=1)
@@ -31,19 +31,19 @@ class TestDeck:
         deck = Deck(maxsize=2)
         card = AICard({"name": "Test Card", "type_line": "Creature"})
         deck.update_deck(card=card, action=4)
-        assert deck.size == 1
+        assert len(deck) == 1
         deck.update_deck(action=3)
-        assert deck.size == 0
+        assert len(deck) == 0
 
     def test_action_noop(self):
         deck = Deck(maxsize=2)
         card = AICard({"name": "Test Card", "type_line": "Creature"})
         deck.update_deck(card=card, action=0)
-        assert deck.size == 0
+        assert len(deck) == 0
 
     def test_size_tracking_after_multiple_adds(self):
         deck = Deck(maxsize=5)
         for i in range(3):
             card = AICard({"name": f"Card {i}", "type_line": "Creature"})
             deck.update_deck(card=card, action=4)
-        assert deck.size == 3
+        assert len(deck) == 3

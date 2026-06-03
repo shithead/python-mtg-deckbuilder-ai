@@ -24,15 +24,16 @@ class AICard(PCard):
         self.data : MTGDataset = MTGDataset()
         self.input_layer_size : int = 0
         self.keys : list = [ "amount", "name", "mana_cost", "type_line" ]
-        if self.mana_cost is not None:
+        if getattr(self, "mana_cost", None) is not None:
             self.keys.append("mana_cost")
-        if self.power is not None:
+        if getattr(self, "power", None) is not None:
             self.keys.append("power")
-        if self.toughness is not None:
+        if getattr(self, "toughness", None) is not None:
             self.keys.append("toughness")
-        if self.loyalty is not None:
+        if getattr(self, "loyalty", None) is not None:
             self.keys.append("loyalty")
-        if self.oracle_text is not None:
+        oracle_text = getattr(self, "oracle_text", None)
+        if oracle_text is not None:
             self.oracle_text = re.sub( r'\(.*\)', "", self.oracle_text)
             self.keys.append("oracle_text")
 
@@ -117,7 +118,7 @@ class MTGDataset(Dataset):
         if torch.is_tensor(idx):
             idx = idx.tolist()
 
-        x = torch.zeros(self.input_size, dtype=torch.float16)
+        x = torch.zeros(self.input_size)
         pos = idx % max(1, self.input_size)
         x[pos] = 1.0
         return x, x
