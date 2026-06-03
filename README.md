@@ -4,11 +4,17 @@ How to
 ## Install
 
 ```bash
-sudo mount -t tmpfs -o remount,rw,size=6G /run/user/`id -u`
-./create_virtenv.sh
-nix-shell
+./create_virtenv.sh          # optional: creates ./_build virtualenv
+nix-shell                    # sets up all system deps + pip install
+pip install -e .             # install the project in editable mode
 ```
 
+## Run tests
+
+```bash
+pytest test/                 # all tests
+pytest test/ -k "test_deck"  # single test suite
+```
 
 ## Prepare
 
