@@ -1,134 +1,102 @@
-How to
-======
+# Python MTG Deckbuilder AI
 
-## Install
+AI-assisted Magic: The Gathering deck building. Uses PyTorch for neural models,
+ChromaDB for semantic card search, and mtgtools for card data.
 
-```bash
-./create_virtenv.sh          # optional: creates ./_build virtualenv
-nix-shell                    # sets up all system deps + pip install
-pip install -e .             # install the project in editable mode
-```
-
-## Run tests
+## Quick start
 
 ```bash
-pytest test/                 # all tests
-pytest test/ -k "test_deck"  # single test suite
+nix-shell                     # system deps + pip install
+pip install -e .              # install the project in editable mode
 ```
 
-## Prepare
-
-
-Copy in data a CSV file in deckbox format with name myCollection.csv.
+Copy a CSV file in deckbox format to `data/myCollection.csv`, then:
 
 ```bash
-python3 import_collection.py
-python3 ai_prepare.py
+python import_collection.py   # import collection into ZODB
+python VectorDB.py            # build ChromaDB vector index
+python ai_prepare.py          # create vocab, embeddings, datasets
 
+python -c "
+from ai.Trainer import Trainer_T1
+from ai.MTGDeckBuilderModel import MTGDeckBuilderModel
+
+trainer = Trainer_T1(MTGDeckBuilderModel)
+trainer.run(epochs=10)
+"                              # train the model
 ```
 
-Model
-=====
- 
-## Vector Database
+Alternatively, use `./create_virtenv.sh` instead of `nix-shell` for a plain venv.
 
-During the process development, i tried to ultilise a vector DB for redundant and persistent information
+## Project structure
 
-Use a vector DB to reduce
+```
+├── ai/                         PyTorch model, data preparation, training
+├── database/                   mtgtools (ZODB), ChromaDB vector search
+├── environment/                Domain objects: AICard, Deck, Constructor
+├── utils/                      Tokenization helpers
+├── test/                       Tests (pytest, 53 tests)
+├── VectorDB.py                 ChromaDB index builder script
+├── import_collection.py        Import CSV + WCC decks into ZODB
+├── ai_prepare.py               Prepare AI data (vocab, datasets)
+├── pyproject.toml              Package metadata
+└── requirements.txt            Python dependencies
+```
 
-* number of input perceptrons,
-* memory usage,
-* easier AI training.
+## Key components
 
-Vector DBs for testing:
-* vectordb (https://pypi.org/project/vectordb/)
-* ChromeDB (https://realpython.com/chromadb-vector-database/)
+### Deck building
 
+```python
+from environment.Card import AICard
+from environment.Deck import Deck
+from environment.Constructor import Constructor
+from mtgtools.PCardList import PCardList
 
-## Embedding
+pool = PCardList()
+# ... load cards into pool ...
 
-Attribute | # of perceptron | description
-----------|-----------------|------------
-amount    | 1               | number of card with unique name
-Name      | 1               | name of card. reduced to one perceptron as phrase.
-Mana Cost | 1               |
-Type line | # of types      |
-power/toughness | 2 (optional) | If is a Creature.
-loyality | 1 (optional) | If it is a Planeswalker.
-Oracle text | # of phrases (optional) | Remove text in __r'\(.*\)'__ . 
+deck = Deck(maxsize=60)
+ctor = Constructor()
 
+# Semantic search — find cards by description
+card = ctor.suggest(pool, "creature with flying and lifelink")
 
-to Pool Size.
+# Manual navigation
+card = ctor.other_card(pool, action=1)   # next card
+card = ctor.other_card(pool, action=2)   # prev card
 
+# Build the deck
+ctor.this_card(pool, deck, action=4)     # pick card into deck
+ctor.this_card(pool, deck, action=3)     # drop card back to pool
+```
 
-## Inputlayer
+### Model architecture
 
-Vector size from embedding, pool size.
+The neural model (`MTGDeckBuilderModel`) predicts card relevance scores.
+Each card is represented as a one-hot vector of size `pool_size`, with
+configurable hidden layers and an output layer of size `4 * pool_size`.
 
-## Hiddenlayer
+Training uses cross-entropy loss with the datasets prepared from the card pool.
 
-Number of hidden layer is 45.
+## Development
 
+### Run tests
 
-## Outputlayer
+```bash
+pytest test/                     # all 53 tests
+pytest test/ -k "test_deck"      # single test suite
+pytest test/ -v --tb=short       # verbose with short tracebacks
+coverage run -m pytest test/     # with coverage
+```
 
-* 4 times of pool size
-* future: Individual amount times of exists Card
+### Run a single test
 
-UI filter criterias
-================
+```bash
+pytest test/test_deck.py::TestDeck::test_add_card_within_limit
+pytest test/ -k "test_forward"
+```
 
-* presets
-    * aggro
-    * control
+### Code conventions
 
-* mana color
-* avg. mana costs
-
-Environments
-==========
-
-Deck
-----
-* equal effects and types
-    * synagy
-    * combos
-
-* 1/3 +- 4/deck.size land cards
-    * optimized to non basic lands
-
-
-Sideboard
---------
-* size: 15
-    + oversize: 4/deck.size
-
-Card
------
-* types/subtypes
-    * instant
-    * sorcery
-    * enchantment
-    * creature
-    * planeswalker
-
-* manacosts
-* manacolor
-    * different attributes
-
-* amount
-
-Pool
-----
-
-* all my available cards
-* load json
-
-Constructor
-----------
-
-* action
-    * preview
-    * next
-    * drop
-    * pick
+See `AGENTS.md` for import style, naming, type hints, and error handling conventions.
