@@ -2,6 +2,7 @@ import os
 import sys
 sys.path.append(os.path.abspath('../environment'))
 sys.path.append(os.path.abspath('../database'))
+sys.path.append(os.path.abspath('../utils'))
 sys.path.append(os.path.abspath('.'))
 
 import chromadb
@@ -9,6 +10,7 @@ from chromadb.utils import embedding_functions
 from database.mtgtools import Database
 from environment.Card import AICard
 from mtgtools.PCardList import PCardList
+from utils.utils import get_token
 
 CHROMA_DATA_PATH = "data/"
 EMBED_MODEL = "all-MiniLM-L6-v2"
@@ -22,7 +24,7 @@ embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
 
 collection : chromadb.Collection = None
 
-#client.delete_collection(name=COLLECTION_NAME)
+client.delete_collection(name=COLLECTION_NAME)
 if COLLECTION_NAME in [c.name for c in client.list_collections()]:
     collection = client.get_collection(
         name=COLLECTION_NAME,
@@ -76,8 +78,8 @@ else:
     )
 
 query_results = collection.query(
-    query_texts=["Find some cards from type creature"],
-    n_results=5
+    query_texts=["Find some cards with life"],
+    n_results=60
 )
 
 print(query_results.keys())
