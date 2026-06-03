@@ -21,9 +21,11 @@ Python project for AI-assisted Magic: The Gathering deck building. Uses PyTorch 
 
 ```bash
 ./create_virtenv.sh          # creates ./_build virtualenv with Python 3
-nix-shell                    # alternative: Nix shell with all deps
+nix-shell                    # alternative: Nix shell with all system deps + pip install
 pip install -r requirements.txt
 ```
+
+`requirements.txt` pins `torch==2.3.0`, `torchtext==0.18.0`. The Nix `shell.nix` provides additional system deps (chromadb, sentence-transformers, gcc, pkg-config, zlib) and runs `pip install -r requirements.txt` automatically in its shellHook.
 
 ## Commands
 
@@ -56,39 +58,42 @@ python ai_prepare.py
 python VectorDB.py
 ```
 
-Note: `requirements.txt` pins specific versions (torch 2.3.0, torchtext 0.18.0). The Nix `shell.nix` provides additional system dependencies (chromadb, sentence-transformers, gcc, pkg-config, zlib).
-
 ## Code style
 
 ### Imports
 
-- **At the package level** (`environment/__init__.py`): use relative imports:
+- **Within a package** (`environment/__init__.py`): use relative imports:
   ```python
   from .Card import AICard
   from .Deck import Deck
   ```
 
-- **Across packages**: use `sys.path` hacks (existing convention in this codebase):
+- **Across packages** (e.g. `ai/Preparer.py` importing `environment` and `database`): use `sys.path` hacks — this is the established convention:
   ```python
   import sys, os
   sys.path.append(os.path.abspath('../environment'))
   sys.path.append(os.path.abspath('../database'))
+  sys.path.append(os.path.abspath('.'))
   from database.mtgtools import Database
   from environment.Card import AICard
   ```
 
-- **Standard library before third-party**, followed by local imports. Group related imports together.
+- **Top-level scripts** (`VectorDB.py`, `import_collection.py`) also use `sys.path` hacks pointing to subdirectories. Top-level scripts may also import directly (e.g. `from database.mtgtools import Database`) when `PYTHONPATH` is set via Nix (`shell.nix` appends `$PWD/` to `PYTHONPATH`).
+
+- **Standard library first**, then third-party, then local imports. Group related imports together. Blank lines between import groups are common but not strict.
 
 ### Naming
 
 | Kind | Convention | Example |
 |------|-----------|---------|
-| Classes | PascalCase | `AICard`, `MTGDeckBuilderModel`, `Preparer` |
+| Classes | PascalCase | `AICard`, `MTGDeckBuilderModel`, `Preparer`, `Trainer_T1` |
 | Methods / functions | snake_case | `create_word2idx()`, `get_token()`, `update_deck()` |
 | Private members | double underscore name mangling | `self.__basic_path`, `self.__pos_pool` |
 | Module-level constants | UPPER_SNAKE_CASE | `CHROMA_DATA_PATH`, `EMBED_MODEL`, `COLLECTION_NAME` |
 | Module-level variables | lowercase | `device`, `client`, `embedding_func` |
-| File names | PascalCase for classes, snake_case for utils | `AICard.py` (in `environment/Card.py`), `utils/utils.py` |
+| File names | PascalCase for single-class modules, snake_case for utils/multi-purpose modules | `Card.py` (class files reside in packages), `utils/utils.py` |
+
+Note: `ai/Trainer.py` and `ai/Preparer.py` set `torch.set_default_dtype(torch.float16)` at module level — globally uses half-precision floats. Be aware of this when adding new tensors.
 
 ### Type hints
 
@@ -98,36 +103,39 @@ Type hints exist on some constructor parameters and attributes but are not requi
 self.pool : PCardList = ...
 self.input_layer_size : int = 0
 self.keys : set = set()
+self.model : MTGDeckBuilderModel = None
 ```
 
-Add return type annotations for public methods when practical.
+Add return type annotations for public methods when practical. Use `@property` decorator for getter-style access (see `Trainer_T1.Model` and `Preparer.Model`).
 
 ### Error handling
 
-- Avoid bare `except: pass`. At minimum catch specific exceptions and log the error.
+- Avoid bare `except: pass`. At minimum catch specific exceptions (e.g. `FileNotFoundError`) and print the error.
 - Raise proper exceptions — never `return Exception("message")` (see `database/mtgtools.py:55-56`). Use `raise ValueError(...)` or `raise RuntimeError(...)`.
-- Use `pytest.raises` for testing exception paths, as done in `test/test_pool.py`.
+- Use `pytest.raises` for testing exception paths.
+- `try`/`except FileNotFoundError: print(e); pass` is an accepted pattern for loading optional cached files (see `Preparer.load()` and `Trainer_T1.load()`).
 
 ### Docstrings
 
 Docstrings exist on some public classes and methods but are sparse. When adding:
 - Use triple-quoted strings immediately after `def`/`class`
 - Describe purpose, parameters, and return values briefly
-- Follow the existing informal style rather than strict Google/NumPy/Sphinx
+- Follow the existing informal style — no strict Google/NumPy/Sphinx format required
 
 ### Logging / printing
 
-The project uses `print()` with `end="", flush=True` for progress indicators. There is no logging framework. Keep this pattern for consistency; use carriage-return `\r` for in-place progress updates during long loops.
+The project uses `print()` with `end="", flush=True` for progress indicators. There is no logging framework. Keep this pattern for consistency; use carriage-return `\r` for in-place progress updates during long loops. Use `\n` in the same `print()` to finalize a line after a loop.
 
 ### Comments
 
 - Comments can be in English or German (mixed usage in existing code)
 - Avoid commenting out large blocks of code — delete them instead
 - Use `# TODO description` for pending work
+- Use `# XXX comment` to mark known hacks or temporary workarounds
 
 ### Formatting
 
-No formatter is configured. Run `black` or `isort` if you add a `pyproject.toml`, but do not reformat the entire codebase without discussion.
+No formatter is configured. Do not add one or reformat the entire codebase without discussion. If adding a `pyproject.toml`, keep formatting changes in a separate commit.
 
 ## Tests
 
@@ -135,23 +143,21 @@ No formatter is configured. Run `black` or `isort` if you add a `pyproject.toml`
 - Test files: flat under `test/`, named `test_*.py`
 - No fixtures, no conftest.py, no parametrize in use yet — add these if helpful
 - Tests import the module under test using `sys.path` hacks, matching main code convention
-- The existing test suite (`test/test_pool.py`) imports `environment.Pool` which has been removed. New tests should target existing modules: `AICard`, `Deck`, `Constructor`, `Database`, `Preparer`, `Trainer_T1`
+
+**IMPORTANT**: `test/test_pool.py` imports `environment.Pool`, `TCard`, and `MTGCard` — all removed or renamed. This test file is **non-functional legacy code**. If you add new tests, target current modules: `AICard`, `Deck`, `Constructor`, `Database`, `Preparer`, `Trainer_T1`. Write tests in the same `sys.path` hack style as test_pool.py but with valid imports.
 
 ## Known issues
 
-- `ai/Trainer.py` — `train_loop()` and `test_loop()` are missing `self` in their signatures; they won't work as instance methods
-- `database/mtgtools.py` — `loadPool()` and `loadWccPool()` return Exception objects instead of raising them
-- `database/SQLite.py` — imports `environment.Pool` and old card classes that no longer exist; this file is defunct
-- `environment/Constructor.py:42` — `del pool.currnet` is a typo for `pool.current`
-- `VectorDB.py:13` — `get_toke@qa` is a typo (presumably meant `get_token`)
-- `environment/Card.py` — `MTGDataset.__getitem__` uses `torch` and `np` without importing them
-- Project has no `.gitignore` — add one for `__pycache__/`, `_build/`, `*.pyc`, `.fs`, `*.sqlite3`, ChromaDB binary files
+- `ai/Trainer.py` — `train_loop()` and `test_loop()` still reference `self.model` and `self` internally, but the methods now have `self` in their signatures. The class still needs a proper dataloader and training orchestration to be functional.
+- `database/SQLite.py` — imports `environment.Pool` and old card classes (`MTGCard`, `TCard`) that no longer exist; this file is defunct
 
 ## External dependencies
 
-- **mtgtools** — Magic: The Gathering card data library providing `PCard`, `PCardList`, `MtgDB`. This is the backbone for all card data operations. Documentation: https://github.com/shithead/mtgtools
+- **mtgtools** — MTG card data library providing `PCard`, `PCardList`, `MtgDB`. Backbone for all card data. Docs: https://github.com/shithead/mtgtools
 - **chromadb** — Vector database for semantic card search
 - **sentence-transformers** — Text embeddings (model: `all-MiniLM-L6-v2`)
 - **pandas** — DataFrames for dataset construction
-- **torch / torchtext** — PyTorch neural network model and text tokenizers
+- **torch / torchtext** — PyTorch neural network and text tokenizers (`torch==2.3.0`, `torchtext==0.18.0`)
+- **torch-summary** — Model architecture summary via `torchsummary.summary()`
 - **ZODB** (`persistent`) — Object database backing `mtgtools` data
+- **coverage / pytest** — Test tooling (`requirements.txt`, dev only)
