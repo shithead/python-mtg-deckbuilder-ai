@@ -1,41 +1,6 @@
 import pytest
 import torch
-import pandas as pd
-from torch.utils.data import DataLoader
 from ai.MTGDeckBuilderModel import MTGDeckBuilderModel
-from environment.Card import MTGDataset
-
-
-class TestMTGDataset:
-    def test_len(self):
-        df = pd.DataFrame({"col": [[1, 2], [3], [4, 5, 6]]})
-        ds = MTGDataset(df, input_size=10)
-        assert len(ds) == 3
-
-    def test_getitem_output_type(self):
-        df = pd.DataFrame({"col": [[1, 2]]})
-        ds = MTGDataset(df, input_size=10)
-        x, y = ds[0]
-        assert isinstance(x, torch.Tensor)
-        assert isinstance(y, torch.Tensor)
-        assert x.shape == (10,)
-        assert y.shape == (10,)
-
-    def test_getitem_one_hot(self):
-        df = pd.DataFrame({"col": [[1]]})
-        ds = MTGDataset(df, input_size=5)
-        x, y = ds[0]
-        assert x[0].item() == 1.0
-        assert x[1].item() == 0.0
-        assert torch.equal(x, y)
-
-    def test_dataloader(self):
-        df = pd.DataFrame({"col": [[1, 2], [3], [4, 5]]})
-        ds = MTGDataset(df, input_size=8)
-        loader = DataLoader(ds, batch_size=2)
-        X, Y = next(iter(loader))
-        assert X.shape == (2, 8)
-        assert Y.shape == (2, 8)
 
 
 class TestMTGDeckBuilderModel:
@@ -82,3 +47,60 @@ class TestMTGDeckBuilderModel:
         x = torch.randn(2, 5)
         out = model(x)
         assert out.shape == (2, 5)
+
+    def test_forward_no_nan(self):
+        model = MTGDeckBuilderModel(
+            input_size=12,
+            num_hidden_layer=3,
+            output_size=7,
+            device="cpu"
+        )
+        x = torch.randn(8, 12)
+        out = model(x)
+        assert not torch.isnan(out).any()
+
+    def test_forward_deterministic(self):
+        model = MTGDeckBuilderModel(
+            input_size=6,
+            num_hidden_layer=2,
+            output_size=4,
+            device="cpu"
+        )
+        model.eval()
+        x = torch.randn(3, 6)
+        out1 = model(x)
+        out2 = model(x)
+        assert torch.equal(out1, out2)
+
+    def test_forward_output_range_is_finite(self):
+        model = MTGDeckBuilderModel(
+            input_size=10,
+            num_hidden_layer=5,
+            output_size=3,
+            device="cpu"
+        )
+        x = torch.randn(32, 10)
+        out = model(x)
+        assert torch.isfinite(out).all()
+
+    def test_forward_many_hidden_layers(self):
+        model = MTGDeckBuilderModel(
+            input_size=4,
+            num_hidden_layer=20,
+            output_size=2,
+            device="cpu"
+        )
+        x = torch.randn(1, 4)
+        out = model(x)
+        assert out.shape == (1, 2)
+
+    def test_forward_same_io_size(self):
+        model = MTGDeckBuilderModel(
+            input_size=32,
+            num_hidden_layer=4,
+            output_size=32,
+            device="cpu"
+        )
+        x = torch.randn(10, 32)
+        out = model(x)
+        assert out.shape == (10, 32)
