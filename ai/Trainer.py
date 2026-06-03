@@ -96,7 +96,7 @@ class Trainer_T1():
         torch.save(self.datasets.to_dict(), f"{self.__basic_path}/datasets.bin")
         torch.save(self.model.state_dict(), f"{self.__basic_path}/t1_model_{self.pool_size}_{len(self.keys)}.bin")
 
-    def train_loop(dataloader, loss_fn, optimizer):
+    def train_loop(self, dataloader, loss_fn, optimizer):
         size = len(dataloader.dataset)
         # Set the model to training mode - important for batch normalization and dropout layers
         # Unnecessary in this situation but added for best practices
@@ -116,7 +116,7 @@ class Trainer_T1():
                 print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
 
 
-    def test_loop(dataloader, loss_fn):
+    def test_loop(self, dataloader, loss_fn):
         # Set the model to evaluation mode - important for batch normalization and dropout layers
         # Unnecessary in this situation but added for best practices
         self.model.eval()

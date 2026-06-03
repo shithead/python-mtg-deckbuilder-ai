@@ -1,4 +1,5 @@
 import torch.nn as nn
+import torch.nn.functional as F
 
 class MTGDeckBuilderModel(nn.Module):
     def __init__(self, input_size, num_hidden_layer, output_size, device = "cpu"):
@@ -16,8 +17,9 @@ class MTGDeckBuilderModel(nn.Module):
 
     def forward(self, x):
         x = self.flatten(x)
-        for layer in self.layers:
-            x = self.layer(x)
-            x = nn.ReLU(x)
+        layers = [m for name, m in self.named_children() if name != 'flatten']
+        for layer in layers[:-1]:
+            x = F.relu(layer(x))
+        x = layers[-1](x)
         return x
 
