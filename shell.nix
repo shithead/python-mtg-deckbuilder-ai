@@ -39,5 +39,6 @@ pkgs.mkShell {
     export PATH="$PIP_PREFIX/bin:$PATH"
     unset SOURCE_DATE_EPOCH
     pip3 --cache /tmp/pip_cache install -r requirements.txt
+    pip3 --cache /tmp/pip_cache install -e .
   '';
 }
