@@ -6,7 +6,27 @@ from .Deck import Deck
 class Constructor():
     def __init__(self):
         self.__pos_pool = 0
-        pass
+        self.__searcher = None
+
+    def _get_searcher(self):
+        if self.__searcher is None:
+            from database.VectorDB import VectorSearcher
+            self.__searcher = VectorSearcher()
+        return self.__searcher
+
+    def suggest(self, pool: PCardList, query_text: str, n_results: int = 5):
+        """
+        Return a card from the pool that matches the query text
+        using semantic vector search, or None if no match is found.
+        """
+        if len(pool) == 0:
+            return None
+        searcher = self._get_searcher()
+        indices = searcher.suggest_indices(query_text, n_results)
+        for idx in indices:
+            if idx < len(pool):
+                return pool[idx]
+        return None
 
     def other_card(self, pool: PCardList, action: int = 0):
         '''

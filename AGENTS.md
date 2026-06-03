@@ -6,7 +6,7 @@ Python project for AI-assisted Magic: The Gathering deck building. Uses PyTorch 
 
 ```
 ├── ai/                    PyTorch model, data preparation, training loop
-├── database/              Database abstraction (mtgtools + legacy SQLite)
+├── database/              Database abstraction (mtgtools, ChromaDB vector search)
 ├── environment/           Domain objects: AICard, Deck, Constructor
 ├── utils/                 Tokenization helpers
 ├── test/                  Tests (pytest)
@@ -143,11 +143,9 @@ No formatter is configured. Do not add one or reformat the entire codebase witho
 - No fixtures, no conftest.py, no parametrize in use yet — add these if helpful
 - Tests import the module under test using direct package-qualified imports (same as main code)
 
-**IMPORTANT**: `test/test_pool.py` imports `environment.Pool`, `TCard`, and `MTGCard` — all removed or renamed. This test file is **non-functional legacy code**. If you add new tests, target current modules: `AICard`, `Deck`, `Constructor`, `Database`, `Preparer`, `Trainer_T1`. Write tests using direct package imports.
-
 ## Known issues
 
-- `database/SQLite.py` — imports `environment.Pool` and old card classes (`MTGCard`, `TCard`) that no longer exist; this file is defunct
+- No known issues currently.
 
 ## External dependencies
 
