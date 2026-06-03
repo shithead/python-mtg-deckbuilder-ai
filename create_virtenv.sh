@@ -1,1 +1,1 @@
-virtualenv -p python3 _build
+virtualenv -p python3.12 .venv

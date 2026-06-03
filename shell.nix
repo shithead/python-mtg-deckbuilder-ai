@@ -32,9 +32,11 @@ pkgs.mkShell {
     zlib
     python-with-my-packages
   ];
-  PATH = lib.strings.makeBinPath [ "/run/current-system/sw" "./_build" ];
+  PATH = lib.strings.makeBinPath [ "/run/current-system/sw" "./.venv" ];
   shellHook = ''
-    export PIP_PREFIX=$(pwd)/_build/pip_packages
+    python3.12 -m venv .venv
+    source .venv/bin/activate
+    export PIP_PREFIX=$(pwd)/.venv/pip_packages
     export PYTHONPATH="$PIP_PREFIX/${python312.sitePackages}:$PYTHONPATH:$PWD/"
     export PATH="$PIP_PREFIX/bin:$PATH"
     unset SOURCE_DATE_EPOCH
