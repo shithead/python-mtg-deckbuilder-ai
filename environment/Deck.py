@@ -6,7 +6,7 @@ from .Card import AICard
 
 class Deck(PCardList):
     def __init__(self, maxsize : int = 60):
-        super().__init__(self)
+        super().__init__()
         self.__maxsize = maxsize
         self.__minsize = 60
 
