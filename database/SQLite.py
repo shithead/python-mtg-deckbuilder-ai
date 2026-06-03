@@ -3,10 +3,6 @@ import base64
 import json
 import copy
 
-import sys
-sys.path.append("..")
-sys.path.append(".")
-
 from environment.Card import MTGCard, TCard
 from environment.Pool import Pool
 

@@ -1,9 +1,3 @@
-import sys
-import os
-
-sys.path.append(os.path.abspath('../environment'))
-sys.path.append(os.path.abspath('../database'))
-sys.path.append(os.path.abspath('.'))
 from database.mtgtools import Database
 from environment.Card import AICard
 from mtgtools.PCardList import PCardList

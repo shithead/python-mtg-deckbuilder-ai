@@ -1,9 +1,4 @@
 import pytest
-import sys
-import os
-sys.path.append(os.path.abspath('../environment'))
-sys.path.append(os.path.abspath('../database'))
-sys.path.append(os.path.abspath('.'))
 from environment.Pool import Pool
 from environment.Card import TCard, MTGCard
 

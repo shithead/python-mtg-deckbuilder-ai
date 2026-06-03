@@ -1,10 +1,3 @@
-import os
-import sys
-sys.path.append(os.path.abspath('../environment'))
-sys.path.append(os.path.abspath('../database'))
-sys.path.append(os.path.abspath('../utils'))
-sys.path.append(os.path.abspath('.'))
-
 import chromadb
 from chromadb.utils import embedding_functions
 from database.mtgtools import Database
