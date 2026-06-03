@@ -14,21 +14,17 @@ db = Database()
 cards : PCardList = PCardList()
 cards.name = "Basic Collection"
 print(f"Start loading {cards.name}")
-data = pd.read_csv(join(DATA_DIR,"myCollection.csv"), usecols=["Count", "Name", "Edition"])
+data = pd.read_csv(join(DATA_DIR,"mtgcb-collection-2026-06-03.csv"), usecols=["Count", "Name", "Edition Code"])
 print(data)
 for idx in data.index:
-    amount, name, edition = data.iloc[idx]
-    edition = re.sub(r' Core Set', "", edition)        
-    if "Modern Masters" in edition:
-        edition = re.sub(r' Edition', "", edition)        
-    edition = re.sub(r' Promos', "", edition)        
+    amount, name, edition_code = data.iloc[idx]
     name = re.sub( r' \(.*\)', "", name)
-    card = db.cards.where_exactly(name=name, set_name=edition)
+    card = db.cards.where_exactly(name=name, set=edition_code.lower())
     if len(card):
         for n in range(amount):
             cards.append(card[0])
     else:
-        print(f"{name} {edition}")
+        print(f"{name} {edition_code}")
 
 print(cards)
 print(len(cards))
