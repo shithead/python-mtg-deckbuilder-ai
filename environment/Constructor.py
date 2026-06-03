@@ -39,6 +39,6 @@ class Constructor():
             pool.add(card)
         if action == 4:
             card = pool.current
-            del pool.currnet
+            del pool.current
             deck.update_deck(card = card, action = action)
 

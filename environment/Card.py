@@ -2,6 +2,8 @@ from utils.utils import get_token, get_optimized_token
 from torchtext.data.utils import ngrams_iterator
 from torch.utils.data import Dataset, DataLoader
 import pandas as pd
+import torch
+import numpy as np
 from mtgtools.PCard import PCard
 from collections import Counter
 import json

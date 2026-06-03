@@ -14,13 +14,13 @@ class Deck(PCardList):
         '''
         action:
             no action = 0
-            remove = 4
-            add = 3
+            remove = 3
+            add = 4
         '''
-        if action == 3:
-            if self.size <= self.__maxsize:
+        if action == 4:
+            if self.size < self.__maxsize:
                 self.add(card)
             else:
-                raise BufferError("Can not delete Card from Deck.")
-        if action == 4:
-            del self.current 
+                raise ValueError("Can not add Card to Deck, max size reached.")
+        if action == 3:
+            del self.current
