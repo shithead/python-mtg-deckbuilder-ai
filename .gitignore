@@ -24,3 +24,4 @@ htmlcov/
 
 # Package build artifacts
 mtg_deckbuilder_ai.egg-info/
+session-*.md
