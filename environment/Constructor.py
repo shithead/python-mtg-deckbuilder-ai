@@ -11,6 +11,8 @@ class Constructor():
     def __init__(self):
         self.__pos_pool = 0
         self.__searcher = None
+        self.__encoder = None
+        self.__model = None
 
     def _get_searcher(self):
         if self.__searcher is None:
@@ -86,3 +88,40 @@ class Constructor():
             return True
         return False
 
+    def _get_scorer(self):
+        if self.__model is None:
+            import torch
+            from ai.CardEncoder import CardEncoder
+            from ai.SynergyClassifier import SynergyClassifier
+            self.__encoder = CardEncoder()
+            self.__model = SynergyClassifier()
+            self.__model.load_state_dict(torch.load("data/synergy_model.pt", map_location="cpu"))
+            self.__model.eval()
+        return self.__model, self.__encoder
+
+    def score_card(self, deck: Deck, card: PCard) -> float:
+        if len(deck) == 0:
+            return 0.5
+        model, encoder = self._get_scorer()
+        import torch
+        with torch.no_grad():
+            deck_embs = encoder.encode_many(list(deck))
+            deck_ctx = deck_embs.mean(dim=0)
+            card_emb = encoder.encode(card)
+            x = torch.cat([deck_ctx, card_emb]).unsqueeze(0)
+            score = model(x).item()
+        return score
+
+    def rank_cards(self, deck: Deck, cards) -> list:
+        if len(deck) == 0:
+            return list(cards)
+        model, encoder = self._get_scorer()
+        import torch
+        with torch.no_grad():
+            deck_embs = encoder.encode_many(list(deck))
+            deck_ctx = deck_embs.mean(dim=0)
+            card_embs = encoder.encode_many(list(cards))
+            deck_ctx = deck_ctx.unsqueeze(0).expand(len(cards), -1)
+            x = torch.cat([deck_ctx, card_embs], dim=1)
+            scores = model(x).squeeze(-1).tolist()
+        return sorted(zip(cards, scores), key=lambda cs: cs[1], reverse=True)

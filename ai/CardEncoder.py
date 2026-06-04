@@ -8,8 +8,9 @@ class CardEncoder:
 
     def _card_to_text(self, card) -> str:
         parts = [f"name: {card.name}"]
-        if card.type_line:
-            parts.append(f"type: {card.type_line}")
+        type_text = getattr(card, "type_line", None) or getattr(card, "type", "") or ""
+        if type_text:
+            parts.append(f"type: {type_text}")
         if hasattr(card, "mana_cost") and card.mana_cost:
             parts.append(f"mana_cost: {card.mana_cost}")
         if hasattr(card, "oracle_text") and card.oracle_text:
