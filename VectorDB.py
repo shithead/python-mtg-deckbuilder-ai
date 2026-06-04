@@ -20,7 +20,7 @@ collection = client.create_collection(
     metadata={"hnsw:space": "cosine"},
 )
 db = Database()
-pool : PCardList = db.loadPool().unique_names() + db.loadWccPool().unique_names()
+pool : PCardList = db.cards.unique_names()
 documents = []
 metadatas = []
 
