@@ -1,4 +1,6 @@
-from mtgtools.MtgDB import MtgDB
+import transaction
+
+from mtgtools.MtgDB import MtgDB, get_scryfall_card_bulks
 from mtgtools.PCardList import PCardList
 from environment.Card import AICard
 from config import DbPROVIDER, ZODB_PATH
@@ -22,9 +24,60 @@ class Database(MtgDB):
         )
         try:
             cards = getattr(self.root, attr, None)
-            return cards is None or len(cards) == 0
+            if cards is None or len(cards) == 0:
+                return True
         except Exception:
             return True
+
+        if self.__provider == DbPROVIDER["scryfall"]:
+            try:
+                bulk_data = get_scryfall_card_bulks()
+                bulk_type = next(
+                    (b for b in bulk_data["data"] if b["type"] == "default_cards"),
+                    None,
+                )
+                if bulk_type:
+                    latest = bulk_type["updated_at"]
+                    stored = getattr(self.root, "_scryfall_updated_at", None)
+                    if stored is None or latest > stored:
+                        return True
+            except Exception:
+                return True
+
+        return False
+
+    def scryfall_bulk_update(self, bulk_type="default_cards", verbose=True):
+        try:
+            super().scryfall_bulk_update(bulk_type, verbose)
+        except ValueError:
+            # mtgtools bug: PSetList.where() uses substring matching, so
+            # obsolete sets whose codes are substrings of other obsolete
+            # codes (e.g. 'plist' in 'uplist') get added to obsolete_sets
+            # multiple times, crashing on the second removal attempt.
+            # Abort the partial transaction and retry with deduplicated sets.
+            transaction.abort()
+            if verbose:
+                print("\nRetrying after deduplicating obsolete sets...")
+            # Use exact code matching to safely remove obsolete sets
+            from mtgtools.util.api_requests import get_response_json, scryfall_sets_url
+            current_sets = self.root.scryfall_sets
+            api_codes = {d["code"] for d in get_response_json(scryfall_sets_url)["data"]}
+            removed = set()
+            for pset in list(current_sets):
+                if pset.code not in api_codes and pset.code not in removed:
+                    current_sets.remove(pset)
+                    removed.add(pset.code)
+            transaction.commit()
+            super().scryfall_bulk_update(bulk_type, verbose)
+
+        bulk_data = get_scryfall_card_bulks()
+        bulk_type_data = next(
+            (b for b in bulk_data["data"] if b["type"] == bulk_type),
+            None,
+        )
+        if bulk_type_data:
+            self.root._scryfall_updated_at = bulk_type_data["updated_at"]
+            transaction.commit()
 
     @property
     def cards(self) -> PCardList:

@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mtg-deckbuilder-ai"
-version = "0.1.0"
+version = "0.8.0"
 description = "AI-assisted Magic: The Gathering deck building"
-requires-python = ">=3.10"
+requires-python = ">=3.10, <3.13"
 
 [tool.setuptools.packages.find]
 include = ["ai*", "config*", "database*", "environment*", "utils*", "test*"]
