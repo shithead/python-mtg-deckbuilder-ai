@@ -20,7 +20,7 @@ class DeckDataset(Dataset):
             indices = []
             for card in deck:
                 for pi, pool_card in enumerate(all_cards):
-                    if pool_card.name == card.name:
+                    if pool_card.name.lower() == card.name.lower():
                         indices.append(pi)
                         break
             self._deck_card_pool_indices.append(indices)
@@ -28,14 +28,15 @@ class DeckDataset(Dataset):
         self._samples = []
         for deck_idx, deck in enumerate(self._decks):
             pool_indices = self._deck_card_pool_indices[deck_idx]
-            for card_pos_in_deck in range(len(deck)):
-                self._samples.append((deck_idx, card_pos_in_deck, 1.0))
 
-                deck_card_names = {c.name for c in deck}
-                neg_candidates = [
-                    pi for pi, name in enumerate(self._all_card_names)
-                    if name not in deck_card_names
-                ]
+            deck_card_names = {c.name.lower() for c in deck}
+            neg_candidates = [
+                pi for pi, name in enumerate(self._all_card_names)
+                if name.lower() not in deck_card_names
+            ]
+
+            for pos in range(len(pool_indices)):
+                self._samples.append((deck_idx, pos, 1.0))
                 for _ in range(num_negatives):
                     neg_pool_idx = random.choice(neg_candidates)
                     self._samples.append((deck_idx, neg_pool_idx, 0.0))
