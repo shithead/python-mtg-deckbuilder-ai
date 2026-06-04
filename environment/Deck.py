@@ -1,5 +1,3 @@
-import numpy as np
-
 from mtgtools.PCard import PCard
 from mtgtools.PCardList import PCardList
 from .Card import AICard
