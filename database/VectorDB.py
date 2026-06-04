@@ -1,9 +1,6 @@
 import chromadb
 from chromadb.utils import embedding_functions
-
-CHROMA_DATA_PATH = "data/"
-EMBED_MODEL = "all-MiniLM-L6-v2"
-COLLECTION_NAME = "MTGCards"
+from config import CHROMA_DATA_PATH, EMBED_MODEL, COLLECTION_NAME
 
 
 class VectorSearcher:

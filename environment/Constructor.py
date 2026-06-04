@@ -3,9 +3,7 @@ from mtgtools.PCard import PCard
 from mtgtools.PCardList import PCardList
 from .Card import AICard
 from .Deck import Deck
-
-BASIC_LAND_TYPES = {"Plains", "Island", "Swamp", "Mountain", "Forest", "Wastes"}
-MAX_COPIES = 4
+from config import BASIC_LAND_TYPES, MAX_COPIES, SYNERGY_MODEL_PATH
 
 class Constructor():
     def __init__(self):
@@ -95,7 +93,7 @@ class Constructor():
             from ai.SynergyClassifier import SynergyClassifier
             self.__encoder = CardEncoder()
             self.__model = SynergyClassifier()
-            self.__model.load_state_dict(torch.load("data/synergy_model.pt", map_location="cpu"))
+            self.__model.load_state_dict(torch.load(SYNERGY_MODEL_PATH, map_location="cpu"))
             self.__model.eval()
         return self.__model, self.__encoder
 

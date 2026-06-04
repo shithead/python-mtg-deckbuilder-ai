@@ -1,11 +1,8 @@
-import chromadb
-from chromadb.utils import embedding_functions
+from config import CHROMA_DATA_PATH, EMBED_MODEL, COLLECTION_NAME
 from database.mtgtools import Database
 from mtgtools.PCardList import PCardList
-
-CHROMA_DATA_PATH = "data/"
-EMBED_MODEL = "all-MiniLM-L6-v2"
-COLLECTION_NAME = "MTGCards"
+import chromadb
+from chromadb.utils import embedding_functions
 
 client = chromadb.PersistentClient(path=CHROMA_DATA_PATH)
 

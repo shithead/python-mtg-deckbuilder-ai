@@ -1,13 +1,12 @@
 from mtgtools.MtgDB import MtgDB
 from mtgtools.PCardList import PCardList
 from environment.Card import AICard
-
-DbPROVIDER = dict({"scryfall" : 1, "mtgio": 2})
+from config import DbPROVIDER, ZODB_PATH
 
 
 class Database(MtgDB):
     def __init__(self, provider : int = DbPROVIDER["scryfall"], force_update : bool = False):
-        super().__init__('data/mtgdb.fs')
+        super().__init__(ZODB_PATH)
         self.__provider = provider
         if force_update or self._needs_update():
             if self.__provider == DbPROVIDER["scryfall"]:
