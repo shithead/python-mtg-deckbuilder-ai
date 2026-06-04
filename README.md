@@ -50,19 +50,61 @@ pool = PCardList()
 deck = Deck(maxsize=60)
 ctor = Constructor()
 
-# Semantic search — find cards by description
+# Text-based search — find cards by description
 card = ctor.suggest(pool, "creature with flying and lifelink")
 
 # Check 4-copy limit (basic lands unlimited)
-ctor.can_add_copy(deck, card)
+if ctor.can_add_copy(deck, card):
+    ctor.add_card_to_deck(pool, deck, card)
 
-# Manual navigation
+# Manual pool navigation
 card = ctor.other_card(pool, action=1)   # next card
 card = ctor.other_card(pool, action=2)   # prev card
 
-# Build the deck
-ctor.this_card(pool, deck, action=4)     # pick card into deck
-ctor.this_card(pool, deck, action=3)     # drop card back to pool
+# Pick/drop cards between pool and deck
+ctor.this_card(pool, deck, action=4)     # pick current card into deck
+ctor.this_card(pool, deck, action=3)     # drop last card back to pool
+
+# AI synergy scoring (requires trained model)
+score = ctor.score_card(deck, card)          # → 0.0–1.0
+ranked = ctor.rank_cards(deck, card_pool)    # → [(card, score), ...] sorted
+```
+
+### Usage example: build a deck with AI
+
+```python
+from database.mtgtools import Database
+from environment.Deck import Deck
+from environment.Constructor import Constructor
+
+db = Database()
+pool = db.loadPool()
+deck = Deck(maxsize=60)
+ctor = Constructor()
+
+# Step 1: Find a theme card
+card = ctor.suggest(pool, "aggressive red creature with haste", n_results=10)
+print(f"Picked: {card.name} ({card.type_line})")
+ctor.add_card_to_deck(pool, deck, card)
+
+# Step 2: Let the AI score your pool against the growing deck
+for _ in range(8):
+    ranked = ctor.rank_cards(deck, pool)
+    best, score = ranked[0]
+    if score < 0.5:
+        break
+    print(f"  + {best.name} ({score:.3f})")
+    ctor.add_card_to_deck(pool, deck, best)
+
+# Step 3: Fill with basic lands
+for card in pool:
+    if "Basic" in getattr(card, "type_line", "") or "Basic" in getattr(card, "type", ""):
+        for _ in range(min(24, 60 - len(deck))):
+            ctor.add_card_to_deck(pool, deck, card)
+
+print(f"\nDeck ({len(deck)} cards):")
+for card in deck:
+    print(f"  {card.name}")
 ```
 
 ### Model architecture
