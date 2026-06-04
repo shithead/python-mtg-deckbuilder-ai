@@ -15,15 +15,11 @@ class DeckDataset(Dataset):
         self._all_card_names = [c.name for c in all_cards]
         self._all_embeddings = encoder.encode_many(all_cards)
 
-        self._deck_card_pool_indices = []
-        for deck in self._decks:
-            indices = []
-            for card in deck:
-                for pi, pool_card in enumerate(all_cards):
-                    if pool_card.name.lower() == card.name.lower():
-                        indices.append(pi)
-                        break
-            self._deck_card_pool_indices.append(indices)
+        self._name_to_idx = {c.name.lower(): i for i, c in enumerate(all_cards)}
+        self._deck_card_pool_indices = [
+            [self._name_to_idx[card.name.lower()] for card in deck]
+            for deck in self._decks
+        ]
 
         self._samples = []
         for deck_idx, deck in enumerate(self._decks):
