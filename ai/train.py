@@ -29,6 +29,7 @@ def train(epochs: int = 25, batch_size: int = 64, lr: float = 1e-3):
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
     size = len(dataset)
+    prev_acc = 0.0
     for epoch in range(epochs):
         model.train()
         running_loss = 0.0
@@ -53,6 +54,15 @@ def train(epochs: int = 25, batch_size: int = 64, lr: float = 1e-3):
         epoch_loss = running_loss / size
         epoch_acc = correct / size
         print(f"Epoch {epoch+1}/{epochs}  loss: {epoch_loss:.4f}  acc: {epoch_acc:.4f}")
+
+        if epoch_acc >= 0.98:
+            print("Accuracy >= 98%, stopping early")
+            break
+        if epoch > 0 and (epoch_acc - prev_acc) < 0.0005:
+            print(f"Improvement < 0.05% ({epoch_acc - prev_acc:.4f}), stopping early")
+            break
+
+        prev_acc = epoch_acc
 
     torch.save(model.state_dict(), "data/synergy_model.pt")
     print("Saved data/synergy_model.pt")
