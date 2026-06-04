@@ -5,18 +5,31 @@
 Python project for AI-assisted Magic: The Gathering deck building. Uses PyTorch for neural models and ChromaDB for vector embeddings. Card data comes from the external `mtgtools` library backed by a ZODB database.
 
 ```
-├── ai/                    PyTorch model, data preparation, training loop
+├── ai/                    PyTorch model, dataset, training (SynergyClassifier v2)
 ├── database/              Database abstraction (mtgtools, ChromaDB vector search)
 ├── environment/           Domain objects: AICard, Deck, Constructor
-├── utils/                 Tokenization helpers
 ├── test/                  Tests (pytest)
 ├── data/                  Persistent data, cache files, CSV/DB files
 ├── VectorDB.py            ChromaDB vector store builder (top-level script)
 ├── import_collection.py   Import CSV + WCC decks into ZODB
-├── ai_prepare.py          Prepare AI data (vocab, embeddings, datasets)
+├── ai_prepare.py          Prepare AI data (vocab, embeddings, datasets) — DEPRECATED
 ├── pyproject.toml         Package metadata and build configuration
 └── requirements.txt       Python dependencies
 ```
+
+## Active design decisions
+
+See `docs/superpowers/specs/2026-06-04-card-synergy-model-v2.md` for the full spec.
+Summary of key decisions (2026-06-04):
+
+- **Model:** Binary classifier predicting (deck_context, card) → compatibility (0/1)
+- **Card encoder (Phase A):** Frozen ChromaDB `all-MiniLM-L6-v2` → 384d embedding
+- **Card encoder (Phase C):** Trainable MLP projection on top of ChromaDB (future)
+- **Deck context:** Mean-pool of card embeddings for all cards currently in the deck
+- **Training data:** WCC decks = positive samples, random pool cards = negative
+- **Constructor:** 4-copy hard constraint (except basic lands), deck size ≥ 60
+- **Target hardware:** Consumer laptop/desktop CPU, <16 GB RAM
+- **Files to delete (during v2 refactor):** `ai/MTGDeckBuilderModel.py`, `ai/Preparer.py`, `ai/Trainer.py`, `utils/`, `data/*.bin` artifacts
 
 ## Setup
 
@@ -145,7 +158,10 @@ No formatter is configured. Do not add one or reformat the entire codebase witho
 
 ## Known issues
 
-- No known issues currently.
+- `MTGDeckBuilderModel` architecture is broken (8.1B params) — being replaced by SynergyClassifier v2 per the 2026-06-04 spec.
+- `ai_prepare.py`, `ai/Preparer.py`, `ai/Trainer.py` are deprecated pending v2 refactor. Do not use.
+- `MTGDataset.__getitem__` returns degenerate `(x, x)` — this is the old model path, not fixable, will be deleted.
+- `data/t1_model_*.bin` was corrupted (torch.save to 2.7 GB file failed). Deleted — regenerated model will be orders of magnitude smaller.
 
 ## External dependencies
 
