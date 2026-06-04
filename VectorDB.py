@@ -31,7 +31,7 @@ for i, card in  enumerate(pool):
     document = ""
     data_dict = dict()
     data_dict.update({"type": card.type_line})
-    if "planswalker" in card.type_line:
+    if card.type_line is not None and "planeswalker" in card.type_line:
         print(card)
 
     document += f"name: {card.name}\n"
