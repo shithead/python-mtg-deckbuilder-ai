@@ -71,9 +71,8 @@ class Constructor():
             deck.update_deck(card = card, action = action)
 
     def can_add_copy(self, deck: Deck, card: PCard) -> bool:
-        type_line = getattr(card, "type", "") or ""
-        if "Basic" in type_line:
-            return True
+        type_text = getattr(card, "type_line", None) or getattr(card, "type", "") or ""
+        if "Basic" in type_text:
             return True
         count = sum(1 for c in deck if c.name == card.name)
         return count < MAX_COPIES
