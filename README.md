@@ -16,15 +16,7 @@ then run the import (first run downloads ~515 MB from Scryfall, one-time cost):
 ```bash
 python import_collection.py   # import CSV + WCC decks into ZODB
 python VectorDB.py            # build ChromaDB vector index
-python ai_prepare.py          # create vocab, embeddings, datasets
-
-python -c "
-from ai.Trainer import Trainer_T1
-from ai.MTGDeckBuilderModel import MTGDeckBuilderModel
-
-trainer = Trainer_T1(MTGDeckBuilderModel)
-trainer.run(epochs=10)
-"                              # train the model
+python ai/train.py            # train synergy classifier (~30s on CPU)
 ```
 
 Alternatively, use `./create_virtenv.sh` instead of `nix-shell` for a plain venv.
@@ -32,14 +24,12 @@ Alternatively, use `./create_virtenv.sh` instead of `nix-shell` for a plain venv
 ## Project structure
 
 ```
-├── ai/                         PyTorch model, data preparation, training
+├── ai/                         PyTorch model, dataset, training
 ├── database/                   mtgtools (ZODB), ChromaDB vector search
 ├── environment/                Domain objects: AICard, Deck, Constructor
-├── utils/                      Tokenization helpers
-├── test/                       Tests (pytest, 53 tests)
+├── test/                       Tests (pytest, 39 tests)
 ├── VectorDB.py                 ChromaDB index builder script
 ├── import_collection.py        Import CSV + WCC decks into ZODB
-├── ai_prepare.py               Prepare AI data (vocab, datasets)
 ├── pyproject.toml              Package metadata
 └── requirements.txt            Python dependencies
 ```
@@ -63,6 +53,9 @@ ctor = Constructor()
 # Semantic search — find cards by description
 card = ctor.suggest(pool, "creature with flying and lifelink")
 
+# Check 4-copy limit (basic lands unlimited)
+ctor.can_add_copy(deck, card)
+
 # Manual navigation
 card = ctor.other_card(pool, action=1)   # next card
 card = ctor.other_card(pool, action=2)   # prev card
@@ -74,18 +67,29 @@ ctor.this_card(pool, deck, action=3)     # drop card back to pool
 
 ### Model architecture
 
-The neural model (`MTGDeckBuilderModel`) predicts card relevance scores.
-Each card is represented as a one-hot vector of size `pool_size`, with
-configurable hidden layers and an output layer of size `4 * pool_size`.
+`SynergyClassifier` — binary classifier predicting card-to-deck compatibility.
 
-Training uses cross-entropy loss with the datasets prepared from the card pool.
+```
+Card → ChromaDB (frozen all-MiniLM-L6-v2) → 384d embedding
+Deck context → mean-pool of all card embeddings
+
+[deck_ctx ⊕ card_emb] → MLP(768, 256) → ReLU → Dropout → Linear(256, 1) → Sigmoid
+```
+
+- **~200K parameters** (trainable on CPU in ~30s)
+- **Training data:** WCC decks = positive, random pool cards = negative
+- **Loss:** Binary Cross-Entropy
+
+```bash
+python ai/train.py             # trains 25 epochs, saves data/synergy_model.pt
+```
 
 ## Development
 
 ### Run tests
 
 ```bash
-pytest test/                     # all 53 tests
+pytest test/                     # all 39 tests
 pytest test/ -k "test_deck"      # single test suite
 pytest test/ -v --tb=short       # verbose with short tracebacks
 coverage run -m pytest test/     # with coverage
