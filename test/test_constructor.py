@@ -127,3 +127,54 @@ class TestConstructor:
         ctor.this_card(pool, deck, action=0)
         assert len(deck) == 0
         assert len(pool) == 1
+
+
+class TestConstructorCopyLimit:
+    def _make_card(self, name, type="Creature"):
+        return AICard({"name": name, "type": type})
+
+    def test_can_add_first_copy(self):
+        ctor = Constructor()
+        deck = Deck(maxsize=60)
+        card = self._make_card("Lightning Bolt")
+        assert ctor.can_add_copy(deck, card) is True
+
+    def test_can_add_4th_copy(self):
+        ctor = Constructor()
+        deck = Deck(maxsize=60)
+        for _ in range(3):
+            deck.append(self._make_card("Lightning Bolt"))
+        card = self._make_card("Lightning Bolt")
+        assert ctor.can_add_copy(deck, card) is True
+
+    def test_cannot_add_5th_copy(self):
+        ctor = Constructor()
+        deck = Deck(maxsize=60)
+        for _ in range(4):
+            deck.append(self._make_card("Lightning Bolt"))
+        card = self._make_card("Lightning Bolt")
+        assert ctor.can_add_copy(deck, card) is False
+
+    def test_basic_lands_unlimited(self):
+        ctor = Constructor()
+        deck = Deck(maxsize=60)
+        for _ in range(10):
+            deck.append(self._make_card("Island", "Basic Land — Island"))
+        island = self._make_card("Island", "Basic Land — Island")
+        assert ctor.can_add_copy(deck, island) is True
+
+    def test_wastes_is_basic(self):
+        ctor = Constructor()
+        deck = Deck(maxsize=60)
+        for _ in range(20):
+            deck.append(self._make_card("Wastes", "Basic Land"))
+        wastes = self._make_card("Wastes", "Basic Land")
+        assert ctor.can_add_copy(deck, wastes) is True
+
+    def test_different_names_independent(self):
+        ctor = Constructor()
+        deck = Deck(maxsize=60)
+        for _ in range(4):
+            deck.append(self._make_card("Lightning Bolt"))
+        shock = self._make_card("Shock")
+        assert ctor.can_add_copy(deck, shock) is True

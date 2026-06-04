@@ -1,7 +1,11 @@
 
+from mtgtools.PCard import PCard
 from mtgtools.PCardList import PCardList
 from .Card import AICard
 from .Deck import Deck
+
+BASIC_LAND_TYPES = {"Plains", "Island", "Swamp", "Mountain", "Forest", "Wastes"}
+MAX_COPIES = 4
 
 class Constructor():
     def __init__(self):
@@ -65,4 +69,21 @@ class Constructor():
             card = pool[-1]
             pool.pop(-1)
             deck.update_deck(card = card, action = action)
+
+    def can_add_copy(self, deck: Deck, card: PCard) -> bool:
+        type_line = getattr(card, "type", "") or ""
+        if "Basic" in type_line:
+            return True
+            return True
+        count = sum(1 for c in deck if c.name == card.name)
+        return count < MAX_COPIES
+
+    def add_card_to_deck(self, pool: PCardList, deck: Deck, card: PCard) -> bool:
+        if not self.can_add_copy(deck, card):
+            return False
+        if card in pool:
+            pool.remove(card)
+            deck.append(card)
+            return True
+        return False
 
