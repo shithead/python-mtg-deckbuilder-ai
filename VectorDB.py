@@ -55,11 +55,16 @@ for i, card in  enumerate(pool):
     metadatas.append(data_dict)
     documents.append(document)
 
-collection.add(
-    documents=documents,
-    ids=[f"id{i}" for i in range(len(documents))],
-    metadatas=metadatas
-)
+BATCH_SIZE = 5000
+total = len(documents)
+for start in range(0, total, BATCH_SIZE):
+    end = min(start + BATCH_SIZE, total)
+    print(f"\nAdding batch {start//BATCH_SIZE + 1}/{(total + BATCH_SIZE - 1)//BATCH_SIZE} ({start}-{end}/{total})")
+    collection.add(
+        documents=documents[start:end],
+        ids=[f"id{i}" for i in range(start, end)],
+        metadatas=metadatas[start:end],
+    )
 
 query_results = collection.query(
     query_texts=["Find some cards with life"],

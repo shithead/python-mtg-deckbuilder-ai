@@ -7,10 +7,11 @@ from config import DbPROVIDER, ZODB_PATH
 
 
 class Database(MtgDB):
-    def __init__(self, provider : int = DbPROVIDER["scryfall"], force_update : bool = False):
+    def __init__(self, provider : int = DbPROVIDER["scryfall"], force_update : bool = False,
+                 check_update : bool = True):
         super().__init__(ZODB_PATH)
         self.__provider = provider
-        if force_update or self._needs_update():
+        if force_update or (check_update and self._needs_update()):
             if self.__provider == DbPROVIDER["scryfall"]:
                 self.scryfall_bulk_update()
             if self.__provider == DbPROVIDER["mtgio"]:
