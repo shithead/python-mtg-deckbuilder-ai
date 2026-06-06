@@ -97,29 +97,41 @@ class Constructor():
             self.__model.eval()
         return self.__model, self.__encoder
 
-    def score_card(self, deck: Deck, card: PCard) -> float:
+    def score_card(self, deck: Deck, card: PCard, alpha: float = 1.0) -> float:
         if len(deck) == 0:
             return 0.5
         model, encoder = self._get_scorer()
         import torch
+        import torch.nn.functional as F
         with torch.no_grad():
             deck_embs = encoder.encode_many(list(deck))
             deck_ctx = deck_embs.mean(dim=0)
             card_emb = encoder.encode(card)
             x = torch.cat([deck_ctx, card_emb]).unsqueeze(0)
             score = model(x).item()
+        if alpha < 1.0:
+            cos_sim = F.cosine_similarity(deck_ctx.unsqueeze(0), card_emb.unsqueeze(0)).item()
+            cos_sim = (cos_sim + 1) / 2
+            score = alpha * score + (1 - alpha) * cos_sim
         return score
 
-    def rank_cards(self, deck: Deck, cards) -> list:
+    def rank_cards(self, deck: Deck, cards, alpha: float = 1.0) -> list:
         if len(deck) == 0:
             return list(cards)
         model, encoder = self._get_scorer()
         import torch
+        import torch.nn.functional as F
         with torch.no_grad():
             deck_embs = encoder.encode_many(list(deck))
             deck_ctx = deck_embs.mean(dim=0)
             card_embs = encoder.encode_many(list(cards))
-            deck_ctx = deck_ctx.unsqueeze(0).expand(len(cards), -1)
-            x = torch.cat([deck_ctx, card_embs], dim=1)
-            scores = model(x).squeeze(-1).tolist()
+            deck_ctx_exp = deck_ctx.unsqueeze(0).expand(len(cards), -1)
+            x = torch.cat([deck_ctx_exp, card_embs], dim=1)
+            model_scores = model(x).squeeze(-1)
+        if alpha < 1.0:
+            cos_sim = F.cosine_similarity(deck_ctx.unsqueeze(0), card_embs, dim=1)
+            cos_sim = (cos_sim + 1) / 2
+            scores = (alpha * model_scores + (1 - alpha) * cos_sim).tolist()
+        else:
+            scores = model_scores.tolist()
         return sorted(zip(cards, scores), key=lambda cs: cs[1], reverse=True)

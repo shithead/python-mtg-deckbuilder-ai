@@ -73,7 +73,7 @@ def main(query_text: str):
     color_pips = _color_count(getattr(theme_card, "mana_cost", None) or "")
 
     for i in range(60):
-        ranked = ctor.rank_cards(deck, candidates[:80])
+        ranked = ctor.rank_cards(deck, candidates[:80], alpha=0.6)
         if not ranked:
             break
         best, score = ranked[0]

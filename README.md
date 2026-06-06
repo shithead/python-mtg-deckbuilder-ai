@@ -67,8 +67,8 @@ ctor.this_card(pool, deck, action=4)     # pick current card into deck
 ctor.this_card(pool, deck, action=3)     # drop last card back to pool
 
 # AI synergy scoring (requires trained model)
-score = ctor.score_card(deck, card)          # → 0.0–1.0
-ranked = ctor.rank_cards(deck, card_pool)    # → [(card, score), ...] sorted
+score = ctor.score_card(deck, card, alpha=0.6)       # → 0.0–1.0 (hybrid)
+ranked = ctor.rank_cards(deck, card_pool, alpha=0.6)  # → [(card, score), ...] sorted
 ```
 
 ### Usage example: build a deck with AI
@@ -126,10 +126,12 @@ Deck context → mean-pool of all card embeddings
 ```
 
 - **~200K parameters** (trainable on CPU)
-- **Training data:** 595 WCC decks (~86K samples, positive + negative)
+- **Training data:** 595 WCC decks (~87K samples) with synthetic positives + hard negative mining
 - **Loss:** Binary Cross-Entropy
-- **Training accuracy:** ~98% after ~16 epochs
+- **Training accuracy:** ~96.5% on hard negatives (top-200 similar cards per deck)
 - **Early stopping:** Stops when accuracy ≥ 98% or improvement < 0.05% between epochs
+- **Dataset:** Synthetische Positives (top semantisch ähnliche Karten per Deck) + Hard Negative Mining (top-200 ähnlichste Nicht-Deck-Karten statt zufällige)
+- **Hybrid scoring (inference):** `score = 0.6 * model + 0.4 * cosine_sim(deck_ctx, card_emb)`
 
 ```bash
 python ai/train.py             # trains with early stopping, saves data/synergy_model.pt

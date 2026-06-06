@@ -20,7 +20,7 @@ def train(epochs: int = 25, batch_size: int = 64, lr: float = 1e-3):
     print("Loading encoder...")
     encoder = CardEncoder()
     print("Building dataset...")
-    dataset = DeckDataset(db, encoder, num_negatives=1)
+    dataset = DeckDataset(db, encoder, num_negatives=1, num_synthetic=2, hard_negatives=200)
     print(f"  {len(dataset)} samples ({len(db.root.wcc_decks)} decks)")
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
