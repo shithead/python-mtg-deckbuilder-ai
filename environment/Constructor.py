@@ -1,4 +1,5 @@
 
+import torch
 from mtgtools.PCard import PCard
 from mtgtools.PCardList import PCardList
 from .Card import AICard
@@ -97,7 +98,8 @@ class Constructor():
             self.__model.eval()
         return self.__model, self.__encoder
 
-    def score_card(self, deck: Deck, card: PCard, alpha: float = 1.0) -> float:
+    def score_card(self, deck: Deck, card: PCard, alpha: float = 1.0,
+                   query_emb: torch.Tensor = None, query_weight: float = 0.0) -> float:
         if len(deck) == 0:
             return 0.5
         model, encoder = self._get_scorer()
@@ -110,12 +112,18 @@ class Constructor():
             x = torch.cat([deck_ctx, card_emb]).unsqueeze(0)
             score = model(x).item()
         if alpha < 1.0:
-            cos_sim = F.cosine_similarity(deck_ctx.unsqueeze(0), card_emb.unsqueeze(0)).item()
-            cos_sim = (cos_sim + 1) / 2
-            score = alpha * score + (1 - alpha) * cos_sim
+            cos_sim_deck = F.cosine_similarity(deck_ctx.unsqueeze(0), card_emb.unsqueeze(0)).item()
+            cos_sim_deck = (cos_sim_deck + 1) / 2
+            sim = (1 - query_weight) * cos_sim_deck
+            if query_emb is not None and query_weight > 0:
+                cos_sim_query = F.cosine_similarity(query_emb.unsqueeze(0), card_emb.unsqueeze(0)).item()
+                cos_sim_query = (cos_sim_query + 1) / 2
+                sim += query_weight * cos_sim_query
+            score = alpha * score + (1 - alpha) * sim
         return score
 
-    def rank_cards(self, deck: Deck, cards, alpha: float = 1.0) -> list:
+    def rank_cards(self, deck: Deck, cards, alpha: float = 1.0,
+                   query_emb: torch.Tensor = None, query_weight: float = 0.0) -> list:
         if len(deck) == 0:
             return list(cards)
         model, encoder = self._get_scorer()
@@ -131,7 +139,12 @@ class Constructor():
         if alpha < 1.0:
             cos_sim = F.cosine_similarity(deck_ctx.unsqueeze(0), card_embs, dim=1)
             cos_sim = (cos_sim + 1) / 2
-            scores = (alpha * model_scores + (1 - alpha) * cos_sim).tolist()
+            sim = (1 - query_weight) * cos_sim
+            if query_emb is not None and query_weight > 0:
+                cos_sim_query = F.cosine_similarity(query_emb.unsqueeze(0), card_embs, dim=1)
+                cos_sim_query = (cos_sim_query + 1) / 2
+                sim += query_weight * cos_sim_query
+            scores = (alpha * model_scores + (1 - alpha) * sim).tolist()
         else:
             scores = model_scores.tolist()
         return sorted(zip(cards, scores), key=lambda cs: cs[1], reverse=True)

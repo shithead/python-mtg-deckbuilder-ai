@@ -18,6 +18,10 @@ class CardEncoder:
         return "\n".join(parts)
 
     @torch.no_grad()
+    def encode_text(self, text: str) -> torch.Tensor:
+        return self._model.encode(text, convert_to_tensor=True)
+
+    @torch.no_grad()
     def encode(self, card) -> torch.Tensor:
         text = self._card_to_text(card)
         return self._model.encode(text, convert_to_tensor=True)

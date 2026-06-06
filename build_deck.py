@@ -5,6 +5,7 @@ from database.mtgtools import Database
 from database.VectorDB import VectorSearcher
 from environment.Deck import Deck
 from environment.Constructor import Constructor
+from ai.CardEncoder import CardEncoder
 
 def _color_count(mana_cost: str) -> dict:
     if not mana_cost:
@@ -34,9 +35,11 @@ def main(query_text: str):
     print("Loading database...", flush=True)
     db = Database(check_update=False)
     pool = list(db.loadPool())
+    pool_names_orig = {c.name.lower() for c in pool}
     deck = Deck(maxsize=60)
     ctor = Constructor()
     searcher = VectorSearcher()
+    query_emb = CardEncoder().encode_text(query_text)
 
     name_idx = {c.name.lower(): c for c in pool}
 
@@ -73,7 +76,7 @@ def main(query_text: str):
     color_pips = _color_count(getattr(theme_card, "mana_cost", None) or "")
 
     for i in range(60):
-        ranked = ctor.rank_cards(deck, candidates[:80], alpha=0.6)
+        ranked = ctor.rank_cards(deck, candidates[:80], alpha=0.6, query_emb=query_emb, query_weight=0.2)
         if not ranked:
             break
         best, score = ranked[0]
@@ -85,7 +88,7 @@ def main(query_text: str):
             continue
 
         target_lands = _land_count(total_cmc, len(deck))
-        spells_allowed = 60 - target_lands - 1
+        spells_allowed = 60 - target_lands
         if len(deck) >= spells_allowed:
             break
 
@@ -121,7 +124,12 @@ def main(query_text: str):
                 if matches:
                     deck._cards.append(matches[0])
 
-    print(f"\nDeck ({len(deck)} cards):", flush=True)
+    pool_plus_basics = pool_names_orig | {"plains", "island", "swamp", "mountain", "forest"}
+    for c in deck:
+        if c.name.lower() not in pool_plus_basics:
+            print(f"  WARNING: {c.name} NOT in user collection!", flush=True)
+    assert all(c.name.lower() in pool_plus_basics for c in deck), "Cards outside collection!"
+    print(f"\nDeck ({len(deck)} cards, all from your collection):", flush=True)
     for c in deck:
         print(f"  {c.name}")
 

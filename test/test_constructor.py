@@ -1,4 +1,5 @@
 import pytest
+import torch
 from unittest.mock import MagicMock, patch
 from environment.Card import AICard
 from environment.Deck import Deck
@@ -178,3 +179,122 @@ class TestConstructorCopyLimit:
             deck.append(self._make_card("Lightning Bolt"))
         shock = self._make_card("Shock")
         assert ctor.can_add_copy(deck, shock) is True
+
+
+class TestConstructorScoring:
+    def _make_card(self, name, type_line="Creature"):
+        card = MagicMock()
+        card.name = name
+        card.type_line = type_line
+        card.mana_cost = "{R}"
+        card.colors = ["R"]
+        card.cmc = 2
+        return card
+
+    @pytest.fixture
+    def deck(self):
+        d = Deck(maxsize=60)
+        d._cards.append(self._make_card("Card 1"))
+        d._cards.append(self._make_card("Card 2"))
+        return d
+
+    @pytest.fixture
+    def emb_a(self):
+        e = torch.zeros(384)
+        e[0] = 1.0
+        return e
+
+    @pytest.fixture
+    def emb_b(self):
+        e = torch.zeros(384)
+        e[1] = 1.0
+        return e
+
+    def test_score_card_returns_float(self, deck, emb_a):
+        model = MagicMock()
+        model.return_value = torch.tensor([[0.5]])
+        enc = MagicMock()
+        enc.encode_many.return_value = emb_a.unsqueeze(0).expand(2, -1).clone()
+        enc.encode.return_value = emb_a.clone()
+        with patch.object(Constructor, "_get_scorer", return_value=(model, enc)):
+            ctor = Constructor()
+            score = ctor.score_card(deck, self._make_card("X"), alpha=0.5)
+            assert isinstance(score, float)
+            assert 0.0 <= score <= 1.0
+
+    def test_score_card_query_anchor_raises_score(self, deck, emb_b):
+        model = MagicMock()
+        model.return_value = torch.tensor([[0.5]])
+        enc = MagicMock()
+        deck_embs = torch.zeros(2, 384)
+        deck_embs[:, 0] = 1.0
+        enc.encode_many.return_value = deck_embs
+        enc.encode.return_value = emb_b.clone()
+        with patch.object(Constructor, "_get_scorer", return_value=(model, enc)):
+            ctor = Constructor()
+            card = self._make_card("B")
+            query_emb = emb_b.clone()
+            score_no = ctor.score_card(deck, card, alpha=0.0)
+            score_yes = ctor.score_card(deck, card, alpha=0.0, query_emb=query_emb, query_weight=0.5)
+            assert score_yes > score_no
+            assert abs(score_no - 0.5) < 1e-5
+            assert abs(score_yes - 0.75) < 1e-5
+
+    def test_score_card_query_weight_zero_ignores_query(self, deck, emb_a):
+        model = MagicMock()
+        model.return_value = torch.tensor([[0.5]])
+        enc = MagicMock()
+        deck_embs = torch.zeros(2, 384)
+        deck_embs[:, 0] = 1.0
+        enc.encode_many.return_value = deck_embs
+        enc.encode.return_value = emb_a.clone()
+        with patch.object(Constructor, "_get_scorer", return_value=(model, enc)):
+            ctor = Constructor()
+            card = self._make_card("A")
+            query_emb = torch.randn(384)
+            score_a = ctor.score_card(deck, card, alpha=0.0, query_emb=query_emb, query_weight=0.0)
+            score_b = ctor.score_card(deck, card, alpha=0.0)
+            assert abs(score_a - score_b) < 1e-6
+
+    def test_rank_cards_query_anchor_boosts_close_card(self, deck, emb_a, emb_b):
+        model = MagicMock()
+        model.return_value = torch.tensor([[0.5], [0.5]])
+        enc = MagicMock()
+        card_a = self._make_card("A")
+        card_b = self._make_card("B")
+        query_emb = emb_b.clone()
+
+        call_count = [0]
+        def _encode_many_side(cards):
+            if call_count[0] == 0:
+                call_count[0] += 1
+                return emb_a.unsqueeze(0).expand(len(cards), -1).clone()
+            return torch.stack([emb_a, emb_b])
+
+        with patch.object(Constructor, "_get_scorer", return_value=(model, enc)):
+            ctor = Constructor()
+
+            call_count[0] = 0
+            enc.encode_many.side_effect = _encode_many_side
+            ranked_no = ctor.rank_cards(deck, [card_b, card_a], alpha=0.0)
+
+            call_count[0] = 0
+            enc.encode_many.side_effect = _encode_many_side
+            ranked_yes = ctor.rank_cards(deck, [card_b, card_a], alpha=0.0,
+                                          query_emb=query_emb, query_weight=0.5)
+
+            score_b_no = ranked_no[1][1]
+            score_b_yes = ranked_yes[1][1]
+            assert score_b_yes > score_b_no
+
+    def test_rank_cards_sorted_descending(self, deck, emb_a):
+        model = MagicMock()
+        model.return_value = torch.tensor([[0.5], [0.5], [0.5]])
+        enc = MagicMock()
+        cards = [self._make_card("X"), self._make_card("Y"), self._make_card("Z")]
+        enc.encode_many.side_effect = [torch.zeros(2, 384), torch.zeros(3, 384)]
+        with patch.object(Constructor, "_get_scorer", return_value=(model, enc)):
+            ctor = Constructor()
+            ranked = ctor.rank_cards(deck, cards, alpha=1.0)
+            for i in range(len(ranked) - 1):
+                assert ranked[i][1] >= ranked[i + 1][1]

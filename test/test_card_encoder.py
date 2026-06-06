@@ -42,6 +42,16 @@ class TestCardEncoder:
         emb = self.encoder.encode(card)
         assert not emb.requires_grad
 
+    def test_encode_text_returns_tensor(self):
+        emb = self.encoder.encode_text("aggressive red creature with haste")
+        assert isinstance(emb, torch.Tensor)
+        assert emb.shape == (384,)
+
+    def test_encode_text_deterministic(self):
+        e1 = self.encoder.encode_text("lightning bolt")
+        e2 = self.encoder.encode_text("lightning bolt")
+        assert torch.allclose(e1, e2)
+
     def test_encode_many_deterministic(self):
         class MockCard:
             def __init__(self, name):
