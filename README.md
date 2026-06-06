@@ -24,10 +24,10 @@ Alternatively, use `./create_virtenv.sh` instead of `nix-shell` for a plain venv
 ## Project structure
 
 ```
-├── ai/                         PyTorch model, dataset, training
+├── ai/                         PyTorch model, dataset, training (Phase C)
 ├── database/                   mtgtools (ZODB), ChromaDB vector search
 ├── environment/                Domain objects: AICard, Deck, Constructor
-├── test/                       Tests (pytest, 39 tests)
+├── test/                       Tests (pytest, 53 tests)
 ├── VectorDB.py                 ChromaDB index builder script
 ├── import_collection.py        Import CSV + WCC decks into ZODB
 ├── build_deck.py               CLI: build a deck from a search query
@@ -114,27 +114,30 @@ for card in deck:
     print(f"  {card.name}")
 ```
 
-### Model architecture
+### Model architecture (Phase C)
 
-`SynergyClassifier` — binary classifier predicting card-to-deck compatibility.
+`CardProjector` + `SynergyClassifier` — trainable projection on top of frozen ChromaDB.
 
 ```
 Card → ChromaDB (frozen all-MiniLM-L6-v2) → 384d embedding
-Deck context → mean-pool of all card embeddings
-
-[deck_ctx ⊕ card_emb] → MLP(768, 256) → ReLU → Dropout → Linear(256, 1) → Sigmoid
+                                                   ↓
+                                   CardProjector: Linear(384,128) → ReLU → Linear(128,64)
+                                                   ↓
+                                            trainable 64d embedding
+                                                   ↓
+                              [deck_ctx ⊕ card_emb] → MLP(128, 256) → ReLU → Dropout → Linear(256, 1) → Sigmoid
 ```
 
-- **~200K parameters** (trainable on CPU)
+- **~90K parameters** (CardProjector: ~57K + SynergyClassifier: ~33K)
 - **Training data:** 595 WCC decks (~87K samples) with synthetic positives + hard negative mining
-- **Loss:** Binary Cross-Entropy
-- **Training accuracy:** ~96.5% on hard negatives (top-200 similar cards per deck)
+- **Loss:** Binary Cross-Entropy (projector + classifier trained jointly)
+- **Training accuracy:** ~96.3% on hard negatives (top-200 similar cards per deck)
 - **Early stopping:** Stops when accuracy ≥ 98% or improvement < 0.05% between epochs
-- **Dataset:** Synthetische Positives (top semantisch ähnliche Karten per Deck) + Hard Negative Mining (top-200 ähnlichste Nicht-Deck-Karten statt zufällige)
-- **Hybrid scoring (inference):** `score = 0.6 * model + 0.4 * cosine_sim(deck_ctx, card_emb)`
+- **Hybrid scoring (inference):** `score = alpha * model + (1 - alpha) * cosine_sim(deck_ctx, card_emb)` with optional `query_emb` anchor
+- **Query anchor:** Cosine similarity to the original search query keeps the deck focused on the theme
 
 ```bash
-python ai/train.py             # trains with early stopping, saves data/synergy_model.pt
+python ai/train.py             # trains projector + classifier, saves both .pt files
 ```
 
 ## Development
@@ -142,7 +145,7 @@ python ai/train.py             # trains with early stopping, saves data/synergy_
 ### Run tests
 
 ```bash
-pytest test/                     # all 40 tests
+pytest test/                     # all 53 tests
 pytest test/ -k "test_deck"      # single test suite
 pytest test/ -v --tb=short       # verbose with short tracebacks
 coverage run -m pytest test/     # with coverage
