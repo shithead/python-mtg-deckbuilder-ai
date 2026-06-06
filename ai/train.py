@@ -3,6 +3,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from database.mtgtools import Database
 from ai.CardEncoder import CardEncoder
+from ai.CardProjector import CardProjector
 from ai.DeckDataset import DeckDataset
 from ai.SynergyClassifier import SynergyClassifier
 
@@ -16,26 +17,35 @@ print(f"Using {device} device")
 
 def train(epochs: int = 25, batch_size: int = 64, lr: float = 1e-3):
     print("Loading database...")
-    db = Database()
+    db = Database(check_update=False)
     print("Loading encoder...")
     encoder = CardEncoder()
+    print("Creating projector...")
+    projector = CardProjector().to(device)
     print("Building dataset...")
     dataset = DeckDataset(db, encoder, num_negatives=1, num_synthetic=2, hard_negatives=200)
     print(f"  {len(dataset)} samples ({len(db.root.wcc_decks)} decks)")
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
-    model = SynergyClassifier().to(device)
+    model = SynergyClassifier(card_embed_dim=64).to(device)
     loss_fn = nn.BCELoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    optimizer = torch.optim.Adam(
+        list(model.parameters()) + list(projector.parameters()), lr=lr
+    )
 
     size = len(dataset)
     prev_acc = 0.0
     for epoch in range(epochs):
         model.train()
+        projector.train()
         running_loss = 0.0
         correct = 0
-        for batch, (X, y) in enumerate(dataloader):
-            X, y = X.to(device), y.to(device)
+        for batch, (X_raw, y) in enumerate(dataloader):
+            X_raw, y = X_raw.to(device), y.to(device)
+            deck_raw, card_raw = X_raw[:, :384], X_raw[:, 384:]
+            deck_proj = projector(deck_raw)
+            card_proj = projector(card_raw)
+            X = torch.cat([deck_proj, card_proj], dim=1)
 
             pred = model(X)
             loss = loss_fn(pred, y)
@@ -66,6 +76,8 @@ def train(epochs: int = 25, batch_size: int = 64, lr: float = 1e-3):
 
     torch.save(model.state_dict(), "data/synergy_model.pt")
     print("Saved data/synergy_model.pt")
+    torch.save(projector.state_dict(), "data/card_projector.pt")
+    print("Saved data/card_projector.pt")
 
 
 if __name__ == "__main__":

@@ -4,13 +4,14 @@ from mtgtools.PCard import PCard
 from mtgtools.PCardList import PCardList
 from .Card import AICard
 from .Deck import Deck
-from config import BASIC_LAND_TYPES, MAX_COPIES, SYNERGY_MODEL_PATH
+from config import BASIC_LAND_TYPES, MAX_COPIES, SYNERGY_MODEL_PATH, PROJECTOR_PATH
 
 class Constructor():
     def __init__(self):
         self.__pos_pool = 0
         self.__searcher = None
         self.__encoder = None
+        self.__projector = None
         self.__model = None
 
     def _get_searcher(self):
@@ -91,24 +92,32 @@ class Constructor():
         if self.__model is None:
             import torch
             from ai.CardEncoder import CardEncoder
+            from ai.CardProjector import CardProjector
             from ai.SynergyClassifier import SynergyClassifier
             self.__encoder = CardEncoder()
-            self.__model = SynergyClassifier()
+            self.__projector = CardProjector()
+            try:
+                self.__projector.load_state_dict(torch.load(PROJECTOR_PATH, map_location="cpu"))
+            except FileNotFoundError:
+                pass
+            self.__projector.eval()
+            self.__model = SynergyClassifier(card_embed_dim=64)
             self.__model.load_state_dict(torch.load(SYNERGY_MODEL_PATH, map_location="cpu"))
             self.__model.eval()
-        return self.__model, self.__encoder
+        return self.__model, self.__encoder, self.__projector
 
     def score_card(self, deck: Deck, card: PCard, alpha: float = 1.0,
                    query_emb: torch.Tensor = None, query_weight: float = 0.0) -> float:
         if len(deck) == 0:
             return 0.5
-        model, encoder = self._get_scorer()
+        model, encoder, projector = self._get_scorer()
         import torch
         import torch.nn.functional as F
         with torch.no_grad():
-            deck_embs = encoder.encode_many(list(deck))
-            deck_ctx = deck_embs.mean(dim=0)
-            card_emb = encoder.encode(card)
+            deck_raw = encoder.encode_many(list(deck))
+            deck_ctx = projector(deck_raw).mean(dim=0)
+            card_raw = encoder.encode(card).unsqueeze(0)
+            card_emb = projector(card_raw).squeeze(0)
             x = torch.cat([deck_ctx, card_emb]).unsqueeze(0)
             score = model(x).item()
         if alpha < 1.0:
@@ -116,7 +125,8 @@ class Constructor():
             cos_sim_deck = (cos_sim_deck + 1) / 2
             sim = (1 - query_weight) * cos_sim_deck
             if query_emb is not None and query_weight > 0:
-                cos_sim_query = F.cosine_similarity(query_emb.unsqueeze(0), card_emb.unsqueeze(0)).item()
+                card_raw_flat = card_raw.squeeze(0)
+                cos_sim_query = F.cosine_similarity(query_emb.unsqueeze(0), card_raw_flat.unsqueeze(0)).item()
                 cos_sim_query = (cos_sim_query + 1) / 2
                 sim += query_weight * cos_sim_query
             score = alpha * score + (1 - alpha) * sim
@@ -126,13 +136,14 @@ class Constructor():
                    query_emb: torch.Tensor = None, query_weight: float = 0.0) -> list:
         if len(deck) == 0:
             return list(cards)
-        model, encoder = self._get_scorer()
+        model, encoder, projector = self._get_scorer()
         import torch
         import torch.nn.functional as F
         with torch.no_grad():
-            deck_embs = encoder.encode_many(list(deck))
-            deck_ctx = deck_embs.mean(dim=0)
-            card_embs = encoder.encode_many(list(cards))
+            deck_raw = encoder.encode_many(list(deck))
+            deck_ctx = projector(deck_raw).mean(dim=0)
+            cards_raw = encoder.encode_many(list(cards))
+            card_embs = projector(cards_raw)
             deck_ctx_exp = deck_ctx.unsqueeze(0).expand(len(cards), -1)
             x = torch.cat([deck_ctx_exp, card_embs], dim=1)
             model_scores = model(x).squeeze(-1)
@@ -141,7 +152,7 @@ class Constructor():
             cos_sim = (cos_sim + 1) / 2
             sim = (1 - query_weight) * cos_sim
             if query_emb is not None and query_weight > 0:
-                cos_sim_query = F.cosine_similarity(query_emb.unsqueeze(0), card_embs, dim=1)
+                cos_sim_query = F.cosine_similarity(query_emb.unsqueeze(0), cards_raw, dim=1)
                 cos_sim_query = (cos_sim_query + 1) / 2
                 sim += query_weight * cos_sim_query
             scores = (alpha * model_scores + (1 - alpha) * sim).tolist()

@@ -8,5 +8,6 @@ BASIC_LAND_TYPES = {"Plains", "Island", "Swamp", "Mountain", "Forest", "Wastes"}
 MAX_COPIES = 4
 
 SYNERGY_MODEL_PATH = "data/synergy_model.pt"
+PROJECTOR_PATH = "data/card_projector.pt"
 
 DbPROVIDER = {"scryfall": 1, "mtgio": 2}

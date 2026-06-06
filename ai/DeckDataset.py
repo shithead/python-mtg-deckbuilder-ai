@@ -10,7 +10,6 @@ class DeckDataset(Dataset):
     def __init__(self, db: Database, encoder: CardEncoder, num_negatives: int = 1,
                  num_synthetic: int = 0, hard_negatives: int = 0):
         self._decks = list(db.root.wcc_decks)
-        self._encoder = encoder
         self._num_negatives = num_negatives
 
         all_cards = db.loadPool().unique_names() + db.loadWccPool().unique_names()

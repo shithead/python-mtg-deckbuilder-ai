@@ -3,7 +3,7 @@ import torch.nn as nn
 
 
 class SynergyClassifier(nn.Module):
-    def __init__(self, card_embed_dim: int = 384, hidden_dim: int = 256, dropout: float = 0.2):
+    def __init__(self, card_embed_dim: int = 64, hidden_dim: int = 256, dropout: float = 0.2):
         super().__init__()
         input_dim = card_embed_dim * 2
         self._net = nn.Sequential(
