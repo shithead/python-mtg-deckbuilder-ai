@@ -5,17 +5,24 @@ from mtgtools.PCardList import PCardList
 from environment.Card import AICard
 from config import DbPROVIDER, ZODB_PATH
 
+SCRYFALL_HEADERS = {
+    'User-Agent': 'mtg-deckbuilder-ai/0.1.0',
+    'Accept': 'application/json;q=0.9,*/*;q=0.8',
+}
+
 
 class Database(MtgDB):
     def __init__(self, provider : int = DbPROVIDER["scryfall"], force_update : bool = False,
                  check_update : bool = True):
         super().__init__(ZODB_PATH)
         self.__provider = provider
-        if force_update or (check_update and self._needs_update()):
+        needed = force_update or (check_update and self._needs_update())
+        if needed:
             if self.__provider == DbPROVIDER["scryfall"]:
-                self.scryfall_bulk_update()
+                self.scryfall_bulk_update(headers=SCRYFALL_HEADERS)
             if self.__provider == DbPROVIDER["mtgio"]:
                 self.mtgio_update()
+            self.commit()
 
     def _needs_update(self) -> bool:
         attr = (
@@ -32,7 +39,7 @@ class Database(MtgDB):
 
         if self.__provider == DbPROVIDER["scryfall"]:
             try:
-                bulk_data = get_scryfall_card_bulks()
+                bulk_data = get_scryfall_card_bulks(SCRYFALL_HEADERS)
                 bulk_type = next(
                     (b for b in bulk_data["data"] if b["type"] == "default_cards"),
                     None,
@@ -47,9 +54,11 @@ class Database(MtgDB):
 
         return False
 
-    def scryfall_bulk_update(self, bulk_type="default_cards", verbose=True):
+    def scryfall_bulk_update(self, bulk_type="default_cards", verbose=True, headers=None):
+        if headers is None:
+            headers = SCRYFALL_HEADERS
         try:
-            super().scryfall_bulk_update(bulk_type, verbose)
+            super().scryfall_bulk_update(bulk_type, verbose, headers=headers)
         except ValueError:
             # mtgtools bug: PSetList.where() uses substring matching, so
             # obsolete sets whose codes are substrings of other obsolete
@@ -62,16 +71,16 @@ class Database(MtgDB):
             # Use exact code matching to safely remove obsolete sets
             from mtgtools.util.api_requests import get_response_json, scryfall_sets_url
             current_sets = self.root.scryfall_sets
-            api_codes = {d["code"] for d in get_response_json(scryfall_sets_url)["data"]}
+            api_codes = {d["code"] for d in get_response_json(scryfall_sets_url, headers=SCRYFALL_HEADERS)["data"]}
             removed = set()
             for pset in list(current_sets):
                 if pset.code not in api_codes and pset.code not in removed:
                     current_sets.remove(pset)
                     removed.add(pset.code)
             transaction.commit()
-            super().scryfall_bulk_update(bulk_type, verbose)
+            super().scryfall_bulk_update(bulk_type, verbose, headers=headers)
 
-        bulk_data = get_scryfall_card_bulks()
+        bulk_data = get_scryfall_card_bulks(SCRYFALL_HEADERS)
         bulk_type_data = next(
             (b for b in bulk_data["data"] if b["type"] == bulk_type),
             None,

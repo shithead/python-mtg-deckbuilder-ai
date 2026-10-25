@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Ensure dependencies are available (nix-shell provides them).
+if ! python -c "import transaction" 2>/dev/null; then
+    echo "Python environment missing dependencies; re-running under nix-shell..."
+    exec nix-shell --run "$0 $*"
+fi
+
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 DATA="$ROOT/data"
 
