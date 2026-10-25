@@ -254,15 +254,25 @@ def main():
         effect_embs = enc.encode_many([_effect_mock(c) for c in cand_list])
         cos_theme = torch.nn.functional.cosine_similarity(theme_emb.unsqueeze(0), effect_embs, dim=1)
 
-        # weighted score: model 15%, deck 30%, query 25%, text-synergy 30%
-        scored = []
-        for idx, c in enumerate(cand_list):
-            ms = model_map.get(id(c), 0.0)
-            sc = (0.15 * float(ms)
-                  + 0.30 * float(cos_deck[idx])
-                  + 0.25 * float(cos_query[idx])
-                  + 0.30 * float(cos_theme[idx]))
-            scored.append((c, sc))
+        # gewichtete score-aufteilung
+        if len(distinct_names) < 3:
+            # vor 3 distinct: Query 75%, Modell 25%
+            scored = []
+            for idx, c in enumerate(cand_list):
+                ms = model_map.get(id(c), 0.0)
+                sc = (0.25 * float(ms)
+                      + 0.75 * float(cos_query[idx]))
+                scored.append((c, sc))
+        else:
+            # nach 3 distinct: Deck 30%, Query 25%, Modell 15%, Text 30%
+            scored = []
+            for idx, c in enumerate(cand_list):
+                ms = model_map.get(id(c), 0.0)
+                sc = (0.15 * float(ms)
+                      + 0.30 * float(cos_deck[idx])
+                      + 0.25 * float(cos_query[idx])
+                      + 0.30 * float(cos_theme[idx]))
+                scored.append((c, sc))
         scored.sort(key=lambda x: x[1], reverse=True)
 
         if not scored:
