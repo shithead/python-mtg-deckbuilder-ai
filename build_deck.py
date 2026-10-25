@@ -275,8 +275,8 @@ def main():
             deck_mean = deck_embs.mean(dim=0)
             # 50/50: Deck-Mittel + Theme-Embedding (oracle_text bleibt einflussreich)
             query_emb = 0.5 * deck_mean + 0.5 * theme_emb
-            query_weight = 0.6
-            alpha = 0.5
+            query_weight = 5 / 7
+            alpha = 0.3
 
     target_lands = _land_count(total_cmc, len(deck))
     total_pips = sum(color_pips.values())
