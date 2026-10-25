@@ -6,6 +6,7 @@ except ModuleNotFoundError:
     os.execvp("nix-shell", ["nix-shell", "--run", cmd])
 
 import argparse
+import torch
 import random
 import sys
 from collections import Counter
@@ -19,6 +20,11 @@ from environment.Constructor import Constructor
 from ai.CardEncoder import CardEncoder
 
 
+def _kw_bonus(card):
+    txt = ((getattr(card, "type_line", None) or getattr(card, "type", "") or "") + " " + (getattr(card, "oracle_text", "") or "")).lower()
+    return 2.0 if "defender" in txt else 0.0
+
+
 def _color_count(mana_cost: str) -> dict:
     if not mana_cost:
         return {}
@@ -28,6 +34,17 @@ def _color_count(mana_cost: str) -> dict:
             counts[ch] = counts.get(ch, 0) + 1
     return counts
 
+
+
+
+def _effect_mock(card):
+    from types import SimpleNamespace
+    return SimpleNamespace(
+        name=getattr(card, "name", ""),
+        type_line=getattr(card, "type_line", None) or getattr(card, "type", "") or "",
+        mana_cost="",
+        oracle_text=getattr(card, "oracle_text", "") or "",
+    )
 
 def _land_count(total_cmc: float, spell_count: int) -> int:
     avg_cmc = total_cmc / max(spell_count, 1)
@@ -158,7 +175,7 @@ def main():
 
     theme_colors = set()
     for tc in theme_cards:
-        theme_colors |= set(getattr(tc, "colors", []) or [])
+        theme_colors |= {str(x).upper() for x in (getattr(tc, "colors", []) or [])}
 
     if colors is not None and colors > 0 and len(theme_colors) > colors:
         color_counts = Counter()
@@ -170,7 +187,7 @@ def main():
 
     if not theme_colors:
         for tc in theme_cards:
-            theme_colors |= set(getattr(tc, "colors", []) or [])
+            theme_colors |= {str(x).upper() for x in (getattr(tc, "colors", []) or [])}
 
     for tc in theme_cards:
         print(f"Theme: {tc.name} ({tc.type_line})", flush=True)
@@ -189,9 +206,11 @@ def main():
         c for c in pool
         if c.name.lower() in pool_names_orig
         and "basic" not in ((getattr(c, "type_line", None) or getattr(c, "type", "") or "").lower())
-        and (not theme_colors or (set(getattr(c, "colors", []) or []) & theme_colors)
+        and (not theme_colors or ({str(x).upper() for x in (getattr(c, "colors", []) or [])} & theme_colors)
              or not getattr(c, "colors", []))
     ]
+    # prioritize defenders/synergistic cards so they are evaluated
+    candidates.sort(key=lambda c: _kw_bonus(c), reverse=True)
 
     enc = CardEncoder()
     try:
@@ -201,16 +220,33 @@ def main():
         mock = SimpleNamespace(name=query, type_line="", mana_cost="", oracle_text=query)
         query_emb = enc.encode(mock)
 
+    # theme embedding (type + oracle only, no mana_cost) for text-synergy bonus
+    theme_mocks = [_effect_mock(tc) for tc in theme_cards]
+    theme_emb = enc.encode_many(theme_mocks).mean(dim=0)
+
     distinct_names = {tc.name.lower() for tc in theme_cards}
-    alpha = 0.6
-    query_weight = 0.2
+    alpha = 0.0
+    query_weight = 0.5
 
     for i in range(60):
         ranked = ctor.rank_cards(deck, candidates[:80], alpha=alpha, query_emb=query_emb, query_weight=query_weight)
         if not ranked:
             break
+        # soft text-synergy bonus (type_line + oracle_text, no mana_cost)
+        cand_mocks = [_effect_mock(c) for c, _ in ranked]
+        cand_embs = enc.encode_many(cand_mocks)
+        sims = torch.nn.functional.cosine_similarity(theme_emb.unsqueeze(0), cand_embs, dim=1)
+        ranked = [(c, sc + 1.0 * float(sm) + _kw_bonus(c)) for (c, sc), sm in zip(ranked, sims)]
+        ranked.sort(key=lambda x: x[1], reverse=True)
         best, score = ranked[0]
-        if score < 0.3:
+        # soft bonus: prefer defender cards when close in score
+        def _is_defender(c):
+            txt = ((getattr(c, "type_line", None) or getattr(c, "type", "") or "") + " " + (getattr(c, "oracle_text", "") or "")).lower()
+            return "defender" in txt or "wall" in txt
+        def_candidates = [r for r in ranked[:10] if _is_defender(r[0])]
+        if def_candidates and def_candidates[0][1] >= score - 0.3:
+            best, score = def_candidates[0]
+        if score < 0.1:
             break
         name_count = sum(1 for c in deck if c.name == best.name)
         if name_count >= 4:
@@ -233,11 +269,12 @@ def main():
             color_pips[col] = color_pips.get(col, 0) + cnt
 
         distinct_names.add(best.name.lower())
-        if len(distinct_names) >= 3 and query_weight > 0.05:
+        if len(distinct_names) >= 3 and query_weight > 0:
             deck_embs = enc.encode_many(list(deck))
             deck_mean = deck_embs.mean(dim=0)
-            query_emb = 0.5 * query_emb + 0.5 * deck_mean
-            query_weight = 0.05
+            # komplett auf Deck-Mittel umschalten
+            query_emb = deck_mean
+            query_weight = 0.0
             alpha = 0.75
 
     target_lands = _land_count(total_cmc, len(deck))
