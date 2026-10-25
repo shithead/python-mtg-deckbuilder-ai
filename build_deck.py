@@ -192,9 +192,14 @@ def main():
     for tc in theme_cards:
         print(f"Theme: {tc.name} ({tc.type_line})", flush=True)
 
+    # Theme-Karten so oft wie vorhanden (max 4) einfuegen
     for tc in theme_cards:
-        deck._cards.append(tc)
-    pool = [c for c in pool if c not in theme_cards]
+        avail = sum(1 for c in pool if c is tc or c.name.lower() == tc.name.lower())
+        copies = min(4, max(1, avail))
+        for _ in range(copies):
+            deck._cards.append(tc)
+    theme_names = {tc.name.lower() for tc in theme_cards}
+    pool = [c for c in pool if c.name.lower() not in theme_names]
 
     total_cmc = sum(float(getattr(tc, "cmc", 0) or 0) for tc in theme_cards) / len(theme_cards)
     color_pips = {}
@@ -208,6 +213,7 @@ def main():
         and "basic" not in ((getattr(c, "type_line", None) or getattr(c, "type", "") or "").lower())
         and (not theme_colors or ({str(x).upper() for x in (getattr(c, "colors", []) or [])} & theme_colors)
              or not getattr(c, "colors", []))
+        and c.name.lower() not in theme_names
     ]
     # prioritize defenders/synergistic cards so they are evaluated
     candidates.sort(key=lambda c: _kw_bonus(c), reverse=True)
