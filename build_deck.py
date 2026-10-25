@@ -233,21 +233,42 @@ def main():
     theme_emb = enc.encode_many(theme_mocks).mean(dim=0)
 
     distinct_names = {tc.name.lower() for tc in theme_cards}
-    alpha = 0.0
-    query_weight = 0.5
 
     for i in range(60):
-        ranked = ctor.rank_cards(deck, candidates[:80], alpha=alpha, query_emb=query_emb, query_weight=query_weight)
-        if not ranked:
+        cand_list = candidates[:80]
+        if not cand_list:
             break
-        # soft text-synergy bonus (type_line + oracle_text, no mana_cost)
-        cand_mocks = [_effect_mock(c) for c, _ in ranked]
-        cand_embs = enc.encode_many(cand_mocks)
-        sims = torch.nn.functional.cosine_similarity(theme_emb.unsqueeze(0), cand_embs, dim=1)
-        ranked = [(c, sc + 1.0 * float(sm)) for (c, sc), sm in zip(ranked, sims)]
-        ranked.sort(key=lambda x: x[1], reverse=True)
-        best, score = ranked[0]
-        if score < 0.1:
+
+        # model scores (pure model)
+        model_ranked = ctor.rank_cards(deck, cand_list, alpha=1.0)
+        model_map = {id(c): sc for c, sc in model_ranked}
+
+        # embeddings
+        full_embs = enc.encode_many(cand_list)
+        if len(deck) > 0:
+            deck_mean = enc.encode_many(list(deck)).mean(dim=0)
+            cos_deck = torch.nn.functional.cosine_similarity(deck_mean.unsqueeze(0), full_embs, dim=1)
+        else:
+            cos_deck = torch.zeros(len(cand_list))
+        cos_query = torch.nn.functional.cosine_similarity(query_emb.unsqueeze(0), full_embs, dim=1)
+        effect_embs = enc.encode_many([_effect_mock(c) for c in cand_list])
+        cos_theme = torch.nn.functional.cosine_similarity(theme_emb.unsqueeze(0), effect_embs, dim=1)
+
+        # weighted score: model 15%, deck 30%, query 25%, text-synergy 30%
+        scored = []
+        for idx, c in enumerate(cand_list):
+            ms = model_map.get(id(c), 0.0)
+            sc = (0.15 * float(ms)
+                  + 0.30 * float(cos_deck[idx])
+                  + 0.25 * float(cos_query[idx])
+                  + 0.30 * float(cos_theme[idx]))
+            scored.append((c, sc))
+        scored.sort(key=lambda x: x[1], reverse=True)
+
+        if not scored:
+            break
+        best, score = scored[0]
+        if score < 0.3:
             break
         name_count = sum(1 for c in deck if c.name == best.name)
         if name_count >= 4:
@@ -270,13 +291,11 @@ def main():
             color_pips[col] = color_pips.get(col, 0) + cnt
 
         distinct_names.add(best.name.lower())
-        if len(distinct_names) >= 3 and query_weight > 0.05:
+        if len(distinct_names) >= 3:
             deck_embs = enc.encode_many(list(deck))
             deck_mean = deck_embs.mean(dim=0)
             # 50/50: Deck-Mittel + Theme-Embedding (oracle_text bleibt einflussreich)
             query_emb = 0.5 * deck_mean + 0.5 * theme_emb
-            query_weight = 5 / 7
-            alpha = 0.3
 
     target_lands = _land_count(total_cmc, len(deck))
     total_pips = sum(color_pips.values())
