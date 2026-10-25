@@ -37,6 +37,10 @@ for i, card in  enumerate(pool):
 
     document += f"name: {card.name}\n"
     data_dict.update({"name": card.name})
+    printed = getattr(card, "printed_name", None)
+    if printed:
+        document += f"printed_name: {printed}\n"
+        data_dict.update({"printed_name": printed})
     if card.mana_cost is not None:
         data_dict.update({"mana_cost": card.mana_cost})
         document += f"mana_cost: {card.mana_cost}\n"

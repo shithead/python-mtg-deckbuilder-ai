@@ -23,15 +23,23 @@ db = Database()
 # ---------------------------------------------------------------------------
 
 def _build_indexes(cards):
-    """Build name->[cards] and (name,set)->[cards] dicts from a PCardList."""
+    """Build name->[cards] and (name,set)->[cards] dicts from a PCardList.
+
+    Indexes both the canonical Scryfall name and the printed_name (if present,
+    e.g. showcase/alternate-art printings such as "Renfield, Delusional Minion").
+    """
     by_name = {}
     by_name_set = {}
     total = len(cards)
     for i, card in enumerate(cards):
-        name = (card.name or "").lower()
+        names = {(card.name or "").lower()}
+        printed = getattr(card, "printed_name", None)
+        if printed:
+            names.add(printed.lower())
         set_code = (card.set or "").lower() if hasattr(card, "set") else ""
-        by_name.setdefault(name, []).append(card)
-        by_name_set.setdefault((name, set_code), []).append(card)
+        for n in names:
+            by_name.setdefault(n, []).append(card)
+            by_name_set.setdefault((n, set_code), []).append(card)
         if i % 5000 == 0:
             sys.stdout.write(f"\rBuilding lookup indexes... {i}/{total}")
             sys.stdout.flush()
