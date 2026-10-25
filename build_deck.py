@@ -304,8 +304,7 @@ def main():
         if len(distinct_names) >= 3:
             deck_embs = enc.encode_many(list(deck))
             deck_mean = deck_embs.mean(dim=0)
-            # 50/50: Deck-Mittel + Theme-Embedding (oracle_text bleibt einflussreich)
-            query_emb = 0.5 * deck_mean + 0.5 * theme_emb
+            query_emb = deck_mean
 
     target_lands = _land_count(total_cmc, len(deck))
     total_pips = sum(color_pips.values())
