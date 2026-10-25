@@ -69,6 +69,7 @@ def _parse_args():
     parser.add_argument("--colors", type=int, default=None, help="Number of colors to play (1-5).")
     parser.add_argument("--theme", action="append", default=[], help="Theme card name (repeatable, up to 3).")
     parser.add_argument("--query", default=None, help="Semantic query text.")
+    parser.add_argument("--theme-colors", default=None, help="Color letters, e.g. WUG or W,U,G.")
     return parser.parse_args()
 
 
@@ -121,6 +122,11 @@ def main():
     colors = args.colors
     themes = [t.strip() for t in args.theme if t.strip()]
     query = args.query
+
+    # theme-colors override
+    theme_colors_override = None
+    if args.theme_colors:
+        theme_colors_override = set(c for c in args.theme_colors.upper().replace(",", "").replace(" ", "") if c in "WUBRG")
 
     if freetext:
         fc, ft, fq = _parse_freetext(freetext, pool_names_orig)
@@ -176,6 +182,9 @@ def main():
     theme_colors = set()
     for tc in theme_cards:
         theme_colors |= {str(x).upper() for x in (getattr(tc, "colors", []) or [])}
+
+    if theme_colors_override:
+        theme_colors = theme_colors_override
 
     if colors is not None and colors > 0 and len(theme_colors) > colors:
         color_counts = Counter()
