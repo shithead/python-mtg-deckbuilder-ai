@@ -17,6 +17,8 @@ then run the import (first run downloads ~515 MB from Scryfall, one-time cost):
 python import_collection.py   # import CSV + WCC decks into ZODB
 python VectorDB.py            # build ChromaDB vector index
 python ai/train.py            # train synergy classifier
+# or one-shot:
+./run_pipeline.sh             # clean rebuild from scratch (deletes generated files)
 ```
 
 Alternatively, use `./create_virtenv.sh` instead of `nix-shell` for a plain venv.
@@ -25,12 +27,19 @@ Alternatively, use `./create_virtenv.sh` instead of `nix-shell` for a plain venv
 
 ```
 ├── ai/                         PyTorch model, dataset, training (Phase C)
+│   ├── CardEncoder.py          frozen all-MiniLM-L6-v2 → 384d
+│   ├── CardProjector.py        trainable projection 384 → 128 → 64
+│   ├── DeckDataset.py          WCC deck training pairs
+│   ├── SynergyClassifier.py    binary (deck, card) compatibility
+│   └── train.py                training script
+├── config/                     paths & constants
 ├── database/                   mtgtools (ZODB), ChromaDB vector search
 ├── environment/                Domain objects: AICard, Deck, Constructor
-├── test/                       Tests (pytest, 53 tests)
-├── VectorDB.py                 ChromaDB index builder script
-├── import_collection.py        Import CSV + WCC decks into ZODB
-├── build_deck.py               CLI: build a deck from a search query
+├── test/                       pytest (53 tests)
+├── VectorDB.py                 ChromaDB index builder (top-level script)
+├── import_collection.py         Import CSV + WCC decks into ZODB
+├── build_deck.py               CLI: build a deck from query / themes
+├── run_pipeline.sh             Clean rebuild from scratch
 ├── pyproject.toml              Package metadata
 └── requirements.txt            Python dependencies
 ```
@@ -75,6 +84,9 @@ ranked = ctor.rank_cards(deck, card_pool, alpha=0.6)  # → [(card, score), ...]
 
 ```bash
 python build_deck.py 'aggressive red creature with haste'
+# options:
+python build_deck.py --colors 3 --theme 'High Alert' --theme 'Bedrock Tortoise' --query 'defender creatures'
+python build_deck.py '3 Color Deck use High Alert as one theme card'
 ```
 
 Or programmatically:
@@ -139,6 +151,31 @@ Card → ChromaDB (frozen all-MiniLM-L6-v2) → 384d embedding
 ```bash
 python ai/train.py             # trains projector + classifier, saves both .pt files
 ```
+
+### build_deck.py CLI
+
+```bash
+python build_deck.py "aggressive red creature with haste"
+python build_deck.py --colors 2 --theme "Lightning Bolt" --query "burn"
+python build_deck.py --colors 3 --theme "High Alert" --theme "Bedrock Tortoise" --theme-colors WUG
+python build_deck.py "3 Color Deck use High Alert as one theme card"
+```
+
+Options:
+- `--colors N` — number of colors to play (1–5).
+- `--theme NAME` — theme card name (repeatable, up to 3).
+- `--theme-colors LETTERS` — override theme colors, e.g. `WUG` or `W,U,G`.
+- `--query TEXT` — semantic query text (anchoring).
+- Free text may include a color count and theme card names.
+
+## Notes
+
+- `Database()` defaults to `force_update=False`; first run downloads ~515 MB from Scryfall if ZODB is empty. Scryfall requires a custom `User-Agent` (set in `database/mtgtools.py`).
+- `Constructor.suggest` returns `None` for an empty pool; `score_card` returns `0.5` for an empty deck; `rank_cards` returns the input unchanged.
+- `CardEncoder` downloads `all-MiniLM-L6-v2` on first use (sentence-transformers).
+- ChromaDB 1.5.9 caps batch size at 5461; `VectorDB.py` chunks `collection.add` accordingly.
+- Run training/scoring from the project root (model paths are relative to CWD).
+- `build_deck.py` builds a 60-card deck from your collection only; theme cards are inserted as many times as available (max 4). Use `--theme` (repeatable, up to 3), `--colors N`, `--theme-colors WUG`, `--query`.
 
 ## Development
 
