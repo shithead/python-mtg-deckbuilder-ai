@@ -1,175 +1,89 @@
 # AGENTS.md — python-mtg-deckbuilder-ai
 
-## Project overview
+Python 3.10+ project: AI-assisted MTG deck building. PyTorch synergy classifier,
+ChromaDB semantic card search, mtgtools/ZODB card data.
 
-Python project for AI-assisted Magic: The Gathering deck building. Uses PyTorch for neural models and ChromaDB for vector embeddings. Card data comes from the external `mtgtools` library backed by a ZODB database.
+## Layout
 
-```
-├── ai/                    PyTorch model, dataset, training (SynergyClassifier v2)
-├── database/              Database abstraction (mtgtools, ChromaDB vector search)
-├── environment/           Domain objects: AICard, Deck, Constructor
-├── test/                  Tests (pytest)
-├── data/                  Persistent data, cache files, CSV/DB files
-├── VectorDB.py            ChromaDB vector store builder (top-level script)
-├── import_collection.py   Import CSV + WCC decks into ZODB
-├── ai_prepare.py          Prepare AI data (vocab, embeddings, datasets) — DEPRECATED
-├── pyproject.toml         Package metadata and build configuration
-└── requirements.txt       Python dependencies
-```
-
-## Active design decisions
-
-See `docs/superpowers/specs/2026-06-04-card-synergy-model-v2.md` for the full spec.
-Summary of key decisions (2026-06-04):
-
-- **Model:** Binary classifier predicting (deck_context, card) → compatibility (0/1)
-- **Card encoder (Phase A):** Frozen ChromaDB `all-MiniLM-L6-v2` → 384d embedding
-- **Card encoder (Phase C):** Trainable MLP projection on top of ChromaDB (future)
-- **Deck context:** Mean-pool of card embeddings for all cards currently in the deck
-- **Training data:** WCC decks = positive samples, random pool cards = negative
-- **Constructor:** 4-copy hard constraint (except basic lands), deck size ≥ 60
-- **Target hardware:** Consumer laptop/desktop CPU, <16 GB RAM
-- **Files to delete (during v2 refactor):** `ai/MTGDeckBuilderModel.py`, `ai/Preparer.py`, `ai/Trainer.py`, `utils/`, `data/*.bin` artifacts
+- `ai/` — `CardEncoder.py`, `DeckDataset.py`, `SynergyClassifier.py`, `train.py`
+- `database/` — `mtgtools.py` (ZODB `Database`), `VectorDB.py` (`VectorSearcher`)
+- `environment/` — `Card.py` (`AICard`), `Deck.py`, `Constructor.py`
+- `test/` — pytest, 39 tests across 5 files
+- top-level: `VectorDB.py` (builds ChromaDB index), `import_collection.py`, `scrape_decklists.py`
+- `data/` — `mtgdb.fs` (ZODB, gitignored), `synergy_model.pt`, CSV, `magic_WCC_decks/`
 
 ## Setup
 
 ```bash
-./create_virtenv.sh          # creates ./_build virtualenv with Python 3
-nix-shell                    # alternative: Nix shell with all system deps + pip install
-pip install -r requirements.txt
-pip install -e .             # install the project in editable mode
+nix-shell                      # system deps + pip install -r requirements.txt
+# or
+./create_virtenv.sh            # bare venv only; then pip install -r requirements.txt
+pip install -e .               # required for package imports
 ```
 
-`requirements.txt` pins `torch==2.3.0`, `torchtext==0.18.0`. The Nix `shell.nix` provides additional system deps (chromadb, sentence-transformers, gcc, pkg-config, zlib) and runs `pip install -r requirements.txt` automatically in its shellHook.
+`nix-shell` runs `pip install -r requirements.txt` + `pip install -e .` in shellHook.
+`requirements.txt` pins `torch>=2.4.0` (torchtext removed: unused).
 
 ## Commands
 
-### Run all tests
 ```bash
-pytest test/
-# or
-python -m pytest test/
-```
-
-### Run a single test
-```bash
-pytest test/test_pool.py::test_initPool
-# or with -k for substring match:
-pytest test/ -k "test_initPool"
-```
-
-### Run tests with coverage
-```bash
+pytest test/                               # all tests
+pytest test/test_deck.py::TestDeck::test_add_card_within_limit
+pytest test/ -k "test_forward"
 coverage run -m pytest test/
 coverage html --omit="test/*,_build/*,/nix/*"
-# or use the script:
-./coverage.sh
+
+python ai/train.py                         # 25 epochs, ~30s CPU, saves data/synergy_model.pt
+python VectorDB.py                         # rebuild ChromaDB index (deletes+recreates collection)
+python import_collection.py                # import CSV + WCC decks into ZODB (needs data/mtgcb-collection-*.csv)
 ```
 
-### Run a top-level script
-```bash
-python import_collection.py
-python ai_prepare.py
-python VectorDB.py
-```
+CI (`.github/workflows/test.yml`) runs `nix-shell --run "pytest test/ -v"` on push to `main`/`vector_database` and PRs to `main`.
 
-## Code style
+## Architecture
 
-### Imports
+- `SynergyClassifier`: MLP `768 -> 256 -> 1`, ~200K params. Input = `cat(deck_ctx 384d, card_emb 384d)`.
+- `CardEncoder` (Phase A): frozen `all-MiniLM-L6-v2` -> 384d. `encode(card)` / `encode_many(cards)`.
+- `DeckDataset`: WCC decks = positive samples, random pool cards = negative.
+- `Constructor`: 4-copy hard cap (`MAX_COPIES=4`) except basic lands; `suggest()` uses ChromaDB; `score_card()`/`rank_cards()` use the trained model.
+- `AICard.load_from_pcard` does `json.loads(pcard.json.lower())` -- all keys/values lowercased. `Constructor.can_add_copy` checks `"Basic" in type_text` (capital), so basic-land detection is effectively broken for production-loaded cards; tests pass only because they build `AICard` directly with capitalised strings. Fix the check to use `.lower()` comparisons if touching this code.
+- `_get_scorer` caches model/encoder on the instance and loads `data/synergy_model.pt` relative to CWD -- run from project root.
 
-- **Within a package** (`environment/__init__.py`): use relative imports:
-  ```python
-  from .Card import AICard
-  from .Deck import Deck
-  ```
+## Conventions
 
-- **Across packages** (e.g. `ai/Preparer.py` importing `environment` and `database`): use direct package-qualified imports. The `pyproject.toml` + `pip install -e .` makes all packages importable without path hacks:
-  ```python
-  from database.mtgtools import Database
-  from environment.Card import AICard
-  from utils.utils import get_token
-  ```
+- Imports: relative inside a package (`from .Card import AICard`); direct package-qualified across packages (`from database.mtgtools import Database`). Requires `pip install -e .`.
+- Naming: PascalCase classes, snake_case funcs, `__double` private, UPPER_SNAKE constants.
+- Type hints: space before colon (`self.pool : PCardList = ...`) -- project convention, don't "fix".
+- No formatter configured; don't add one or reformat.
+- Printing: `print(..., end="", flush=True)` with `\r` for progress.
+- Comments may be English or German.
 
-- **Top-level scripts** (`VectorDB.py`, `import_collection.py`) also use direct imports — `pip install -e .` places the project root on `sys.path`.
+## Data flow / gotchas
 
-- **Standard library first**, then third-party, then local imports. Group related imports together. Blank lines between import groups are common but not strict.
-
-### Naming
-
-| Kind | Convention | Example |
-|------|-----------|---------|
-| Classes | PascalCase | `AICard`, `MTGDeckBuilderModel`, `Preparer`, `Trainer_T1` |
-| Methods / functions | snake_case | `create_word2idx()`, `get_token()`, `update_deck()` |
-| Private members | double underscore name mangling | `self.__basic_path`, `self.__pos_pool` |
-| Module-level constants | UPPER_SNAKE_CASE | `CHROMA_DATA_PATH`, `EMBED_MODEL`, `COLLECTION_NAME` |
-| Module-level variables | lowercase | `device`, `client`, `embedding_func` |
-| File names | PascalCase for single-class modules, snake_case for utils/multi-purpose modules | `Card.py` (class files reside in packages), `utils/utils.py` |
-
-Note: `ai/Trainer.py` and `ai/Preparer.py` set `torch.set_default_dtype(torch.float16)` at module level — globally uses half-precision floats. Be aware of this when adding new tensors.
-
-### Type hints
-
-Type hints exist on some constructor parameters and attributes but are not required. When adding them, use the existing style with a **space before the colon** (this is the project convention, not a PEP 8 violation to be "fixed"):
-
-```python
-self.pool : PCardList = ...
-self.input_layer_size : int = 0
-self.keys : set = set()
-self.model : MTGDeckBuilderModel = None
-```
-
-Add return type annotations for public methods when practical. Use `@property` decorator for getter-style access (see `Trainer_T1.Model` and `Preparer.Model`).
-
-### Error handling
-
-- Avoid bare `except: pass`. At minimum catch specific exceptions (e.g. `FileNotFoundError`) and print the error.
-- Raise proper exceptions — never `return Exception("message")` (see `database/mtgtools.py:55-56`). Use `raise ValueError(...)` or `raise RuntimeError(...)`.
-- Use `pytest.raises` for testing exception paths.
-- `try`/`except FileNotFoundError: print(e); pass` is an accepted pattern for loading optional cached files (see `Preparer.load()` and `Trainer_T1.load()`).
-
-### Docstrings
-
-Docstrings exist on some public classes and methods but are sparse. When adding:
-- Use triple-quoted strings immediately after `def`/`class`
-- Describe purpose, parameters, and return values briefly
-- Follow the existing informal style — no strict Google/NumPy/Sphinx format required
-
-### Logging / printing
-
-The project uses `print()` with `end="", flush=True` for progress indicators. There is no logging framework. Keep this pattern for consistency; use carriage-return `\r` for in-place progress updates during long loops. Use `\n` in the same `print()` to finalize a line after a loop.
-
-### Comments
-
-- Comments can be in English or German (mixed usage in existing code)
-- Avoid commenting out large blocks of code — delete them instead
-- Use `# TODO description` for pending work
-- Use `# XXX comment` to mark known hacks or temporary workarounds
-
-### Formatting
-
-No formatter is configured. Do not add one or reformat the entire codebase without discussion.
+- `Database()` defaults `force_update=False`; downloads ~515 MB from Scryfall on first run if ZODB empty.
+- `import_collection.py` builds O(1) lookup indexes from `db.cards`; needs a `data/mtgcb-collection-*.csv`.
+- Top-level `VectorDB.py` deletes and recreates the `MTGCards` collection each run; requires populated ZODB. ChromaDB 1.5.9 caps batch size at 5461, so `collection.add` is chunked (see script).
+- `Constructor.suggest` returns `None` for empty pool; `score_card` returns `0.5` for empty deck; `rank_cards` returns input unchanged for empty deck.
+- `Deck.update_deck`: action `4` adds (raises `ValueError` at maxsize), `3` pops last, `0` noop.
+- `Constructor.this_card`: action `4` picks `pool[-1]`, action `3` drops `deck[-1]`.
+- `CardEncoder` downloads `all-MiniLM-L6-v2` on first use (sentence-transformers).
+- No `utils/` package anymore (removed in v2 refactor); `pyproject.toml` still lists `utils*` in packages.find (harmless).
 
 ## Tests
 
-- Framework: **pytest** (no config file)
-- Test files: flat under `test/`, named `test_*.py`
-- No fixtures, no conftest.py, no parametrize in use yet — add these if helpful
-- Tests import the module under test using direct package-qualified imports (same as main code)
+- pytest, no config file, flat `test/test_*.py`.
+- Direct package-qualified imports in tests.
+- Test count: 39 (7 deck + 17 constructor + 6 dataset + 5 classifier + 4 encoder).
 
-## Known issues
+## Active design decisions
 
-- `MTGDeckBuilderModel` architecture is broken (8.1B params) — being replaced by SynergyClassifier v2 per the 2026-06-04 spec.
-- `ai_prepare.py`, `ai/Preparer.py`, `ai/Trainer.py` are deprecated pending v2 refactor. Do not use.
-- `MTGDataset.__getitem__` returns degenerate `(x, x)` — this is the old model path, not fixable, will be deleted.
-- `data/t1_model_*.bin` was corrupted (torch.save to 2.7 GB file failed). Deleted — regenerated model will be orders of magnitude smaller.
+See `docs/superpowers/specs/2026-06-04-card-synergy-model-v2.md`. Summary:
 
-## External dependencies
+- Binary classifier `(deck_context, card) -> compatibility`.
+- Phase A encoder: frozen ChromaDB `all-MiniLM-L6-v2` -> 384d (Phase C: trainable MLP projection, future).
+- Deck context: mean-pool of card embeddings.
+- Training data: WCC decks positive, random pool cards negative.
+- Constructor: 4-copy cap (except basic lands), deck size >= 60.
+- Target: CPU, <16 GB RAM.
 
-- **mtgtools** — MTG card data library providing `PCard`, `PCardList`, `MtgDB`. Backbone for all card data. Docs: https://github.com/shithead/mtgtools
-- **chromadb** — Vector database for semantic card search
-- **sentence-transformers** — Text embeddings (model: `all-MiniLM-L6-v2`)
-- **pandas** — DataFrames for dataset construction
-- **torch / torchtext** — PyTorch neural network and text tokenizers (`torch==2.3.0`, `torchtext==0.18.0`)
-- **torch-summary** — Model architecture summary via `torchsummary.summary()`
-- **ZODB** (`persistent`) — Object database backing `mtgtools` data
-- **coverage / pytest** — Test tooling (`requirements.txt`, dev only)
+Stale references removed in v2 refactor: `ai/MTGDeckBuilderModel.py`, `ai/Preparer.py`, `ai/Trainer.py`, `utils/`, `ai_prepare.py`, old `data/*.bin`. Do not recreate.

@@ -17,6 +17,8 @@ data/mtgdb.fs.tmp
 
 # Collection
 data/myCollection.csv
+data/magic_WCC_decks/*
+data/mtgcb-collection-*
 
 # Coverage
 .coverage

@@ -1,5 +1,6 @@
-torchtext==0.18.0
-torch==2.3.0
+# torch must be >=2.4 to stay compatible with the transformers version
+# pulled in by sentence-transformers (nix provides torch 2.11).
+torch>=2.4.0
 torch-summary
 chromadb
 sentence-transformers
