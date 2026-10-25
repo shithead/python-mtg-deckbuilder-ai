@@ -20,11 +20,6 @@ from environment.Constructor import Constructor
 from ai.CardEncoder import CardEncoder
 
 
-def _kw_bonus(card):
-    txt = ((getattr(card, "type_line", None) or getattr(card, "type", "") or "") + " " + (getattr(card, "oracle_text", "") or "")).lower()
-    return 2.0 if "defender" in txt else 0.0
-
-
 def _color_count(mana_cost: str) -> dict:
     if not mana_cost:
         return {}
@@ -224,8 +219,6 @@ def main():
              or not getattr(c, "colors", []))
         and c.name.lower() not in theme_names
     ]
-    # prioritize defenders/synergistic cards so they are evaluated
-    candidates.sort(key=lambda c: _kw_bonus(c), reverse=True)
 
     enc = CardEncoder()
     try:
@@ -251,16 +244,9 @@ def main():
         cand_mocks = [_effect_mock(c) for c, _ in ranked]
         cand_embs = enc.encode_many(cand_mocks)
         sims = torch.nn.functional.cosine_similarity(theme_emb.unsqueeze(0), cand_embs, dim=1)
-        ranked = [(c, sc + 1.0 * float(sm) + _kw_bonus(c)) for (c, sc), sm in zip(ranked, sims)]
+        ranked = [(c, sc + 1.0 * float(sm)) for (c, sc), sm in zip(ranked, sims)]
         ranked.sort(key=lambda x: x[1], reverse=True)
         best, score = ranked[0]
-        # soft bonus: prefer defender cards when close in score
-        def _is_defender(c):
-            txt = ((getattr(c, "type_line", None) or getattr(c, "type", "") or "") + " " + (getattr(c, "oracle_text", "") or "")).lower()
-            return "defender" in txt or "wall" in txt
-        def_candidates = [r for r in ranked[:10] if _is_defender(r[0])]
-        if def_candidates and def_candidates[0][1] >= score - 0.3:
-            best, score = def_candidates[0]
         if score < 0.1:
             break
         name_count = sum(1 for c in deck if c.name == best.name)
@@ -284,12 +270,12 @@ def main():
             color_pips[col] = color_pips.get(col, 0) + cnt
 
         distinct_names.add(best.name.lower())
-        if len(distinct_names) >= 3 and query_weight > 0:
+        if len(distinct_names) >= 3 and query_weight > 0.05:
             deck_embs = enc.encode_many(list(deck))
             deck_mean = deck_embs.mean(dim=0)
-            # komplett auf Deck-Mittel umschalten
-            query_emb = deck_mean
-            query_weight = 0.0
+            # 50/50: Deck-Mittel + Theme-Embedding (oracle_text bleibt einflussreich)
+            query_emb = 0.5 * deck_mean + 0.5 * theme_emb
+            query_weight = 0.2
             alpha = 0.75
 
     target_lands = _land_count(total_cmc, len(deck))
