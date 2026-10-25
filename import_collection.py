@@ -32,10 +32,10 @@ def _build_indexes(cards):
     by_name_set = {}
     total = len(cards)
     for i, card in enumerate(cards):
-        names = {(card.name or "").lower()}
+        names = {_normalize_name(card.name)}
         printed = getattr(card, "printed_name", None)
         if printed:
-            names.add(printed.lower())
+            names.add(_normalize_name(printed))
         set_code = (card.set or "").lower() if hasattr(card, "set") else ""
         for n in names:
             by_name.setdefault(n, []).append(card)
@@ -47,14 +47,21 @@ def _build_indexes(cards):
     return by_name, by_name_set
 
 
+def _normalize_name(name):
+    """Normalize card name for lookup: lowercase and replace ae-ligature."""
+    return (name or "").lower().replace("æ", "ae")
+
+
 def _lookup(name, set_code=None):
-    """Look up a card in the pre-built indexes."""
-    name_key = name.lower()
+    """Look up a card in the pre-built indexes (canonical name or printed_name)."""
+    name_key = _normalize_name(name)
     if set_code:
         matches = _name_set_index.get((name_key, set_code.lower()), [])
         if matches:
             return matches[0]
     matches = _name_index.get(name_key, [])
+    if not matches:
+        matches = _name_index.get(name.lower(), [])
     return random.choice(matches) if matches else None
 
 
