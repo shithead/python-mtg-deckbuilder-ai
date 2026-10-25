@@ -126,7 +126,7 @@ class Database(MtgDB):
         return PCardList()
 
     def loadPool(self) -> PCardList:
-        cards = self.root.basic_collection.filtered(lambda card: card.legalities['modern'] == 'legal' or card.legalities['modern'] == 'banned')
+        cards = self.root.basic_collection.filtered(lambda card: card.legalities['legacy'] == 'legal' or card.legalities['legacy'] == 'banned')
         if cards is None:
             raise RuntimeError("import first your basic collection via import_collection.py")
         return PCardList([ AICard.load_from_pcard(pcard) for pcard in cards ])
