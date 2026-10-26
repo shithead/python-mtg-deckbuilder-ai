@@ -268,10 +268,10 @@ def main():
             scored = []
             for idx, c in enumerate(cand_list):
                 ms = model_map.get(id(c), 0.0)
-                sc = (0.15 * float(ms)
-                      + 0.30 * float(cos_deck[idx])
+                sc = (0.25 * float(ms)
+                      + 0.25 * float(cos_deck[idx])
                       + 0.25 * float(cos_query[idx])
-                      + 0.30 * float(cos_theme[idx]))
+                      + 0.25 * float(cos_theme[idx]))
                 scored.append((c, sc))
         scored.sort(key=lambda x: x[1], reverse=True)
 
