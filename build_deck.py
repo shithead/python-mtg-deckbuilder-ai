@@ -79,8 +79,7 @@ def _parse_freetext(text, pool_names):
     for name in pool_names:
         if name in low and name not in themes:
             themes.append(name)
-            if len(themes) >= 3:
-                break
+
     query = text
     for t in themes:
         query = query.replace(t, "")
@@ -139,7 +138,7 @@ def main():
 
     # Resolve theme cards (up to 3)
     theme_cards = []
-    for tname in themes[:3]:
+    for tname in themes:
         tc = _theme_card_from_name(tname, searcher, name_idx)
         if tc is not None:
             theme_cards.append(tc)
@@ -172,7 +171,7 @@ def main():
         if tc.name.lower() not in seen:
             seen.add(tc.name.lower())
             uniq.append(tc)
-    theme_cards = uniq[:3]
+    theme_cards = uniq
 
     theme_colors = set()
     for tc in theme_cards:
