@@ -224,11 +224,7 @@ def main():
         if not cand_list:
             break
 
-        # model scores (pure model)
-        model_ranked = ctor.rank_cards(deck, cand_list, alpha=1.0)
-        model_map = {id(c): sc for c, sc in model_ranked}
-
-        # embeddings
+        # embeddings (kein Modell-Score mehr)
         full_embs = enc.encode_many(cand_list)
         if len(deck) > 0:
             deck_mean = enc.encode_many(list(deck)).mean(dim=0)
@@ -239,28 +235,17 @@ def main():
         effect_embs = enc.encode_many([_effect_mock(c) for c in cand_list])
         cos_theme = torch.nn.functional.cosine_similarity(theme_emb.unsqueeze(0), effect_embs, dim=1)
 
-        # gewichtete score-aufteilung
-        if len(distinct_names) < 3:
-            # vor 3 distinct: Query 75%, Modell 25%
-            scored = []
-            for idx, c in enumerate(cand_list):
-                ms = model_map.get(id(c), 0.0)
-                sc = (0.25 * float(ms)
-                      + 0.75 * float(cos_query[idx]))
-                scored.append((c, sc))
-        else:
-            # nach 3 distinct: Deck 30%, Query 25%, Modell 15%, Text 30%
-            scored = []
-            for idx, c in enumerate(cand_list):
-                ms = model_map.get(id(c), 0.0)
-                sc = (0.25 * float(ms)
-                      + 0.25 * float(cos_deck[idx])
-                      + 0.25 * float(cos_query[idx])
-                      + 0.25 * float(cos_theme[idx]))
-                # Malus fuer farblose (Artefakt-)Karten
-                if not (getattr(c, "colors", []) or []):
-                    sc -= 0.1
-                scored.append((c, sc))
+        # gewichtete score-aufteilung (kein Modell):
+        # Deck 25%, Query 75%, Text-Synergie 3.0 (additiv)
+        # Malus -0.1 fuer farblose (Artefakt-)Karten
+        scored = []
+        for idx, c in enumerate(cand_list):
+            sc = (0.25 * float(cos_deck[idx])
+                  + 0.75 * float(cos_query[idx])
+                  + 3.0 * float(cos_theme[idx]))
+            if not (getattr(c, "colors", []) or []):
+                sc -= 0.1
+            scored.append((c, sc))
         scored.sort(key=lambda x: x[1], reverse=True)
 
         if not scored:
@@ -289,10 +274,7 @@ def main():
             color_pips[col] = color_pips.get(col, 0) + cnt
 
         distinct_names.add(best.name.lower())
-        if len(distinct_names) >= 3:
-            deck_embs = enc.encode_many(list(deck))
-            deck_mean = deck_embs.mean(dim=0)
-            query_emb = deck_mean
+        # Query-Anker bleibt persistent (kein Umschalten)
 
     target_lands, _ = land_count(total_cmc, len(deck), deck)
     total_pips = sum(color_pips.values())
