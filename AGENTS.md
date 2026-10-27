@@ -44,9 +44,9 @@ CI (`.github/workflows/test.yml`) runs `nix-shell --run "pytest test/ -v"` on pu
 
 - `SynergyClassifier`: MLP `768 -> 256 -> 1`, ~200K params. Input = `cat(deck_ctx 384d, card_emb 384d)`.
 - `CardEncoder` (Phase A): frozen `all-MiniLM-L6-v2` -> 384d. `encode(card)` / `encode_many(cards)`.
-- `DeckDataset`: WCC decks = positive samples, random pool cards = negative.
+- `DeckDataset`: supports multiple deck sources (`sources=`), format-aware negatives (`formats=`), balancing (`balance=`), and basic-land exclusion. Defaults remain backward-compatible with `db.root.wcc_decks`.
 - `Constructor`: 4-copy hard cap (`MAX_COPIES=4`) except basic lands; `suggest()` uses ChromaDB; `score_card()`/`rank_cards()` use the trained model.
-- `AICard.load_from_pcard` does `json.loads(pcard.json.lower())` -- all keys/values lowercased. `Constructor.can_add_copy` checks `"Basic" in type_text` (capital), so basic-land detection is effectively broken for production-loaded cards; tests pass only because they build `AICard` directly with capitalised strings. Fix the check to use `.lower()` comparisons if touching this code.
+- `AICard.load_from_pcard` does `json.loads(pcard.json.lower())` -- all keys/values lowercased. `Constructor.can_add_copy` now checks `"basic" in type_text.lower()`, so basic-land detection works for production-loaded cards.
 - `_get_scorer` caches model/encoder on the instance and loads `data/synergy_model.pt` relative to CWD -- run from project root.
 
 ## Conventions
@@ -61,7 +61,7 @@ CI (`.github/workflows/test.yml`) runs `nix-shell --run "pytest test/ -v"` on pu
 ## Data flow / gotchas
 
 - `Database()` defaults `force_update=False`; downloads ~515 MB from Scryfall on first run if ZODB empty.
-- `import_collection.py` builds O(1) lookup indexes from `db.cards`; needs a `data/mtgcb-collection-*.csv`.
+- `import_collection.py` builds O(1) lookup indexes from `db.cards`; needs a `data/mtgcb-collection-*.csv`. Supports multiple deck sources under `data/decks/<source>/` (fallback `data/magic_WCC_decks/`), separates sideboards, and stores `db.root.deck_collections`/`deck_pools` plus backward-compatible `wcc_decks`.
 - Top-level `VectorDB.py` deletes and recreates the `MTGCards` collection each run; requires populated ZODB. ChromaDB 1.5.9 caps batch size at 5461, so `collection.add` is chunked (see script).
 - `Constructor.suggest` returns `None` for empty pool; `score_card` returns `0.5` for empty deck; `rank_cards` returns input unchanged for empty deck.
 - `Deck.update_deck`: action `4` adds (raises `ValueError` at maxsize), `3` pops last, `0` noop.

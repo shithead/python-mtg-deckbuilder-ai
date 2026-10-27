@@ -77,7 +77,7 @@ class Constructor():
 
     def can_add_copy(self, deck: Deck, card: PCard) -> bool:
         type_text = getattr(card, "type_line", None) or getattr(card, "type", "") or ""
-        if "Basic" in type_text:
+        if "basic" in type_text.lower():
             return True
         count = sum(1 for c in deck if c.name == card.name)
         return count < MAX_COPIES
