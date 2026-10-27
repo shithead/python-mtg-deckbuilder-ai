@@ -338,15 +338,6 @@ def main():
             for _ in range(min(needed, 60 - len(deck))):
                 if matches:
                     deck._cards.append(matches[0])
-    # fill remaining slots with any theme-colored basic
-    while len(deck) < 60:
-        col = next(iter(theme_colors)) if theme_colors else "G"
-        basic_name = COLOR_TO_BASIC.get(col, "forest")
-        matches = [c for c in basics if c.name.lower() == basic_name]
-        if matches:
-            deck._cards.append(matches[0])
-        else:
-            break
 
     non_collection = [c for c in deck if c.name.lower() not in pool_names_orig and "basic" not in ((getattr(c, "type_line", None) or getattr(c, "type", "") or "").lower())]
     if non_collection:
