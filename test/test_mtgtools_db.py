@@ -10,6 +10,7 @@ from database.mtgtools import Database
 def initDB():
     return Database()
 
+@pytest.mark.heavy
 def test_loadPool():
     pool = initDB().loadPool()
     print(len(pool))

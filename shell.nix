@@ -8,10 +8,6 @@ let
     virtualenv
     setuptools
     wheel
-    ipython
-    pandas
-    chromadb
-    sentence-transformers
   ]);
   
 in
@@ -40,6 +36,7 @@ pkgs.mkShell {
     export PYTHONPATH="$PIP_PREFIX/${python312.sitePackages}:$PYTHONPATH:$PWD/"
     export PATH="$PIP_PREFIX/bin:$PATH"
     unset SOURCE_DATE_EPOCH
+    pip3 --cache /tmp/pip_cache install --index-url https://download.pytorch.org/whl/cpu "torch>=2.4.0"
     pip3 --cache /tmp/pip_cache install -r requirements.txt
     pip3 --cache /tmp/pip_cache install -e .
   '';

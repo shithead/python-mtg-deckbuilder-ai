@@ -10,3 +10,9 @@ requires-python = ">=3.10, <3.13"
 
 [tool.setuptools.packages.find]
 include = ["ai*", "config*", "database*", "environment*", "utils*", "test*"]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+markers = [
+    "heavy: tests requiring real ZODB data or the real sentence-transformers model",
+]

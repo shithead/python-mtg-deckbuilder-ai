@@ -2,9 +2,14 @@ import torch
 from sentence_transformers import SentenceTransformer
 
 
+_MODEL_CACHE = {}
+
+
 class CardEncoder:
     def __init__(self, model_name : str = "all-MiniLM-L6-v2"):
-        self._model = SentenceTransformer(model_name)
+        if model_name not in _MODEL_CACHE:
+            _MODEL_CACHE[model_name] = SentenceTransformer(model_name)
+        self._model = _MODEL_CACHE[model_name]
 
     def _card_to_text(self, card) -> str:
         parts = [f"name: {card.name}"]
