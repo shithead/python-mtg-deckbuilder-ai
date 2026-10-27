@@ -287,12 +287,6 @@ def main():
         if best.name.lower() not in pool_names_orig:
             candidates = [c for c in candidates if c is not best]
             continue
-        # 10%-Cap fuer farblose Karten, wenn Theme-Farben gesetzt sind
-        if theme_colors and not (getattr(best, "colors", []) or []):
-            colorless_in_deck = sum(1 for c in deck if not (getattr(c, "colors", []) or []))
-            if colorless_in_deck >= max(1, int(0.1 * 60)):
-                candidates = [c for c in candidates if c is not best]
-                continue
 
         target_lands = _land_count(total_cmc, len(deck))
         spells_allowed = 60 - target_lands
