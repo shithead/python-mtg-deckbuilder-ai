@@ -72,6 +72,9 @@ class Constructor():
             pool.pop(-1)
             deck.update_deck(card = card, action = action)
 
+    def land_count(self, total_cmc: float, spell_count: int, deck=None):
+        return land_count(total_cmc, spell_count, deck)
+
     def can_add_copy(self, deck: Deck, card: PCard) -> bool:
         type_text = getattr(card, "type_line", None) or getattr(card, "type", "") or ""
         if "Basic" in type_text:
@@ -159,3 +162,41 @@ class Constructor():
         else:
             scores = model_scores.tolist()
         return sorted(zip(cards, scores), key=lambda cs: cs[1], reverse=True)
+
+
+def _is_ramp(card) -> bool:
+    txt = (getattr(card, "oracle_text", "") or "").lower()
+    return (
+        ("search your library" in txt and "land" in txt)
+        or "add {" in txt
+        or "landfall" in txt
+        or ("mana" in txt and "add" in txt)
+    )
+
+
+def land_count(total_cmc: float, spell_count: int, deck=None):
+    """Return (lands, spells) for a 60-card deck based on avg CMC and ramp.
+
+    Aggressive decks (low CMC) get fewer lands; control decks (high CMC) more.
+    Ramp cards reduce the land count. Never more than 25 lands.
+    """
+    avg_cmc = total_cmc / max(spell_count, 1)
+    if avg_cmc <= 1.5:
+        lands = 17
+    elif avg_cmc <= 2.0:
+        lands = 18
+    elif avg_cmc <= 2.5:
+        lands = 20
+    elif avg_cmc <= 3.0:
+        lands = 22
+    elif avg_cmc <= 3.5:
+        lands = 24
+    else:
+        lands = 25
+    if deck:
+        ramp = sum(1 for c in deck if _is_ramp(c))
+        lands -= min(4, ramp * 2)
+    lands = max(17, min(25, lands))
+    spells = 60 - lands
+    return lands, spells
+

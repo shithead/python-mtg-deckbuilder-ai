@@ -16,7 +16,7 @@ from mtgtools.PCard import PCard
 from database.mtgtools import Database
 from database.VectorDB import VectorSearcher
 from environment.Deck import Deck
-from environment.Constructor import Constructor
+from environment.Constructor import Constructor, land_count
 from ai.CardEncoder import CardEncoder
 
 
@@ -40,20 +40,6 @@ def _effect_mock(card):
         mana_cost="",
         oracle_text=getattr(card, "oracle_text", "") or "",
     )
-
-def _land_count(total_cmc: float, spell_count: int) -> int:
-    avg_cmc = total_cmc / max(spell_count, 1)
-    if avg_cmc <= 1.5:
-        return 17
-    elif avg_cmc <= 2.0:
-        return 19
-    elif avg_cmc <= 2.5:
-        return 21
-    elif avg_cmc <= 3.0:
-        return 23
-    else:
-        return 25
-
 
 COLOR_TO_BASIC = {"W": "plains", "U": "island", "B": "swamp", "R": "mountain", "G": "forest"}
 
@@ -290,7 +276,7 @@ def main():
             candidates = [c for c in candidates if c is not best]
             continue
 
-        target_lands = _land_count(total_cmc, len(deck))
+        target_lands, _ = land_count(total_cmc, len(deck), deck)
         spells_allowed = 60 - target_lands
         if len(deck) >= spells_allowed:
             break
@@ -308,7 +294,7 @@ def main():
             deck_mean = deck_embs.mean(dim=0)
             query_emb = deck_mean
 
-    target_lands = _land_count(total_cmc, len(deck))
+    target_lands, _ = land_count(total_cmc, len(deck), deck)
     total_pips = sum(color_pips.values())
     basics = [c for c in pool
               if "basic" in ((getattr(c, "type_line", None) or getattr(c, "type", "") or "").lower())
